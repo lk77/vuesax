@@ -15,8 +15,8 @@
     <div class="input-select-con">
       <!-- v-model="valueFilter" -->
       <input
-        ref="inputselect"
         v-bind="$attrs"
+        ref="inputselect"
         :readonly="!autocomplete"
         class="input-select vs-select--input"
         type="text"

@@ -17,6 +17,7 @@
       @click="focusInput">{{ label }}</label>
     <div class="vs-con-input">
       <input
+        v-bind="$attrs"
         ref="vsinput"
         :style="style"
         :autofocus="autofocus"
@@ -27,7 +28,6 @@
         }]"
         :placeholder="null"
         :value="value"
-        v-bind="$attrs"
         :type="$attrs.type?$attrs.type:'text'"
         class="vs-inputx vs-input--input"
         v-on="listeners">

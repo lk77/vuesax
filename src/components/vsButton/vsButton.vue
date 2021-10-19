@@ -1,7 +1,7 @@
 <template lang="html">
   <button
-    ref="btn"
     v-bind="$attrs"
+    ref="btn"
     :class="[`vs-button-${isColor() ? color : null}`,`vs-button-${type}`,{
       'isActive':isActive,
       'includeIcon':icon,
@@ -246,7 +246,7 @@ export default {
           this.isActive = false
         }
       });
-      
+
     },
     clickButton(event){
       this.$emit('click', event)
@@ -301,7 +301,7 @@ export default {
           }, this.time * 1100)
         }
       });
-      
+
 
     },
     isColor(){

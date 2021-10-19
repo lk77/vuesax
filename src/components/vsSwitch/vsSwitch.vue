@@ -1,5 +1,6 @@
 <template lang="html">
   <button
+    v-bind="$attrs"
     :class="[
       `vs-switch-${color}`,
       {
@@ -7,11 +8,10 @@
       }
     ]"
     :style="style"
-    v-bind="$attrs"
     class="vs-component vs-switch">
     <input
-      ref="inputCheckbox"
       v-bind="$attrs"
+      ref="inputCheckbox"
       :disabled="$attrs.disabled"
       :value="value"
       class="input-switch vs-switch--input"

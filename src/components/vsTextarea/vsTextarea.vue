@@ -9,8 +9,8 @@
     </h4>
 
     <textarea
-      :value="value"
       v-bind="$attrs"
+      :value="value"
       class="vs-textarea"
       v-on="listeners">
     </textarea>

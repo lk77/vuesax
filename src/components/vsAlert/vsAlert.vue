@@ -5,9 +5,9 @@
     @leave="leave">
 
     <div
+      v-bind="$attrs"
       v-if="active"
       ref="alert"
-      v-bind="$attrs"
       :class="[`con-vs-alert-${color}`,{
         'con-icon':icon,
       }]"

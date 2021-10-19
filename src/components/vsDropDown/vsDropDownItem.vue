@@ -10,9 +10,9 @@
     @mouseover="hoverx=true"
     @mouseout="hoverx=false">
     <router-link
+      v-bind="$attrs"
       v-if="to"
       :to="to"
-      v-bind="$attrs"
       :class="{'disabled':disabled}"
       class="vs-dropdown--item-link"
       v-on="$listeners"
@@ -22,8 +22,8 @@
     </router-link>
 
     <a
-      v-else
       v-bind="$attrs"
+      v-else
       :class="{'disabled':disabled}"
       class="vs-dropdown--item-link"
       v-on="$listeners"

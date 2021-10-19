@@ -24,10 +24,10 @@
     </button>
     <span v-if="label">{{ label }}</span>
     <input
+      v-bind="$attrs"
       ref="input"
       :style="styleInput"
       :value="value"
-      v-bind="$attrs"
       :disabled="isDisabled"
       :min="min"
       :max="max"

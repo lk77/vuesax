@@ -77,8 +77,8 @@
         }"
         class="con-input-upload">
         <input
-          ref="fileInput"
           v-bind="$attrs"
+          ref="fileInput"
           :disabled="$attrs.disabled || limit?(srcs.length - itemRemove.length) >= Number(limit):false"
           type="file"
           @change="getFiles">

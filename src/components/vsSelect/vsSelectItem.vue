@@ -5,9 +5,9 @@
     class="vs-component"
     v-on="listeners">
     <button
+      v-bind="$attrs"
       ref="item"
       :disabled="disabled"
-      v-bind="$attrs"
       :style="styles"
       :class="{
         'activex':$parent.parent.multiple?getValue.indexOf(value) != -1:getValue == value,
@@ -21,9 +21,9 @@
       @keydown.down.prevent="navigateOptions('next')"
       @keydown.up.prevent="navigateOptions('prev')"
       @keydown.enter.prevent="clickOption()">
-      <vs-icon 
-        v-if="$parent.parent.multiple" 
-        class="icon-item vs-select--item-icon" 
+      <vs-icon
+        v-if="$parent.parent.multiple"
+        class="icon-item vs-select--item-icon"
         icon="check_circle"></vs-icon>
       <span
         v-html="getText"></span>
