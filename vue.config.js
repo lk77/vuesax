@@ -4,13 +4,13 @@ module.exports = {
   productionSourceMap: false,
   configureWebpack: {
     plugins: [
-      new CopyWebpackPlugin([
+      new CopyWebpackPlugin({ patterns: [
         {
           from: 'src/style',
           to: 'style/',
           toType: 'dir'
         }
-      ])
+      ] })
     ]
   }
 }

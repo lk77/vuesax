@@ -46,24 +46,23 @@
     "postinstall": "node postinstall.js"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "vue": "^2.6.9"
+    "chalk": "^4.1.2",
+    "vue": "^2.6.14"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@vue/cli-plugin-babel": "^4.1.2",
-    "@vue/cli-plugin-eslint": "^3.0.3",
-    "@vue/cli-service": "^3.0.3",
-    "copy-webpack-plugin": "^4.5.2",
-    "eslint": "^5.1.0",
-    "eslint-plugin-vue": "^4.7.1",
-    "file-loader": "^1.1.11",
+    "@babel/core": "^7.15.8",
+    "@vue/cli-plugin-babel": "^4.5.14",
+    "@vue/cli-plugin-eslint": "^4.5.14",
+    "@vue/cli-service": "^4.5.14",
+    "copy-webpack-plugin": "^9.0.1",
+    "eslint-plugin-vue": "^7.19.1",
+    "file-loader": "^6.2.0",
     "prefixfree": "^1.0.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
+    "stylus": "^0.55.0",
+    "stylus-loader": "^6.2.0",
     "viewcode": "0.0.27",
-    "vuepress": "^0.14.10",
-    "webpack": "^4.19.0"
+    "vuepress": "^1.8.2",
+    "webpack": "^5.58.2"
   },
   "babel": {
     "presets": [
