@@ -1,5 +1,6 @@
 import { injectDirectionClass } from "./utils/rtl";
 import vsFunctions from './functions'
+import { reactive } from "vue"
 /**
  * Vuesax global mixin, all vueasx functions and properties injected
  * in the @beforeCreate hook.
@@ -18,7 +19,7 @@ export default (Vue, options) => {
       // create $vs property if not exist
       if(!this.$vs) {
         // define $vs reactive properties
-        this.$vs = Vue.observable(options);
+        this.$vs = reactive(options);
         // define $vs functions
         vsFunctions(this);
       }

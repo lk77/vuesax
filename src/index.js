@@ -4,7 +4,7 @@ import vsTheme from './utils/theme.js'
 import DefineVuesaxMixin from './defineGlobalMixin'
 import vuesaxOptions from './utils/options'
 
-const install = (Vue, options={}) => {
+const install = (app, options={}) => {
   // set default options
   for(let prop in vuesaxOptions) {
     if(!options[prop]) {
@@ -13,7 +13,7 @@ const install = (Vue, options={}) => {
   }
   // Use Components
   Object.values(vsComponents).forEach((vsComponent) => {
-    Vue.use(vsComponent)
+    app.use(vsComponent)
   })
   if(options){
     if(Object.prototype.hasOwnProperty.call(options, 'theme')){
@@ -25,7 +25,7 @@ const install = (Vue, options={}) => {
     }
   }
   // Define vuesax functions and properties ($vs)
-  DefineVuesaxMixin(Vue, options);
+  DefineVuesaxMixin(app, options);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

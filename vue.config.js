@@ -8,6 +8,11 @@ module.exports = {
   },
   productionSourceMap: false,
   configureWebpack: {
+    resolve: {
+      alias: {
+        'vue': '@vue/compat'
+      }
+    },
     plugins: [
       new CopyWebpackPlugin({
         patterns: [
