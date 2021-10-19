@@ -16,7 +16,7 @@ const vsFunctions = {
 
 export default vm => {
   Object.values(vsFunctions).forEach((vsFunctions) => {
-    if(vsFunctions.hasOwnProperty('subName')){
+    if(Object.prototype.hasOwnProperty.call(vsFunctions, 'subName')){
       vm.$vs[vsFunctions.name][vsFunctions.subName] = vsFunctions.vsfunction
     } else {
       vm.$vs[vsFunctions.name] = vsFunctions.vsfunction

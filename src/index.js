@@ -16,8 +16,8 @@ const install = (Vue, options={}) => {
     Vue.use(vsComponent)
   })
   if(options){
-    if(options.hasOwnProperty('theme')){
-      if(options.theme.hasOwnProperty('colors')){
+    if(Object.prototype.hasOwnProperty.call(options, 'theme')){
+      if(Object.prototype.hasOwnProperty.call(options.theme, 'colors')){
         if (typeof window !== 'undefined') {
           vsTheme.vsfunction(options.theme.colors, options.server)
         }
