@@ -1,7 +1,7 @@
 <template>
   <transition name="vs-sidebar-animate">
     <div
-      v-show="staticPosition || value"
+      v-show="staticPosition || modelValue"
       ref="sidebarbackground"
       class="vs-content-sidebar">
       <div
@@ -48,7 +48,7 @@
 export default {
   name:'VsSidebar',
   props:{
-    value:{
+    modelValue:{
       default: false
     },
     defaultIndex:{
@@ -100,7 +100,7 @@ export default {
     currentIndex: 0
   }),
   watch:{
-    value() {
+    modelValue() {
       if(!this.clickNotClose) this.addEventClick()
     }
   },
@@ -121,7 +121,7 @@ export default {
       this.$nextTick(() => {
         let parentx = typeof this.parent == 'string' ? document.querySelector(this.parent) : this.parent
         let element = parentx || window
-        if(this.value) {
+        if(this.modelValue) {
           setTimeout(() => {
             element.addEventListener('click', this.closeSidebar)
           }, 300)
@@ -132,7 +132,7 @@ export default {
     closeSidebar (evt) {
       let parent = evt.target.closest('.vs-sidebar')
       if (!parent) {
-        this.$emit('input', false)
+        this.$emit('update:modelValue', false)
         let parentx = typeof this.parent == 'string' ? document.querySelector(this.parent) : this.parent
         let element = parentx || window
         element.removeEventListener('click', this.closeSidebar)

@@ -27,7 +27,7 @@
           'icon-after-input':iconAfter
         }]"
         :placeholder="null"
-        :value="value"
+        :value="modelValue"
         :type="$attrs.type?$attrs.type:'text'"
         class="vs-inputx vs-input--input">
       <transition name="placeholderx">
@@ -128,7 +128,7 @@ export default {
   name:'VsInput',
   inheritAttrs: false,
   props:{
-    value:{
+    modelValue:{
       default:'',
       type:[String,Number]
     },
@@ -239,7 +239,7 @@ export default {
       return {
         ...this.$attrs,
         onInput: (evt) => {
-          this.$emit('input',evt.target.value)
+          this.$emit('update:modelValue',evt.target.value)
         },
         onFocus: (evt) => {
           this.$emit('focus',evt)
@@ -252,7 +252,7 @@ export default {
       }
     },
     isValue(){
-      return this.labelPlaceholder?true:!this.value
+      return this.labelPlaceholder?true:!this.modelValue
     },
     getIcon(){
       return this.danger  ? this.valIconDanger

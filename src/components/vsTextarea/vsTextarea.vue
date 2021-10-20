@@ -1,7 +1,7 @@
 <template lang="html">
   <div
     :style="style"
-    :class="[`vs-textarea-${color}`, {'textarea-danger': counter ? (value && value.length > counter) : false, 'focusx': isFocus}]"
+    :class="[`vs-textarea-${color}`, {'textarea-danger': counter ? (modelValue && modelValue.length > counter) : false, 'focusx': isFocus}]"
     class="vs-component vs-con-textarea">
 
     <h4 v-if="label">
@@ -10,14 +10,14 @@
 
     <textarea
       v-bind="attrs"
-      :value="value"
+      :value="modelValue"
       class="vs-textarea">
     </textarea>
 
     <div
       v-if="counter"
       class="count vs-textarea--count">
-      {{ value ? value.length : 0 }} / {{ counter }}
+      {{ modelValue ? modelValue.length : 0 }} / {{ counter }}
     </div>
 
   </div>
@@ -29,7 +29,7 @@ export default {
   name: "VsTextarea",
   inheritAttrs:false,
   props:{
-    value:{},
+    modelValue:{},
     label:{
       default:null,
       type: String
@@ -71,7 +71,7 @@ export default {
       return {
         ...this.$attrs,
         onInput:(evt) => {
-          this.$emit('input', evt.target.value)
+          this.$emit('update:modelValue', evt.target.value)
         },
         onFocus:() => {
           this.focus()
@@ -83,8 +83,8 @@ export default {
     }
   },
   watch:{
-    value() {
-      if(this.value && this.value.length > this.counter) {
+    modelValue() {
+      if(this.modelValue && this.modelValue.length > this.counter) {
         this.$emit('update:counterDanger', true)
       } else {
         this.$emit('update:counterDanger', false)

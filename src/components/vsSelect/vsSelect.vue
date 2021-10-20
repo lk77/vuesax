@@ -13,7 +13,7 @@
       ref="inputSelectLabel"
       class="vs-select--label">{{ label }}</label>
     <div class="input-select-con">
-      <!-- v-model="valueFilter" -->
+      <!-- v-model="modelValueFilter" -->
       <input
         v-bind="attrs"
         ref="inputselect"
@@ -111,7 +111,7 @@ import utils from "../../utils";
 export default {
   name: "VsSelect",
   props: {
-    value: {},
+    modelValue: {},
     noData: {
       default: "No data available",
       type: String
@@ -182,9 +182,9 @@ export default {
     }
   },
   data: () => ({
-    valueFilter: "",
+    modelValueFilter: "",
     active: false,
-    valuex: "",
+    modelValuex: "",
     clear: false,
     scrollx: false,
     cords: {},
@@ -241,15 +241,15 @@ export default {
           }
 
           this.$children.map(item => {
-            item.valueInputx = this.$refs.inputselect.value;
+            item.modelValueInputx = this.$refs.inputselect.modelValue;
           });
         }
       };
     }
   },
   watch: {
-    value(event) {
-      this.valuex = this.value;
+    modelValue(event) {
+      this.modelValuex = this.modelValue;
       this.$emit("change", event);
     },
     active() {
@@ -272,7 +272,7 @@ export default {
     }
   },
   mounted() {
-    // this.$refs.inputselect.value = this.value
+    // this.$refs.inputselect.modelValue = this.modelValue
     this.changeValue();
     if (this.active) {
       utils.insertBody(this.$refs.vsSelectOptions);
@@ -303,32 +303,32 @@ export default {
       this.filterItems("");
       this.changeValue();
     },
-    addMultiple(value) {
-      let currentValues = this.value ? this.value : [];
-      if (currentValues.includes(value)) {
-        currentValues.splice(currentValues.indexOf(value), 1);
-        this.$emit("input", currentValues);
+    addMultiple(modelValue) {
+      let currentValues = this.modelValue ? this.modelValue : [];
+      if (currentValues.includes(modelValue)) {
+        currentValues.splice(currentValues.indexOf(modelValue), 1);
+        this.$emit('update:modelValue', currentValues);
         this.changeValue();
         if (this.autocomplete) {
           this.$refs.inputselect.focus();
         }
       } else {
         if (this.autocomplete) {
-          currentValues.push(value);
-          this.$emit("input", currentValues);
+          currentValues.push(modelValue);
+          this.$emit('update:modelValue', currentValues);
           this.filterItems("");
           this.changeValue();
-          // this.$refs.inputselect.value += ','
+          // this.$refs.inputselect.modelValue += ','
           this.$refs.inputselect.focus();
         } else {
-          currentValues.push(value);
-          this.$emit("input", currentValues);
+          currentValues.push(modelValue);
+          this.$emit('update:modelValue', currentValues);
           this.changeValue();
         }
       }
     },
-    filterItems(value) {
-      if (value) {
+    filterItems(modelValue) {
+      if (modelValue) {
         this.filterx = true;
       } else {
         this.filterx = false;
@@ -347,16 +347,16 @@ export default {
         let text = item.text;
 
         if (this.multiple) {
-          let valuesx = value.split(",");
-          valuesx.forEach(value_multi => {
-            if (text.toUpperCase().indexOf(value_multi.toUpperCase()) == -1) {
+          let modelValuesx = modelValue.split(",");
+          modelValuesx.forEach(modelValue_multi => {
+            if (text.toUpperCase().indexOf(modelValue_multi.toUpperCase()) == -1) {
               item.visible = false;
             } else {
               item.visible = true;
             }
           });
         } else {
-          if (text.toUpperCase().indexOf(value.toUpperCase()) == -1) {
+          if (text.toUpperCase().indexOf(modelValue.toUpperCase()) == -1) {
             item.visible = false;
           } else {
             item.visible = true;
@@ -381,7 +381,7 @@ export default {
     changeValue() {
       this.filterx = false;
       if (this.multiple) {
-        let values = this.value ? this.value : [];
+        let modelValues = this.modelValue ? this.modelValue : [];
         let options = this.$children;
 
         options.forEach(item => {
@@ -391,19 +391,19 @@ export default {
         });
 
         let optionsValues = [];
-        values.forEach(item => {
+        modelValues.forEach(item => {
           options.forEach(item_option => {
-            if (item_option.value == item) {
+            if (item_option.modelValue == item) {
               let text = item_option.text;
               text = text.replace("check_circle", "");
               optionsValues.push(text.trim());
             }
           });
         });
-        this.$refs.inputselect.value = optionsValues.toString();
+        this.$refs.inputselect.modelValue = optionsValues.toString();
       } else {
         if (this.$refs.inputselect) {
-          this.$refs.inputselect.value = this.valuex;
+          this.$refs.inputselect.modelValue = this.modelValuex;
         }
       }
     },
@@ -414,8 +414,8 @@ export default {
       let inputx = this.$refs.inputselect;
       if (this.autocomplete && this.multiple) {
         setTimeout(() => {
-          if (inputx.value) {
-            this.$refs.inputselect.value = inputx.value += ",";
+          if (inputx.modelValue) {
+            this.$refs.inputselect.modelValue = inputx.modelValue += ",";
           }
           inputx.selectionStart = inputx.selectionEnd = 10000;
         }, 10);
@@ -425,7 +425,7 @@ export default {
 
       if (!this.autocomplete) {
         if (
-          this.multiple ? this.value.length == 0 : !this.value || this.multiple
+          this.multiple ? this.modelValue.length == 0 : !this.modelValue || this.multiple
         ) {
           setTimeout(() => {
             const el = this.$children[0].$el.querySelector(".vs-select--item");

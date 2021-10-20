@@ -10,7 +10,7 @@
       :disabled="disabled"
       :style="styles"
       :class="{
-        'activex':$parent.parent.multiple?getValue.indexOf(value) != -1:getValue == value,
+        'activex':$parent.parent.multiple?getValue.indexOf(modelValue) != -1:getValue == modelValue,
         'con-icon':$parent.parent.multiple,
         'disabledx':disabledx
       }"
@@ -41,7 +41,7 @@ export default {
       type:Boolean,
       default:false
     },
-    value:{
+    modelValue:{
       default:null,
     },
     text:{
@@ -52,7 +52,7 @@ export default {
     hoverx:false,
     visible:true,
     getText:null,
-    valueInputx:''
+    modelValueInputx:''
   }),
   computed:{
     disabledx(){
@@ -60,14 +60,14 @@ export default {
         if(this.isActive){
           return false
         } else {
-          return this.$parent.parent.maxSelected == this.$parent.parent.value.length
+          return this.$parent.parent.maxSelected == this.$parent.parent.modelValue.length
         }
       } else {
         return false
       }
     },
     isActive(){
-      return this.$parent.parent.multiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value
+      return this.$parent.parent.multiple?this.getValue.indexOf(this.modelValue) != -1:this.getValue == this.modelValue
     },
     attrs() {
       return {
@@ -96,13 +96,13 @@ export default {
       }
     },
     getValue(){
-      return this.$parent.parent.value
+      return this.$parent.parent.modelValue
     }
   },
   watch:{
     '$parent.parent.active': function () {
       this.$nextTick(() => {
-        if( this.$parent.parent.multiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value ) {
+        if( this.$parent.parent.multiple?this.getValue.indexOf(this.modelValue) != -1:this.getValue == this.modelValue ) {
           this.$emit('update:isSelected', true)
           this.getText = this.text
           this.putValue()
@@ -113,19 +113,19 @@ export default {
         }
       })
     },
-    valueInputx(){
+    modelValueInputx(){
       if(this.visible){
-        let valueInputx = this.valueInputx.split(',')
-        if(valueInputx[valueInputx.length-1] == ''){
+        let modelValueInputx = this.modelValueInputx.split(',')
+        if(modelValueInputx[modelValueInputx.length-1] == ''){
           this.getText = this.text
           return
         }
-        let valuex = valueInputx[valueInputx.length-1]
-        var re = new RegExp(valuex,"i");
-        if(this.text.toUpperCase().indexOf(valuex.toUpperCase()) == 0){
-          valuex = this.MaysPrimera(valuex)
+        let modelValuex = modelValueInputx[modelValueInputx.length-1]
+        var re = new RegExp(modelValuex,"i");
+        if(this.text.toUpperCase().indexOf(modelValuex.toUpperCase()) == 0){
+          modelValuex = this.MaysPrimera(modelValuex)
         }
-        let text = this.text.replace(re,`<span class="searchx">${valuex}</span>`)
+        let text = this.text.replace(re,`<span class="searchx">${modelValuex}</span>`)
         this.getText = text
       } else {
         this.getText = this.text
@@ -135,7 +135,7 @@ export default {
   created(){
     this.putValue()
     this.$nextTick(() => {
-      if( this.$parent.parent.multiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value ) {
+      if( this.$parent.parent.multiple?this.getValue.indexOf(this.modelValue) != -1:this.getValue == this.modelValue ) {
         this.$emit('update:isSelected', true)
         this.getText = this.text
         this.putValue()
@@ -158,8 +158,8 @@ export default {
     },
     backspace(){
       if(this.$parent.parent.autocomplete){
-        let valueInput = this.$parent.parent.$refs.inputselect.value
-        this.$parent.parent.$refs.inputselect.value = valueInput.substr(0,valueInput.length-1)
+        let modelValueInput = this.$parent.parent.$refs.inputselect.modelValue
+        this.$parent.parent.$refs.inputselect.modelValue = modelValueInput.substr(0,modelValueInput.length-1)
         this.$parent.parent.$refs.inputselect.focus()
       }
     },
@@ -211,7 +211,7 @@ export default {
       }
     },
     focusValue(index){
-      if(this.$parent.parent.multiple?this.$parent.parent.value.indexOf(this.value) != -1:this.value == this.$parent.parent.value){
+      if(this.$parent.parent.multiple?this.$parent.parent.modelValue.indexOf(this.modelValue) != -1:this.modelValue == this.$parent.parent.modelValue){
         if(!this.$parent.parent.autocomplete){
           setTimeout( () => {
             this.$refs.item.focus()
@@ -226,8 +226,8 @@ export default {
       }
     },
     putValue(){
-      if(this.value == this.$parent.parent.value){
-        this.$parent.parent.valuex = this.text
+      if(this.modelValue == this.$parent.parent.modelValue){
+        this.$parent.parent.modelValuex = this.text
       }
 
     },
@@ -239,15 +239,15 @@ export default {
       if(!this.$parent.parent.multiple){
         this.$parent.parent.active = false
         document.removeEventListener('click',this.$parent.parent.clickBlur)
-        this.$parent.parent.valuex = text
-        this.$parent.parent.$emit('input',this.value)
+        this.$parent.parent.modelValuex = text
+        this.$parent.parent.$emit('update:modelValue',this.modelValue)
         this.$parent.parent.changeValue()
       } else if (this.$parent.parent.multiple) {
-        this.$parent.parent.valuex = text
-        this.$parent.parent.addMultiple(this.value)
+        this.$parent.parent.modelValuex = text
+        this.$parent.parent.addMultiple(this.modelValue)
       }
       this.$parent.parent.$children.map((item)=>{
-        item.valueInputx = ''
+        item.modelValueInputx = ''
       })
     },
 

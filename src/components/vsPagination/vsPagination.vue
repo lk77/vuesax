@@ -121,7 +121,7 @@ export default {
       type:[Number, String],
       required:false
     },
-    value:{
+    modelValue:{
       type:Number,
       required:true,
       default: 1
@@ -207,7 +207,7 @@ export default {
     current(val) {
       this.getPages()
       this.calculateMinMax(val)
-      this.$emit('input', this.current)
+      this.$emit('update:modelValue', this.current)
       this.$emit('change', this.current)
     },
     total() {
@@ -216,14 +216,14 @@ export default {
     max() {
       this.getPages()
     },
-    value(val) {
+    modelValue(val) {
       const pageNum = val < 1 ? 1 : (val <= this.total ? val : this.total)
       this.goTo(pageNum)
     },
   },
 
   async mounted () {
-    this.current = this.go = this.value
+    this.current = this.go = this.modelValue
     await this.calculateMinMax(this.current)
     this.indexRows = this.descriptionItems.indexOf(this.maxItems)
     this.getPages()
@@ -250,9 +250,9 @@ export default {
       if (typeof page.target === 'undefined') {
         this.current = page
       } else {
-        const value  = parseInt(page.target.value, 10)
+        const modelValue  = parseInt(page.target.value, 10)
         this.go      = (
-          value < 1 ? 1 : (value <= this.total ? value : this.total)
+          modelValue < 1 ? 1 : (modelValue <= this.total ? modelValue : this.total)
         )
         this.current = this.go
       }

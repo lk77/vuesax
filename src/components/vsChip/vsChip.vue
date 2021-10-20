@@ -37,7 +37,7 @@ export default {
     item:{
       type:Boolean,
     },
-    value:{},
+    modelValue:{},
     active:{
       type:Boolean,
       default:true,
@@ -86,7 +86,7 @@ export default {
         return true
       } else {
         if(this.vsClosable) {
-          return this.value
+          return this.modelValue
         } else {
           return true
         }
@@ -95,12 +95,12 @@ export default {
   },
   methods:{
     closeChip () {
-      this.$emit('input', false)
+      this.$emit('update:modelValue', false)
       this.$emit('click')
     },
     remove(){
       this.$emit('vs-remove', false)
-      this.$emit('input', false)
+      this.$emit('update:modelValue', false)
     }
   }
 }

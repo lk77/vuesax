@@ -22,7 +22,7 @@
             class="vs-tabs--btn"
             type="button"
             @click="activeChild(index)"
-            v-on="child.listeners">
+            v-on="child.attrs">
             <vs-icon
               v-if="child.icon"
               :icon-pack="child.iconPack"
@@ -61,7 +61,7 @@ export default {
   name:'VsTabs',
   components:{vsIcon},
   props:{
-    value: {
+    modelValue: {
       default: 0,
       type: [Number, String],
     },
@@ -111,13 +111,13 @@ export default {
     }
   },
   watch: {
-    value(index) {
+    modelValue(index) {
       const activeIndex = this.parseIndex(index)
       this.activeChild(activeIndex)
     },
   },
   mounted(){
-    const activeIndex = this.parseIndex(this.value)
+    const activeIndex = this.parseIndex(this.modelValue)
     this.childActive = activeIndex
     this.$nextTick(() => {
       this.activeChild(activeIndex, true)
@@ -169,7 +169,7 @@ export default {
 
       this.$children[index].active = true
       this.childActive = index
-      this.$emit('input', this.childActive)
+      this.$emit('update:modelValue', this.childActive)
 
       if(this.position == 'left' || this.position == 'right'){
         this.$children[index].vertical = true

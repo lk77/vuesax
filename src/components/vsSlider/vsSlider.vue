@@ -64,7 +64,7 @@
 
     </button>
     <button
-      v-if="Array.isArray(value)"
+      v-if="Array.isArray(modelValue)"
       ref="circle2"
       :disabled="disabled"
       :class="{
@@ -103,7 +103,7 @@ import _color from "../../utils/color.js";
 export default {
   name: "VsSlider",
   props: {
-    value: {},
+    modelValue: {},
     disabled: {
       default: false,
       type: [Boolean, String]
@@ -154,11 +154,11 @@ export default {
     actived: false,
     changeValue: false,
     valueCircle1: 0,
-    valueCircle2: 0
+    calueCircle2: 0
   }),
   computed: {
     isEquals() {
-      return Array.isArray(this.value) ? this.value[0] == this.value[1] : false;
+      return Array.isArray(this.modelValue) ? this.modelValue[0] == this.modelValue[1] : false;
     },
     countTicks() {
       return this.max + 1;
@@ -209,7 +209,7 @@ export default {
     }
   },
   watch: {
-    value() {
+    modelValue() {
       if (!this.actived) {
         this.changePosition();
       }
@@ -217,25 +217,25 @@ export default {
       setTimeout(() => {
         this.changeValue = false;
       }, 300);
-      this.$emit("change", this.value);
+      this.$emit("change", this.modelValue);
     },
     leftx() {
-      if (Array.isArray(this.value)) {
+      if (Array.isArray(this.modelValue)) {
         if (this.leftx > this.leftTwo) {
-          this.valueCircle1 = this.value[1];
+          this.valueCircle1 = this.modelValue[1];
         } else {
-          this.valueCircle1 = this.value[0];
+          this.valueCircle1 = this.modelValue[0];
         }
       } else {
-        this.valueCircle1 = this.value;
+        this.valueCircle1 = this.modelValue;
       }
     },
     leftTwo: {
       handler: function() {
         if (this.leftTwo > this.leftx) {
-          this.valueCircle2 = this.value[1];
+          this.valueCircle2 = this.modelValue[1];
         } else {
-          this.valueCircle2 = this.value[0];
+          this.valueCircle2 = this.modelValue[0];
         }
       },
       deep: true
@@ -247,55 +247,55 @@ export default {
 
   methods: {
     mousewheelx(evt) {
-      if (!Array.isArray(this.value)) {
+      if (!Array.isArray(this.modelValue)) {
         if (evt.wheelDelta > 0) {
-          let val = parseFloat(this.value) + parseFloat(this.step);
+          let val = parseFloat(this.modelValue) + parseFloat(this.step);
           val = this.stepDecimals ? this.toDecimal(val) : Math.round(val);
-          if (this.value >= this.max) {
+          if (this.modelValue >= this.max) {
             val = this.max;
           }
           this.leftx = val;
-          this.$emit("input", val);
+          this.$emit('update:modelValue', val);
         } else {
-          let val = parseFloat(this.value) - parseFloat(this.step);
+          let val = parseFloat(this.modelValue) - parseFloat(this.step);
           val = this.stepDecimals ? this.toDecimal(val) : Math.round(val);
-          if (this.value <= this.min) {
+          if (this.modelValue <= this.min) {
             val = this.min;
           }
           this.leftx = val;
-          this.$emit("input", val);
+          this.$emit('update:modelValue', val);
         }
       }
     },
     keydownLeft() {
-      if (!Array.isArray(this.value)) {
-        let val = parseFloat(this.value) - parseFloat(this.step);
+      if (!Array.isArray(this.modelValue)) {
+        let val = parseFloat(this.modelValue) - parseFloat(this.step);
         val = this.stepDecimals ? this.toDecimal(val) : Math.round(val);
-        if (this.value == this.min) {
+        if (this.modelValue == this.min) {
           val = this.min;
         }
         this.leftx = val;
-        this.$emit("input", val);
+        this.$emit('update:modelValue', val);
       }
     },
     keydownRight() {
-      if (!Array.isArray(this.value)) {
-        let val = parseFloat(this.value) + parseFloat(this.step);
+      if (!Array.isArray(this.modelValue)) {
+        let val = parseFloat(this.modelValue) + parseFloat(this.step);
         val = this.stepDecimals ? this.toDecimal(val) : Math.round(val);
-        if (this.value >= this.max) {
+        if (this.modelValue >= this.max) {
           val = this.max;
         }
         this.leftx = val;
-        this.$emit("input", val);
+        this.$emit('update:modelValue', val);
       }
     },
     changePosition() {
-      if (Array.isArray(this.value)) {
-        this.leftx = ((this.value[1] - this.min) / (this.max - this.min)) * 100;
+      if (Array.isArray(this.modelValue)) {
+        this.leftx = ((this.modelValue[1] - this.min) / (this.max - this.min)) * 100;
         this.leftTwo =
-          ((this.value[0] - this.min) / (this.max - this.min)) * 100;
+          ((this.modelValue[0] - this.min) / (this.max - this.min)) * 100;
       } else {
-        this.leftx = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.leftx = ((this.modelValue - this.min) / (this.max - this.min)) * 100;
       }
     },
     styleTicks(index) {
@@ -348,7 +348,7 @@ export default {
       }, 200);
       let percentX = Math.round((leftx / slider.clientWidth) * 100);
 
-      if (Array.isArray(this.value)) {
+      if (Array.isArray(this.modelValue)) {
         if (
           Math.abs(percentX - this.leftx) > Math.abs(percentX - this.leftTwo)
         ) {
@@ -376,39 +376,39 @@ export default {
         this[this.two ? "leftTwo" : "leftx"] = steps * lengthPerStep;
       }
 
-      if (Array.isArray(this.value)) {
-        let valueNew = val;
+      if (Array.isArray(this.modelValue)) {
+        let modelValueNew = val;
         if (val == this.max) {
-          valueNew = this.max;
+          modelValueNew = this.max;
         }
-        let vals = this.value;
+        let vals = this.modelValue;
         let min =
           Math.round((this.leftTwo / 100) * (this.max / this.step)) * this.step;
         let max =
           Math.round((this.leftx / 100) * (this.max / this.step)) * this.step;
         if (this.two) {
           if (min < max) {
-            this.$emit("input", [valueNew, vals[1]]);
+            this.$emit('update:modelValue', [modelValueNew, vals[1]]);
           } else if (min > max) {
-            this.$emit("input", [vals[0], valueNew]);
+            this.$emit('update:modelValue', [vals[0], modelValueNew]);
           } else {
-            this.$emit("input", [valueNew, valueNew]);
+            this.$emit('update:modelValue', [modelValueNew, modelValueNew]);
           }
         } else {
           if (min > max) {
-            this.$emit("input", [valueNew, vals[1]]);
+            this.$emit('update:modelValue', [modelValueNew, vals[1]]);
           } else if (min < max) {
-            this.$emit("input", [vals[0], valueNew]);
+            this.$emit('update:modelValue', [vals[0], modelValueNew]);
           } else {
-            this.$emit("input", [valueNew, valueNew]);
+            this.$emit('update:modelValue', [modelValueNew, modelValueNew]);
           }
         }
       } else {
-        this.$emit("input", val);
+        this.$emit('update:modelValue', val);
       }
     },
-    toDecimal(value) {
-      return parseFloat(value.toFixed(1));
+    toDecimal(modelValue) {
+      return parseFloat(modelValue.toFixed(1));
     }
   }
 };

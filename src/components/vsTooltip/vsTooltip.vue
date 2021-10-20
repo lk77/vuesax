@@ -50,12 +50,12 @@ export default {
       default: true,
       type: [Boolean]
     },
-    value: Boolean,
+    modelValue: Boolean,
   },
   data() {
     return {
       cords:{},
-      activeTooltip: this.value,
+      activeTooltip: this.modelValue,
       widthx: 'auto',
       positionx: null,
       noneAfter: false
@@ -73,12 +73,12 @@ export default {
     }
   },
   watch: {
-    value(val) {
+    modelValue(val) {
       this.activeTooltip = val
     },
     activeTooltip(val) {
-      if (this.value !== val) {
-        this.$emit('input', val)
+      if (this.modelValue !== val) {
+        this.$emit('update:modelValue', val)
       }
     }
   },

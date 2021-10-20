@@ -5,8 +5,8 @@
     <input
       v-bind="attrs"
       :checked="isChecked"
-      :value="value"
-      :name="vsName || value"
+      :value="modelValue"
+      :name="vsName || modelValue"
       type="radio"
       class="vs-radio--input">
     <span
@@ -30,7 +30,7 @@ export default {
   name:'VsRadio',
   inheritAttrs:false,
   props:{
-    value:{},
+    modelValue:{},
     vsValue:{},
     vsName:{},
     color:{
@@ -42,8 +42,8 @@ export default {
     attrs(){
       return {
         ...this.$attrs,
-        input: () => this.$emit('input', this.vsValue),
-        click: () => this.$emit('input', this.vsValue)
+        input: () => this.$emit('update:modelValue', this.vsValue),
+        click: () => this.$emit('update:modelValue', this.vsValue)
       }
     },
     /*attrs(){
@@ -53,7 +53,7 @@ export default {
       }
     },*/
     isChecked(){
-      return this.vsValue == this.value
+      return this.vsValue == this.modelValue
     },
     styles(){
       return {

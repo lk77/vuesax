@@ -5,7 +5,7 @@
     <input
       v-bind="$attrs"
       :checked="isChecked || $attrs.checked"
-      :value="value"
+      :value="modelValue"
       type="checkbox"
       class="vs-checkbox--input">
     <span
@@ -37,7 +37,7 @@ export default {
       default:'primary',
       type:String,
     },
-    value:{},
+    modelValue:{},
     icon:{
       default:'check',
       type:String
@@ -78,7 +78,7 @@ export default {
       }
     },
     isChecked() {
-      return this.isArrayx() ? this.isArrayIncludes() : this.value
+      return this.isArrayx() ? this.isArrayIncludes() : this.modelValue
     },
   },
   methods:{
@@ -92,39 +92,39 @@ export default {
         this.setValueString()
       }
       else {
-        this.$emit('input', !this.value)
+        this.$emit('update:modelValue', !this.modelValue)
         this.$emit('change', evt)
       }
     },
     setArray() {
       // Copy Array
-      const value = this.value.slice(0)
+      const modelValue = this.modelValue.slice(0)
       if(this.isArrayIncludes()) {
-        value.splice(value.indexOf(this.vsValue), 1)
-        this.$emit('input', value)
-        this.$emit('change', value)
+        modelValue.splice(modelValue.indexOf(this.vsValue), 1)
+        this.$emit('update:modelValue', modelValue)
+        this.$emit('change', modelValue)
       } else {
-        value.push(this.vsValue)
-        this.$emit('input', value)
-        this.$emit('change', value)
+        modelValue.push(this.vsValue)
+        this.$emit('update:modelValue', modelValue)
+        this.$emit('change', modelValue)
       }
     },
     setValueString() {
-      if(this.value == this.vsValue) {
-        this.$emit('input', null)
+      if(this.modelValue == this.vsValue) {
+        this.$emit('update:modelValue', null)
         this.$emit('change', null)
       } else {
-        this.$emit('input', this.vsValue)
+        this.$emit('update:modelValue', this.vsValue)
         this.$emit('change', this.vsValue)
       }
     },
     isArrayIncludes() {
-      let modelx = this.value
-      let value = this.vsValue
-      return modelx.includes(value)
+      let modelx = this.modelValue
+      let modelValue = this.vsValue
+      return modelx.includes(modelValue)
     },
     isArrayx() {
-      return Array.isArray(this.value)
+      return Array.isArray(this.modelValue)
     }
   }
 }

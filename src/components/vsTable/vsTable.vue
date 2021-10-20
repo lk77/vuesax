@@ -77,7 +77,7 @@
 export default {
   name: "VsTable",
   props:{
-    value:{},
+    modelValue:{},
     color: {
       default:'primary',
       type: String
@@ -179,8 +179,8 @@ export default {
       if(this.searchx && this.search) {
         let dataBase = this.data
         queriedResults = dataBase.filter((tr)=>{
-          let values = this.getValues(tr).toString().toLowerCase()
-          return values.indexOf(this.searchx.toLowerCase()) != -1
+          let modelValues = this.getValues(tr).toString().toLowerCase()
+          return modelValues.indexOf(this.searchx.toLowerCase()) != -1
         })
       }
       return queriedResults
@@ -194,11 +194,11 @@ export default {
     },
     isCheckedLine () {
       let lengthx = this.data.length
-      let lengthSelected = this.value.length
+      let lengthSelected = this.modelValue.length
       return lengthx !== lengthSelected
     },
     isCheckedMultiple () {
-      return this.value.length > 0
+      return this.modelValue.length > 0
     },
     styleConTbody () {
       return {
@@ -321,7 +321,7 @@ export default {
     },
     getValues: function getValues(obj) {
       function flattenDeep(val) {
-        return Object.values(val || []).reduce((acc, val) => (typeof val === 'object') ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+        return Object.modelValues(val || []).reduce((acc, val) => (typeof val === 'object') ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
       }
 
       return flattenDeep(obj).filter(function (item) {
@@ -330,40 +330,40 @@ export default {
     },
     changeCheckedMultiple () {
       let lengthx = this.data.length
-      let lengthSelected = this.value.length
+      let lengthSelected = this.modelValue.length
       let selectedx = (lengthx - lengthSelected)
       if (selectedx == 0) {
-        this.$emit('input', [])
+        this.$emit('update:modelValue', [])
       } else {
-        this.$emit('input', this.data)
+        this.$emit('update:modelValue', this.data)
       }
     },
     handleCheckbox(tr) {
       if(this.multiple && this.onlyClickCheckbox){
-        let val = this.value.slice(0)
+        let val = this.modelValue.slice(0)
         if(val.includes(tr)) {
           val.splice(val.indexOf(tr),1)
         } else {
           val.push(tr)
         }
 
-        this.$emit('input', val)
+        this.$emit('update:modelValue', val)
         this.$emit('selected', tr)
       }
     },
     clicktr (tr, isTr) {
       if(this.multiple && isTr && !this.onlyClickCheckbox){
-        let val = this.value.slice(0)
+        let val = this.modelValue.slice(0)
         if(val.includes(tr)) {
           val.splice(val.indexOf(tr),1)
         } else {
           val.push(tr)
         }
 
-        this.$emit('input', val)
+        this.$emit('update:modelValue', val)
         this.$emit('selected', tr)
       } else if (isTr && !this.onlyClickCheckbox) {
-        this.$emit('input', tr)
+        this.$emit('update:modelValue', tr)
         this.$emit('selected', tr)
       }
     },
@@ -379,13 +379,13 @@ export default {
       this.changeTdsWidth()
     },
     changeTdsWidth() {
-      if(!this.value) return
+      if(!this.modelValue) return
 
       let tbody = this.$refs.table.querySelector('tbody')
 
       // Adding condition removes querySelector none error - if tbody isnot present
       if(tbody) {
-        let trvs = tbody.querySelector('.tr-values')
+        let trvs = tbody.querySelector('.tr-modelValues')
         if (trvs === undefined || trvs === null ) return
         let tds = trvs.querySelectorAll('.td')
 

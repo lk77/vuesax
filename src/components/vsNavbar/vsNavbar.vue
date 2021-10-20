@@ -31,7 +31,7 @@ export default {
   name:'VsNavbar',
 
   props:{
-    value:{},
+    modelValue:{},
     type:{
       default: null,
       type: String
@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     changeIndex (index) {
-      this.$emit('input', index)
+      this.$emit('update:modelValue', index)
     }
   }
 }

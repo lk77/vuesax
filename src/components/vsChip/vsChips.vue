@@ -7,7 +7,7 @@
       </slot>
 
       <input
-        :placeholder="value.length > 0 ? null : placeholder"
+        :placeholder="modelValue.length > 0 ? null : placeholder"
         v-model="newChip"
         type="text"
         class="con-chips--input"
@@ -32,7 +32,7 @@ export default {
     vsChip
   },
   props:{
-    value:{},
+    modelValue:{},
     vsColor:{
       type:String,
       default:'primary',
@@ -59,15 +59,15 @@ export default {
   }),
   methods:{
     addItem(){
-      let valueOld = this.value
-      valueOld.push(this.newChip)
-      this.$emit('input', valueOld)
+      let modelValueOld = this.modelValue
+      modelValueOld.push(this.newChip)
+      this.$emit('update:modelValue', modelValueOld)
       this.newChip = ''
     },
     removeTotalItems(){
-      let valueOld = this.value
-      valueOld.splice(0, this.value.length);
-      this.$emit('input', valueOld)
+      let modelValueOld = this.modelValue
+      modelValueOld.splice(0, this.modelValue.length);
+      this.$emit('update:modelValue', modelValueOld)
     }
   }
 }

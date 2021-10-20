@@ -13,7 +13,7 @@
       v-bind="attrs"
       ref="inputCheckbox"
       :disabled="$attrs.disabled"
-      :value="value"
+      :value="modelValue"
       class="input-switch vs-switch--input"
       type="checkbox">
 
@@ -51,7 +51,7 @@ export default {
   name:'VsSwitch',
   inheritAttrs:false,
   props:{
-    value:{},
+    modelValue:{},
     color:{
       default:'primary',
       type:String
@@ -81,7 +81,7 @@ export default {
   computed:{
     style(){
       return {
-        background: this.value?_color.getColor(this.color,1):null,
+        background: this.modelValue?_color.getColor(this.color,1):null,
         width: `${this.widthx}px`
       }
     },
@@ -94,7 +94,7 @@ export default {
       }
     },
     isChecked(){
-      return this.isArrayx() ? this.isArrayIncludes() : this.value
+      return this.isArrayx() ? this.isArrayIncludes() : this.modelValue
     },
   },
   mounted(){
@@ -106,33 +106,33 @@ export default {
   },
   methods:{
     toggleValue(evt){
-      if(Array.isArray(this.value)){
+      if(Array.isArray(this.modelValue)){
         this.setArray(evt)
       }
       else {
-        this.$emit('input', !this.value)
+        this.$emit('update:modelValue', !this.modelValue)
         this.$emit('change',evt)
       }
     },
     setArray(evt){
-      const value = this.value.slice(0) // Copy Array.
+      const modelValue = this.modelValue.slice(0) // Copy Array.
       if(this.isArrayIncludes()){
-        value.splice(value.indexOf(this.vsValue),1) // delete value
-        this.$emit('input', value)
+        modelValue.splice(modelValue.indexOf(this.vsValue),1) // delete modelValue
+        this.$emit('update:modelValue', modelValue)
         this.$emit('change', evt)
       } else {
-        value.push(this.vsValue) // add value new
-        this.$emit('input', value)
+        modelValue.push(this.vsValue) // add modelValue new
+        this.$emit('update:modelValue', modelValue)
         this.$emit('change', evt)
       }
     },
     isArrayIncludes(){
-      let modelx = this.value
-      let value = this.vsValue
-      return modelx.includes(value)
+      let modelx = this.modelValue
+      let modelValue = this.vsValue
+      return modelx.includes(modelValue)
     },
     isArrayx(){
-      return Array.isArray(this.value)
+      return Array.isArray(this.modelValue)
     }
   },
 }

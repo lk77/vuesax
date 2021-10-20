@@ -27,7 +27,7 @@
       v-bind="attrs"
       ref="input"
       :style="styleInput"
-      :value="value"
+      :value="modelValue"
       :disabled="isDisabled"
       :min="min"
       :max="max"
@@ -90,7 +90,7 @@ export default {
   },
   inheritAttrs:false,
   props:{
-    value:{},
+    modelValue:{},
     color:{
       default:'primary',
       type:String
@@ -142,8 +142,8 @@ export default {
       }
     },
     getLength(){
-      if(this.value){
-        return this.value.toString().length * 9.1
+      if(this.modelValue){
+        return this.modelValue.toString().length * 9.1
       } else {
         return 0
       }
@@ -155,21 +155,21 @@ export default {
       return {
         ...this.$attrs,
         onBlur:(evt)=>{
-          if(parseFloat(this.value) > parseFloat(this.max)) {
-            this.$emit('input',this.max)
-          } else if (parseFloat(this.value) < parseFloat(this.min)) {
-            this.$emit('input',this.min)
+          if(parseFloat(this.modelValue) > parseFloat(this.max)) {
+            this.$emit('update:modelValue',this.max)
+          } else if (parseFloat(this.modelValue) < parseFloat(this.min)) {
+            this.$emit('update:modelValue',this.min)
             this.$emit('blur',evt)
           }
         },
         onInput:(evt)=>{
-          this.$emit('input',evt.target.value)
+          this.$emit('update:modelValue',evt.target.value)
         }
       }
     }
   },
   watch:{
-    value(){
+    modelValue(){
       this.isChangeValue = true
       setTimeout(()=>{
         this.isChangeValue = false
@@ -179,25 +179,25 @@ export default {
   methods:{
     plus(){
       let newValue
-      if(this.value === ''){
+      if(this.modelValue === ''){
         newValue = 0
-        this.$emit('input',this.fixPrecision(newValue))
+        this.$emit('update:modelValue',this.fixPrecision(newValue))
       } else  {
-        if(this.max?parseFloat(this.value)<parseFloat(this.max):true){
-          newValue = parseFloat(this.value) + parseFloat(this.step)
-          this.$emit('input',this.fixPrecision(newValue))
+        if(this.max?parseFloat(this.modelValue)<parseFloat(this.max):true){
+          newValue = parseFloat(this.modelValue) + parseFloat(this.step)
+          this.$emit('update:modelValue',this.fixPrecision(newValue))
         }
       }
     },
     less(){
       let newValue
-      if(this.value === ''){
+      if(this.modelValue === ''){
         newValue = 0
-        this.$emit('input',this.fixPrecision(newValue))
+        this.$emit('update:modelValue',this.fixPrecision(newValue))
       } else  {
-        if(this.min?parseFloat(this.value)>parseFloat(this.min):true){
-          newValue = parseFloat(this.value) - parseFloat(this.step)
-          this.$emit('input',this.fixPrecision(newValue))
+        if(this.min?parseFloat(this.modelValue)>parseFloat(this.min):true){
+          newValue = parseFloat(this.modelValue) - parseFloat(this.step)
+          this.$emit('update:modelValue',this.fixPrecision(newValue))
         }
       }
     },

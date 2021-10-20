@@ -64,7 +64,7 @@ export default {
   name: "VsTimePicker",
   inheritAttrs:false,
   props:{
-    value:{}
+    modelValue:{}
   },
   data:()=>({
     activeHours: false,
@@ -83,11 +83,11 @@ export default {
   }),
   computed:{
     getMinutes() {
-      let minutesx = this.value.split(':')[1]
+      let minutesx = this.modelValue.split(':')[1]
       return minutesx
     },
     getHours() {
-      let hoursx = this.value.split(':')[0]
+      let hoursx = this.modelValue.split(':')[0]
       return hoursx
     },
     styleUlHours() {
@@ -104,7 +104,7 @@ export default {
     }
   },
   watch:{
-    value() {
+    modelValue() {
       this.activeHours = false
       this.activeMinutes = false
     }
@@ -116,10 +116,10 @@ export default {
   },
   methods: {
     changeHours(hour) {
-      this.$emit('input', `${hour}:${this.getMinutes}`)
+      this.$emit('update:modelValue', `${hour}:${this.getMinutes}`)
     },
     changeMinutes(minute) {
-      this.$emit('input', `${this.getHours}:${minute}`)
+      this.$emit('update:modelValue', `${this.getHours}:${minute}`)
     },
     changePositions() {
       // add hours ul position

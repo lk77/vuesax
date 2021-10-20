@@ -207,14 +207,14 @@ export default {
     }
   },
   methods:{
-    isRTL(value) {
+    isRTL(modelValue) {
       if(this.$vs.rtl) {
-        return value
+        return modelValue
       }else {
-        if(value === 'right') {
+        if(modelValue === 'right') {
           return 'left'
         }
-        if(value === 'left') {
+        if(modelValue === 'left') {
           return 'right'
         }
       }

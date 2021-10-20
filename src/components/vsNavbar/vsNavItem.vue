@@ -30,7 +30,7 @@ export default {
       return this.$parent.$props.activeTextColor
     },
     isActiveItem () {
-      return this.$parent.value == this.index
+      return this.$parent.modelValue == this.index
     },
     styleAfter () {
       return {

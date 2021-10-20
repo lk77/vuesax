@@ -2,7 +2,7 @@
   <tr
     ref="tableTr"
     :class="[`tr-table-state-${state}`, {'is-selected':isSelected, 'selected': data, 'is-expand': maxHeight != '0px', 'activeEdit': activeEdit, 'hoverFlat': $parent.hoverFlat}]"
-    class="tr-values vs-table--tr"
+    class="tr-modelValues vs-table--tr"
     @dblclick="dblclicktr"
     @click="clicktr"
   >
@@ -54,12 +54,12 @@ export default {
       return lengthx
     },
     isSelected(){
-      if(this.$parent.multiple && this.$parent.value) {
-        return this.data ? this.$parent.value.some(
+      if(this.$parent.multiple && this.$parent.modelValue) {
+        return this.data ? this.$parent.modelValue.some(
               (item) => JSON.stringify(item) === JSON.stringify(this.data)
             ) : false
       } else {
-        return this.data ? this.$parent.value == this.data : false
+        return this.data ? this.$parent.modelValue == this.data : false
       }
     }
   },
