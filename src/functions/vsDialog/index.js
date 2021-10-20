@@ -3,7 +3,7 @@ import utils from '../../utils'
 import vsDialog from './index.vue'
 
 
-const dialogConstructor = Vue.extend(vsDialog);
+const dialogConstructor = Vue.createApp(vsDialog);
 
 let instance;
 

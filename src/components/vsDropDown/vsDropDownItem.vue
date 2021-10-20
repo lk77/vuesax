@@ -14,9 +14,7 @@
       v-if="to"
       :to="to"
       :class="{'disabled':disabled}"
-      class="vs-dropdown--item-link"
-      v-on="$listeners"
-    >
+      class="vs-dropdown--item-link">
       {{ $attrs.disabled }}
       <slot/>
     </router-link>
@@ -25,9 +23,7 @@
       v-bind="$attrs"
       v-else
       :class="{'disabled':disabled}"
-      class="vs-dropdown--item-link"
-      v-on="$listeners"
-    >
+      class="vs-dropdown--item-link">
       <slot/>
     </a>
   </li>

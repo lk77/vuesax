@@ -3,13 +3,12 @@
     :class="[`vs-radio-${color}`]"
     class="vs-component con-vs-radio">
     <input
-      v-bind="$attrs"
+      v-bind="attrs"
       :checked="isChecked"
       :value="value"
       :name="vsName || value"
       type="radio"
-      class="vs-radio--input"
-      v-on="listeners">
+      class="vs-radio--input">
     <span
       class="vs-radio">
       <span
@@ -40,19 +39,19 @@ export default {
     }
   },
   computed:{
-    listeners(){
+    attrs(){
       return {
-        ...this.$listeners,
+        ...this.$attrs,
         input: () => this.$emit('input', this.vsValue),
         click: () => this.$emit('input', this.vsValue)
       }
     },
-    attrs(){
+    /*attrs(){
       let attrsx = JSON.parse(JSON.stringify(this.$attrs))
       return {
         attrsx
       }
-    },
+    },*/
     isChecked(){
       return this.vsValue == this.value
     },

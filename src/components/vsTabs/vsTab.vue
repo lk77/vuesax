@@ -52,7 +52,7 @@ export default {
       iconPack: this.iconPack,
       tag: this.tag,
       id: this.$parent.children.length,
-      listeners: this.$listeners,
+      //listeners: this.$listeners,
       attrs: this.$attrs
     })
   }

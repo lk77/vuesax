@@ -2,7 +2,7 @@ import Vue from 'vue';
 import utils from '../../utils'
 import vsNotifications from './index.vue'
 
-const NotiConstructor = Vue.extend(vsNotifications);
+const NotiConstructor = Vue.createApp(vsNotifications);
 
 
 let instance;

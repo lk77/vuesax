@@ -1,11 +1,10 @@
 <template lang="html">
   <!-- @contextmenu.capture.prevent -->
   <button
-    v-bind="$attrs"
+    v-bind="attrs"
     ref="dropdown"
     className="vs-con-dropdown parent-dropdown"
-    type="button"
-    v-on="listeners">
+    type="button">
     <slot/>
   </button>
 </template>
@@ -41,11 +40,11 @@ export default {
     rightx: false
   }),
   computed: {
-    listeners() {
+    attrs() {
       return {
-        ...this.$listeners,
-        contextmenu: (evt) => this.vsTriggerContextmenu ? this.clickToogleMenu(evt, true) : {},
-        click: (evt) => {
+        ...this.$attrs,
+        onContextmenu: (evt) => this.vsTriggerContextmenu ? this.clickToogleMenu(evt, true) : {},
+        onClick: (evt) => {
           if (!this.vsTriggerContextmenu) {
             this.clickToogleMenu(evt)
           }
@@ -54,8 +53,8 @@ export default {
             this.$emit('click')
           }
         },
-        mouseout: evt => this.toggleMenu('out', evt),
-        mouseover: evt => this.toggleMenu('over', evt),
+        onMouseout: evt => this.toggleMenu('out', evt),
+        onMouseover: evt => this.toggleMenu('over', evt),
       }
     }
   },

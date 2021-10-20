@@ -1,11 +1,11 @@
 <template lang="html">
   <li
+    v-bind="$attrs"
     v-show="visible"
     :data-text="text"
-    class="vs-component"
-    v-on="listeners">
+    class="vs-component">
     <button
-      v-bind="$attrs"
+      v-bind="attrs"
       ref="item"
       :disabled="disabled"
       :style="styles"
@@ -69,20 +69,20 @@ export default {
     isActive(){
       return this.$parent.parent.multiple?this.getValue.indexOf(this.value) != -1:this.getValue == this.value
     },
-    listeners() {
+    attrs() {
       return {
-        ...this.$listeners,
-        blur: (event) => {
+        ...this.$attrs,
+        onBlur: (event) => {
           if(event.relatedTarget?!event.relatedTarget.closest('.vs-select--options'):true) {
             this.$parent.parent.closeOptions()
           }
         },
-        click: (event) => this.clickOption(event),
-        mouseover: (event) => {
+        onClick: (event) => this.clickOption(event),
+        onMouseover: (event) => {
           this.$emit('mouseover',event)
           this.changeHover(true)
         },
-        mouseout: (event) => {
+        onMouseout: (event) => {
           this.$emit('mouseover',event)
           this.changeHover(false)
         }

@@ -7,8 +7,7 @@
       :checked="isChecked || $attrs.checked"
       :value="value"
       type="checkbox"
-      class="vs-checkbox--input"
-      v-on="listeners">
+      class="vs-checkbox--input">
     <span
       :style="style"
       class="checkbox_x vs-checkbox">

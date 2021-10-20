@@ -24,7 +24,7 @@
     </button>
     <span v-if="label">{{ label }}</span>
     <input
-      v-bind="$attrs"
+      v-bind="attrs"
       ref="input"
       :style="styleInput"
       :value="value"
@@ -32,8 +32,7 @@
       :min="min"
       :max="max"
       type="number"
-      class="vs-input-number--input"
-      v-on="listeners">
+      class="vs-input-number--input">
     <button
       v-repeat-click="plus"
       :disabled="$attrs.disabled"
@@ -152,10 +151,10 @@ export default {
     getColor(){
       return _color.getColor(this.color,1)
     },
-    listeners(){
+    attrs(){
       return {
-        ...this.$listeners,
-        blur:(evt)=>{
+        ...this.$attrs,
+        onBlur:(evt)=>{
           if(parseFloat(this.value) > parseFloat(this.max)) {
             this.$emit('input',this.max)
           } else if (parseFloat(this.value) < parseFloat(this.min)) {
@@ -163,7 +162,7 @@ export default {
             this.$emit('blur',evt)
           }
         },
-        input:(evt)=>{
+        onInput:(evt)=>{
           this.$emit('input',evt.target.value)
         }
       }

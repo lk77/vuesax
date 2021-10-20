@@ -3,8 +3,7 @@
     v-bind="$attrs"
     :class="`vs-align-${align}`"
     class="vs-breadcrumb"
-    aria-label="breadcrumb"
-    v-on="$listeners">
+    aria-label="breadcrumb">
     <ol class="vs-breadcrumb--ol">
       <slot/>
       <li

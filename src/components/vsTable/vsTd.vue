@@ -62,7 +62,7 @@ export default {
       if(this.$slots.edit) {
         let tr = evt.target.closest('tr')
         if(!this.activeEdit) {
-          let trx = Vue.extend(trExpand);
+          let trx = Vue.createApp(trExpand);
           let instance = new trx({parent: this, propsData: {colspan: this.$parent.colspan, close: true}});
           instance.$slots.default = this.$slots.edit
           instance.vm = instance.$mount();

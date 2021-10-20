@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import vsLoading from './index.vue'
 
-const loadingConstructor = Vue.extend(vsLoading);
+const loadingConstructor = Vue.createApp(vsLoading);
 
 export default {
   name:'loading',

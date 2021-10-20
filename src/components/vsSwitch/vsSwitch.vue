@@ -10,13 +10,12 @@
     :style="style"
     class="vs-component vs-switch">
     <input
-      v-bind="$attrs"
+      v-bind="attrs"
       ref="inputCheckbox"
       :disabled="$attrs.disabled"
       :value="value"
       class="input-switch vs-switch--input"
-      type="checkbox"
-      v-on="listeners">
+      type="checkbox">
 
     <span
       ref="on"
@@ -86,10 +85,10 @@ export default {
         width: `${this.widthx}px`
       }
     },
-    listeners(){
+    attrs(){
       return {
-        ...this.$listeners,
-        input: (evt) => {
+        ...this.$attrs,
+        onInput: (evt) => {
           this.toggleValue(evt)
         },
       }

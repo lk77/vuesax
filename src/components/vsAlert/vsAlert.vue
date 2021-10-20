@@ -12,8 +12,7 @@
         'con-icon':icon,
       }]"
       :style="styleAlert"
-      class="con-vs-alert"
-      v-on="$listeners">
+      class="con-vs-alert">
       <div
         v-if="closable"
         class="con-x vs-alert--close"

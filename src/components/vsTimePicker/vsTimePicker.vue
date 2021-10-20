@@ -1,8 +1,7 @@
 <template lang="html">
   <div
     v-bind="$attrs"
-    class="vs-component vs-timepicker"
-    v-on="$listeners">
+    class="vs-component vs-timepicker">
     <div class="con-vs-time">
       <div class="con-icon-timepicker">
         <vs-icon>

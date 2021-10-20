@@ -3,8 +3,7 @@
     v-bind="$attrs"
     :style="avatarStyle"
     :class="avatarClass"
-    class="con-vs-avatar"
-    v-on="$listeners">
+    class="con-vs-avatar">
     <div
       v-if="badge && badge > 0"
       :style="badgeStyle"

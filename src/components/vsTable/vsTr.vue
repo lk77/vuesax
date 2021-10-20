@@ -109,7 +109,7 @@ export default {
         this.expanded = false
       } else {
         tr.classList.add('tr-expandedx')
-        let trx = Vue.extend(trExpand);
+        let trx = Vue.createApp(trExpand);
         let instance = new trx({parent: this, propsData: {colspan: this.colspan}});
         instance.vm = instance.$mount();
         var newTR = document.createElement('tr').appendChild(instance.vm.$el);

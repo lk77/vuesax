@@ -1,6 +1,6 @@
 <template lang="html">
   <button
-    v-bind="$attrs"
+    v-bind="attrs"
     ref="btn"
     :class="[`vs-button-${isColor() ? color : null}`,`vs-button-${type}`,{
       'isActive':isActive,
@@ -14,8 +14,7 @@
     }]"
     :type="button"
     class="vs-component vs-button"
-    name="button"
-    v-on="listeners">
+    name="button">
     <span
       v-if="!is('line')&&!is('gradient')&&!is('relief')"
       ref="backgroundx"
@@ -131,13 +130,13 @@ export default {
     opacity:1,
   }),
   computed:{
-    listeners() {
+    attrs() {
       return {
-        ...this.$listeners,
-        click: (event) => this.clickButton(event),
-        blur: (event) => this.blurButton(event),
-        mouseover: (event) => this.mouseoverx(event),
-        mouseout: (event) => this.mouseoutx(event)
+        ...this.$attrs,
+        onClick: (event) => this.clickButton(event),
+        onBlur: (event) => this.blurButton(event),
+        onMouseover: (event) => this.mouseoverx(event),
+        onMouseout: (event) => this.mouseoutx(event)
       }
     },
     styles() {

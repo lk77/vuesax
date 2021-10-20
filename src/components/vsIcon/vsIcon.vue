@@ -3,9 +3,7 @@
     v-bind="$attrs"
     :style="iconStyle"
     :class="[iconPack, iconPack !='material-icons' ? icon : '',iconClass,getBg,getBgSize,{'round':round}]"
-    class="vs-icon notranslate icon-scale"
-    v-on="$listeners"
-  >
+    class="vs-icon notranslate icon-scale">
     <slot>{{ iconPack == 'material-icons' ? icon : '' }}</slot>
   </i>
 </template>

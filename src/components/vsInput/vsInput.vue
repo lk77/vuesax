@@ -17,7 +17,7 @@
       @click="focusInput">{{ label }}</label>
     <div class="vs-con-input">
       <input
-        v-bind="$attrs"
+        v-bind="attrs"
         ref="vsinput"
         :style="style"
         :autofocus="autofocus"
@@ -29,8 +29,7 @@
         :placeholder="null"
         :value="value"
         :type="$attrs.type?$attrs.type:'text'"
-        class="vs-inputx vs-input--input"
-        v-on="listeners">
+        class="vs-inputx vs-input--input">
       <transition name="placeholderx">
         <span
           v-if="isValue&&(labelPlaceholder||$attrs.placeholder)"
@@ -236,17 +235,17 @@ export default {
         color: this.isFocus?_color.getColor(this.color,1):null,
       }
     },
-    listeners(){
+    attrs(){
       return {
-        ...this.$listeners,
-        input: (evt) => {
+        ...this.$attrs,
+        onInput: (evt) => {
           this.$emit('input',evt.target.value)
         },
-        focus: (evt) => {
+        onFocus: (evt) => {
           this.$emit('focus',evt)
           this.changeFocus(true)
         },
-        blur: (evt) => {
+        onBlur: (evt) => {
           this.$emit('blur',evt)
           this.changeFocus(false)
         }

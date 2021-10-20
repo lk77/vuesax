@@ -15,13 +15,12 @@
     <div class="input-select-con">
       <!-- v-model="valueFilter" -->
       <input
-        v-bind="$attrs"
+        v-bind="attrs"
         ref="inputselect"
         :readonly="!autocomplete"
         class="input-select vs-select--input"
         type="text"
-        @keydown.esc.stop.prevent="closeOptions"
-        v-on="listeners">
+        @keydown.esc.stop.prevent="closeOptions">
 
       <button
         :class="{'activeBtnClear': activeBtnClear}"
@@ -201,10 +200,10 @@ export default {
     parent() {
       return this;
     },
-    listeners() {
+    attrs() {
       return {
-        ...this.$listeners,
-        blur: event => {
+        ...this.$attrs,
+        onBlur: event => {
           if (
             this.autocomplete && event.relatedTarget
               ? !event.relatedTarget.closest(".vs-select--options")
@@ -214,21 +213,21 @@ export default {
           }
           this.$emit("blur", event);
         },
-        focus: event => {
+        onFocus: event => {
           this.$emit("focus", event);
           if (event.keyCode ? event.keyCode : event.which) {
             this.focus();
           }
         },
-        mouseup: () => {
+        onMouseup: () => {
           this.focus();
         },
-        input: event => {
+        onInput: event => {
           if (this.autocomplete) {
             this.$emit("input-change", event);
           }
         },
-        keyup: event => {
+        onKeyup: event => {
           if (event.key == "ArrowDown" || event.key == "ArrowUp") {
             event.preventDefault();
             let childrens = this.$children.filter(item => {

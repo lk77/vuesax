@@ -9,10 +9,9 @@
     </h4>
 
     <textarea
-      v-bind="$attrs"
+      v-bind="attrs"
       :value="value"
-      class="vs-textarea"
-      v-on="listeners">
+      class="vs-textarea">
     </textarea>
 
     <div
@@ -68,16 +67,16 @@ export default {
 
       return style
     },
-    listeners() {
+    attrs() {
       return {
-        ...this.$listeners,
-        input:(evt) => {
+        ...this.$attrs,
+        onInput:(evt) => {
           this.$emit('input', evt.target.value)
         },
-        focus:() => {
+        onFocus:() => {
           this.focus()
         },
-        blur:() => {
+        onBlur:() => {
           this.blur()
         }
       }
