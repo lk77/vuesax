@@ -14,7 +14,7 @@
 <script>
 export default {
   name: "VsDropdown",
-  inheritAttrs: false,
+  //inheritAttrs: false,
   props: {
     vsTriggerClick: {
       default: false,

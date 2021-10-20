@@ -16,7 +16,7 @@
 <script>
 export default {
   name: 'VsImage',
-  inheritAttrs: false,
+  //inheritAttrs: false,
   props:{
     src:{
       default: null,

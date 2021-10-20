@@ -126,7 +126,7 @@
 import _color from '../../utils/color.js'
 export default {
   name:'VsInput',
-  inheritAttrs: false,
+  //inheritAttrs: false,
   props:{
     modelValue:{
       default:'',

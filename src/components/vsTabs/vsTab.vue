@@ -11,7 +11,7 @@
 <script>
 export default {
   name:'VsTab',
-  inheritAttrs: false,
+  //inheritAttrs: false,
   props:{
     label:{
       default:'Label',
