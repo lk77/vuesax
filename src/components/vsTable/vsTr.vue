@@ -100,7 +100,7 @@ export default {
     dblclicktr () {
       this.$parent.dblclicktr(this.data, true)
     },
-    clicktd (evt) {
+    /*clicktd (evt) {
       if(this.$parent.multiple || !this.$slots.expand) return
       let tr = evt.target.closest('tr')
       if(this.expanded) {
@@ -116,7 +116,7 @@ export default {
         this.insertAfter(tr, newTR)
         this.expanded = true
       }
-    },
+    },*/
     collapseExpandedData() {
       if(this.expanded){
         const tr = this.$refs.tableTr

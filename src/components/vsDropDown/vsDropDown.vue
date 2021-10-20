@@ -106,6 +106,7 @@ export default {
       })
     },
     changePositionMenu() {
+      console.log(this.$children);
       let [dropdownMenu] = this.$children.filter(item => item.hasOwnProperty('dropdownVisible'))
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
       if (this.$refs.dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {

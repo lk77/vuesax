@@ -58,7 +58,7 @@ export default {
         e.parentNode.appendChild(i);
       }
     },
-    clicktd (evt) {
+    /*clicktd (evt) {
       if(this.$slots.edit) {
         let tr = evt.target.closest('tr')
         if(!this.activeEdit) {
@@ -75,7 +75,7 @@ export default {
           }, 20)
         }
       }
-    },
+    },*/
     closeEdit (evt) {
       if (!evt.target.closest('.tr-expand') && !evt.target.closest('.vs-select--options')) {
         this.close()

@@ -104,7 +104,7 @@ export default {
     },
     to:{
       default:false,
-      type:[String,Object]
+      type:[String,Object,Boolean]
     },
     href:{
       default:'',
