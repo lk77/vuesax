@@ -104,11 +104,11 @@ export default {
     },
     to:{
       default:false,
-      type:String | Object
+      type:[String,Object]
     },
     href:{
       default:'',
-      type:String | Object
+      type:[String,Object]
     },
     target:{
       default:false,

@@ -99,9 +99,10 @@ export default {
     changeColor() {
       let child = this.$children
       child.forEach(item => {
-        if (item.$vnode.tag.indexOf('dropdown') != -1) {
-          item.color = this.color
-        }
+        // todo : fix vnode
+        //if (item.$vnode.tag.indexOf('dropdown') != -1) {
+          //item.color = this.color
+        //}
       })
     },
     changePositionMenu() {

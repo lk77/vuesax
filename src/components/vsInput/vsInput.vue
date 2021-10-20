@@ -22,7 +22,7 @@
         :style="style"
         :autofocus="autofocus"
         :class="[size,{
-          'hasValue':value !== '',
+          'hasValue':modelValue !== '',
           'hasIcon':icon,
           'icon-after-input':iconAfter
         }]"
