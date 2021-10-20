@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="con-select-example">
-    <input v-model="colorx" type="color" name="" value="">
+    <input v-model="colorx" type="color" name="">
     <vs-select
       :color="colorx"
       class="selectExample"

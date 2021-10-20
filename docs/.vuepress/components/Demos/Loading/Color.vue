@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="centerx">
-    <input type="color" v-model="colorLoading" name="" value="">
+    <input type="color" v-model="colorLoading" name="">
     <vs-button @click="openLoadingColor" type="gradient" color="danger">Danger</vs-button>
   </div>
 </template>

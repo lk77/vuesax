@@ -11,7 +11,7 @@
       <vs-radio v-model="colorx" color="warning" vs-value="warning">Warning</vs-radio>
       <vs-radio v-model="colorx" color="dark" vs-value="dark">Dark</vs-radio>
     </div>
-    <input class="input-color" v-model="colorx" type="color" name="" value="">
+    <input class="input-color" v-model="colorx" type="color" name="">
     <vs-navbar
       v-model="indexActive"
       :color="colorx"

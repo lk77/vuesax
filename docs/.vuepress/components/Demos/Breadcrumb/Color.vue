@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="centerx">
-    <input v-model="colorx" type="color" name="" value="">
+    <input v-model="colorx" type="color" name="">
     <vs-breadcrumb
     :color="colorx"
     :items="items"

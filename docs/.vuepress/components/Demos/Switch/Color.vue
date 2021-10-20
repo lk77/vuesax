@@ -22,7 +22,7 @@
     </li>
     <li class="con-input-color">
       <label for="">Color: <span>{{color}}</span></label>
-      <input v-model="color" type="color" name="" value="">
+      <input v-model="color" type="color" name="">
       <vs-switch :color="color" v-model="switch6"/>
     </li>
   </ul>

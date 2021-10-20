@@ -219,12 +219,6 @@ export default {
 
 </box>
 
-
-
-</vuecode>
-
-</box>
-
 <box>
 
 ## Fixed and function click

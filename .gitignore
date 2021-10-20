@@ -28,3 +28,6 @@ yarn.lock
 *.iml
 
 \.vs/
+
+docs/.vuepress/.cache
+docs/.vuepress/.temp

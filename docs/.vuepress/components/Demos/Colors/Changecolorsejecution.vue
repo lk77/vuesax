@@ -2,23 +2,23 @@
   <div class="con-colors">
     <ul>
       <li class="colorprimaryx">
-        <input @change="changeColor($event.target.value,'primary')" type="color" name="" value="">
+        <input @change="changeColor($event.target.value,'primary')" type="color" name="">
         Primary
       </li>
       <li class="colorsuccessx">
-        <input @change="changeColor($event.target.value,'success')" type="color" name="" value="">
+        <input @change="changeColor($event.target.value,'success')" type="color" name="">
         Success
       </li>
       <li class="colordangerx">
-        <input @change="changeColor($event.target.value,'danger')" type="color" name="" value="">
+        <input @change="changeColor($event.target.value,'danger')" type="color" name="">
         Danger
       </li>
       <li class="colorwarningx">
-        <input @change="changeColor($event.target.value,'warning')" type="color" name="" value="">
+        <input @change="changeColor($event.target.value,'warning')" type="color" name="">
         Warning
       </li>
       <li class="colordarkx">
-        <input @change="changeColor($event.target.value,'dark')" type="color" name="" value="">
+        <input @change="changeColor($event.target.value,'dark')" type="color" name="">
         Dark
       </li>
     </ul>

@@ -1,3 +1,4 @@
+const { path } = require('@vuepress/utils')
 
 module.exports = {
   base: '/vuesax/',
@@ -231,5 +232,32 @@ module.exports = {
         ]
       },
     ]
+  },
+  //theme: path.resolve(__dirname, './theme'),
+  plugins: [
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ],
+  ],
+  bundler: '@vuepress/bundler-webpack',
+  bundlerConfig: {
+    configureWebpack: () => { return {
+      resolve: {
+        fallback: {
+          "os": false,
+          "stream": false,
+          "path": false,
+          "constants": false,
+          "fs": false,
+          "readline": false
+        }
+      },
+      module: {
+        exprContextCritical: false
+      }
+    }}
   }
 }

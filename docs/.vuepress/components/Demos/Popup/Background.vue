@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="centerx">
-    <input v-model="colorx" type="color" name="" value="">
+    <input v-model="colorx" type="color" name="">
     <vs-button :color="colorx" @click="popupActivo5=true" type="filled">Open background popup</vs-button>
 
     <vs-popup

@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
-    <input type="color" v-model="colorx" name="" value="">
-    <input type="color" v-model="colorx2" name="" value="">
+    <input type="color" v-model="colorx" name="">
+    <input type="color" v-model="colorx2" name="">
     <vs-button :color="colorx" type="filled">Color</vs-button>
     <vs-button :color="colorx" type="border">Color</vs-button>
     <vs-button :color="colorx" type="flat">Color</vs-button>

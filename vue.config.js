@@ -12,6 +12,12 @@ module.exports = {
       alias: {
         'vue': '@vue/compat'
       }
+      fallback: {
+        "os": false,
+        "stream": false,
+        "path": false,
+        "constants": false
+      }
     },
     plugins: [
       new CopyWebpackPlugin({
