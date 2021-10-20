@@ -73,7 +73,7 @@ export default {
     this.changeColor()
     document.addEventListener('click', this.clickx)
   },
-  beforeDestroy() {
+  beforeUnmount() {
     document.removeEventListener('click', this.clickx)
   },
   methods: {

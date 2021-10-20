@@ -278,7 +278,7 @@ export default {
       utils.insertBody(this.$refs.vsSelectOptions);
     }
   },
-  beforeDestroy() {
+  beforeUnmount() {
     let [parent] = document.getElementsByTagName("body");
 
     if (this.active) {

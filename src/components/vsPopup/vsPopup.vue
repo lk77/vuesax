@@ -120,7 +120,7 @@ export default {
   mounted(){
     this.insertBody()
   },
-  beforeDestroy() {
+  beforeUnmount() {
     // close the left open prompt
     let elx = this.$refs.con
     if (document.body) {

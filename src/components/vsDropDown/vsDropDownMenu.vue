@@ -62,7 +62,7 @@ export default {
   mounted() {
     this.insertBody()
   },
-  beforeDestroy() {
+  beforeUnmount() {
     this.$el.parentNode.removeChild(this.$el)
   },
   methods:{

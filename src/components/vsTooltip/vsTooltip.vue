@@ -90,7 +90,7 @@ export default {
       this.activeTooltip = false
     }
   },
-  beforeDestroy() {
+  beforeUnmount() {
     if(this.$refs.vstooltip && this.activeTooltip) {
       utils.removeBody(this.$refs.vstooltip)
     }
