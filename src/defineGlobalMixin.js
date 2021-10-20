@@ -6,8 +6,8 @@ import { reactive } from "vue"
  * in the @beforeCreate hook.
  */
 
-export default (Vue, options) => {
-  Vue.mixin({
+export default (app, options) => {
+  app.mixin({
     watch: {
       '$vs.rtl': {
         handler(val) {

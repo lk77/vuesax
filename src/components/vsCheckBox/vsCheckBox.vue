@@ -1,6 +1,7 @@
 <template lang="html">
   <div
-    :class="[`vs-checkbox-${color}`, `vs-checkbox-${size}`]"
+    :class="[`vs-checkbox-${color}`, `vs-checkbox-${size}`, $attrs.class]"
+    :style="$attrs.style"
     class="vs-component con-vs-checkbox">
     <input
       v-bind="$attrs"

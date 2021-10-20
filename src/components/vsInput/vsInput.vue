@@ -1,14 +1,14 @@
 <template lang="html">
   <div
     ref="coninput"
-    :style="styleLabel"
+    :style="[styleLabel, $attrs.style]"
     :class="[`vs-input-${color}`,{
       'isFocus':isFocus,
       'input-icon-validate-success':success,
       'input-icon-validate-danger':danger,
       'input-icon-validate-warning':warning,
       'is-label-placeholder':labelPlaceholder
-    }]"
+    }, $attrs.class]"
     class="vs-component vs-con-input-label vs-input">
     <label
       v-if="labelPlaceholder?false:label"

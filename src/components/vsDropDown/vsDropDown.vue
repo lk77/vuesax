@@ -1,6 +1,8 @@
 <template lang="html">
   <!-- @contextmenu.capture.prevent -->
   <button
+    :class="$attrs.class"
+    :style="$attrs.style"
     v-bind="attrs"
     ref="dropdown"
     className="vs-con-dropdown parent-dropdown"

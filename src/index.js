@@ -1,32 +1,4 @@
-import * as vsComponents from './components'
-import './style/vuesax.styl'
-import vsTheme from './utils/theme.js'
-import DefineVuesaxMixin from './defineGlobalMixin'
-import vuesaxOptions from './utils/options'
-
-const install = (app, options={}) => {
-  // set default options
-  for(let prop in vuesaxOptions) {
-    if(!options[prop]) {
-      options[prop] = vuesaxOptions[prop]
-    }
-  }
-  // Use Components
-  Object.values(vsComponents).forEach((vsComponent) => {
-    app.use(vsComponent)
-  })
-  if(options){
-    if(Object.prototype.hasOwnProperty.call(options, 'theme')){
-      if(Object.prototype.hasOwnProperty.call(options.theme, 'colors')){
-        if (typeof window !== 'undefined') {
-          vsTheme.vsfunction(options.theme.colors, options.server)
-        }
-      }
-    }
-  }
-  // Define vuesax functions and properties ($vs)
-  DefineVuesaxMixin(app, options);
-}
+import install from './install';
 
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
@@ -61,7 +33,7 @@ export { default as vsIcon } from './components/vsIcon'
 export { default as vsNavbar } from './components/vsNavbar'
 export { default as vsSideBar } from './components/vsSideBar'
 export { default as vsDropDown } from './components/vsDropDown'
-export { default as vsTable } from './components/vsTable'
+//export { default as vsTable } from './components/vsTable'
 export { default as vsTextarea } from './components/vsTextarea'
 export { default as vsCollapse } from './components/vsCollapse'
 export { default as vsImages } from './components/vsImages'
@@ -70,6 +42,3 @@ export { default as vsImages } from './components/vsImages'
 //layout
 export { default as vsRow } from './layout/vsRow/'
 export { default as vsCol } from './layout/vsCol/'
-
-
-

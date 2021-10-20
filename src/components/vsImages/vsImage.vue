@@ -1,5 +1,5 @@
 <template>
-  <li class="vs-image">
+  <li class="vs-image" :class="$attrs.class" :style="$attrs.style">
     <div class="con-vs-image">
       <div
         :v-bind="$attrs"
