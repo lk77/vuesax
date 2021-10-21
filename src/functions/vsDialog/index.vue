@@ -27,7 +27,7 @@
             :icon="closeIcon"
             :icon-pack="iconPack"
             class="vs-dialog-cancel vs-dialog-cancel--icon notranslate"
-            @click.native="handleClose"
+            @click="handleClose"
           />
         </header>     <!-- // slots  -->
         <div class="vs-dialog-text">
