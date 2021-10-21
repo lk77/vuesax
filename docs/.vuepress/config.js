@@ -1,4 +1,5 @@
 const { path } = require('@vuepress/utils')
+const components = require('./components');
 
 module.exports = {
   base: '/vuesax/',
@@ -14,7 +15,7 @@ module.exports = {
     //         a.appendChild(r);
     //     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`]
   ],
-  ga:'UA-122319353-1',
+  //ga:'UA-122319353-1',
   docsDir: 'docs',
   host:'localhost',
   port: 7070,
@@ -238,7 +239,7 @@ module.exports = {
     [
       '@vuepress/register-components',
       {
-        componentsDir: path.resolve(__dirname, './components'),
+        components: components
       },
     ],
   ],
