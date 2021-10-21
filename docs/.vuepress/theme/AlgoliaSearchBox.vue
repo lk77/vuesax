@@ -12,16 +12,16 @@ export default {
   },
   methods: {
     initialize () {
-      Promise.all([
-        import(/* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.js'),
-        import(/* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.css')
+      /*Promise.all([
+        import(/!* webpackChunkName: "docsearch" *!/ 'docsearch.js/dist/cdn/docsearch.min.js'),
+        import(/!* webpackChunkName: "docsearch" *!/ 'docsearch.js/dist/cdn/docsearch.min.css')
       ]).then(([docsearch]) => {
         docsearch = docsearch.default
         docsearch(Object.assign(this.options, {
           debug: true,
           inputSelector: '#algolia-search-input'
         }))
-      })
+      })*/
     }
   },
   watch: {

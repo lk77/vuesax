@@ -1,137 +1,135 @@
 <template>
-
   <div class="con-home vs-component">
 
     <div class="logo-g">
-      <img  v-if="data.heroImage" :src="$withBase(data.heroImage)" alt="hero">
+      <img v-if="data.heroImage" :src="$withBase(data.heroImage)" alt="hero">
     </div>
 
-  <div class="home">
-    <div v-if="data.heroImage" :class="{'doc-activo':doc}" class="doc-img">
-      <img :src="$withBase(data.heroImage)" alt="">
-    </div>
-    <div :class="{'git-activo':git}" class="flaticon-github git-img">
-
-    </div>
-    <div :class="{'git-activo':discord}" class="doc-img">
-      <img :src="$withBase('/Discord-Logo-White.svg')" alt="">
-    </div>
-    <div :class="{'homeBackgroundComponent':data.heroBackgroundComponent}" class="home-init">
-      <div class="heroBackgroundComponent" :is="data.heroBackgroundComponent">
+    <div class="home">
+      <div v-if="data.heroImage" :class="{'doc-activo':doc}" class="doc-img">
+        <img :src="$withBase(data.heroImage)" alt="">
+      </div>
+      <div :class="{'git-activo':git}" class="flaticon-github git-img">
 
       </div>
-    <div class="hero">
-
-      <h1 v-if="data.heroText" v-html="data.heroText"></h1>
-      <!-- <h1 v-else>{{$title || 'hello'}}</h1> -->
-      <p v-html="data.tagline || $description || 'Welcome to your VuePress site'" class="description"></p>
-      <p class="action" v-if="data.actionText && data.actionLink">
-        <NavLink class="action-button" :item="actionLink"/>
-      </p>
-      <p class="actions">
-        <!-- {{data.vueThemes.actionsLinks}} -->
-        <ul>
-          <li @mouseenter="doc=true" @mouseleave="doc=false" v-for="action in data.vueThemes.actionsLinks">
-            <router-link
-              class="nav-link"
-              :to="action.link"
-              :exact="action.link === '/'"
-            >{{action.text}}</router-link>
-          </li>
-          <li @mouseenter="discord=true" @mouseleave="discord=false">
-            <a
-              target="_blank"
-              href="https://discord.gg/6AZNXEa"
-              class="nav-link discord-link"
-              rel="noopener noreferrer"
-            >
-            <img :src="$withBase('/Discord-Logo-White.png')" alt="">
-            Discord
-            </a>
-          </li>
-          <li class="starx">
-            <a @mouseenter="git=true" @mouseleave="git=false" class="flaticon-github fgithub" :href="data.vueThemes.github">
-              <span class="stargazers_count">{{star}}</span>
-            </a>
-          </li>
-
-        </ul>
-      </p>
-    </div>
-    </div>
-    <!-- <div class="features" v-if="data.features && data.features.length">
-      <div class="feature" v-for="feature in data.features">
-        <h2>{{ feature.title }}</h2>
-        <p>{{ feature.details }}</p>
+      <div :class="{'git-activo':discord}" class="doc-img">
+        <img :src="$withBase('/Discord-Logo-White.svg')" alt="">
       </div>
-    </div> -->
-    <div class="contenedor">
+      <div :class="{'homeBackgroundComponent':data.heroBackgroundComponent}" class="home-init">
+        <div class="heroBackgroundComponent" :is="data.heroBackgroundComponent">
 
-      <home-patreons/>
+        </div>
+        <div class="hero">
 
-    <div class="features" v-if="data.features && data.features.length">
-      <div class="feature" v-for="feature in data.features">
-        <div class="con-text-feature">
-          <h2 v-html="feature.title"></h2>
-          <p v-html="feature.details"></p>
-          <div v-if="feature.button" class="con-btns-features">
-            <button type="button" name="button">
+          <h1 v-if="data.heroText" v-html="data.heroText"></h1>
+          <!-- <h1 v-else>{{$title || 'hello'}}</h1> -->
+          <p v-html="data.tagline || $description || 'Welcome to your VuePress site'" class="description"></p>
+          <p class="action" v-if="data.actionText && data.actionLink">
+            <NavLink class="action-button" :item="actionLink"/>
+          </p>
+          <p class="actions">
+            <!-- {{data.vueThemes.actionsLinks}} -->
+          <ul>
+            <li @mouseenter="doc=true" @mouseleave="doc=false" v-for="action in data.vueThemes.actionsLinks">
               <router-link
                 class="nav-link"
-                :to="feature.button.link"
-                :exact="feature.button.link === '/'"
-              >{{feature.button.text?feature.button.text:'see more'}}</router-link>
-              </button>
-            <!-- <button v-if="feature.github" type="button" name="button"> -->
-              <a target="_blank" class="flaticon-github githubx" :href="data.vueThemes.github" rel="noopener noreferrer"></a>
-            <!-- </button> -->
+                :to="action.link"
+                :exact="action.link === '/'"
+              >{{ action.text }}
+              </router-link>
+            </li>
+            <li @mouseenter="discord=true" @mouseleave="discord=false">
+              <a
+                target="_blank"
+                href="https://discord.gg/6AZNXEa"
+                class="nav-link discord-link"
+                rel="noopener noreferrer"
+              >
+                <img :src="$withBase('/Discord-Logo-White.png')" alt="">
+                Discord
+              </a>
+            </li>
+            <li class="starx">
+              <a @mouseenter="git=true" @mouseleave="git=false" class="flaticon-github fgithub" :href="data.vueThemes.github">
+                <span class="stargazers_count">{{ star }}</span>
+              </a>
+            </li>
+
+          </ul>
+          </p>
+        </div>
+      </div>
+      <!-- <div class="features" v-if="data.features && data.features.length">
+        <div class="feature" v-for="feature in data.features">
+          <h2>{{ feature.title }}</h2>
+          <p>{{ feature.details }}</p>
+        </div>
+      </div> -->
+      <div class="contenedor">
+
+        <home-patreons/>
+
+        <div class="features" v-if="data.features && data.features.length">
+          <div class="feature" v-for="feature in data.features">
+            <div class="con-text-feature">
+              <h2 v-html="feature.title"></h2>
+              <p v-html="feature.details"></p>
+              <div v-if="feature.button" class="con-btns-features">
+                <button type="button" name="button">
+                  <router-link
+                    class="nav-link"
+                    :to="feature.button.link"
+                    :exact="feature.button.link === '/'"
+                  >{{ feature.button.text ? feature.button.text : 'see more' }}
+                  </router-link>
+                </button>
+                <!-- <button v-if="feature.github" type="button" name="button"> -->
+                <a target="_blank" class="flaticon-github githubx" :href="data.vueThemes.github" rel="noopener noreferrer"></a>
+                <!-- </button> -->
+              </div>
+            </div>
+            <div class="con-img-feature">
+              <div v-if="feature.component" :is="feature.component">
+                {{ feature.img }}
+              </div>
+              <img v-if="feature.img" :src="$withBase(data.heroImage)" alt="">
+            </div>
           </div>
         </div>
-        <div class="con-img-feature">
-          <div v-if="feature.component" :is="feature.component">
-            {{feature.img}}
+
+        <home-templates/>
+
+        <div class="contribuitors">
+          <div class="con-contribuitors">
+            <contributors :title="'Contributors'" :repo="this.$site.themeConfig.repo" contributors="all"/>
           </div>
-          <img v-if="feature.img"  :src="$withBase(data.heroImage)" alt="">
+          <div class="con-svg-trofeos">
+            <trofeos/>
+          </div>
         </div>
+
+        <Content custom/>
       </div>
+      <!-- <div class="footer" v-if="data.footer">
+        {{ data.footer }}
+      </div> -->
+      <!-- <div class="con-contribuitors">
+        <contributors :title="title" :repo="this.$site.themeConfig.repo" contributors="all"/>
+      </div> -->
+
+
+      <partners/>
+
+
     </div>
 
-    <home-templates/>
 
-    <div class="contribuitors">
-      <div class="con-contribuitors">
-        <contributors :title="'Contributors'" :repo="this.$site.themeConfig.repo" contributors="all"/>
-      </div>
-      <div class="con-svg-trofeos">
-        <trofeos />
-      </div>
-    </div>
-
-    <Content custom/>
-    </div>
-    <!-- <div class="footer" v-if="data.footer">
-      {{ data.footer }}
-    </div> -->
-    <!-- <div class="con-contribuitors">
-      <contributors :title="title" :repo="this.$site.themeConfig.repo" contributors="all"/>
-    </div> -->
-
-
-    <partners />
-
-
+    <Footer/>
   </div>
-
-
-      <Footer/>
-  </div>
-  </div>
-
 </template>
 
 <script>
 // <!-- Hotjar Tracking Code for https://lusaxweb.github.io/vuesax/ -->
-
 
 
 import trofeos from './trofeos.vue'
@@ -141,6 +139,7 @@ import contributors from './contributors.vue'
 import homePatreons from './homePatreons.vue'
 import homeTemplates from './HomeTemplates.vue'
 import Partners from './Partners.vue'
+
 export default {
   components: { NavLink, Footer, contributors, trofeos, homePatreons, Partners, homeTemplates },
   data(){

@@ -1,8 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-let Demos = path.join(__dirname, "Demos");
-let contributors = path.join(__dirname, "Demos");
+let theme = path.join(__dirname);
 
 let components = {};
 
@@ -22,8 +21,10 @@ let handleDir = (dir) => {
   })
 }
 
-handleDir(Demos);
-handleDir(contributors);
+handleDir(theme);
 
-module.exports = components;
+module.exports = {
+  extend: '@vuepress/theme-default',
+  layouts: components
+}
 

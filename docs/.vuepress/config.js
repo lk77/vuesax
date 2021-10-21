@@ -234,7 +234,7 @@ module.exports = {
       },
     ]
   },
-  //theme: path.resolve(__dirname, './theme'),
+  theme: path.resolve(__dirname, './theme'),
   plugins: [
     [
       '@vuepress/register-components',
@@ -250,7 +250,7 @@ module.exports = {
         fallback: {
           "os": false,
           "stream": false,
-          "path": false,
+          "path": require.resolve('path-browserify'),
           "constants": false,
           "fs": false,
           "readline": false

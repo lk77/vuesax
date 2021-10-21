@@ -22,7 +22,6 @@
     </ul>
 
 
-
     <div class="con-text-home-patreons">
       <span>
       It helps to pay dedicated development time so that I can move forward and evolve.
@@ -31,7 +30,6 @@
         <img :src="$withBase('/patreon.webp')" alt="vuesax-patreon">
         Become a patron
       </a>
-      </div>
     </div>
   </div>
 </template>

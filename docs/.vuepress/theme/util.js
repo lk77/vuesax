@@ -1,4 +1,8 @@
-import { findPageForPath } from '@app/util'
+//import { findPageForPath } from '@app/util'
+
+let findPageForPath = (pages, path) => {
+  console.log(pages, path)
+}
 
 export const hashRE = /#.*$/
 export const extRE = /\.(md|html)$/
