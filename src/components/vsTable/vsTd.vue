@@ -58,14 +58,13 @@ export default {
         e.parentNode.appendChild(i);
       }
     },
-    /*clicktd (evt) {
+    clicktd (evt) {
       if(this.$slots.edit) {
         let tr = evt.target.closest('tr')
         if(!this.activeEdit) {
-          let trx = Vue.createApp(trExpand);
-          let instance = new trx({parent: this, propsData: {colspan: this.$parent.colspan, close: true}});
+          let instance = Vue.createApp({extends: trExpand, parent: this, propsData: {colspan: this.$parent.colspan, close: true});
           instance.$slots.default = this.$slots.edit
-          instance.vm = instance.$mount();
+          instance.vm = instance.mount();
           instance.$on('click', this.close)
           var nuevo_parrafo = document.createElement('tr').appendChild(instance.vm.$el);
           this.insertAfter(tr, nuevo_parrafo)
@@ -75,7 +74,7 @@ export default {
           }, 20)
         }
       }
-    },*/
+    },
     closeEdit (evt) {
       if (!evt.target.closest('.tr-expand') && !evt.target.closest('.vs-select--options')) {
         this.close()

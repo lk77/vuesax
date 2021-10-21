@@ -10,7 +10,7 @@
         class="ul-tabs vs-tabs--ul">
         <li
           v-for="(child,index) in children"
-          ref="li"
+          :ref="setRefLi"
           :class="{'activeChild':childActive == index}"
           :style="childActive == index ? styleTab : {}"
           class="vs-tabs--li"
@@ -91,6 +91,7 @@ export default {
     leftx:0,
     widthx:0,
     these:false,
+    $refsLi: []
   }),
   computed:{
     styleTab(){
@@ -124,6 +125,11 @@ export default {
     })
   },
   methods:{
+    setRefLi(el) {
+      if(el) {
+        this.$refsLi.push(el);
+      }
+    },
     clickTag(child) {
       this.$emit('click-tag', child)
     },
@@ -143,7 +149,7 @@ export default {
     },
     activeChild(index, initialAnimation){
       initialAnimation = !!initialAnimation;
-      const elem = this.$refs.li[index]
+      const elem = this.$refsLi[index]
       if(this.childActive == index && !initialAnimation){
         this.these = true
         elem.classList.add('isActive')

@@ -1,28 +1,38 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 import vsLoading from './index.vue'
 
-const loadingConstructor = Vue.createApp(vsLoading);
-
 export default {
-  name:'loading',
-  vsfunction(parameters){
-    let instance = new loadingConstructor();
+  name: 'loading',
+  vsfunction(parameters) {
+    let instance = createApp({
+      extends: vsLoading,
+      data() {
+        if(parameters) {
+          return {
+            type: parameters.type || 'default',
+            background: parameters.background,
+            color: parameters.color,
+            scale: parameters.scale,
+            text: parameters.text,
+            clickEffect: parameters.clickEffect
+          }
+        }
+
+        return {};
+      }
+    });
+
     let containerx = document.body
-    if(parameters){
-      instance.$data.type = parameters.type || 'default'
-      instance.$data.background = parameters.background
-      instance.$data.color = parameters.color
-      instance.$data.scale = parameters.scale
-      instance.$data.text = parameters.text
-      instance.$data.clickEffect = parameters.clickEffect
-      if(parameters.container) {
+    if (parameters) {
+      if (parameters.container) {
         containerx = parameters.container instanceof Element ? parameters.container : document.querySelector(parameters.container)
       }
     }
-    instance.vm = instance.$mount();
+    instance.vm = instance.mount();
+    console.log(instance.vm);
     containerx.insertBefore(instance.vm.$el, containerx.firstChild)
   },
-  close(elx){
+  close(elx) {
     let loadings
 
     if (elx instanceof Element) {
@@ -34,11 +44,11 @@ export default {
     }
 
     loadings
-      .forEach((loading)=>{
+      .forEach((loading) => {
         loading.classList.add('beforeRemove')
-        setTimeout(()=>{
+        setTimeout(() => {
           loading.remove()
-        },300)
+        }, 300)
       })
   }
 }

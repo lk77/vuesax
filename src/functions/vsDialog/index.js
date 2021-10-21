@@ -1,44 +1,45 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 import utils from '../../utils'
 import vsDialog from './index.vue'
 
-
-const dialogConstructor = Vue.createApp(vsDialog);
-
 let instance;
 
-export default { name:'dialog', vsfunction(props) {
+export default {
+  name: 'dialog',
+  vsfunction(props) {
 
+    instance = Vue.createApp({
+        extends: vsDialog,
+        data() {
+          return {
+            isPrompt: false
+          }
+        }
+      },
+      {
+        text: props.text,
+        title: props.title || 'Dialog',
+        color: props.color,
+        type: props.type || 'alert',
+        buttonAccept: props.buttonAccept || 'filled',
+        buttonCancel: props.buttonCancel || 'flat',
+        acceptText: props.acceptText || 'Accept',
+        cancelText: props.cancelText || 'Cancel',
+        closeIcon: props.closeIcon || 'close',
+        iconPack: props.iconPack || 'material-icons',
+        isValid: props.isValid || 'none'
+      });
 
+    instance.vm = instance.mount();
 
-  instance = new dialogConstructor();
+    props.accept ? instance.vm.$on('accept', props.accept) : null
+    props.cancel ? instance.vm.$on('cancel', props.cancel) : null
+    utils.insertBody(instance.vm.$el, props.parent);
 
-  instance.$props.text = props.text
-  instance.$props.title = props.title || 'Dialog'
-  instance.$props.color = props.color
-  instance.$props.type = props.type || 'alert'
-  instance.$props.buttonAccept = props.buttonAccept || 'filled'
-  instance.$props.buttonCancel = props.buttonCancel || 'flat'
-  instance.$props.acceptText = props.acceptText || 'Accept'
-  instance.$props.cancelText = props.cancelText || 'Cancel'
-  instance.$props.closeIcon = props.closeIcon || 'close'
-  instance.$props.iconPack = props.iconPack || 'material-icons'
-  instance.$props.isValid = props.isValid || 'none'
-
-
-
-  instance.$data.isPrompt = false
-
-  instance.vm = instance.$mount();
-
-  props.accept?instance.vm.$on('accept', props.accept):null
-  props.cancel?instance.vm.$on('cancel', props.cancel):null
-  utils.insertBody(instance.vm.$el, props.parent);
-
-  Vue.nextTick(() => {
-    instance.$data.fActive = true
-    instance.$data.parameters = props.parameters
-  });
-}
+    Vue.nextTick(() => {
+      instance.$data.fActive = true
+      instance.$data.parameters = props.parameters
+    });
+  }
 
 }

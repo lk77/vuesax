@@ -24,7 +24,6 @@
   </tr>
 </template>
 <script>
-import Vue from 'vue';
 import trExpand from './vsTrExpand.vue'
 export default {
   name: 'VsTr',
@@ -100,7 +99,7 @@ export default {
     dblclicktr () {
       this.$parent.dblclicktr(this.data, true)
     },
-    /*clicktd (evt) {
+    clicktd (evt) {
       if(this.$parent.multiple || !this.$slots.expand) return
       let tr = evt.target.closest('tr')
       if(this.expanded) {
@@ -109,14 +108,13 @@ export default {
         this.expanded = false
       } else {
         tr.classList.add('tr-expandedx')
-        let trx = Vue.createApp(trExpand);
-        let instance = new trx({parent: this, propsData: {colspan: this.colspan}});
-        instance.vm = instance.$mount();
+        let instance = Vue.createApp({extends: trExpand, parent: this, propsData: {colspan: this.colspan});
+        instance.vm = instance.mount();
         var newTR = document.createElement('tr').appendChild(instance.vm.$el);
         this.insertAfter(tr, newTR)
         this.expanded = true
       }
-    },*/
+    },
     collapseExpandedData() {
       if(this.expanded){
         const tr = this.$refs.tableTr
