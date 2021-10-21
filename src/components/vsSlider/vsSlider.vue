@@ -27,13 +27,14 @@
         class="vs-slider-line-efect"></span>
 
       <!-- vsTicks -->
-      <span
-        v-for="(tick,index) in countTicks"
-        v-if="ticks&&tick"
-        :class="{'isEnd':index == countTicks-1}"
-        :style="styleTicks(index)"
-        class="vs-slider--tick">
-      </span>
+      <template v-if="ticks&&tick">
+        <span
+          v-for="(tick,index) in countTicks"
+          :class="{'isEnd':index == countTicks-1}"
+          :style="styleTicks(index)"
+          class="vs-slider--tick">
+        </span>
+      </template>
     </button>
     <button
       ref="circle1"
