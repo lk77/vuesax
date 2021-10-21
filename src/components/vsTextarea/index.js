@@ -1,5 +1,5 @@
-/*import vsComponent from './vsTextarea'
+import vsComponent from './vsTextarea'
 
 export default Vue => {
   Vue.component(vsComponent.name, vsComponent)
-}*/
+}
