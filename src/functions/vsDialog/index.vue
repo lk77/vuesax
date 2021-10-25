@@ -27,8 +27,7 @@
             :icon="closeIcon"
             :icon-pack="iconPack"
             class="vs-dialog-cancel vs-dialog-cancel--icon notranslate"
-            @click="handleClose"
-          />
+            @click="handleClose"/>
         </header>     <!-- // slots  -->
         <div class="vs-dialog-text">
           <slot/>
@@ -195,6 +194,7 @@ export default {
       }, 200);
     },
     handleClose(event,con){
+      console.log('handle close');
       if(con){
         if(event.target.className.indexOf('vs-dialog-dark')!=-1 && this.type == 'alert'){
           this.fActive = false

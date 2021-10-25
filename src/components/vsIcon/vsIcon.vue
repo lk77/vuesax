@@ -1,6 +1,7 @@
 <template>
   <i
     v-bind="$attrs"
+    @click="$emit('click', $event)"
     :style="iconStyle"
     :class="[iconPack, iconPack !='material-icons' ? icon : '',iconClass,getBg,getBgSize,{'round':round}]"
     class="vs-icon notranslate icon-scale">

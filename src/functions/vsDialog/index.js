@@ -8,7 +8,7 @@ export default {
   name: 'dialog',
   vsfunction(props) {
 
-    instance = Vue.createApp({
+    instance = createApp({
         extends: vsDialog,
         data() {
           return {
