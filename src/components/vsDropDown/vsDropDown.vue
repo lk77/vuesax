@@ -1,17 +1,17 @@
 <template lang="html">
   <!-- @contextmenu.capture.prevent -->
   <button
-    :class="$attrs.class"
+    :class="['vs-con-dropdown parent-dropdown', $attrs.class]"
     :style="$attrs.style"
     v-bind="attrs"
     ref="dropdown"
-    className="vs-con-dropdown parent-dropdown"
     type="button">
     <slot/>
   </button>
 </template>
 
 <script>
+
 export default {
   name: "VsDropdown",
   //inheritAttrs: false,
@@ -39,7 +39,8 @@ export default {
   },
   data: () => ({
     vsDropdownVisible: false,
-    rightx: false
+    rightx: false,
+    childrenItems: []
   }),
   computed: {
     attrs() {
@@ -58,7 +59,7 @@ export default {
         onMouseout: evt => this.toggleMenu('out', evt),
         onMouseover: evt => this.toggleMenu('over', evt),
       }
-    }
+    },
   },
   watch: {
     vsDropdownVisible() {
@@ -80,7 +81,7 @@ export default {
   },
   methods: {
     clickx(evt) {
-      let [dropdownMenu] = this.$children.filter(item => item.hasOwnProperty('dropdownVisible'))
+      let [dropdownMenu] = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
       dropdownMenu.vsCustomContent = this.vsCustomContent
       dropdownMenu.vsTriggerClick = this.vsTriggerClick
       dropdownMenu.vsDropRight = this.vsDropRight
@@ -92,22 +93,20 @@ export default {
             dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
             document.removeEventListener('click', this.clickx)
           }
-
         }
       }
     },
     changeColor() {
-      let child = this.$children
+      let child = this.childrenItems
       child.forEach(item => {
         // todo : fix vnode
         //if (item.$vnode.tag.indexOf('dropdown') != -1) {
-          //item.color = this.color
+        //item.color = this.color
         //}
       })
     },
     changePositionMenu() {
-      console.log(this.$children);
-      let [dropdownMenu] = this.$children.filter(item => item.hasOwnProperty('dropdownVisible'))
+      let [dropdownMenu] = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
       if (this.$refs.dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
         this.$nextTick(() => {
@@ -141,7 +140,7 @@ export default {
       if (evt.type == 'contextmenu') {
         evt.preventDefault()
       }
-      let [dropdownMenu] = this.$children.filter(item => item.hasOwnProperty('dropdownVisible'))
+      let [dropdownMenu] = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
       if (this.vsTriggerClick || this.vsTriggerContextmenu) {
         if (this.vsDropdownVisible && !evt.target.closest('.vs-dropdown--menu')) {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
@@ -158,7 +157,7 @@ export default {
       this.$emit('click')
     },
     toggleMenu(typex, evt) {
-      let [dropdownMenu] = this.$children.filter(item => item.hasOwnProperty('dropdownVisible'))
+      let [dropdownMenu] = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
       if (!this.vsTriggerClick && !this.vsTriggerContextmenu) {
         if (typex == 'over') {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = true

@@ -14,8 +14,8 @@
       class="span vs-dropdown--group-label"
       v-text="vsLabel"
     />
-    <h3 
-      v-else 
+    <h3
+      v-else
       v-text="vsLabel"/>
     <vs-icon
       v-if="vsCollapse"
@@ -67,7 +67,7 @@ export default {
     activeGroup: false,
     rightx: false,
     widthx: 0,
-    maxHeight: '0px',
+    maxHeight: '0px'
   }),
   computed:{
     styleItems() {
@@ -76,7 +76,21 @@ export default {
       }
     }
   },
+  mounted() {
+    this.searchParent(this, (parent) => {
+      parent.childrenItems.push(this);
+    });
+  },
   methods:{
+    searchParent(_this, callback) {
+      let parent = _this.$parent
+      if (!parent.$el.className) return
+      if (!Object.prototype.hasOwnProperty.call(parent, 'childrenItems')) {
+        this.searchParent(parent, callback)
+      } else {
+        callback(parent)
+      }
+    },
     clickGroup(evt) {
       if(evt.target != this.$refs.group) return
       if(!this.openHover) {

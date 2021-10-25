@@ -188,7 +188,8 @@ export default {
     clear: false,
     scrollx: false,
     cords: {},
-    filterx: false
+    filterx: false,
+    childrenItems: []
   }),
   computed: {
     activeBtnClear() {
@@ -230,7 +231,7 @@ export default {
         onKeyup: event => {
           if (event.key == "ArrowDown" || event.key == "ArrowUp") {
             event.preventDefault();
-            let childrens = this.$children.filter(item => {
+            let childrens = this.childrenItems.filter(item => {
               return item.visible;
             });
             childrens[0].$el.querySelector(".vs-select--item").focus();
@@ -240,7 +241,7 @@ export default {
             }
           }
 
-          this.$children.map(item => {
+          this.childrenItems.map(item => {
             item.modelValueInputx = this.$refs.inputselect.modelValue;
           });
         }
@@ -257,7 +258,7 @@ export default {
         if (this.active) {
           utils.insertBody(this.$refs.vsSelectOptions);
           setTimeout(() => {
-            this.$children.forEach(item => {
+            this.childrenItems.forEach(item => {
               if (item.focusValue) {
                 item.focusValue();
               }
@@ -333,11 +334,11 @@ export default {
       } else {
         this.filterx = false;
       }
-      let items = this.$children;
+      let items = this.childrenItems;
 
       items.forEach(item => {
-        if (item.$children.length > 0) {
-          items = [...items, ...item.$children];
+        if (item.childrenItems.length > 0) {
+          items = [...items, ...item.childrenItems];
         }
       });
 
@@ -382,11 +383,11 @@ export default {
       this.filterx = false;
       if (this.multiple) {
         let modelValues = this.modelValue ? this.modelValue : [];
-        let options = this.$children;
+        let options = this.childrenItems;
 
         options.forEach(item => {
-          if (item.$children.length > 0) {
-            options = [...options, ...item.$children];
+          if (item.childrenItems.length > 0) {
+            options = [...options, ...item.childrenItems];
           }
         });
 
@@ -428,7 +429,7 @@ export default {
           this.multiple ? this.modelValue.length == 0 : !this.modelValue || this.multiple
         ) {
           setTimeout(() => {
-            const el = this.$children[0].$el.querySelector(".vs-select--item");
+            const el = this.childrenItems[0].$el.querySelector(".vs-select--item");
             if (el) el.focus();
           }, 50);
         }

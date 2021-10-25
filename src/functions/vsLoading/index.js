@@ -28,9 +28,10 @@ export default {
         containerx = parameters.container instanceof Element ? parameters.container : document.querySelector(parameters.container)
       }
     }
-    instance.vm = instance.mount();
+    //instance.vm = instance.mount();
     console.log(instance.vm);
-    containerx.insertBefore(instance.vm.$el, containerx.firstChild)
+    console.log(containerx, instance);
+    //containerx.insertBefore(instance.vm.$el, containerx.firstChild)
   },
   close(elx) {
     let loadings

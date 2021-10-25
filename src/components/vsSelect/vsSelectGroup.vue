@@ -14,19 +14,32 @@ export default {
     }
   },
   data: () => ({
-    activeTitle: true
+    activeTitle: true,
+    childrenItems: [],
+    parent: null
   }),
-  computed:{
+  created() {
+    this.searchParent(this, (parent) => {
+      this.parent = parent;
+    })
+  },
+  computed: {
     filterx() {
-      return this.$parent.filterx
+      return this.parent.filterx
     },
-    parent(){
-      return this.$parent
-    }
   },
   methods:{
     focusValue(index) {
-      this.$children[0].focusValue(index)
+      this.childrenItems[0].focusValue(index)
+    },
+    searchParent(_this, callback) {
+      let parent = _this.$parent
+      if (!parent.$el.className) return
+      if (!Object.prototype.hasOwnProperty.call(parent, 'childrenItems')) {
+        this.searchParent(parent, callback)
+      } else {
+        callback(parent)
+      }
     }
   }
 }

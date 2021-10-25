@@ -31,6 +31,7 @@
 
 <script>
 import _color from '../../utils/color.js'
+
 export default {
   name: "VsDropdownItem",
   inheritAttrs:false,
@@ -48,45 +49,40 @@ export default {
   data: () => ({
     hoverx: false,
     vsDropDownItem: true,
-    color: null
+    color: null,
   }),
-  mounted () {
+  mounted() {
     this.changeColor()
+    this.searchParent(this, (parent) => {
+      parent.childrenItems.push(this);
+    });
   },
   updated() {
     this.changeColor()
   },
   methods:{
-    closeParent() {
-      if(this.disabled) return
-      searchParent(this)
-      function searchParent(_this) {
-        let parent = _this.$parent
-        if(!parent.$el.className) return
-        if(parent.$el.className.indexOf('parent-dropdown') == -1) {
-          searchParent(parent)
-        } else {
-          let [dropdownMenu] = parent.$children.filter(item => {
-            return item.hasOwnProperty('dropdownVisible')
-          })
-          dropdownMenu.dropdownVisible = parent.vsDropdownVisible = false
-        }
+    searchParent(_this, callback) {
+      let parent = _this.$parent
+      if (!parent.$el.className) return
+      if (!Object.prototype.hasOwnProperty.call(parent, 'childrenItems')) {
+        this.searchParent(parent, callback)
+      } else {
+        callback(parent)
       }
+    },
+    closeParent() {
+      if (this.disabled) return
+      this.searchParent(this, (dropdownMenu) => {
+        this.searchParent(dropdownMenu, (dropdown) => {
+          dropdownMenu.dropdownVisible = dropdown.vsDropdownVisible = false
+        });
+      });
     },
     changeColor() {
       let _self = this
-      searchParent(this)
-      function searchParent(_this){
-        let parent = _this.$parent
-        if(!parent.$el.className){
-          return
-        }
-        if(parent.$el.className.indexOf('parent-dropdown') == -1) {
-          searchParent(parent)
-        } else {
-          _self.color = parent.color
-        }
-      }
+      this.searchParent(this, (parent) => {
+        _self.color = parent.color
+      });
     },
     giveColor(opacity = 1) {
       return _color.rColor(this.color,opacity)

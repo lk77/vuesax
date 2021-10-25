@@ -9,6 +9,7 @@
         'top':`${topx}px`
       }"
       class="con-vs-dropdown--menu vs-dropdown-menu"
+      style="position:absolute!important;"
       @mouseleave="mouseleavex"
       @mouseenter="mouseenterx"
     >
@@ -16,13 +17,13 @@
       <!-- @mouseover="toggleMenu($event)" -->
       <ul
         v-if="!vsCustomContent"
-        class="vs-component vs-dropdown--menu" >
+        class="vs-component vs-dropdown--menu">
         <slot/>
       </ul>
       <div
         v-else
         class="vs-dropdown--custom vs-dropdown--menu">
-        <slot/>
+          <slot/>
       </div>
       <div
         ref="menuAfter"
@@ -46,11 +47,12 @@ export default {
     widthx: 0,
     notHeight: false,
     vsCustomContent: false,
-    parentNode: null
+    parentNode: null,
+    childrenItems: [],
   }),
   watch:{
     dropdownVisible(val) {
-      let dropdownGroup = this.$children.filter(item => item.hasOwnProperty('activeGroup'))
+      let dropdownGroup = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'activeGroup'))
       dropdownGroup.forEach((item_group)=>{
         item_group.activeGroup = false
       })
@@ -61,6 +63,7 @@ export default {
   },
   mounted() {
     this.insertBody()
+    this.$parent.childrenItems.push(this);
   },
   beforeUnmount() {
     this.$el.parentNode.removeChild(this.$el)
@@ -84,7 +87,7 @@ export default {
         const menuAfter = this.$refs.menuAfter
         if (!menuAfter) return
         if(dropdown && menuAfter && dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
-          // const hasGroup = this.$children.find(it=>it.hasOwnProperty('activeGroup'))
+          // const hasGroup = this.$childrenItems.find(it=>Object.prototype.hasOwnProperty.call(it, 'activeGroup'))
           menuAfter.style.bottom = '-5px'
           menuAfter.style.transform = 'rotate(225deg)'
           return
@@ -103,8 +106,8 @@ export default {
     },
     insertBody(){
       let elp = this.$el
-      this.parentNode = this.$el.parentNode
-      document.body.insertBefore(elp, document.body.firstChild)
+      this.parentNode = this.$root.$el.parentNode
+      document.body.prepend(elp)
     }
   }
 }

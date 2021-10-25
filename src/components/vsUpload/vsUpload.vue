@@ -73,7 +73,7 @@
         :class="{
           'on-progress-all-upload':percent != 0,
           'is-ready-all-upload':percent >= 100,
-          'disabled-upload':$attrs.hasOwnProperty('disabled') || limit?(srcs.length - itemRemove.length) >= Number(limit):false
+          'disabled-upload':Object.prototype.hasOwnProperty.call($attrs, 'disabled') || limit?(srcs.length - itemRemove.length) >= Number(limit):false
         }"
         class="con-input-upload">
         <input
@@ -181,7 +181,7 @@
       postFiles(){
         let postFiles = Array.prototype.slice.call(this.filesx);
         postFiles = postFiles.filter((item)=>{
-          return !item.hasOwnProperty('remove') && !item.hasOwnProperty('success');
+          return !Object.prototype.hasOwnProperty.call(item, 'remove') && !Object.prototype.hasOwnProperty.call(item, 'success');
         })
         return postFiles.length
       },
@@ -259,7 +259,7 @@
         for (const file in files) {
 
 
-          if (files.hasOwnProperty(file)) {
+          if (Object.prototype.hasOwnProperty.call(files, file)) {
             if(this.limit) {
               count ++
               if( count > Number(this.limit) ) {
@@ -313,7 +313,7 @@
           postFiles = [postFiles[index]]
         } else if (index == 'all'){
           postFiles = postFiles.filter((item)=>{
-            return !item.hasOwnProperty('remove') && !item.hasOwnProperty('success');
+            return !Object.prototype.hasOwnProperty.call(item, 'remove') && !Object.prototype.hasOwnProperty.call(item, 'success');
           })
         }
 
@@ -386,7 +386,7 @@
         const headers = this.headers || {};
 
         for (let head in headers) {
-          if (headers.hasOwnProperty(head) && headers[head] !== null) {
+          if (Object.prototype.hasOwnProperty.call(headers, head) && headers[head] !== null) {
             xhr.setRequestHeader(head, headers[head]);
           }
         }

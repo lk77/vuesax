@@ -34,27 +34,33 @@ export default {
     vertical:false,
     active:false,
     id:null,
-    invert:false
+    invert:false,
+    parent: null
   }),
   watch: {
     label(val) {
-      this.$parent.children[this.id].label = val;
+      this.parent.children[this.id].label = val;
     },
-    '$attrs' (val) {
-      this.$parent.children[this.id].attrs = val;
+    '$attrs'(val) {
+      this.parent.childrenItems[this.id].attrs = val;
     }
   },
-  mounted(){
-    this.id = this.$parent.children.length
-    this.$parent.children.push({
-      label: this.label,
-      icon: this.icon,
-      iconPack: this.iconPack,
-      tag: this.tag,
-      id: this.$parent.children.length,
-      //listeners: this.$listeners,
-      attrs: this.$attrs
+  mounted() {
+    this.searchParent(this, (parent) => {
+      this.parent = parent;
+      this.id = this.parent.childrenItems.length;
+      this.parent.childrenItems.push(this);
     })
+  },
+  methods: {
+    searchParent(_this, callback) {
+      let parent = _this.$parent
+      if (!Object.prototype.hasOwnProperty.call(parent, 'childrenItems')) {
+        this.searchParent(parent, callback)
+      } else {
+        callback(parent)
+      }
+    }
   }
 }
 </script>

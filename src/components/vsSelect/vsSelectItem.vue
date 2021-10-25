@@ -150,6 +150,15 @@ export default {
     this.putValue()
   },
   methods:{
+    searchParent(_this, callback) {
+      let parent = _this.$parent
+      if (!parent.$el.className) return
+      if (!Object.prototype.hasOwnProperty.call(parent, 'childrenItems')) {
+        this.searchParent(parent, callback)
+      } else {
+        callback(parent)
+      }
+    },
     changeHover(booleanx){
       this.hoverx = booleanx
     },
@@ -185,16 +194,16 @@ export default {
         }
       }
 
-      var children = this.$parent.parent.$children
+      var children = this.$parent.parent.childrenItems
 
       children.forEach((item)=>{
-        if(item.$children.length > 0) {
-          children = [...children,...item.$children]
+        if(item.childrenItems.length > 0) {
+          children = [...children,...item.childrenItems]
         }
       })
 
       children = children.filter((item) => {
-        return item.$children.length == 0 && item.$el.localName != 'span'
+        return item.childrenItems.length == 0 && item.$el.localName != 'span'
       })
 
       if(orientation == 'prev'){
@@ -246,7 +255,7 @@ export default {
         this.$parent.parent.modelValuex = text
         this.$parent.parent.addMultiple(this.modelValue)
       }
-      this.$parent.parent.$children.map((item)=>{
+      this.$parent.parent.childrenItems.map((item)=>{
         item.modelValueInputx = ''
       })
     },
