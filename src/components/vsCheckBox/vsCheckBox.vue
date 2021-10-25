@@ -7,6 +7,7 @@
       v-bind="$attrs"
       :checked="isChecked || $attrs.checked"
       :value="modelValue"
+      @input="$emit('update:modelValue', Boolean($event.target.value))"
       type="checkbox"
       class="vs-checkbox--input">
     <span

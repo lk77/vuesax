@@ -248,8 +248,8 @@ export default {
 
     },
     clickButton(event){
-      this.$emit('click', event)
       this.$nextTick(() => {
+        this.$emit('click', event)
         if(this.isActive){
           return
         }
