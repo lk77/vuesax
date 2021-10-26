@@ -160,7 +160,7 @@ export default {
     }
     this.fActive = this.active
   },
-  beforeDestroy() {
+  beforeUnmount() {
     // close the left open prompt
     let elx = this.$refs.con
     let parentx = this.parent ? this.parent : document.body

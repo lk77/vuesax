@@ -61,7 +61,7 @@ export default {
       bind(el, binding, vnode) {
         let intervalx = null;
         let startT;
-        const functionx = () => vnode.context[binding.expression].apply();
+        const functionx = binding.value;
         const bucle = () => {
           if (new Date() - startT < 100) {
             functionx();
