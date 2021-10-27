@@ -110,7 +110,6 @@ export default {
     this.currentIndex = this.defaultIndex
   },
   mounted () {
-    console.log(this.$attrs);
     this.insertBody()
   },
   methods:{

@@ -1,4 +1,7 @@
 export default {
+  randomId() {
+    return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 8);
+  },
   insertBody(elx, parent){
     let bodyx = parent ? parent : document.body
     bodyx.insertBefore(elx, bodyx.firstChild)

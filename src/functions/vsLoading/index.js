@@ -29,8 +29,8 @@ export default {
       }
     }
     //instance.vm = instance.mount();
-    console.log(instance.vm);
-    console.log(containerx, instance);
+    //console.log(instance.vm);
+    //console.log(containerx, instance);
     //containerx.insertBefore(instance.vm.$el, containerx.firstChild)
   },
   close(elx) {
