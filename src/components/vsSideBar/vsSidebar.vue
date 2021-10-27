@@ -3,6 +3,8 @@
     <div
       v-show="staticPosition || modelValue"
       ref="sidebarbackground"
+      :class="$attrs.class"
+      :style="$attrs.style"
       class="vs-content-sidebar">
       <div
         v-if="!hiddenBackground"
@@ -108,6 +110,7 @@ export default {
     this.currentIndex = this.defaultIndex
   },
   mounted () {
+    console.log(this.$attrs);
     this.insertBody()
   },
   methods:{

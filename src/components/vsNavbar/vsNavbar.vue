@@ -1,7 +1,7 @@
 <template lang="html">
   <header
-    :style="[styleNavbar]"
-    :class="[`vs-navbar-${type}`, `vs-navbar-color-${color}`, {'collapse':collapse}]"
+    :style="[styleNavbar, style]"
+    :class="[`vs-navbar-${type}`, `vs-navbar-color-${color}`, {'collapse':collapse}, this.class]"
     class="vs-navbar">
     <div class="vs-navbar--header">
       <button
@@ -29,7 +29,6 @@
 import _color from '../../utils/color.js'
 export default {
   name:'VsNavbar',
-
   props:{
     modelValue:{},
     type:{
@@ -51,7 +50,10 @@ export default {
     textColor: {
       type:String,
       default:'rgb(40,40,40)',
-    }
+    },
+    // temporary fix because missing from $attrs
+    class: {},
+    style: {}
   },
 
   data:() => ({
