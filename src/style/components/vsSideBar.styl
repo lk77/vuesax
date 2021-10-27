@@ -212,11 +212,11 @@ for colorx, i in $vs-colors
   .vs-sidebar
     transition: all .25s ease
 
-.vs-sidebar-animate-enter:not(.vs-sidebar-position-right), .vs-sidebar-animate-leave-to:not(.vs-sidebar-position-right)
+.vs-sidebar-animate-enter-from:not(.vs-sidebar-position-right), .vs-sidebar-animate-leave-to:not(.vs-sidebar-position-right)
   .vs-sidebar
     propWithDir(transform, null, (-100%))
 
-.vs-sidebar-animate-enter, .vs-sidebar-animate-leave-to
+.vs-sidebar-animate-enter-from, .vs-sidebar-animate-leave-to
   .vs-sidebar-background
     opacity 0 !important
   .vs-sidebar
