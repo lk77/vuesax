@@ -1,8 +1,8 @@
 //animations
-.popup-t-enter, .popup-t-leave-to /* .popup-t-leave-active below version 2.1.8 */
+.popup-t-enter-from, .popup-t-leave-to /* .popup-t-leave-active below version 2.1.8 */
   opacity: 0 !important;
 //box popup
-.popup-t-enter .vs-popup/* .fade-leave-active below version 2.1.8 */
+.popup-t-enter-from .vs-popup/* .fade-leave-active below version 2.1.8 */
   transform: scale(.9) !important;
 
 .popup-t-leave-to .vs-popup/* .fade-leave-active below version 2.1.8 */
@@ -21,16 +21,16 @@
 
 
 // cancel / text
-.popup-t-enter .vs-popup-cancel, .popup-t-leave-to .vs-popup-cancel
+.popup-t-enter-from .vs-popup-cancel, .popup-t-leave-to .vs-popup-cancel
   border-radius: 50% !important;
   propWithDir(transform, null, (8px -8px), scale(.5) !important)
 
-.popup-t-enter .vs-popup-text, .popup-t-leave-to .vs-popup-text
+.popup-t-enter-from .vs-popup-text, .popup-t-leave-to .vs-popup-text
   opacity: 0;
   propWithDir(transform, null, (-15px), !important)
 
 
-.popup-t-enter header h3, .popup-t-leave-to header h3
+.popup-t-enter-from header h3, .popup-t-leave-to header h3
   propWithDir(transform, null, (-50px), !important)
   opacity: 0;
 

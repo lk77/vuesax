@@ -1,10 +1,10 @@
 //animations
-.dialog-t-enter, .dialog-t-leave-to /* .dialog-t-leave-active below version 2.1.8 */ {
+.dialog-t-enter-from, .dialog-t-leave-to /* .dialog-t-leave-active below version 2.1.8 */ {
   opacity: 0 !important;
 }
 
 //box dialog
-.dialog-t-enter .vs-dialog/* .fade-leave-active below version 2.1.8 */ {
+.dialog-t-enter-from .vs-dialog/* .fade-leave-active below version 2.1.8 */ {
   transform: scale(.9) !important;
 
 }
@@ -21,26 +21,26 @@
 
 
 // cancel / text
-.dialog-t-enter .vs-dialog-cancel, .dialog-t-leave-to .vs-dialog-cancel {
+.dialog-t-enter-from .vs-dialog-cancel, .dialog-t-leave-to .vs-dialog-cancel {
   border-radius: 50% !important;
   propWithDir(transform, null, (8px -8px), scale(.5) !important)
 }
-.dialog-t-enter .vs-dialog-text, .dialog-t-leave-to .vs-dialog-text {
+.dialog-t-enter-from .vs-dialog-text, .dialog-t-leave-to .vs-dialog-text {
   opacity: 0;
   propWithDir(transform, null, (-15px 0px), !important)
 }
 
 // line after
-.dialog-t-enter .after, .dialog-t-leave-to .after {
+.dialog-t-enter-from .after, .dialog-t-leave-to .after {
   height: 0% !important
 }
-.dialog-t-enter header h3, .dialog-t-leave-to header h3 {
+.dialog-t-enter-from header h3, .dialog-t-leave-to header h3 {
   propWithDir(transform, null, (-50px 0px), !important)
   opacity: 0;
 }
 
 // buttons
-.dialog-t-enter footer button, .dialog-t-leave-to footer button {
+.dialog-t-enter-from footer button, .dialog-t-leave-to footer button {
   transform: translate(0,10px);
   opacity: 0;
 }
