@@ -8,7 +8,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default install
 
 export { default as vsButton } from './components/vsButton'
-export { default as vsSelect } from './components/vsSelect'
+//export { default as vsSelect } from './components/vsSelect'
 export { default as vsSwitch } from './components/vsSwitch'
 export { default as vsCheckbox } from './components/vsCheckBox'
 export { default as vsRadio } from './components/vsRadio'
