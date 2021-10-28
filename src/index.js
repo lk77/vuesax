@@ -1,7 +1,7 @@
 import './style/vuesax.styl'
 import install from './install';
 
-if (typeof window !== 'undefined' && window.Vue) {
+if (typeof module === 'undefined' && typeof window !== 'undefined' && window.Vue && !require.main === module) {
   install(window.Vue)
 }
 

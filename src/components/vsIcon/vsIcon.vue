@@ -5,7 +5,7 @@
     :style="iconStyle"
     :class="[iconPack, iconPack !='material-icons' ? icon : '',iconClass,getBg,getBgSize,{'round':round}]"
     class="vs-icon notranslate icon-scale">
-    <slot>{{ iconPack == 'material-icons' ? icon : '' }}</slot>
+    {{ iconPack == 'material-icons' ? icon : '' }}
   </i>
 </template>
 <script>
