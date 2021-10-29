@@ -7,7 +7,7 @@
       v-bind="$attrs"
       :checked="isChecked || $attrs.checked"
       :value="modelValue"
-      @input="$emit('update:modelValue', Boolean($event.target.value))"
+      @change="toggleValue"
       type="checkbox"
       class="vs-checkbox--input">
     <span
@@ -66,17 +66,6 @@ export default {
     style() {
       return {
         border: `2px solid ${this.isChecked ? _color.getColor(this.color, 1) : 'rgb(180, 180, 180)'}`,
-      }
-    },
-    listeners() {
-      return {
-        // ...this.$listeners,
-        change: (evt) => {
-          this.toggleValue(evt)
-        },
-        // input: (evt) => {
-        //   this.toggleValue(evt)
-        // }
       }
     },
     isChecked() {

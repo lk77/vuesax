@@ -42,16 +42,10 @@ export default {
     attrs(){
       return {
         ...this.$attrs,
-        input: () => this.$emit('update:modelValue', this.vsValue),
-        click: () => this.$emit('update:modelValue', this.vsValue)
+        onInput: () => this.$emit('update:modelValue', this.vsValue),
+        onClick: () => this.$emit('update:modelValue', this.vsValue)
       }
     },
-    /*attrs(){
-      let attrsx = JSON.parse(JSON.stringify(this.$attrs))
-      return {
-        attrsx
-      }
-    },*/
     isChecked(){
       return this.vsValue == this.modelValue
     },
