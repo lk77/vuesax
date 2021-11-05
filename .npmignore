@@ -19,3 +19,4 @@ dist/demo.html
 *.njsproj
 *.sln
 .github/
+.nvmrc
