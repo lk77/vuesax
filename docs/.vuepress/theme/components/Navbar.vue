@@ -42,8 +42,8 @@
     <div class="con-redes-download">
       <a
         title="Github"
-        v-if="repoLink"
-        :href="repoLink"
+        v-if="$themeConfig.repoLink"
+        :href="$themeConfig.repoLink"
         class="repo-link flaticon-github"
         target="_blank"
         rel="noopener noreferrer">
@@ -62,13 +62,13 @@
           <span>Download</span>
         </a>-->
 
-      <div title="Change Color Primary" v-if="!$page.frontmatter.home" class="con-colors-input">
+      <!--<div title="Change Color Primary" v-if="!$page.frontmatter.home" class="con-colors-input">
         <div :style="{
           'box-shadow': '0px 5px 20px -4px rgba(var(--vs-primary),.9)',
           'background': 'rgb(var(--vs-primary))'}" class="con-inputx-c">
           <input @change="changeColor($event.target.value)" type="color" name="" :value="color">
         </div>
-      </div>
+      </div>-->
 
       <!--<btnApps />-->
     </div>

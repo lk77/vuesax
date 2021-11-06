@@ -56,9 +56,9 @@ module.exports = {
       }
     }}
   },
-  markdown: {
+  /*markdown: {
     extendMarkdown: md => {
       md.set({html: true})
     }
-  }
+  }*/
 }

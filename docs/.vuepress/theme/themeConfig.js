@@ -1,4 +1,5 @@
 module.exports = {
+    repoLink: 'https://github.com/lk77/vuesax',
     // Assumes GitHub. Can also be a full GitLab url.
     //repo: 'lk77/vuesax',
     // Customising the header label

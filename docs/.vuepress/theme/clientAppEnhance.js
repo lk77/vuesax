@@ -1,17 +1,17 @@
 import { defineClientAppEnhance } from '@vuepress/client';
 import { h } from 'vue';
-import Badge from './components/global/Badge.vue';
-import CodeGroup from './components/global/CodeGroup';
-import CodeGroupItem from './components/global/CodeGroupItem.vue';
+//import Badge from './components/global/Badge.vue';
+//import CodeGroup from './components/global/CodeGroup';
+//import CodeGroupItem from './components/global/CodeGroupItem.vue';
 import OutboundLink from './components/global/OutboundLink.vue';
 import { useScrollPromise } from '@vuepress/theme-default/lib/client/composables';
 import './styles/theme.scss';
 import vueThemes from './vueThemes';
 import themeConfig from './themeConfig';
 export default defineClientAppEnhance(({ app, router }) => {
-    app.component('Badge', Badge);
-    app.component('CodeGroup', CodeGroup);
-    app.component('CodeGroupItem', CodeGroupItem);
+    //app.component('Badge', Badge);
+    //app.component('CodeGroup', CodeGroup);
+    //app.component('CodeGroupItem', CodeGroupItem);
     // unregister the built-in `<OutboundLink>` to avoid warning
     delete app._context.components.OutboundLink;
     // override the built-in `<OutboundLink>`

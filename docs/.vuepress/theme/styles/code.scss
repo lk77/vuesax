@@ -19,6 +19,11 @@
 		margin: 0 -1.5rem;
 		padding: 0 1.5rem;
 	}
+	&:not(.line-numbers-mode) {
+		.line-numbers {
+		  display: none;
+		}
+	  }
 }
 .content pre,
 .content pre[class*="language-"] {
@@ -51,54 +56,95 @@
 	font-size: 0.75rem;
 	color: rgba(255,255,255,0.4);
 }
-pre[class="language-js"]:before,
-pre[class="language-javascript"]:before {
-	content: "js";
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
 }
-pre[class="language-html"]:before,
-pre[class="language-markup"]:before {
-	content: "html";
+
+.token.punctuation {
+  color: #ccc;
 }
-pre[class="language-markdown"]:before,
-pre[class="language-md"]:before {
-	content: "md";
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #ec5975;
 }
-pre[class="language-vue"]:before {
-	content: "vue";
+
+.token.function-name {
+  color: #6196cc;
 }
-pre[class="language-css"]:before {
-	content: "css";
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
 }
-pre[class="language-sass"]:before {
-	content: "sass";
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
 }
-pre[class="language-less"]:before {
-	content: "less";
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
 }
-pre[class="language-scss"]:before {
-	content: "scss";
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
 }
-pre[class="language-stylus"]:before {
-	content: "stylus";
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
 }
-pre[class="language-json"]:before {
-	content: "json";
+
+.token.important,
+.token.bold {
+  font-weight: bold;
 }
-pre[class="language-ruby"]:before {
-	content: "rb";
+.token.italic {
+  font-style: italic;
 }
-pre[class="language-python"]:before {
-	content: "py";
+
+.token.entity {
+  cursor: help;
 }
-pre[class="language-go"]:before {
-	content: "go";
+
+.token.inserted {
+  color: #3eaf7c;
 }
-pre[class="language-java"]:before {
-	content: "java";
-}
-pre[class="language-c"]:before {
-	content: "c";
-}
-pre[class="language-bash"]:before {
-	content: "sh";
-}
+
+@each $lang in $codeLang {
+	div[class*='language-'].ext-#{$lang} {
+	  &:before {
+		content: '' + $lang;
+	  }
+	}
+  }
+  
+  // narrow mobile
+  @media (max-width: $MQMobileNarrow) {
+	.theme-default-content {
+	  div[class*='language-'] {
+		margin: 0.85rem -1.5rem;
+		border-radius: 0;
+	  }
+	}
+  }

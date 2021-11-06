@@ -44,8 +44,13 @@ const renderChildren = (item, depth) => {
     return h('ul', {
         class: {
             'sidebar-group-items': depth == 0,
+            'sidebar-sub-headers': depth > 0
         },
-    }, item.children.map((child) => h('li', h(SidebarChild, {
+    }, item.children.map((child) => h('li', {
+        class: {
+            'sidebar-sub-header': depth > 0
+        }
+    }, h(SidebarChild, {
         item: child,
         depth: depth + 1,
     }))));

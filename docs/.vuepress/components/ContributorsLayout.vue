@@ -90,7 +90,7 @@ import pull20 from './contributors/pull/20pull.vue'
 import pull50 from './contributors/pull/50pull.vue'
 
 import footerContributors from './contributors/footerContributors.vue'
-import Footer from '../theme/Footer.vue'
+import Footer from '../theme/components/Footer.vue'
 
 import api from './api.js'
 export default {
@@ -223,125 +223,159 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-@import '../theme/styles/config.styl'
-.con-contenedores
-  margin-top: 20px;
-.con-contributors
-  // overflow-x: hidden;
-  width: 100%;
-  overflow: hidden;
-  ul.menu
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    li
-      position: relative;
-      list-style: none
-      padding: 15px;
-      cursor: pointer;
-      &:before
-        width: 0%;
-        height: 2px;
-        background: $accentColor
-        position: absolute;
-        content: '';
-        bottom: 0px;
-        left: 50%;
-        transform: translate(-50%);
-        transition: all .3s ease;
-      &.estas-contribucion:before
-        width: 100% !important
-  .con-rank
-    width: 100%;
-    max-width: 1000px;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.050);
-    border-radius: 8px;
-    margin: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    overflow: auto;
-    table
-      width: 100%;
-      position: relative;
-      thead
-        tr
-          &:first-child
-            border-top: 0px;
-        th
-          padding: 15px;
-          font-weight: normal;
-      tr
-        cursor: default;
-        border-bottom: 1px solid rgba(0, 0, 0,.050)
-        background: rgb(255, 255, 255) !important
-        th
-          border: 0px;
-        td
-          border: 0px;
-          &.medals
-            svg
-              display: inline-block;
-              position: relative;
-              width: 40px;
-          &.medals-pull
-            svg
-              display: inline-block;
-              position: relative;
-              width: 50px;
-          &.iconx-github
-            text-align: center;
-            a
-              margin: auto;
-              width: 100%
-              text-align: center;
-              display: block;
-              color: rgba(0, 0, 0, 0.4)
-              transition: all .2s ease;
-              &:hover
-                color: $accentColor
-          img
-            width: 50px
-            border-radius: 50%;
-  .con-awward
-    width: 100%;
-    max-width: 950px
-    margin: auto;
-    // margin: 20px;
-    h2
-      padding: 10px;
-      border-bottom: 0px;
-    ul
-      overflow: auto;
-      width: 100%
-      white-space: nowrap;
-      padding-bottom: 10px;
-      li
-        display: inline-block;
-        max-width: 190px;
-        margin: 20px;
-        box-shadow: 0px 10px 40px -6px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        padding-bottom: 15px;
+<style lang="scss">
+@use '../theme/styles/config' as *;
 
-        &:first-child
-          margin-left: 0px;
-        .con-card-awward
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-        p
-          width: 100%;
-          display: block;
-          position: relative;
-          clear: both;
-          white-space: normal;
-          padding: 10px;
-          font-size: 12px;
-          text-align: center;
-        svg
-          width: 110px;
+.con-contenedores {
+	margin-top: 20px;
+}
+.con-contributors {
+	width: 100%;
+	overflow: hidden;
+	ul {
+		&.menu {
+			margin-top: 20px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			li {
+				position: relative;
+				list-style: none;
+				padding: 15px;
+				cursor: pointer;
+				&:before {
+					width: 0%;
+					height: 2px;
+					background: $accentColor;
+					position: absolute;
+					content: '';
+					bottom: 0px;
+					left: 50%;
+					transform: translate(-50%);
+					transition: all 0.3s ease;
+				}
+				&.estas-contribucion {
+					&:before {
+						width: 100% !important;
+					}
+				}
+			}
+		}
+	}
+	.con-rank {
+		width: 100%;
+		max-width: 1000px;
+		box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.05);
+		border-radius: 8px;
+		margin: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+		overflow: auto;
+		table {
+			width: 100%;
+			position: relative;
+			thead {
+				tr {
+					&:first-child {
+						border-top: 0px;
+					}
+				}
+				th {
+					padding: 15px;
+					font-weight: normal;
+				}
+			}
+			tr {
+				cursor: default;
+				border-bottom: 1px solid rgba(0,0,0,0.05);
+				background: #fff !important;
+				th {
+					border: 0px;
+				}
+				td {
+					border: 0px;
+					&.medals {
+						svg {
+							display: inline-block;
+							position: relative;
+							width: 40px;
+						}
+					}
+					&.medals-pull {
+						svg {
+							display: inline-block;
+							position: relative;
+							width: 50px;
+						}
+					}
+					&.iconx-github {
+						text-align: center;
+						a {
+							margin: auto;
+							width: 100%;
+							text-align: center;
+							display: block;
+							color: rgba(0,0,0,0.4);
+							transition: all 0.2s ease;
+							&:hover {
+								color: $accentColor;
+							}
+						}
+					}
+					img {
+						width: 50px;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
+	.con-awward {
+		width: 100%;
+		max-width: 950px;
+		margin: auto;
+		h2 {
+			padding: 10px;
+			border-bottom: 0px;
+		}
+		ul {
+			overflow: auto;
+			width: 100%;
+			white-space: nowrap;
+			padding-bottom: 10px;
+			li {
+				display: inline-block;
+				max-width: 190px;
+				margin: 20px;
+				box-shadow: 0px 10px 40px -6px rgba(0,0,0,0.1);
+				border-radius: 8px;
+				padding-bottom: 15px;
+				&:first-child {
+					margin-left: 0px;
+				}
+				.con-card-awward {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+				}
+				p {
+					width: 100%;
+					display: block;
+					position: relative;
+					clear: both;
+					white-space: normal;
+					padding: 10px;
+					font-size: 12px;
+					text-align: center;
+				}
+				svg {
+					width: 110px;
+				}
+			}
+		}
+	}
+}
+
 </style>
