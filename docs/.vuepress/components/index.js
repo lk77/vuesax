@@ -3,6 +3,7 @@ const path = require("path");
 
 let Demos = path.join(__dirname, "Demos");
 let contributors = path.join(__dirname, "Demos");
+let componentsDir = path.join(__dirname);
 
 let components = {};
 
@@ -24,6 +25,7 @@ let handleDir = (dir) => {
 
 handleDir(Demos);
 handleDir(contributors);
+handleDir(componentsDir);
 
 module.exports = components;
 

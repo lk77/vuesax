@@ -1,30 +1,14 @@
-const fs = require("fs");
-const path = require("path");
-
-let theme = path.join(__dirname);
-
-let components = {};
-
-let handleFile = (filepath, filename) => {
-  if(filename.endsWith('.vue')) {
-    components[filename.split('.')[0]] = path.resolve(__dirname, filepath);
-  }
-}
-
-let handleDir = (dir) => {
-  fs.readdirSync(dir).forEach((file) => {
-    if (fs.lstatSync(dir + '/' + file).isDirectory()) {
-      handleDir(dir + '/' + file);
-    } else {
-      handleFile(dir + '/' + file, file);
-    }
-  })
-}
-
-handleDir(theme);
+const { path } = require('@vuepress/utils')
 
 module.exports = {
-  extend: '@vuepress/theme-default',
-  layouts: components
+  name: 'vuepress-theme-local',
+  //extends: '@vuepress/theme-default',
+  layouts: {
+    Home: path.resolve(__dirname, 'components/Home.vue'),
+    Layout: path.resolve(__dirname, 'layouts/Layout.vue'),
+    404: path.resolve(__dirname, 'layouts/404.vue'),
+    Navbar: path.resolve(__dirname, 'components/Navbar.vue'),
+  },
+  clientAppEnhanceFiles: path.resolve(__dirname, './clientAppEnhance.js'),
+  clientAppSetupFiles: path.resolve(__dirname, './clientAppSetup.js'),
 }
-

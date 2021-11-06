@@ -1,9 +1,9 @@
-import './main.styl'
+//import './main.styl'
 import Vuesax from '../../src'
 import Vuecode from './vc/dist/vuecode.common.js'
 import './vc/dist/vuecode.css'
-import demo from './theme/demo.vue'
-import Box from './theme/box.vue'
+import demo from './theme/components/demo.vue'
+import Box from './theme/components/box.vue'
 export default ({
   app, // the version of Vue being used in the VuePress app
   router, // the router instance for the app
