@@ -1,7 +1,8 @@
 <template>
-  <footer class="page-meta">
-    <div v-if="editNavLink" class="meta-item edit-link">
+  <footer class="page-meta content">
+    <div v-if="editNavLink" class="meta-item edit-link content">
       <NavLink class="meta-item-label" :item="editNavLink" />
+      <OutboundLink/>
     </div>
 
     <div v-if="lastUpdated" class="meta-item last-updated">
@@ -125,3 +126,34 @@ const editNavLink = useEditNavLink()
 const lastUpdated = useLastUpdated()
 const contributors = useContributors()
 </script>
+
+
+<style lang="scss">
+.edit-link {
+	&.content {
+		padding: 1rem 2rem !important;
+		padding-top: 0 !important;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		z-index: 10;
+		a {
+			margin-top: 0px !important;
+			margin-right: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #807b9f;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+  .edit-link {
+    text-align: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+</style>

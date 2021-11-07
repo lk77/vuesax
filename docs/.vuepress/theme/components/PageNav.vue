@@ -1,14 +1,12 @@
 <template>
-  <nav v-if="prevNavLink || nextNavLink" class="page-nav">
+  <nav v-if="prevNavLink || nextNavLink" class="page-nav content">
     <p class="inner">
       <span v-if="prevNavLink" class="prev">
-        ←
         <NavLink :item="prevNavLink" />
       </span>
 
       <span v-if="nextNavLink" class="next">
         <NavLink :item="nextNavLink" />
-        →
       </span>
     </p>
   </nav>
@@ -90,8 +88,12 @@ const prevNavLink = computed(() => {
   if (prevConfig !== false) {
     return prevConfig
   }
+  
+  let childResult = resolveFromSidebarItems(sidebarItems.value, route.path, -1);
+  
+  childResult.text = '< ' + childResult.text;
 
-  return resolveFromSidebarItems(sidebarItems.value, route.path, -1)
+  return childResult;
 })
 
 const nextNavLink = computed(() => {
@@ -100,6 +102,73 @@ const nextNavLink = computed(() => {
     return nextConfig
   }
 
-  return resolveFromSidebarItems(sidebarItems.value, route.path, 1)
+  let childResult = resolveFromSidebarItems(sidebarItems.value, route.path, 1);
+
+  childResult.text = childResult.text + ' >';
+
+  return childResult;
 })
 </script>
+
+<style lang="scss">
+.page-nav {
+	&.content {
+		padding-top: 1rem !important;
+		padding-bottom: 0 !important;
+		z-index: 10;
+		.inner {
+			min-height: 2rem;
+			margin-top: 0 !important;
+			padding-top: 1rem;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			span {
+				float: left;
+				cursor: pointer;
+				a {
+					background: #fff;
+					padding: 4px 10px;
+					transition: all 0.25s ease;
+					text-transform: none !important;
+					text-decoration: none;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					outline: none !important;
+					border-radius: 15px;
+					color: rgba(0,0,0,0.6);
+					border: 1px solid rgba(0,0,0,0.03);
+					font-size: 0.85rem;
+					i {
+						font-size: 1rem !important;
+					}
+					&:hover {
+						background: rgba(91,60,196,0.1);
+						color: #5b3cc4;
+						border: 1px solid rgba(91,60,196,0.3);
+					}
+				}
+			}
+		}
+		.next {
+			float: right;
+			i {
+				float: right;
+			}
+    }
+    .prev, .next {
+      display: flex;
+    }
+	}
+}
+@media (max-width: 550px) {
+  .page-nav {
+    &.content {
+      span {
+        font-size: 12px !important;
+      }
+    }
+  }
+}
+</style>

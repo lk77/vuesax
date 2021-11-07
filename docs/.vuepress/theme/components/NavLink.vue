@@ -22,8 +22,8 @@
   >
     <!--<slot name="before" />-->
     {{ item.text }}
-    <!--<OutboundLink v-if="isBlankTarget" />
-    <slot name="after" />-->
+    <!--<OutboundLink v-if="isBlankTarget" />-->
+    <!--<slot name="after" />-->
   </a>
 </template>
 
