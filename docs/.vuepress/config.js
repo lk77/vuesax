@@ -52,8 +52,27 @@ module.exports = {
         }
       },
       module: {
-        exprContextCritical: false
-      }
+        exprContextCritical: false,
+        rules: [
+          {
+            test: /\.vue$/,
+            use: [
+              {
+                loader: "vue-loader",
+                options: {
+                  compilerOptions: {
+                    directiveTransforms: {
+                      "repeat-click": () => ({
+                        props: [],
+                      }),
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        ]
+      },
     }}
   },
   /*markdown: {

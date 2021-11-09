@@ -6,7 +6,7 @@
       <div class="content content-pagex" style="margin-top:50px;">
         <Content :custom="false"/>
       </div>
-      
+
     </transition>
 
     <PageMeta />
@@ -48,26 +48,6 @@
 <script setup lang="ts">
 import PageMeta from './PageMeta.vue'
 import PageNav from './PageNav.vue'
-import {
-  usePageFrontmatter,
-  useSiteLocaleData,
-  withBase,
-} from '@vuepress/client'
-import { computed, onMounted, reactive } from 'vue'
-
-const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
-const siteLocale = useSiteLocaleData()
-
-const heroText = computed(() => {
-  if (frontmatter.value.heroText === null) {
-    return null
-  }
-  console.log(frontmatter);
-
-  return frontmatter.value.heroText || siteLocale.value.title || 'Hello'
-})
-
-console.log(frontmatter);
 </script>
 
 <style lang="scss">
