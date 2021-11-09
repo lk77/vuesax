@@ -53,19 +53,17 @@ Vuesax is an open source [MIT](https://raw.githubusercontent.com/lusaxweb/vuesax
 
 The framework is focused on facilitating the development of applications, improving the design of the same without removing the necessary functionality. we want all the components to be independent in colors, shapes and design for a freedom that we like all front-end but without losing the speed of creation and production.
 
-## Vuesax 4 (alpha)
+## Vuesax 3 for Vue 3
 
-We are already creating vuesax 4 you can see the progress [here](https://vuesax.com/) and if you want to help in the development you can do it [here](https://github.com/lusaxweb/vuesax-next)
+This fork bring vue 3 support to vuesax 3,
+There is still a lot of work to do, and there is still issues 
+with some components, like VsTable, VsSwitch and VsSelect.
 
-## Support the project ⭐
-
-If you feel awesome and want to support us in a small way, please consider starring and sharing the repo! This helps us getting known and grow the community. 🙏
-
-<img src="https://raw.githubusercontent.com/lusaxweb/vuesax/master/public/github-vuesax-star.gif" alt="vuesax-star" />
+You should look for vuesax-next for vuesax 4, which is still in alpha.
 
 ## Links
 
-- 📘 [Documentation](https://lusaxweb.github.io/vuesax/)
+- 📘 [Documentation](https://lk77.github.io/vuesax/)
 - 📚 [Blog](https://lusaxweb.github.io/vuesax-blog/)
 - 🐦 Twitter: [@vuesax](https://twitter.com/vuesax)
 - 💬 Chat: [Discord](https://discord.gg/6AZNXEa)
