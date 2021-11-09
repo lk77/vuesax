@@ -122,6 +122,10 @@ API:
    default: false
 ---
 
+:::warning
+  Table components are not yet compatible with vue3
+:::
+
 # Table
 
 <box header>

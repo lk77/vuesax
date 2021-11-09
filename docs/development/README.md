@@ -16,7 +16,7 @@ Vuesax is a library of Vuejs components that facilitates front-end development a
 </box>
 
 
-<box>
+<!--<box>
 
 ## Quick-start CDN
 
@@ -26,7 +26,7 @@ Start a project quickly using a CDN and let Vuesax do the magic.
 
 <iframe width="100%" height="300" src="//jsfiddle.net/luisdanielroviracontreras/txzqp7ny/362/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
-</box>
+</box>-->
 
 <box>
 
@@ -35,7 +35,7 @@ Start a project quickly using a CDN and let Vuesax do the magic.
 ```bash
 
 # install
-npm install vuesax # OR yarn add vuesax
+npm install vuesax3 # OR yarn add vuesax3
 
 ```
 
@@ -49,11 +49,12 @@ npm install vuesax # OR yarn add vuesax
 Vuesax is a Vuejs library. To use it, add the code below:
 
 ```js
-import Vue from 'vue'
-import Vuesax from 'vuesax'
+import {createApp} from 'vue'
+import Vuesax from 'vuesax3'
 
-import 'vuesax/dist/vuesax.css' //Vuesax styles
-Vue.use(Vuesax, {
+import 'vuesax3/dist/vuesax.css' //Vuesax styles
+const app = createApp({})
+app.use(Vuesax, {
   // options here
 })
 ```
@@ -68,13 +69,15 @@ Vue.use(Vuesax, {
 
 ```javascript
 
-import Vue from 'vue'
-import { vsButton, vsSelect, vsPopup } from 'vuesax'
-import 'vuesax/dist/vuesax.css'
+import {createApp} from 'vue'
+import { vsButton, vsSelect, vsPopup } from 'vuesax3'
+import 'vuesax3/dist/vuesax.css'
 
-Vue.use(vsButton)
-Vue.use(vsSelect)
-Vue.use(vsPopup)
+const app = createApp({})
+
+app.use(vsButton)
+app.use(vsSelect)
+app.use(vsPopup)
 
 ```
 

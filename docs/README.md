@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /vuesax-logo-beta.png
-heroText: <b>Vuesax</b> Frontend <a target="_blank" href="https://vuejs.org/" rel="noopener noreferrer">Vue</a> Components
+heroText: <b>Vuesax</b> Frontend <a target="_blank" href="https://https://v3.vuejs.org//" rel="noopener noreferrer">Vue 3</a> Components
 heroBackgroundComponent: city
 features:
 - title: <b>Experience</b> design
