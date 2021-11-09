@@ -46,15 +46,15 @@
     "postinstall": "node postinstall.js"
   },
   "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
     "@vue/compat": "^3.2.20",
-    "chalk": "^4.1.2",
     "path-browserify": "^0.0.1",
     "sass-loader": "^10.2.0",
     "stream": "^0.0.2",
     "style-loader": "^2.0.0",
-    "vue-loader": "^16.8.1"
-  },
-  "devDependencies": {
+    "vue-loader": "^16.8.1",
     "@babel/core": "^7.15.8",
     "@vue/cli-plugin-babel": "^4.5.14",
     "@vue/cli-service": "^4.5.14",
@@ -66,9 +66,9 @@
     "stylus": "^0.55.0",
     "stylus-loader": "^3.0.2",
     "viewcode": "0.0.27",
-    "vue": "^3.1.5",
     "vuepress": "^2.0.0-beta.26",
-    "webpack": "^4.46.0"
+    "webpack": "^4.46.0",
+    "vue": "^3.1.5"
   },
   "babel": {
     "presets": [
