@@ -43,11 +43,11 @@ You should look for vuesax-next for vuesax 4, which is still in alpha.
 
 ## Status
 
-| Status  | Number of Components | Percentage |
-|---------|----------------------|------------|
-| Vue 3   | 18                   | 60%        |
-| Vue 2   | 7                    | 23.3%        |
-| Unknown | 5                    | 16.6%        |
+| Status  | Number of Components | Percentage   |
+|---------|----------------------|--------------|
+| Vue 3   | 20                   | 66.6%        |
+| Vue 2   | 8                    | 26.6%        |
+| Unknown | 2                    | 6.6%         |
 
 ## Components
 
@@ -64,20 +64,20 @@ You should look for vuesax-next for vuesax 4, which is still in alpha.
 - [InputNumber](https://lk77.github.io/vuesax/components/number.html) - <i>vue2</i>
 - [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html) - <b>vue3</b>
 - [Upload](https://lk77.github.io/vuesax/components/upload.html) - unknown
-- [Loading](https://lk77.github.io/vuesax/components/loading.html) - unknown
+- [Loading](https://lk77.github.io/vuesax/components/loading.html) - <i>vue2</i>
 - [Popup](https://lk77.github.io/vuesax/components/popup.html) - <b>vue3</b>
 - [Avatar](https://lk77.github.io/vuesax/components/avatar.html) - <b>vue3</b>
 - [Breadcrumb](https://lk77.github.io/vuesax/components/breadcrumb.html) - <i>vue2</i>
 - [Alert](https://lk77.github.io/vuesax/components/alert.html) - <b>vue3</b> (except closable)
 - [Divider](https://lk77.github.io/vuesax/components/divider.html) - <b>vue3</b>
 - [Chip](https://lk77.github.io/vuesax/components/chip.html) - <b>vue3</b>
-- [Progress](https://lk77.github.io/vuesax/components/progress.html)
+- [Progress](https://lk77.github.io/vuesax/components/progress.html) - unknown
 - [Card](https://lk77.github.io/vuesax/components/card.html) - <b>vue3</b>
 - [List](https://lk77.github.io/vuesax/components/list.html) - <b>vue3</b>
 - [Pagination](https://lk77.github.io/vuesax/components/pagination.html) - <b>vue3</b>
-- [Topbar](https://lk77.github.io/vuesax/components/topbar.html) - unknown
+- [NAvbar](https://lk77.github.io/vuesax/components/navbar.html) - <b>vue3</b> (style/class binding issues)
 - [SideBar](https://lk77.github.io/vuesax/components/sideBar.html) - <i>vue2</i>
-- [DropDown](https://lk77.github.io/vuesax/components/dropDown.html) - unknown
+- [DropDown](https://lk77.github.io/vuesax/components/dropDown.html) - <b>vue3</b>
 - [Table](https://lk77.github.io/vuesax/components/table.html) - <i>vue2</i>
 - [Textarea](https://lk77.github.io/vuesax/components/textarea.html) - <b>vue3</b>
 - [Collapse](https://lk77.github.io/vuesax/components/collapse.html) - <i>vue2</i> (style issue)
