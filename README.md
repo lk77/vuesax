@@ -130,7 +130,7 @@ app.use(Vuesax)
 ### Or use individual components:
 
 ```javascript
-import { createapp } from 'vue'
+import { createApp } from 'vue'
 import { vsButton, vsPrompt } from 'vuesax'
 import 'vuesax/dist/vuesax.css'
 
