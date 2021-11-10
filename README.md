@@ -40,40 +40,54 @@ You should look for vuesax-next for vuesax 4, which is still in alpha.
 ## Links
 
 - 📘 [Documentation](https://lk77.github.io/vuesax/)
--
+
+## Status
+
+| Status  | Number of Components | Percentage |
+|---------|----------------------|------------|
+| Vue 3   | 18                   | 60%        |
+| Vue 2   | 7                    | 23.3%        |
+| Unknown | 5                    | 16.6%        |
+
 ## Components
 
-- [Buttons](https://lk77.github.io/vuesax/components/)
-- [Selects](https://lk77.github.io/vuesax/components/selects.html)
-- [Notifications](https://lk77.github.io/vuesax/components/notifications.html)
-- [Switch](https://lk77.github.io/vuesax/components/switch.html)
-- [CheckBox](https://lk77.github.io/vuesax/components/checkbox.html)
-- [Radio](https://lk77.github.io/vuesax/components/radio.html)
-- [Input](https://lk77.github.io/vuesax/components/input.html)
-- [Dialogs](https://lk77.github.io/vuesax/components/dialog.html)
-- [Tabs](https://lk77.github.io/vuesax/components/tabs.html)
-- [Slider](https://lk77.github.io/vuesax/components/slider.html)
-- [InputNumber](https://lk77.github.io/vuesax/components/number.html)
-- [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html)
-- [Upload](https://lk77.github.io/vuesax/components/upload.html)
-- [Loading](https://lk77.github.io/vuesax/components/loading.html)
-- [Popup](https://lk77.github.io/vuesax/components/popup.html)
-- [Avatar](https://lk77.github.io/vuesax/components/avatar.html)
-- [Breadcrumb](https://lk77.github.io/vuesax/components/breadcrumb.html)
-- [Alert](https://lk77.github.io/vuesax/components/alert.html)
-- [Divider](https://lk77.github.io/vuesax/components/divider.html)
-- [Chip](https://lk77.github.io/vuesax/components/chip.html)
+- [Buttons](https://lk77.github.io/vuesax/components/buttons.html) - <b>vue3</b>
+- [Selects](https://lk77.github.io/vuesax/components/selects.html) - <i>vue2</i>
+- [Notifications](https://lk77.github.io/vuesax/components/notifications.html) - <b>vue3</b>
+- [Switch](https://lk77.github.io/vuesax/components/switch.html) - <b>vue3</b>
+- [CheckBox](https://lk77.github.io/vuesax/components/checkbox.html) - <b>vue3</b>
+- [Radio](https://lk77.github.io/vuesax/components/radio.html) - <b>vue3</b>
+- [Input](https://lk77.github.io/vuesax/components/input.html) - <b>vue3</b>
+- [Dialogs](https://lk77.github.io/vuesax/components/dialog.html) - <i>vue2</i>
+- [Tabs](https://lk77.github.io/vuesax/components/tabs.html) - <b>vue3</b>
+- [Slider](https://lk77.github.io/vuesax/components/slider.html) - <b>vue3</b>
+- [InputNumber](https://lk77.github.io/vuesax/components/number.html) - <i>vue2</i>
+- [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html) - <b>vue3</b>
+- [Upload](https://lk77.github.io/vuesax/components/upload.html) - unknown
+- [Loading](https://lk77.github.io/vuesax/components/loading.html) - unknown
+- [Popup](https://lk77.github.io/vuesax/components/popup.html) - <b>vue3</b>
+- [Avatar](https://lk77.github.io/vuesax/components/avatar.html) - <b>vue3</b>
+- [Breadcrumb](https://lk77.github.io/vuesax/components/breadcrumb.html) - <i>vue2</i>
+- [Alert](https://lk77.github.io/vuesax/components/alert.html) - <b>vue3</b> (except closable)
+- [Divider](https://lk77.github.io/vuesax/components/divider.html) - <b>vue3</b>
+- [Chip](https://lk77.github.io/vuesax/components/chip.html) - <b>vue3</b>
 - [Progress](https://lk77.github.io/vuesax/components/progress.html)
-- [Card](https://lk77.github.io/vuesax/components/card.html)
-- [List](https://lk77.github.io/vuesax/components/list.html)
-- [Pagination](https://lk77.github.io/vuesax/components/pagination.html)
-- [Topbar](https://lk77.github.io/vuesax/components/topbar.html)
-- [SideBar](https://lk77.github.io/vuesax/components/sideBar.html)
-- [DropDown](https://lk77.github.io/vuesax/components/dropDown.html)
-- [Table](https://lk77.github.io/vuesax/components/table.html)
-- [Textarea](https://lk77.github.io/vuesax/components/textarea.html)
-- [Collapse](https://lk77.github.io/vuesax/components/collapse.html)
-- [Images](https://lk77.github.io/vuesax/components/images.html)
+- [Card](https://lk77.github.io/vuesax/components/card.html) - <b>vue3</b>
+- [List](https://lk77.github.io/vuesax/components/list.html) - <b>vue3</b>
+- [Pagination](https://lk77.github.io/vuesax/components/pagination.html) - <b>vue3</b>
+- [Topbar](https://lk77.github.io/vuesax/components/topbar.html) - unknown
+- [SideBar](https://lk77.github.io/vuesax/components/sideBar.html) - <i>vue2</i>
+- [DropDown](https://lk77.github.io/vuesax/components/dropDown.html) - unknown
+- [Table](https://lk77.github.io/vuesax/components/table.html) - <i>vue2</i>
+- [Textarea](https://lk77.github.io/vuesax/components/textarea.html) - <b>vue3</b>
+- [Collapse](https://lk77.github.io/vuesax/components/collapse.html) - <i>vue2</i> (style issue)
+- [Images](https://lk77.github.io/vuesax/components/images.html) - <b>vue3</b>
+
+## To Be Fixed
+
+- usages of vue router
+- material icons
+- Alert Closables
 
 ## Browser Support
 Recent versions of **Firefox**, **Chrome**, **Edge**, **Opera** and **Safari**. **IE11+**
@@ -93,7 +107,7 @@ Recent versions of **Firefox**, **Chrome**, **Edge**, **Opera** and **Safari**. 
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuesax3/dist/vuesax.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuesax3@/dist/vuesax.umd.js"></script>
   <script>
     const app = window.Vue.createApp({});
     app.use(window.Vuesax);
