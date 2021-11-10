@@ -32,7 +32,7 @@ The framework is focused on facilitating the development of applications, improv
 ## Vuesax 3 for Vue 3
 
 This fork bring vue 3 support to vuesax 3,
-There is still a lot of work to do, and there is still issues 
+There is still a lot of work to do, and there is still issues
 with some components, like VsTable, VsSwitch and VsSelect.
 
 You should look for vuesax-next for vuesax 4, which is still in alpha.
@@ -40,7 +40,7 @@ You should look for vuesax-next for vuesax 4, which is still in alpha.
 ## Links
 
 - 📘 [Documentation](https://lk77.github.io/vuesax/)
-- 
+-
 ## Components
 
 - [Buttons](https://lk77.github.io/vuesax/components/)
@@ -78,9 +78,30 @@ You should look for vuesax-next for vuesax 4, which is still in alpha.
 ## Browser Support
 Recent versions of **Firefox**, **Chrome**, **Edge**, **Opera** and **Safari**. **IE11+**
 
-## CDN / UMD
+## Quick-start CDN
 
-Not yet supported with Vue3, but coming very soon !
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/vuesax3/dist/vuesax.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <vs-button vs-type="filled">Hello World</vs-button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuesax3/dist/vuesax.umd.js"></script>
+  <script>
+    const app = window.Vue.createApp({});
+    app.use(window.Vuesax);
+    app.mount('#app');
+  </script>
+</body>
+</html>
+```
 
 # Install inside a NPM project
 ``` bash

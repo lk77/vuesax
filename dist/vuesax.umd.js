@@ -10911,7 +10911,9 @@ function install(app) {
 
 
 
-if (false) {}
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vuesax = install;
+}
 
 /* harmony default export */ var src_0 = (install);
  //export { default as vsSelect } from './components/vsSelect'

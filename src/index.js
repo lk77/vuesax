@@ -1,8 +1,8 @@
 import './style/vuesax.styl'
 import install from './install';
 
-if (typeof module === 'undefined' && typeof window !== 'undefined' && window.Vue && !require.main === module) {
-  install(window.Vue)
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vuesax = install;
 }
 
 export default install
