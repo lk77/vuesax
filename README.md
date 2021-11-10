@@ -145,8 +145,8 @@ app.use(Vuesax)
 
 ```javascript
 import { createApp } from 'vue'
-import { vsButton, vsPrompt } from 'vuesax'
-import 'vuesax/dist/vuesax.css'
+import { vsButton, vsPrompt } from 'vuesax3'
+import 'vuesax3/dist/vuesax.css'
 
 const app = createApp({})
 app.use(vsButton)
