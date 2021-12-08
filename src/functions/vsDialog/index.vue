@@ -125,6 +125,7 @@ export default {
     isPrompt:true,
     fActive: false,
     parameters: null,
+    console: console
   }),
   computed:{
     styleHeader(){
@@ -194,7 +195,7 @@ export default {
       }, 200);
     },
     handleClose(event,con){
-      //console.log('handle close');
+      console.log('handle close');
       if(con){
         if(event.target.className.indexOf('vs-dialog-dark')!=-1 && this.type == 'alert'){
           this.fActive = false

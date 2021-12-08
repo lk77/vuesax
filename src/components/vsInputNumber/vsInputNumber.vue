@@ -10,7 +10,7 @@
       v-repeat-click="less"
       :disabled="$attrs.disabled"
       :class="{
-        limit:value <= min
+        limit:parseInt(modelValue) <= parseInt(min)
       }"
       :style="{
         background:getColor
@@ -37,7 +37,7 @@
       v-repeat-click="plus"
       :disabled="$attrs.disabled"
       :class="{
-        limit:value >= max && max !== null
+        limit:parseInt(modelValue) >= parseInt(max) && max !== null
       }"
       :style="{
         background:getColor
@@ -58,7 +58,7 @@ export default {
   name:'VsInputNumber',
   directives: {
     repeatClick: {
-      bind(el, binding, vnode) {
+      beforeMount(el, binding, vnode) {
         let intervalx = null;
         let startT;
         const functionx = binding.value;

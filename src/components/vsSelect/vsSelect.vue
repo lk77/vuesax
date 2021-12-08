@@ -16,6 +16,7 @@
       <!-- v-model="modelValueFilter" -->
       <input
         v-bind="attrs"
+        :value="modelValuex"
         ref="inputselect"
         :readonly="!autocomplete"
         class="input-select vs-select--input"

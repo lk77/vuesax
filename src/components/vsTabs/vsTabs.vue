@@ -17,12 +17,12 @@
           @mouseover="hover = true"
           @mouseout="hover = false">
           <button
-            v-bind="child.attrs"
+            v-bind="allowedAttrs(child.$attrs)"
             :style="styleAlignIcon(child.icon)"
             class="vs-tabs--btn"
             type="button"
             @click="activeChild(index)"
-            v-on="child.attrs">
+            v-on="child.$attrs">
             <vs-icon
               v-if="child.icon"
               :icon-pack="child.iconPack"
@@ -130,6 +130,16 @@ export default {
     })
   },
   methods:{
+    // restore old behaviour without class/style in $attrs
+    allowedAttrs(attrs) {
+      let result = {};
+      Object.keys(attrs).forEach(attrName => {
+        if(!['class', 'style'].includes(attrName)) {
+          result[attrName] = attrs[attrName];
+        }
+      });
+      return result;
+    },
     clickTag(child) {
       this.$emit('click-tag', child)
     },
