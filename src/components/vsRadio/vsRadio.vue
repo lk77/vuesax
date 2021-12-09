@@ -1,6 +1,7 @@
 <template lang="html">
   <label
-    :class="[`vs-radio-${color}`]"
+    :class="[`vs-radio-${color}`, this.$attrs.class]"
+    :style="this.$attrs.style"
     class="vs-component con-vs-radio">
     <input
       v-bind="attrs"
@@ -28,7 +29,7 @@
 import _color from '../../utils/color.js'
 export default {
   name:'VsRadio',
-  inheritAttrs:false,
+  //inheritAttrs:false,
   props:{
     modelValue:{},
     vsValue:{},
@@ -42,6 +43,8 @@ export default {
     attrs(){
       return {
         ...this.$attrs,
+        class: '',
+        style: '',
         onInput: () => this.$emit('update:modelValue', this.vsValue),
         //click: () => this.$emit('update:modelValue', this.vsValue)
       }

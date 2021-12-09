@@ -159,7 +159,7 @@
   methods:{
     searchParent(_this, callback) {
       let parent = _this.$parent
-      if (parent.$el && parent.$el.className) return
+      if (!(parent.$el && parent.$el.className)) return
       if (!Object.prototype.hasOwnProperty.call(parent, 'childrenItems')) {
         this.searchParent(parent, callback)
       } else {
@@ -242,7 +242,6 @@
       }
     },
     putValue(){
-      console.log(this.modelValue, this.$parent);
       if(this.modelValue == this.parent.modelValue){
         this.parent.modelValuex = this.text
       }

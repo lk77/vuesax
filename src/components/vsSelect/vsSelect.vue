@@ -22,6 +22,7 @@
         class="input-select vs-select--input"
         type="text"
         @keydown.esc.stop.prevent="closeOptions">
+      <input :name="$attrs.name" type="hidden" :value="modelValue">
 
       <button
         :class="{'activeBtnClear': activeBtnClear}"
@@ -205,6 +206,7 @@ export default {
     attrs() {
       return {
         ...this.$attrs,
+        name: this.$attrs.name + '_label',
         onBlur: event => {
           if (
             this.autocomplete && event.relatedTarget
