@@ -89,6 +89,7 @@ export default {
       return {
         ...this.$attrs,
         onInput: (evt) => {
+          evt.stopPropagation();
           this.toggleValue(evt)
         },
       }
