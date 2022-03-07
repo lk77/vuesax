@@ -3314,15 +3314,15 @@ const vsSelectGroup_exports_ = /*#__PURE__*/exportHelper_default()(vsSelectGroup
   Vue.component(vsSelectItem.name, vsSelectItem);
   Vue.component(vsSelectGroup.name, vsSelectGroup);
 });
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsSwitch/vsSwitch.vue?vue&type=template&id=0d03d11a&lang=html
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsSwitch/vsSwitch.vue?vue&type=template&id=019b3f90&lang=html
 
-var vsSwitchvue_type_template_id_0d03d11a_lang_html_hoisted_1 = ["disabled", "value"];
+var vsSwitchvue_type_template_id_019b3f90_lang_html_hoisted_1 = ["disabled", "value"];
 
-var vsSwitchvue_type_template_id_0d03d11a_lang_html_hoisted_2 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
+var vsSwitchvue_type_template_id_019b3f90_lang_html_hoisted_2 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
   class: "vs-circle-switch vs-switch--circle"
 }, null, -1);
 
-function vsSwitchvue_type_template_id_0d03d11a_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsSwitchvue_type_template_id_019b3f90_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])(_ctx.$attrs, {
@@ -3336,7 +3336,7 @@ function vsSwitchvue_type_template_id_0d03d11a_lang_html_render(_ctx, _cache, $p
     value: $props.modelValue,
     class: "input-switch vs-switch--input",
     type: "checkbox"
-  }), null, 16, vsSwitchvue_type_template_id_0d03d11a_lang_html_hoisted_1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
+  }), null, 16, vsSwitchvue_type_template_id_019b3f90_lang_html_hoisted_1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
     ref: "on",
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([{
       'active-text': $options.isChecked || _ctx.$attrs.checked
@@ -3354,9 +3354,9 @@ function vsSwitchvue_type_template_id_0d03d11a_lang_html_render(_ctx, _cache, $p
     "icon-pack": $props.iconPack,
     icon: $props.vsIconOff || $props.vsIcon,
     class: "icons-switch vs-switch--icon"
-  }, null, 8, ["icon-pack", "icon"])], 2), vsSwitchvue_type_template_id_0d03d11a_lang_html_hoisted_2], 16);
+  }, null, 8, ["icon-pack", "icon"])], 2), vsSwitchvue_type_template_id_019b3f90_lang_html_hoisted_2], 16);
 }
-// CONCATENATED MODULE: ./src/components/vsSwitch/vsSwitch.vue?vue&type=template&id=0d03d11a&lang=html
+// CONCATENATED MODULE: ./src/components/vsSwitch/vsSwitch.vue?vue&type=template&id=019b3f90&lang=html
 
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsSwitch/vsSwitch.vue?vue&type=script&lang=js
 
@@ -3414,6 +3414,8 @@ function vsSwitchvue_type_template_id_0d03d11a_lang_html_render(_ctx, _cache, $p
 
       return _objectSpread2(_objectSpread2({}, this.$attrs), {}, {
         onInput: function onInput(evt) {
+          evt.stopPropagation();
+
           _this.toggleValue(evt);
         }
       });
@@ -3472,7 +3474,7 @@ function vsSwitchvue_type_template_id_0d03d11a_lang_html_render(_ctx, _cache, $p
 
 
 
-const vsSwitch_exports_ = /*#__PURE__*/exportHelper_default()(vsSwitchvue_type_script_lang_js, [['render',vsSwitchvue_type_template_id_0d03d11a_lang_html_render]])
+const vsSwitch_exports_ = /*#__PURE__*/exportHelper_default()(vsSwitchvue_type_script_lang_js, [['render',vsSwitchvue_type_template_id_019b3f90_lang_html_render]])
 
 /* harmony default export */ var vsSwitch = (vsSwitch_exports_);
 // CONCATENATED MODULE: ./src/components/vsSwitch/index.js
@@ -10811,38 +10813,51 @@ const vsLoading_exports_ = /*#__PURE__*/exportHelper_default()(vsLoadingvue_type
 
 
 
-var vsDialog_instance;
 /* harmony default export */ var functions_vsDialog = ({
   name: 'dialog',
   vsfunction: function vsfunction(props) {
-    vsDialog_instance = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createApp"])({
-      extends: vsDialog,
-      data: function data() {
-        return {
-          isPrompt: false
-        };
+    var div = document.createElement("div");
+    var id = utils.randomId();
+    div.setAttribute('id', id);
+    utils.insertBody(div);
+    var app = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createApp"])({
+      render: function render() {
+        return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["h"])({
+          extends: vsDialog,
+          data: function data() {
+            return {
+              isPrompt: false
+            };
+          },
+          mounted: function mounted() {
+            this.fActive = true;
+          },
+          watch: {
+            fActive: function fActive(val) {
+              if (!val) {
+                app.unmount();
+                utils.removeBody(div);
+              }
+            }
+          }
+        }, {
+          onAccept: props.accept || null,
+          onCancel: props.cancel || null,
+          text: props.text,
+          title: props.title || 'Dialog',
+          color: props.color,
+          type: props.type || 'alert',
+          buttonAccept: props.buttonAccept || 'filled',
+          buttonCancel: props.buttonCancel || 'flat',
+          acceptText: props.acceptText || 'Accept',
+          cancelText: props.cancelText || 'Cancel',
+          closeIcon: props.closeIcon || 'close',
+          iconPack: props.iconPack || 'material-icons',
+          isValid: props.isValid || 'none'
+        });
       }
-    }, {
-      text: props.text,
-      title: props.title || 'Dialog',
-      color: props.color,
-      type: props.type || 'alert',
-      buttonAccept: props.buttonAccept || 'filled',
-      buttonCancel: props.buttonCancel || 'flat',
-      acceptText: props.acceptText || 'Accept',
-      cancelText: props.cancelText || 'Cancel',
-      closeIcon: props.closeIcon || 'close',
-      iconPack: props.iconPack || 'material-icons',
-      isValid: props.isValid || 'none'
     });
-    vsDialog_instance.vm = vsDialog_instance.mount();
-    props.accept ? vsDialog_instance.vm.$on('accept', props.accept) : null;
-    props.cancel ? vsDialog_instance.vm.$on('cancel', props.cancel) : null;
-    utils.insertBody(vsDialog_instance.vm.$el, props.parent);
-    Vue.nextTick(function () {
-      vsDialog_instance.$data.fActive = true;
-      vsDialog_instance.$data.parameters = props.parameters;
-    });
+    app.mount('#' + id);
   }
 });
 // CONCATENATED MODULE: ./src/functions/index.js
