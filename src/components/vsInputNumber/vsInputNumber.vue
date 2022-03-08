@@ -5,7 +5,7 @@
       `vs-input-number-${color}`,
       {'isChangeValue':isChangeValue}
     ]"
-    class="vs-input-number">
+    class="vs-input-number" v-bind="$attrs">
     <button
       v-repeat-click="less"
       :disabled="$attrs.disabled"
@@ -153,7 +153,7 @@ export default {
     },
     attrs(){
       return {
-        ...this.$attrs,
+        //...this.$attrs,
         onBlur:(evt)=>{
           if(parseFloat(this.modelValue) > parseFloat(this.max)) {
             this.$emit('update:modelValue',this.max)
