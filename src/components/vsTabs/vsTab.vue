@@ -37,14 +37,6 @@ export default {
     invert:false,
     parent: null
   }),
-  watch: {
-    label(val) {
-      this.parent.children[this.id].label = val;
-    },
-    '$attrs'(val) {
-      this.parent.childrenItems[this.id].attrs = val;
-    }
-  },
   mounted() {
     this.searchParent(this, (parent) => {
       this.parent = parent;
