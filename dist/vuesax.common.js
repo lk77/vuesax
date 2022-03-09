@@ -4426,25 +4426,25 @@ const vsIcon_exports_ = /*#__PURE__*/exportHelper_default()(vsIconvue_type_scrip
 const vsTabs_exports_ = /*#__PURE__*/exportHelper_default()(vsTabsvue_type_script_lang_js, [['render',vsTabsvue_type_template_id_218201bc_lang_html_render]])
 
 /* harmony default export */ var vsTabs = (vsTabs_exports_);
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsTabs/vsTab.vue?vue&type=template&id=6d41cfdf&lang=html
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsTabs/vsTab.vue?vue&type=template&id=07d38360&lang=html
 
-var vsTabvue_type_template_id_6d41cfdf_lang_html_hoisted_1 = {
+var vsTabvue_type_template_id_07d38360_lang_html_hoisted_1 = {
   key: 0,
   class: "con-tab vs-tabs--content"
 };
-function vsTabvue_type_template_id_6d41cfdf_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsTabvue_type_template_id_07d38360_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])(_ctx.$attrs.class),
     style: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeStyle"])(_ctx.$attrs.style),
     name: _ctx.invert ? _ctx.vertical ? 'fade-tab-vertical-invert' : 'fade-tab-invert' : _ctx.vertical ? 'fade-tab-vertical' : 'fade-tab'
   }, {
     default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-      return [_ctx.active ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", vsTabvue_type_template_id_6d41cfdf_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
+      return [_ctx.active ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", vsTabvue_type_template_id_07d38360_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
     }),
     _: 3
   }, 8, ["class", "style", "name"]);
 }
-// CONCATENATED MODULE: ./src/components/vsTabs/vsTab.vue?vue&type=template&id=6d41cfdf&lang=html
+// CONCATENATED MODULE: ./src/components/vsTabs/vsTab.vue?vue&type=template&id=07d38360&lang=html
 
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsTabs/vsTab.vue?vue&type=script&lang=js
 /* harmony default export */ var vsTabvue_type_script_lang_js = ({
@@ -4477,14 +4477,6 @@ function vsTabvue_type_template_id_6d41cfdf_lang_html_render(_ctx, _cache, $prop
       parent: null
     };
   },
-  watch: {
-    label: function label(val) {
-      this.parent.children[this.id].label = val;
-    },
-    '$attrs': function $attrs(val) {
-      this.parent.childrenItems[this.id].attrs = val;
-    }
-  },
   mounted: function mounted() {
     var _this2 = this;
 
@@ -4515,7 +4507,7 @@ function vsTabvue_type_template_id_6d41cfdf_lang_html_render(_ctx, _cache, $prop
 
 
 
-const vsTab_exports_ = /*#__PURE__*/exportHelper_default()(vsTabvue_type_script_lang_js, [['render',vsTabvue_type_template_id_6d41cfdf_lang_html_render]])
+const vsTab_exports_ = /*#__PURE__*/exportHelper_default()(vsTabvue_type_script_lang_js, [['render',vsTabvue_type_template_id_07d38360_lang_html_render]])
 
 /* harmony default export */ var vsTab = (vsTab_exports_);
 // CONCATENATED MODULE: ./src/components/vsTabs/index.js
@@ -4997,24 +4989,24 @@ const vsSlider_exports_ = /*#__PURE__*/exportHelper_default()(vsSlidervue_type_s
 /* harmony default export */ var components_vsSlider = (function (Vue) {
   Vue.component(vsSlider.name, vsSlider);
 });
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsInputNumber/vsInputNumber.vue?vue&type=template&id=d0d8df9a&lang=html
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsInputNumber/vsInputNumber.vue?vue&type=template&id=7fc5e9be&lang=html
 
-var vsInputNumbervue_type_template_id_d0d8df9a_lang_html_hoisted_1 = ["disabled"];
-var vsInputNumbervue_type_template_id_d0d8df9a_lang_html_hoisted_2 = {
+var vsInputNumbervue_type_template_id_7fc5e9be_lang_html_hoisted_1 = ["disabled"];
+var vsInputNumbervue_type_template_id_7fc5e9be_lang_html_hoisted_2 = {
   key: 0
 };
-var vsInputNumbervue_type_template_id_d0d8df9a_lang_html_hoisted_3 = ["value", "disabled", "min", "max"];
-var vsInputNumbervue_type_template_id_d0d8df9a_lang_html_hoisted_4 = ["disabled"];
-function vsInputNumbervue_type_template_id_d0d8df9a_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+var vsInputNumbervue_type_template_id_7fc5e9be_lang_html_hoisted_3 = ["value", "disabled", "min", "max"];
+var vsInputNumbervue_type_template_id_7fc5e9be_lang_html_hoisted_4 = ["disabled"];
+function vsInputNumbervue_type_template_id_7fc5e9be_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
 
   var _directive_repeat_click = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDirective"])("repeat-click");
 
-  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([["vs-input-number-size-".concat($props.size), "vs-input-number-".concat($props.color), {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+    class: [["vs-input-number-size-".concat($props.size), "vs-input-number-".concat($props.color), {
       'isChangeValue': _ctx.isChangeValue
-    }], "vs-input-number"])
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("button", {
+    }], "vs-input-number"]
+  }, _ctx.$attrs), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("button", {
     disabled: _ctx.$attrs.disabled,
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([{
       limit: parseInt($props.modelValue) <= parseInt($props.min)
@@ -5026,7 +5018,7 @@ function vsInputNumbervue_type_template_id_d0d8df9a_lang_html_render(_ctx, _cach
   }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_vs_icon, {
     "icon-pack": $props.iconPack,
     icon: $props.iconDec
-  }, null, 8, ["icon-pack", "icon"])], 14, vsInputNumbervue_type_template_id_d0d8df9a_lang_html_hoisted_1), [[_directive_repeat_click, $options.less]]), $props.label ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("span", vsInputNumbervue_type_template_id_d0d8df9a_lang_html_hoisted_2, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("input", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])($options.attrs, {
+  }, null, 8, ["icon-pack", "icon"])], 14, vsInputNumbervue_type_template_id_7fc5e9be_lang_html_hoisted_1), [[_directive_repeat_click, $options.less]]), $props.label ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("span", vsInputNumbervue_type_template_id_7fc5e9be_lang_html_hoisted_2, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("input", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])($options.attrs, {
     ref: "input",
     style: $options.styleInput,
     value: $props.modelValue,
@@ -5035,7 +5027,7 @@ function vsInputNumbervue_type_template_id_d0d8df9a_lang_html_render(_ctx, _cach
     max: $props.max,
     type: "number",
     class: "vs-input-number--input"
-  }), null, 16, vsInputNumbervue_type_template_id_d0d8df9a_lang_html_hoisted_3), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("button", {
+  }), null, 16, vsInputNumbervue_type_template_id_7fc5e9be_lang_html_hoisted_3), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("button", {
     disabled: _ctx.$attrs.disabled,
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([{
       limit: parseInt($props.modelValue) >= parseInt($props.max) && $props.max !== null
@@ -5047,12 +5039,11 @@ function vsInputNumbervue_type_template_id_d0d8df9a_lang_html_render(_ctx, _cach
   }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_vs_icon, {
     "icon-pack": $props.iconPack,
     icon: $props.iconInc
-  }, null, 8, ["icon-pack", "icon"])], 14, vsInputNumbervue_type_template_id_d0d8df9a_lang_html_hoisted_4), [[_directive_repeat_click, $options.plus]])], 2);
+  }, null, 8, ["icon-pack", "icon"])], 14, vsInputNumbervue_type_template_id_7fc5e9be_lang_html_hoisted_4), [[_directive_repeat_click, $options.plus]])], 16);
 }
-// CONCATENATED MODULE: ./src/components/vsInputNumber/vsInputNumber.vue?vue&type=template&id=d0d8df9a&lang=html
+// CONCATENATED MODULE: ./src/components/vsInputNumber/vsInputNumber.vue?vue&type=template&id=7fc5e9be&lang=html
 
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsInputNumber/vsInputNumber.vue?vue&type=script&lang=js
-
 
 
 
@@ -5174,7 +5165,8 @@ function vsInputNumbervue_type_template_id_d0d8df9a_lang_html_render(_ctx, _cach
     attrs: function attrs() {
       var _this = this;
 
-      return _objectSpread2(_objectSpread2({}, this.$attrs), {}, {
+      return {
+        //...this.$attrs,
         onBlur: function onBlur(evt) {
           if (parseFloat(_this.modelValue) > parseFloat(_this.max)) {
             _this.$emit('update:modelValue', _this.max);
@@ -5187,7 +5179,7 @@ function vsInputNumbervue_type_template_id_d0d8df9a_lang_html_render(_ctx, _cach
         onInput: function onInput(evt) {
           _this.$emit('update:modelValue', evt.target.value);
         }
-      });
+      };
     }
   },
   watch: {
@@ -5241,7 +5233,7 @@ function vsInputNumbervue_type_template_id_d0d8df9a_lang_html_render(_ctx, _cach
 
 
 
-const vsInputNumber_exports_ = /*#__PURE__*/exportHelper_default()(vsInputNumbervue_type_script_lang_js, [['render',vsInputNumbervue_type_template_id_d0d8df9a_lang_html_render]])
+const vsInputNumber_exports_ = /*#__PURE__*/exportHelper_default()(vsInputNumbervue_type_script_lang_js, [['render',vsInputNumbervue_type_template_id_7fc5e9be_lang_html_render]])
 
 /* harmony default export */ var vsInputNumber = (vsInputNumber_exports_);
 // CONCATENATED MODULE: ./src/components/vsInputNumber/index.js
