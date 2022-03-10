@@ -113,13 +113,19 @@ export default {
       el.style.opacity = 0
     },
     enter(el, done){
-      let h = this.$refs.alert.scrollHeight
-      this.$refs.alert.style.height = h + 'px'
+      if(this.$refs.alert) {
+        let h = this.$refs.alert.scrollHeight
+        this.$refs.alert.style.height = h + 'px'
+      }
+
       el.style.opacity = 1
       done()
     },
     leave(el) {
-      this.$refs.alert.style.height = 0 + 'px'
+      if(this.$refs.alert) {
+        this.$refs.alert.style.height = 0 + 'px'
+      }
+
       el.style.opacity = 0
     }
   }

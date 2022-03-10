@@ -125,7 +125,7 @@ export default {
     isPrompt:true,
     fActive: false,
     parameters: null,
-    console: console
+    closing: false
   }),
   computed:{
     styleHeader(){
@@ -195,6 +195,13 @@ export default {
       }, 200);
     },
     handleClose(event,con){
+      // temporary fix see why handleClose is called multiple times
+      if(!this.closing) {
+        this.closing = true;
+      } else {
+        return;
+      }
+
       if(con){
         if(event.target.className.indexOf('vs-dialog-dark')!=-1 && this.type == 'alert'){
           this.fActive = false
@@ -209,6 +216,9 @@ export default {
         }
       }
       this.$emit('close')
+      this.$nextTick(() => {
+        this.closing = false;
+      })
     },
     cancelClose(){
       this.fActive = false

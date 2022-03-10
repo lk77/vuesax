@@ -38,7 +38,7 @@ with some components, like VsTable and VsSwitch.
 You should look for vuesax-next for vuesax 4, which is still in alpha.
 
 Please note that Vue 3 changes have not been applied to the documentation examples,
-so do not forget for example to replace instances of :value by :modelValue
+so do not forget for example to replace instances of :value by :modelValue, or instances of :active.sync by v-model:active
 
 ## Links
 
@@ -48,8 +48,8 @@ so do not forget for example to replace instances of :value by :modelValue
 
 | Status  | Number of Components | Percentage   |
 |---------|----------------------|--------------|
-| Vue 3   | 22                   | 73%          |
-| Vue 2   | 6                    | 20%          |
+| Vue 3   | 23                   | 76%          |
+| Vue 2   | 5                    | 17%          |
 | Unknown | 2                    | 7%           |
 
 ## Components
@@ -61,7 +61,7 @@ so do not forget for example to replace instances of :value by :modelValue
 - [CheckBox](https://lk77.github.io/vuesax/components/checkbox.html) - <b>vue3</b>
 - [Radio](https://lk77.github.io/vuesax/components/radio.html) - <b>vue3</b>
 - [Input](https://lk77.github.io/vuesax/components/input.html) - <b>vue3</b>
-- [Dialogs](https://lk77.github.io/vuesax/components/dialog.html) - <i>vue2</i>
+- [Dialogs](https://lk77.github.io/vuesax/components/dialog.html) - <b>vue3</b>
 - [Tabs](https://lk77.github.io/vuesax/components/tabs.html) - <b>vue3</b>
 - [Slider](https://lk77.github.io/vuesax/components/slider.html) - <b>vue3</b>
 - [InputNumber](https://lk77.github.io/vuesax/components/number.html) - <b>vue3</b>
