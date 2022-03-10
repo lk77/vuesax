@@ -245,7 +245,7 @@ export default {
           }
 
           this.childrenItems.map(item => {
-            item.modelValueInputx = this.$refs.inputselect.modelValue;
+            item.modelValueInputx = this.$refs.inputselect.value;
           });
         }
       };
@@ -276,7 +276,7 @@ export default {
     }
   },
   mounted() {
-    // this.$refs.inputselect.modelValue = this.modelValue
+    this.$refs.inputselect.value = this.modelValue
     this.changeValue();
     if (this.active) {
       utils.insertBody(this.$refs.vsSelectOptions);
@@ -322,7 +322,7 @@ export default {
           this.$emit('update:modelValue', currentValues);
           this.filterItems("");
           this.changeValue();
-          // this.$refs.inputselect.modelValue += ','
+          // this.$refs.inputselect.value += ','
           this.$refs.inputselect.focus();
         } else {
           currentValues.push(modelValue);
@@ -339,11 +339,11 @@ export default {
       }
       let items = this.childrenItems;
 
-      items.forEach(item => {
+      /*items.forEach(item => {
         if (item.childrenItems.length > 0) {
           items = [...items, ...item.childrenItems];
         }
-      });
+      });*/
 
       items.map(item => {
         if (!("text" in item)) return;
@@ -388,11 +388,12 @@ export default {
         let modelValues = this.modelValue ? this.modelValue : [];
         let options = this.childrenItems;
 
-        options.forEach(item => {
+        /*options.forEach(item => {
           if (item.childrenItems.length > 0) {
             options = [...options, ...item.childrenItems];
           }
         });
+        options = options.filter(o => !o.childrenItems);*/
 
         let optionsValues = [];
         modelValues.forEach(item => {
@@ -404,10 +405,10 @@ export default {
             }
           });
         });
-        this.$refs.inputselect.modelValue = optionsValues.toString();
+        this.$refs.inputselect.value = optionsValues.toString();
       } else {
         if (this.$refs.inputselect) {
-          this.$refs.inputselect.modelValue = this.modelValuex;
+          this.$refs.inputselect.value = this.modelValuex;
         }
       }
     },
@@ -419,7 +420,7 @@ export default {
       if (this.autocomplete && this.multiple) {
         setTimeout(() => {
           if (inputx.modelValue) {
-            this.$refs.inputselect.modelValue = inputx.modelValue += ",";
+            this.$refs.inputselect.value = inputx.modelValue += ",";
           }
           inputx.selectionStart = inputx.selectionEnd = 10000;
         }, 10);
