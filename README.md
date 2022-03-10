@@ -48,8 +48,8 @@ so do not forget for example to replace instances of :value by :modelValue
 
 | Status  | Number of Components | Percentage   |
 |---------|----------------------|--------------|
-| Vue 3   | 21                   | 70%          |
-| Vue 2   | 7                    | 23%          |
+| Vue 3   | 22                   | 73%          |
+| Vue 2   | 6                    | 20%          |
 | Unknown | 2                    | 7%           |
 
 ## Components
@@ -64,7 +64,7 @@ so do not forget for example to replace instances of :value by :modelValue
 - [Dialogs](https://lk77.github.io/vuesax/components/dialog.html) - <i>vue2</i>
 - [Tabs](https://lk77.github.io/vuesax/components/tabs.html) - <b>vue3</b>
 - [Slider](https://lk77.github.io/vuesax/components/slider.html) - <b>vue3</b>
-- [InputNumber](https://lk77.github.io/vuesax/components/number.html) - <i>vue2</i>
+- [InputNumber](https://lk77.github.io/vuesax/components/number.html) - <b>vue3</b>
 - [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html) - <b>vue3</b>
 - [Upload](https://lk77.github.io/vuesax/components/upload.html) - unknown
 - [Loading](https://lk77.github.io/vuesax/components/loading.html) - <i>vue2</i>
