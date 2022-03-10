@@ -6144,10 +6144,10 @@ const vsPopup_exports_ = /*#__PURE__*/exportHelper_default()(vsPopupvue_type_scr
 /* harmony default export */ var components_vsPopup = (function (Vue) {
   Vue.component(vsPopup.name, vsPopup);
 });
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsAlert/vsAlert.vue?vue&type=template&id=fd2099da&lang=html
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsAlert/vsAlert.vue?vue&type=template&id=7279bdf7&lang=html
 
-var vsAlertvue_type_template_id_fd2099da_lang_html_hoisted_1 = ["textContent"];
-function vsAlertvue_type_template_id_fd2099da_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+var vsAlertvue_type_template_id_7279bdf7_lang_html_hoisted_1 = ["textContent"];
+function vsAlertvue_type_template_id_7279bdf7_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
@@ -6178,7 +6178,7 @@ function vsAlertvue_type_template_id_fd2099da_lang_html_render(_ctx, _cache, $pr
         style: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeStyle"])($options.styleTitle),
         class: "titlex vs-alert--title",
         textContent: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.title)
-      }, null, 12, vsAlertvue_type_template_id_fd2099da_lang_html_hoisted_1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+      }, null, 12, vsAlertvue_type_template_id_7279bdf7_lang_html_hoisted_1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
         class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([{
           'con-icon': $props.icon
         }, "vs-alert"])
@@ -6192,7 +6192,7 @@ function vsAlertvue_type_template_id_fd2099da_lang_html_render(_ctx, _cache, $pr
     _: 3
   }, 8, ["onBeforeEnter", "onEnter", "onLeave"]);
 }
-// CONCATENATED MODULE: ./src/components/vsAlert/vsAlert.vue?vue&type=template&id=fd2099da&lang=html
+// CONCATENATED MODULE: ./src/components/vsAlert/vsAlert.vue?vue&type=template&id=7279bdf7&lang=html
 
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsAlert/vsAlert.vue?vue&type=script&lang=js
 
@@ -6262,13 +6262,19 @@ function vsAlertvue_type_template_id_fd2099da_lang_html_render(_ctx, _cache, $pr
       el.style.opacity = 0;
     },
     enter: function enter(el, done) {
-      var h = this.$refs.alert.scrollHeight;
-      this.$refs.alert.style.height = h + 'px';
+      if (this.$refs.alert) {
+        var h = this.$refs.alert.scrollHeight;
+        this.$refs.alert.style.height = h + 'px';
+      }
+
       el.style.opacity = 1;
       done();
     },
     leave: function leave(el) {
-      this.$refs.alert.style.height = 0 + 'px';
+      if (this.$refs.alert) {
+        this.$refs.alert.style.height = 0 + 'px';
+      }
+
       el.style.opacity = 0;
     }
   }
@@ -6281,7 +6287,7 @@ function vsAlertvue_type_template_id_fd2099da_lang_html_render(_ctx, _cache, $pr
 
 
 
-const vsAlert_exports_ = /*#__PURE__*/exportHelper_default()(vsAlertvue_type_script_lang_js, [['render',vsAlertvue_type_template_id_fd2099da_lang_html_render]])
+const vsAlert_exports_ = /*#__PURE__*/exportHelper_default()(vsAlertvue_type_script_lang_js, [['render',vsAlertvue_type_template_id_7279bdf7_lang_html_render]])
 
 /* harmony default export */ var vsAlert = (vsAlert_exports_);
 // CONCATENATED MODULE: ./src/components/vsAlert/index.js
@@ -7655,28 +7661,28 @@ const vsBreadcrumb_exports_ = /*#__PURE__*/exportHelper_default()(vsBreadcrumbvu
 /* harmony default export */ var components_vsBreadcrumb = (function (Vue) {
   Vue.component(vsBreadcrumb.name, vsBreadcrumb);
 });
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/functions/vsDialog/index.vue?vue&type=template&id=f7263632&lang=html
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/functions/vsDialog/index.vue?vue&type=template&id=6f0e00cf&lang=html
 
-var vsDialogvue_type_template_id_f7263632_lang_html_hoisted_1 = {
+var vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_1 = {
   ref: "dialogx",
   class: "vs-dialog"
 };
-var vsDialogvue_type_template_id_f7263632_lang_html_hoisted_2 = {
+var vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_2 = {
   class: "con-title-after"
 };
-var vsDialogvue_type_template_id_f7263632_lang_html_hoisted_3 = {
+var vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_3 = {
   class: "dialog-title"
 };
-var vsDialogvue_type_template_id_f7263632_lang_html_hoisted_4 = {
+var vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_4 = {
   class: "vs-dialog-text"
 };
-var vsDialogvue_type_template_id_f7263632_lang_html_hoisted_5 = {
+var vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_5 = {
   key: 0
 };
-var vsDialogvue_type_template_id_f7263632_lang_html_hoisted_6 = {
+var vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_6 = {
   key: 1
 };
-function vsDialogvue_type_template_id_f7263632_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsDialogvue_type_template_id_6f0e00cf_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
 
   var _component_vs_button = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-button");
@@ -7694,19 +7700,19 @@ function vsDialogvue_type_template_id_f7263632_lang_html_render(_ctx, _cache, $p
         onClick: _cache[0] || (_cache[0] = function ($event) {
           return $options.handleClose($event, true);
         })
-      }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsDialogvue_type_template_id_f7263632_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("header", {
+      }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("header", {
         style: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeStyle"])($options.styleHeader),
         class: "vs-dialog-header"
-      }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsDialogvue_type_template_id_f7263632_lang_html_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
+      }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
         style: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeStyle"])($options.styleAfter),
         class: "after"
-      }, null, 4), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", vsDialogvue_type_template_id_f7263632_lang_html_hoisted_3, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.title), 1)]), $props.type == 'alert' ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_vs_icon, {
+      }, null, 4), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_3, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.title), 1)]), $props.type == 'alert' ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_vs_icon, {
         key: 0,
         icon: $props.closeIcon,
         "icon-pack": $props.iconPack,
         class: "vs-dialog-cancel vs-dialog-cancel--icon notranslate",
         onClick: $options.handleClose
-      }, null, 8, ["icon", "icon-pack", "onClick"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 4), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsDialogvue_type_template_id_f7263632_lang_html_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(" " + Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.text), 1)]), ($props.buttonsHidden ? false : _ctx.isPrompt || $props.type == 'confirm') ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("footer", vsDialogvue_type_template_id_f7263632_lang_html_hoisted_5, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_vs_button, {
+      }, null, 8, ["icon", "icon-pack", "onClick"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 4), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(" " + Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.text), 1)]), ($props.buttonsHidden ? false : _ctx.isPrompt || $props.type == 'confirm') ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("footer", vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_5, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_vs_button, {
         disabled: $props.isValid == 'none' ? false : !$props.isValid,
         color: $props.color,
         type: $props.buttonAccept,
@@ -7727,7 +7733,7 @@ function vsDialogvue_type_template_id_f7263632_lang_html_render(_ctx, _cache, $p
           return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.cancelText), 1)];
         }),
         _: 1
-      }, 8, ["text-color", "type", "onClick"])])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), $props.type == 'alert' && !_ctx.isPrompt ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("footer", vsDialogvue_type_template_id_f7263632_lang_html_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_vs_button, {
+      }, 8, ["text-color", "type", "onClick"])])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), $props.type == 'alert' && !_ctx.isPrompt ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("footer", vsDialogvue_type_template_id_6f0e00cf_lang_html_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_vs_button, {
         color: $props.color,
         type: $props.buttonAccept,
         class: "vs-dialog-accept-button",
@@ -7742,7 +7748,7 @@ function vsDialogvue_type_template_id_f7263632_lang_html_render(_ctx, _cache, $p
     _: 3
   });
 }
-// CONCATENATED MODULE: ./src/functions/vsDialog/index.vue?vue&type=template&id=f7263632&lang=html
+// CONCATENATED MODULE: ./src/functions/vsDialog/index.vue?vue&type=template&id=6f0e00cf&lang=html
 
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/functions/vsDialog/index.vue?vue&type=script&lang=js
 
@@ -7810,7 +7816,7 @@ function vsDialogvue_type_template_id_f7263632_lang_html_render(_ctx, _cache, $p
       isPrompt: true,
       fActive: false,
       parameters: null,
-      console: console
+      closing: false
     };
   },
   computed: {
@@ -7889,6 +7895,15 @@ function vsDialogvue_type_template_id_f7263632_lang_html_render(_ctx, _cache, $p
       }, 200);
     },
     handleClose: function handleClose(event, con) {
+      var _this4 = this;
+
+      // temporary fix see why handleClose is called multiple times
+      if (!this.closing) {
+        this.closing = true;
+      } else {
+        return;
+      }
+
       if (con) {
         if (event.target.className.indexOf('vs-dialog-dark') != -1 && this.type == 'alert') {
           this.fActive = false;
@@ -7904,6 +7919,9 @@ function vsDialogvue_type_template_id_f7263632_lang_html_render(_ctx, _cache, $p
       }
 
       this.$emit('close');
+      this.$nextTick(function () {
+        _this4.closing = false;
+      });
     },
     cancelClose: function cancelClose() {
       this.fActive = false;
@@ -7927,7 +7945,7 @@ function vsDialogvue_type_template_id_f7263632_lang_html_render(_ctx, _cache, $p
 
 
 
-const vsDialog_exports_ = /*#__PURE__*/exportHelper_default()(vsDialogvue_type_script_lang_js, [['render',vsDialogvue_type_template_id_f7263632_lang_html_render]])
+const vsDialog_exports_ = /*#__PURE__*/exportHelper_default()(vsDialogvue_type_script_lang_js, [['render',vsDialogvue_type_template_id_6f0e00cf_lang_html_render]])
 
 /* harmony default export */ var vsDialog = (vsDialog_exports_);
 // CONCATENATED MODULE: ./src/components/vsPrompt/index.js
