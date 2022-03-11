@@ -48,9 +48,9 @@ so do not forget for example to replace instances of :value by :modelValue, or i
 
 | Status  | Number of Components | Percentage   |
 |---------|----------------------|--------------|
-| Vue 3   | 23                   | 76%          |
-| Vue 2   | 5                    | 17%          |
-| Unknown | 2                    | 7%           |
+| Vue 3   | 25                   | 84%          |
+| Vue 2   | 4                    | 13%          |
+| Unknown | 1                    | 3%           |
 
 ## Components
 
@@ -66,8 +66,8 @@ so do not forget for example to replace instances of :value by :modelValue, or i
 - [Slider](https://lk77.github.io/vuesax/components/slider.html) - <b>vue3</b>
 - [InputNumber](https://lk77.github.io/vuesax/components/number.html) - <b>vue3</b>
 - [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html) - <b>vue3</b>
-- [Upload](https://lk77.github.io/vuesax/components/upload.html) - unknown
-- [Loading](https://lk77.github.io/vuesax/components/loading.html) - <i>vue2</i>
+- [Upload](https://lk77.github.io/vuesax/components/upload.html) - <b>vue3</b>
+- [Loading](https://lk77.github.io/vuesax/components/loading.html) - <b>vue3</b>
 - [Popup](https://lk77.github.io/vuesax/components/popup.html) - <b>vue3</b>
 - [Avatar](https://lk77.github.io/vuesax/components/avatar.html) - <b>vue3</b>
 - [Breadcrumb](https://lk77.github.io/vuesax/components/breadcrumb.html) - <i>vue2</i>

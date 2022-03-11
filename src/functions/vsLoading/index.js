@@ -1,26 +1,12 @@
-import { createApp } from 'vue';
+import utils from '../../utils'
 import vsLoading from './index.vue'
 
 export default {
   name: 'loading',
-  vsfunction(parameters) {
-    let instance = createApp({
-      extends: vsLoading,
-      data() {
-        if(parameters) {
-          return {
-            type: parameters.type || 'default',
-            background: parameters.background,
-            color: parameters.color,
-            scale: parameters.scale,
-            text: parameters.text,
-            clickEffect: parameters.clickEffect
-          }
-        }
-
-        return {};
-      }
-    });
+  vsfunction(parameters = {}) {
+    const comp = {
+      extends: vsLoading
+    };
 
     let containerx = document.body
     if (parameters) {
@@ -28,10 +14,19 @@ export default {
         containerx = parameters.container instanceof Element ? parameters.container : document.querySelector(parameters.container)
       }
     }
-    //instance.vm = instance.mount();
-    //console.log(instance.vm);
-    //console.log(containerx, instance);
-    //containerx.insertBefore(instance.vm.$el, containerx.firstChild)
+
+    utils.mount(comp, {
+      element: containerx,
+      app: this.app,
+      props: {
+        type: parameters.type || 'default',
+        background: parameters.background,
+        color: parameters.color,
+        scale: parameters.scale,
+        text: parameters.text,
+        clickEffect: parameters.clickEffect
+      }
+    });
   },
   close(elx) {
     let loadings

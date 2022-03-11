@@ -21,7 +21,7 @@ export default (app, options) => {
         // define $vs reactive properties
         this.$vs = reactive(options);
         // define $vs functions
-        vsFunctions(this);
+        vsFunctions(this, app);
       }
     },
     mounted() {
