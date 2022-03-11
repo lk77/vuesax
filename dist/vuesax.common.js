@@ -1423,6 +1423,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "vsButton", function() { return /* reexport */ components_vsButton; });
+__webpack_require__.d(__webpack_exports__, "vsSelect", function() { return /* reexport */ components_vsSelect; });
 __webpack_require__.d(__webpack_exports__, "vsSwitch", function() { return /* reexport */ components_vsSwitch; });
 __webpack_require__.d(__webpack_exports__, "vsCheckbox", function() { return /* reexport */ components_vsCheckBox; });
 __webpack_require__.d(__webpack_exports__, "vsRadio", function() { return /* reexport */ components_vsRadio; });
@@ -1571,7 +1572,7 @@ var _hoisted_2 = {
   key: 2,
   class: "vs-button-text vs-button--text"
 };
-function vsButtonvue_type_template_id_a768630a_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _normalizeStyle2;
 
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
@@ -2135,7 +2136,7 @@ var exportHelper_default = /*#__PURE__*/__webpack_require__.n(exportHelper);
 
 
 
-const __exports__ = /*#__PURE__*/exportHelper_default()(vsButtonvue_type_script_lang_js, [['render',vsButtonvue_type_template_id_a768630a_lang_html_render]])
+const __exports__ = /*#__PURE__*/exportHelper_default()(vsButtonvue_type_script_lang_js, [['render',render]])
 
 /* harmony default export */ var vsButton = (__exports__);
 // CONCATENATED MODULE: ./src/components/vsButton/index.js
@@ -2355,9 +2356,35 @@ var es_regexp_to_string = __webpack_require__("bf56");
 
 
 
+
 /* harmony default export */ var utils = ({
   randomId: function randomId() {
     return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 8);
+  },
+  //https://github.com/pearofducks/mount-vue-component/blob/master/index.js
+  mount: function mount(component) {
+    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+        props = _ref.props,
+        children = _ref.children,
+        element = _ref.element,
+        app = _ref.app;
+
+    var el = element;
+    var vNode = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(component, props, children);
+    if (app && app._context) vNode.appContext = app._context;
+    if (el) Object(external_commonjs_vue_commonjs2_vue_root_Vue_["render"])(vNode, el);else if (typeof document !== 'undefined') Object(external_commonjs_vue_commonjs2_vue_root_Vue_["render"])(vNode, el = document.createElement('div'));
+
+    var destroy = function destroy() {
+      if (el) Object(external_commonjs_vue_commonjs2_vue_root_Vue_["render"])(null, el);
+      el = null;
+      vNode = null;
+    };
+
+    return {
+      vNode: vNode,
+      destroy: destroy,
+      el: el
+    };
   },
   insertBody: function insertBody(elx, parent) {
     var bodyx = parent ? parent : document.body;
@@ -10467,36 +10494,30 @@ const vsNotifications_exports_ = /*#__PURE__*/exportHelper_default()(vsNotificat
 
 
 
-
-var vsNotifications_instance;
 /* harmony default export */ var functions_vsNotifications = ({
   name: 'notify',
-  vsfunction: function vsfunction(parameters) {
+  vsfunction: function vsfunction() {
+    var parameters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
     if (parameters.fullWidth) {
       if (parameters.position) {
         parameters.position = parameters.position.replace('right', 'left');
       }
     }
 
-    var div = document.createElement("div");
-    var id = utils.randomId();
-    div.setAttribute('id', id);
-    utils.insertBody(div);
-    var app = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createApp"])({
-      render: function render() {
-        return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["h"])({
-          extends: vsNotifications,
-          data: function data() {
-            return parameters;
-          }
-        });
+    var comp = {
+      extends: vsNotifications,
+      data: function data() {
+        return parameters;
+      }
+    };
+    utils.mount(comp, {
+      element: document.body,
+      app: this.app,
+      props: {
+        onClick: parameters.click || null
       }
     });
-    app.mount('#' + id);
-    setTimeout(function () {
-      app.unmount();
-      utils.removeBody(div);
-    }, parameters.time || 3000);
   }
 });
 // EXTERNAL MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.array.from.js
@@ -10766,35 +10787,31 @@ const vsLoading_exports_ = /*#__PURE__*/exportHelper_default()(vsLoadingvue_type
 
 /* harmony default export */ var functions_vsLoading = ({
   name: 'loading',
-  vsfunction: function vsfunction(parameters) {
-    var instance = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createApp"])({
-      extends: vsLoading,
-      data: function data() {
-        if (parameters) {
-          return {
-            type: parameters.type || 'default',
-            background: parameters.background,
-            color: parameters.color,
-            scale: parameters.scale,
-            text: parameters.text,
-            clickEffect: parameters.clickEffect
-          };
-        }
-
-        return {};
-      }
-    });
+  vsfunction: function vsfunction() {
+    var parameters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var comp = {
+      extends: vsLoading
+    };
     var containerx = document.body;
 
     if (parameters) {
       if (parameters.container) {
         containerx = parameters.container instanceof Element ? parameters.container : document.querySelector(parameters.container);
       }
-    } //instance.vm = instance.mount();
-    //console.log(instance.vm);
-    //console.log(containerx, instance);
-    //containerx.insertBefore(instance.vm.$el, containerx.firstChild)
+    }
 
+    utils.mount(comp, {
+      element: containerx,
+      app: this.app,
+      props: {
+        type: parameters.type || 'default',
+        background: parameters.background,
+        color: parameters.color,
+        scale: parameters.scale,
+        text: parameters.text,
+        clickEffect: parameters.clickEffect
+      }
+    });
   },
   close: function close(elx) {
     var loadings;
@@ -10820,52 +10837,43 @@ const vsLoading_exports_ = /*#__PURE__*/exportHelper_default()(vsLoadingvue_type
 // CONCATENATED MODULE: ./src/functions/vsDialog/index.js
 
 
-
 /* harmony default export */ var functions_vsDialog = ({
   name: 'dialog',
-  vsfunction: function vsfunction(props) {
-    var div = document.createElement("div");
-    var id = utils.randomId();
-    div.setAttribute('id', id);
-    utils.insertBody(div);
-    var app = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createApp"])({
-      render: function render() {
-        return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["h"])({
-          extends: vsDialog,
-          data: function data() {
-            return {
-              isPrompt: false
-            };
-          },
-          mounted: function mounted() {
-            this.fActive = true;
-          },
-          watch: {
-            fActive: function fActive(val) {
-              if (!val) {
-                app.unmount();
-                utils.removeBody(div);
-              }
-            }
-          }
-        }, {
-          onAccept: props.accept || null,
-          onCancel: props.cancel || null,
-          text: props.text,
-          title: props.title || 'Dialog',
-          color: props.color,
-          type: props.type || 'alert',
-          buttonAccept: props.buttonAccept || 'filled',
-          buttonCancel: props.buttonCancel || 'flat',
-          acceptText: props.acceptText || 'Accept',
-          cancelText: props.cancelText || 'Cancel',
-          closeIcon: props.closeIcon || 'close',
-          iconPack: props.iconPack || 'material-icons',
-          isValid: props.isValid || 'none'
-        });
+  vsfunction: function vsfunction() {
+    var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var comp = {
+      extends: vsDialog,
+      data: function data() {
+        return {
+          isPrompt: false,
+          fActive: false,
+          parameters: props.parameters || null,
+          closing: false
+        };
+      },
+      mounted: function mounted() {
+        this.fActive = true;
+      }
+    };
+    utils.mount(comp, {
+      element: document.body,
+      app: this.app,
+      props: {
+        onAccept: props.accept || null,
+        onCancel: props.cancel || null,
+        text: props.text,
+        title: props.title || 'Dialog',
+        color: props.color,
+        type: props.type || 'alert',
+        buttonAccept: props.buttonAccept || 'filled',
+        buttonCancel: props.buttonCancel || 'flat',
+        acceptText: props.acceptText || 'Accept',
+        cancelText: props.cancelText || 'Cancel',
+        closeIcon: props.closeIcon || 'close',
+        iconPack: props.iconPack || 'material-icons',
+        isValid: props.isValid || 'none'
       }
     });
-    app.mount('#' + id);
   }
 });
 // CONCATENATED MODULE: ./src/functions/index.js
@@ -10888,7 +10896,7 @@ var vsFunctions = {
   vsTheme: theme,
   vsDialog: functions_vsDialog
 };
-/* harmony default export */ var functions = (function (vm) {
+/* harmony default export */ var functions = (function (vm, app) {
   Object.values(vsFunctions).forEach(function (vsFunctions) {
     if (Object.prototype.hasOwnProperty.call(vsFunctions, 'subName')) {
       vm.$vs[vsFunctions.name][vsFunctions.subName] = vsFunctions.vsfunction;
@@ -10897,6 +10905,7 @@ var vsFunctions = {
     }
   });
   vm.$vs.loading.close = functions_vsLoading.close;
+  vm.$vs.app = app;
 });
 // CONCATENATED MODULE: ./src/defineGlobalMixin.js
 
@@ -10922,7 +10931,7 @@ var vsFunctions = {
         // define $vs reactive properties
         this.$vs = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["reactive"])(options); // define $vs functions
 
-        functions(this);
+        functions(this, app);
       }
     },
     mounted: function mounted() {
@@ -10978,7 +10987,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 /* harmony default export */ var src_0 = (install);
- //export { default as vsSelect } from './components/vsSelect'
+
 
 
 
