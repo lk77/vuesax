@@ -8,6 +8,7 @@
       $attrs.class
     ]"
     :style="[style, $attrs.style]"
+    v-bind="$attrs"
     class="vs-component vs-switch">
     <input
       v-bind="attrs"
