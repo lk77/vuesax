@@ -7,11 +7,11 @@
       'includeIcon':icon,
       'includeIconOnly':icon && !$slots.default,
       'vs-radius':radius
-    }, size]"
+    }, size, this.class]"
     :style="[styles,{
       'width':/[px]/.test(size) ? `${size}` : null,
       'height':/[px]/.test(size) ? `${size}` : null
-    }]"
+    }, this.style]"
     :type="button"
     class="vs-component vs-button"
     name="button">

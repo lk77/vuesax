@@ -1,6 +1,7 @@
 <template lang="html">
   <div
-    :class="[`vs-tabs-${color}`,`vs-tabs-position-${position}`]"
+    :class="[`vs-tabs-${color}`,`vs-tabs-position-${position}`, $attrs.class]"
+    :style="$attrs.style"
     class="con-vs-tabs vs-tabs">
     <div
       class="con-ul-tabs">

@@ -1,7 +1,7 @@
 <template lang="html">
   <nav
     v-bind="$attrs"
-    :class="`vs-align-${align}`"
+    :class="[`vs-align-${align}`, $attrs.class]"
     class="vs-breadcrumb"
     aria-label="breadcrumb">
     <ol class="vs-breadcrumb--ol">

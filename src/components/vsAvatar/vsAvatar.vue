@@ -1,8 +1,8 @@
 <template lang="html">
   <div
     v-bind="$attrs"
-    :style="avatarStyle"
-    :class="avatarClass"
+    :style="[avatarStyle, $attrs.style]"
+    :class="[avatarClass, $attrs.class]"
     class="con-vs-avatar">
     <div
       v-if="badge && badge > 0"

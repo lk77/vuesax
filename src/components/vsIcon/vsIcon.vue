@@ -2,8 +2,8 @@
   <i
     v-bind="$attrs"
     @click="$emit('click')"
-    :style="iconStyle"
-    :class="[iconPack, iconPack !='material-icons' ? icon : '',iconClass,getBg,getBgSize,{'round':round}]"
+    :style="[iconStyle, $attrs.style]"
+    :class="[iconPack, iconPack !='material-icons' ? icon : '',iconClass,getBg,getBgSize,{'round':round}, $attrs.class]"
     class="vs-icon notranslate icon-scale">
     {{ iconPack == 'material-icons' ? icon : '' }}
   </i>
