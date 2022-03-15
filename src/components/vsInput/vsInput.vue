@@ -124,9 +124,10 @@
 
 <script>
 import _color from '../../utils/color.js'
+import utils from '../../utils'
 export default {
   name:'VsInput',
-  //inheritAttrs: false,
+  inheritAttrs: false,
   props:{
     modelValue:{
       default:'',
@@ -237,7 +238,7 @@ export default {
     },
     attrs(){
       return {
-        ...this.$attrs,
+        ...utils.allowedAttrs(this.$attrs),
         onInput: (evt) => {
           this.$emit('update:modelValue',evt.target.value)
         },

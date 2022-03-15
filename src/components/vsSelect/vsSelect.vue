@@ -1,12 +1,12 @@
 <template lang="html">
   <div
-    :class="{
+    :class="[{
       'autocompletex':autocomplete,
       'activeOptions':active,
       'input-select-validate-success':success,
       'input-select-validate-danger':danger,
-      'input-select-validate-warning':warning}"
-    :style="getWidth"
+      'input-select-validate-warning':warning}, $attrs.class]"
+    :style="[getWidth, $attrs.style]"
     class="con-select">
     <label
       v-if="label"
@@ -205,7 +205,7 @@ export default {
     },
     attrs() {
       return {
-        ...this.$attrs,
+        ...utils.allowedAttrs(this.$attrs),
         name: this.$attrs.name + '_label',
         onBlur: event => {
           if (

@@ -1,16 +1,16 @@
 <template lang="html">
   <li
-    :class="{'divider':divider}"
-    :style="{
+    :class="[{'divider':divider}, $attrs.class]"
+    :style="[{
       'color':hoverx?giveColor()+' !important':null,
-      'background':hoverx?giveColor(.01)+' !important':null
-    }"
+      'background':hoverx?giveColor(.01)+' !important':null,
+    }, $attrs.style]"
     class="vs-component vs-dropdown--item"
     @click="closeParent"
     @mouseover="hoverx=true"
     @mouseout="hoverx=false">
     <router-link
-      v-bind="$attrs"
+      v-bind="attrs"
       v-if="to"
       :to="to"
       :class="{'disabled':disabled}"
@@ -20,7 +20,7 @@
     </router-link>
 
     <a
-      v-bind="$attrs"
+      v-bind="attrs"
       v-else
       :class="{'disabled':disabled}"
       class="vs-dropdown--item-link">
@@ -31,7 +31,7 @@
 
 <script>
 import _color from '../../utils/color.js'
-
+import utils from '../../utils'
 export default {
   name: "VsDropdownItem",
   inheritAttrs:false,
@@ -51,6 +51,13 @@ export default {
     vsDropDownItem: true,
     color: null,
   }),
+  computed: {
+    attrs() {
+      return {
+        ...utils.allowedAttrs(this.$attrs)
+      }
+    }
+  },
   mounted() {
     this.changeColor()
     this.searchParent(this, (parent) => {

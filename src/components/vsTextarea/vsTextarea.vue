@@ -1,7 +1,7 @@
 <template lang="html">
   <div
     :style="style"
-    :class="[`vs-textarea-${color}`, {'textarea-danger': counter ? (modelValue && modelValue.length > counter) : false, 'focusx': isFocus}]"
+    :class="[`vs-textarea-${color}`, {'textarea-danger': counter ? (modelValue && modelValue.length > counter) : false, 'focusx': isFocus}, $attrs.class]"
     class="vs-component vs-con-textarea">
 
     <h4 v-if="label">
@@ -25,6 +25,7 @@
 
 <script>
 import _color from '../../utils/color.js'
+import utils from '../../utils'
 export default {
   name: "VsTextarea",
   inheritAttrs:false,
@@ -69,7 +70,7 @@ export default {
     },
     attrs() {
       return {
-        ...this.$attrs,
+        ...utils.allowedAttrs(this.$attrs),
         onInput:(evt) => {
           this.$emit('update:modelValue', evt.target.value)
         },

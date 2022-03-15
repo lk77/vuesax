@@ -2,10 +2,12 @@
   <transition
     @before-enter="beforeEnter"
     @enter="enter"
-    @leave="leave">
+    @leave="leave"
+    :class="$attrs.class"
+    :style="$attrs.style">
 
     <div
-      v-bind="$attrs"
+      v-bind="attrs"
       v-if="active"
       ref="alert"
       :class="[`con-vs-alert-${color}`,{
@@ -46,6 +48,7 @@
 </template>
 
 <script>
+import utils from '../../utils'
 import _color from '../../utils/color.js'
 
 export default {
@@ -86,6 +89,11 @@ export default {
   },
 
   computed:{
+    attrs() {
+      return {
+        ...utils.allowedAttrs(this.$attrs)
+      }
+    },
     styleAlert () {
       return {
         background: _color.getColor(this.color,.15),

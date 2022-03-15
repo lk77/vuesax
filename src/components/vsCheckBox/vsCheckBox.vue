@@ -4,7 +4,7 @@
     :style="$attrs.style"
     class="vs-component con-vs-checkbox">
     <input
-      v-bind="$attrs"
+      v-bind="attrs"
       :checked="isChecked || $attrs.checked"
       :value="modelValue"
       @change="toggleValue"
@@ -31,6 +31,7 @@
 
 <script>
 import _color from '../../utils/color.js'
+import utils from '../../utils'
 export default {
   name:'VsCheckbox',
   //inheritAttrs: false,
@@ -58,6 +59,11 @@ export default {
     }
   },
   computed:{
+    attrs() {
+      return {
+        ...utils.allowedAttrs(this.$attrs)
+      }
+    },
     style_check() {
       return {
         background: this.isChecked ? _color.getColor(this.color, 1) : null,

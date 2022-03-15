@@ -1,7 +1,7 @@
 <template lang="html">
   <div
     :class="[`vs-tabs-${color}`,`vs-tabs-position-${position}`]"
-    class="con-vs-tabs vs-tabs" >
+    class="con-vs-tabs vs-tabs">
     <div
       class="con-ul-tabs">
       <ul

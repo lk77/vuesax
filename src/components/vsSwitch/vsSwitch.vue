@@ -1,13 +1,13 @@
 <template lang="html">
   <button
-    v-bind="$attrs"
     :class="[
       `vs-switch-${color}`,
       {
         'vs-switch-active':isChecked || $attrs.checked
-      }
+      },
+      $attrs.class
     ]"
-    :style="style"
+    :style="[style, $attrs.style]"
     class="vs-component vs-switch">
     <input
       v-bind="attrs"
@@ -47,6 +47,7 @@
 
 <script>
 import _color from '../../utils/color.js'
+import utils from '../../utils'
 export default {
   name:'VsSwitch',
   inheritAttrs:false,
@@ -87,7 +88,7 @@ export default {
     },
     attrs(){
       return {
-        ...this.$attrs,
+        ...utils.allowedAttrs(this.$attrs),
         onInput: (evt) => {
           evt.stopPropagation();
           this.toggleValue(evt)

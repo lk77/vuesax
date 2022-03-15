@@ -1,5 +1,5 @@
 <template>
-  <div class="con-upload">
+  <div class="con-upload" :class="$attrs.class" :style="$attrs.style">
     <view-upload
       v-if="viewActive"
       :src="viewSrc" />
@@ -77,7 +77,7 @@
         }"
         class="con-input-upload">
         <input
-          v-bind="$attrs"
+          v-bind="attrs"
           ref="fileInput"
           :disabled="$attrs.disabled || limit?(srcs.length - itemRemove.length) >= Number(limit):false"
           type="file"
@@ -111,6 +111,7 @@
 </template>
 <script>
   import viewUpload from './viewUpload'
+  import utils from '../../utils'
   var lastTap = 0;
   export default {
     name: 'VsUpload',
@@ -171,6 +172,11 @@
       viewSrc:null,
     }),
     computed:{
+      attrs() {
+        return {
+          ...utils.allowedAttrs(this.$attrs)
+        }
+      },
       getFilesFilter() {
         let files = this.srcs.filter((item) => {
           return !item.remove

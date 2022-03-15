@@ -1,6 +1,7 @@
 <template lang="html">
   <li
-    v-bind="$attrs"
+    :class="$attrs.class"
+    :style="$attrs.style"
     v-if="parent"
     v-show="visible"
     :data-text="text"
@@ -34,6 +35,7 @@
 
 <script>
   import _color from '../../utils/color.js'
+  import utils from '../../utils'
 
   export default {
   name:'VsSelectItem',
@@ -74,7 +76,7 @@
     },
     attrs() {
       return {
-        ...this.$attrs,
+        ...utils.allowedAttrs(this.$attrs),
         onBlur: (event) => {
           if(event.relatedTarget?!event.relatedTarget.closest('.vs-select--options'):true) {
             this.parent.closeOptions()

@@ -27,9 +27,10 @@
 
 <script>
 import _color from '../../utils/color.js'
+import utils from '../../utils'
 export default {
   name:'VsRadio',
-  //inheritAttrs:false,
+  inheritAttrs:false,
   props:{
     modelValue:{},
     vsValue:{},
@@ -42,7 +43,7 @@ export default {
   computed:{
     attrs(){
       return {
-        ...this.$attrs,
+        ...utils.allowedAttrs(this.$attrs),
         class: '',
         style: '',
         onInput: () => this.$emit('update:modelValue', this.vsValue),

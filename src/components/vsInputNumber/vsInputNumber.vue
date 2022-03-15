@@ -3,9 +3,10 @@
     :class="[
       `vs-input-number-size-${size}`,
       `vs-input-number-${color}`,
-      {'isChangeValue':isChangeValue}
+      {'isChangeValue':isChangeValue},
+      $attrs.class
     ]"
-    class="vs-input-number" v-bind="$attrs">
+    class="vs-input-number" :style="$attrs.style">
     <button
       v-repeat-click="less"
       :disabled="$attrs.disabled"
@@ -54,6 +55,8 @@
 
 <script>
 import _color from '../../utils/color.js'
+import utils from "../../utils";
+
 export default {
   name:'VsInputNumber',
   directives: {
@@ -153,7 +156,7 @@ export default {
     },
     attrs(){
       return {
-        //...this.$attrs,
+        ...utils.allowedAttrs(this.$attrs),
         onBlur:(evt)=>{
           if(parseFloat(this.modelValue) > parseFloat(this.max)) {
             this.$emit('update:modelValue',this.max)

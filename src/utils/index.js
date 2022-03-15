@@ -1,6 +1,16 @@
-import { createVNode, render } from 'vue'
+import {createVNode, render} from 'vue'
 
 export default {
+  // restore old behaviour without class/style in $attrs
+  allowedAttrs(attrs) {
+    let result = {};
+    Object.keys(attrs).forEach(attrName => {
+      if (!['class', 'style'].includes(attrName)) {
+        result[attrName] = attrs[attrName];
+      }
+    });
+    return result;
+  },
   randomId() {
     return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 8);
   },
