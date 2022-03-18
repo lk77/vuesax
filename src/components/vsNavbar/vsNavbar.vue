@@ -2,15 +2,17 @@
   <header
     :style="[styleNavbar, style]"
     :class="[`vs-navbar-${type}`, `vs-navbar-color-${color}`, {'collapse':collapse}, this.class]"
-    class="vs-navbar">
+    class="vs-navbar"
+  >
     <div class="vs-navbar--header">
       <button
         :class="{'active-menu' : activeMenuResponsive}"
         class="vs-navbar--btn-responsive"
-        @click="activeMenuResponsive = !activeMenuResponsive">
-        <span class="btn-responsive-line line--1"/>
-        <span class="btn-responsive-line line--2"/>
-        <span class="btn-responsive-line line--3"/>
+        @click="activeMenuResponsive = !activeMenuResponsive"
+      >
+        <span class="btn-responsive-line line--1" />
+        <span class="btn-responsive-line line--2" />
+        <span class="btn-responsive-line line--3" />
       </button>
 
       <slot name="title">
@@ -19,7 +21,8 @@
 
     <div
       :class="{'activeMenuResponsive' : activeMenuResponsive}"
-      class="vs-con-items">
+      class="vs-con-items"
+    >
       <slot></slot>
     </div>
   </header>
@@ -51,9 +54,6 @@ export default {
       type:String,
       default:'rgb(40,40,40)',
     },
-    // temporary fix because missing from $attrs
-    class: {},
-    style: {}
   },
 
   data:() => ({

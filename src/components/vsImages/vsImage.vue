@@ -1,16 +1,22 @@
 <template>
-  <li class="vs-image" :class="$attrs.class" :style="$attrs.style">
+  <li
+    class="vs-image"
+    :class="$attrs.class"
+    :style="$attrs.style"
+  >
     <div class="con-vs-image">
       <div
         v-bind="attrs"
         :style="styleImage"
-        class="vs-image--img">
+        class="vs-image--img"
+      >
       </div>
     </div>
     <img
       :src="src"
       class="imag-blur"
-      alt="">
+      alt=""
+    >
   </li>
 </template>
 <script>

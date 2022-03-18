@@ -5,19 +5,22 @@
       ref="con"
       :class="[`vs-popup-${color}`,{'fullscreen':fullscreen}]"
       class="vs-component con-vs-popup"
-      @click="close($event,true)">
+      @click="close($event,true)"
+    >
       <div
         :style="styleCon"
-        class="vs-popup--background"/>
+        class="vs-popup--background"
+      />
       <div
         ref="popupx"
         :style="stylePopup"
-        class="vs-popup">
-
+        class="vs-popup"
+      >
         <!-- //header -->
         <header
           :style="styleHeader"
-          class="vs-popup--header">
+          class="vs-popup--header"
+        >
           <div class="vs-popup--title">
             <h3>{{ title }}</h3>
             <slot name="subtitle" />
@@ -37,8 +40,9 @@
         <div
           :style="styleContent"
           :class="classContent"
-          class="vs-popup--content">
-          <slot/>
+          class="vs-popup--content"
+        >
+          <slot />
         </div>
       </div>
     </div>

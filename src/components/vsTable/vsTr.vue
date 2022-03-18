@@ -18,13 +18,16 @@
         @change="handleCheckbox"
       />
 
-      <vs-icon v-if="$slots.expand">keyboard_arrow_down</vs-icon>
+      <vs-icon v-if="$slots.expand">
+        keyboard_arrow_down
+      </vs-icon>
     </td>
     <slot></slot>
   </tr>
 </template>
 <script>
-import trExpand from './vsTrExpand.vue'
+//import {createApp} from 'vue';
+//import trExpand from './vsTrExpand.vue'
 export default {
   name: 'VsTr',
   props:{
@@ -99,7 +102,7 @@ export default {
     dblclicktr () {
       this.$parent.dblclicktr(this.data, true)
     },
-    clicktd (evt) {
+    /*clicktd (evt) {
       if(this.$parent.multiple || !this.$slots.expand) return
       let tr = evt.target.closest('tr')
       if(this.expanded) {
@@ -107,14 +110,14 @@ export default {
         tr.classList.remove('tr-expandedx')
         this.expanded = false
       } else {
-        tr.classList.add('tr-expandedx')
-        let instance = Vue.createApp({extends: trExpand, parent: this, propsData: {colspan: this.colspan});
+        tr.classList.add('tr-expandedx');
+        //let instance = createApp({extends: trExpand, parent: this, propsData: {colspan: this.colspan}});
         instance.vm = instance.mount();
         var newTR = document.createElement('tr').appendChild(instance.vm.$el);
         this.insertAfter(tr, newTR)
         this.expanded = true
       }
-    },
+    },*/
     collapseExpandedData() {
       if(this.expanded){
         const tr = this.$refs.tableTr

@@ -8,23 +8,26 @@
     class="vs-component vs-dropdown--item"
     @click="closeParent"
     @mouseover="hoverx=true"
-    @mouseout="hoverx=false">
+    @mouseout="hoverx=false"
+  >
     <router-link
-      v-bind="attrs"
       v-if="to"
+      v-bind="attrs"
       :to="to"
       :class="{'disabled':disabled}"
-      class="vs-dropdown--item-link">
+      class="vs-dropdown--item-link"
+    >
       {{ $attrs.disabled }}
-      <slot/>
+      <slot />
     </router-link>
 
     <a
-      v-bind="attrs"
       v-else
+      v-bind="attrs"
       :class="{'disabled':disabled}"
-      class="vs-dropdown--item-link">
-      <slot/>
+      class="vs-dropdown--item-link"
+    >
+      <slot />
     </a>
   </li>
 </template>

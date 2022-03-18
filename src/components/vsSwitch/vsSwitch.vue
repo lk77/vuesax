@@ -9,20 +9,23 @@
     ]"
     :style="[style, $attrs.style]"
     v-bind="$attrs"
-    class="vs-component vs-switch">
+    class="vs-component vs-switch"
+  >
     <input
       v-bind="attrs"
       ref="inputCheckbox"
       :disabled="$attrs.disabled"
       :value="modelValue"
       class="input-switch vs-switch--input"
-      type="checkbox">
+      type="checkbox"
+    >
 
     <span
       ref="on"
       :class="{'active-text':isChecked || $attrs.checked}"
-      class="text-on text-switch vs-switch--text">
-      <slot name="on"/>
+      class="text-on text-switch vs-switch--text"
+    >
+      <slot name="on" />
 
       <vs-icon
         :icon-pack="iconPack"
@@ -33,16 +36,17 @@
     <span
       ref="off"
       :class="{'active-text':!isChecked && !$attrs.checked}"
-      class="text-off text-switch vs-switch--text">
+      class="text-off text-switch vs-switch--text"
+    >
       <!-- gato con botas -->
-      <slot name="off"/>
+      <slot name="off" />
       <vs-icon
         :icon-pack="iconPack"
         :icon="vsIconOff || vsIcon"
         class="icons-switch vs-switch--icon"
       ></vs-icon>
     </span>
-    <span class="vs-circle-switch vs-switch--circle"/>
+    <span class="vs-circle-switch vs-switch--circle" />
   </button>
 </template>
 

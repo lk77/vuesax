@@ -1,7 +1,8 @@
 <template>
   <div
     :class="[type]"
-    class="vs-collapse">
+    class="vs-collapse"
+  >
     <slot></slot>
   </div>
 </template>

@@ -2,17 +2,20 @@
   <td
     ref="td"
     :class="{'td-edit': $slots.edit}"
-    class="td vs-table--td">
+    class="td vs-table--td"
+  >
     <span @click="clicktd">
       <vs-icon
         v-if="$slots.edit"
         class="icon-edit"
-        icon="edit">
+        icon="edit"
+      >
       </vs-icon>
       <slot></slot>
       <span
         v-if="$slots.edit"
-        class="empty">
+        class="empty"
+      >
         {{ data ? '' : 'Empty' }}
       </span>
     </span>
@@ -33,8 +36,8 @@
   </td>
 </template>
 <script>
-import Vue from 'vue';
-import trExpand from './vsTrExpand.vue'
+//import {createApp} from 'vue';
+//import trExpand from './vsTrExpand.vue'
 export default {
   name: 'VsTd',
   props:{

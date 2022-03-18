@@ -1,9 +1,14 @@
 <template lang="html">
-  <transition :class="$attrs.class" :style="$attrs.style" :name="invert?vertical?'fade-tab-vertical-invert':'fade-tab-invert':vertical?'fade-tab-vertical':'fade-tab'">
+  <transition
+    :class="$attrs.class"
+    :style="$attrs.style"
+    :name="invert?vertical?'fade-tab-vertical-invert':'fade-tab-invert':vertical?'fade-tab-vertical':'fade-tab'"
+  >
     <div
       v-if="active"
-      class="con-tab vs-tabs--content">
-      <slot/>
+      class="con-tab vs-tabs--content"
+    >
+      <slot />
     </div>
   </transition>
 </template>

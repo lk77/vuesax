@@ -6,8 +6,9 @@
       'display':vsType,
       'overflow': vsType === 'block' ? 'hidden' : null,
       'width':vsW*100/12+'%'}"
-    class="vs-row">
-    <slot/>
+    class="vs-row"
+  >
+    <slot />
   </div>
 </template>
 

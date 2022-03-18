@@ -1,12 +1,13 @@
 <template lang="html">
   <!-- @contextmenu.capture.prevent -->
   <button
-    :class="['vs-con-dropdown parent-dropdown', $attrs.class]"
-    :style="$attrs.style"
     v-bind="attrs"
     ref="dropdown"
-    type="button">
-    <slot/>
+    :class="['vs-con-dropdown parent-dropdown', $attrs.class]"
+    :style="$attrs.style"
+    type="button"
+  >
+    <slot />
   </button>
 </template>
 
@@ -97,13 +98,13 @@ export default {
       }
     },
     changeColor() {
-      let child = this.childrenItems
+      /*let child = this.childrenItems
       child.forEach(item => {
         // todo : fix vnode
         //if (item.$vnode.tag.indexOf('dropdown') != -1) {
         //item.color = this.color
         //}
-      })
+      })*/
     },
     changePositionMenu() {
       let [dropdownMenu] = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))

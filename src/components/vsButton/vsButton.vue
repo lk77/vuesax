@@ -11,15 +11,17 @@
     :style="[styles,{
       'width':/[px]/.test(size) ? `${size}` : null,
       'height':/[px]/.test(size) ? `${size}` : null
-    }, this.style]"
+    }, style]"
     :type="button"
     class="vs-component vs-button"
-    name="button">
+    name="button"
+  >
     <span
       v-if="!is('line')&&!is('gradient')&&!is('relief')"
       ref="backgroundx"
       :style="stylesBackGround"
-      class="vs-button-backgroundx vs-button--background">
+      class="vs-button-backgroundx vs-button--background"
+    >
     </span>
 
     <vs-icon
@@ -36,8 +38,9 @@
 
     <span
       v-if="$slots.default"
-      class="vs-button-text vs-button--text">
-      <slot/>
+      class="vs-button-text vs-button--text"
+    >
+      <slot />
     </span>
 
     <span
@@ -118,9 +121,6 @@ export default {
       default:'button',
       type:String
     },
-    // temporary fix because missing from $attrs
-    class: {},
-    style: {}
   },
   data:()=>({
     isActive:false,
@@ -174,6 +174,7 @@ export default {
           boxShadow: `0 3px 0 0 ${_color.darken(color, -0.4)}`
         }
       }
+      return {};
     },
     stylesBackGround(){
       let styles = {

@@ -1,5 +1,5 @@
 import utils from '../../utils'
-import vsDialog from './index.vue'
+import vsDialog from './vsDialog.vue'
 
 export default {
   name: 'dialog',

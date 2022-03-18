@@ -3,10 +3,12 @@
     <div
       ref="view"
       class="view-upload"
-      @click="closeView">
+      @click="closeView"
+    >
       <img
         :src="src"
-        alt="image">
+        alt="image"
+      >
     </div>
   </transition>
 </template>

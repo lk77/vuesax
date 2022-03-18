@@ -1,27 +1,35 @@
 <template>
-  <div class="con-upload" :class="$attrs.class" :style="$attrs.style">
+  <div
+    class="con-upload"
+    :class="$attrs.class"
+    :style="$attrs.style"
+  >
     <view-upload
       v-if="viewActive"
-      :src="viewSrc" />
+      :src="viewSrc"
+    />
 
 
     <div class="con-img-upload">
       <!-- <transition-group v-for="(img,index) in getFilesFilter" :key="index" name="upload"> -->
       <div
         v-for="(img,index) in getFilesFilter"
+        :key="index"
         :class="{
           'fileError':img.error,
           'removeItem':itemRemove.includes(index)
         }"
-        :key="index"
-        class="img-upload">
+        class="img-upload"
+      >
         <button
           class="btn-x-file"
           type="button"
-          @click="removeFile(index)">
+          @click="removeFile(index)"
+        >
           <i
             translate="no"
-            class="material-icons notranslate">
+            class="material-icons notranslate"
+          >
             clear
           </i>
         </button>
@@ -35,30 +43,35 @@
             height: `${img.percent}%`
           }"
           class="btn-upload-file"
-          @click="upload(index)">
+          @click="upload(index)"
+        >
           <i
             translate="no"
-            class="material-icons notranslate">
+            class="material-icons notranslate"
+          >
             {{ img.percent >= 100?img.error?'report_problem':'cloud_done':'cloud_upload' }}
           </i>
           <span>{{ img.percent }} %</span>
         </button>
         <img
           v-if="img.src"
+          :key="index"
           :style="{
             maxWidth:img.orientation == 'h'?'100%':'none',
             maxHeight:img.orientation == 'w'?'100%':'none'
           }"
-          :key="index"
           :src="img.src"
           @touchend="viewImage(img.src,$event)"
-          @click="viewImage(img.src,$event)">
+          @click="viewImage(img.src,$event)"
+        >
         <h4
           v-if="!img.src"
-          class="text-archive">
+          class="text-archive"
+        >
           <i
             translate="no"
-            class="material-icons notranslate">
+            class="material-icons notranslate"
+          >
             description
           </i>
           <span>
@@ -75,13 +88,15 @@
           'is-ready-all-upload':percent >= 100,
           'disabled-upload':Object.prototype.hasOwnProperty.call($attrs, 'disabled') || limit?(srcs.length - itemRemove.length) >= Number(limit):false
         }"
-        class="con-input-upload">
+        class="con-input-upload"
+      >
         <input
           v-bind="attrs"
           ref="fileInput"
           :disabled="$attrs.disabled || limit?(srcs.length - itemRemove.length) >= Number(limit):false"
           type="file"
-          @change="getFiles">
+          @change="getFiles"
+        >
         <span class="text-input">
           {{ text }}
         </span>
@@ -89,7 +104,8 @@
           :style="{
             width:`${percent}%`
           }"
-          class="input-progress">
+          class="input-progress"
+        >
 
         </span>
         <button
@@ -98,10 +114,12 @@
           type="button"
           title="Upload"
           class="btn-upload-all vs-upload--button-upload"
-          @click="upload('all')">
+          @click="upload('all')"
+        >
           <i
             translate="no"
-            class="material-icons notranslate">
+            class="material-icons notranslate"
+          >
             cloud_upload
           </i>
         </button>

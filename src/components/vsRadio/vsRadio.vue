@@ -1,26 +1,31 @@
 <template lang="html">
   <label
-    :class="[`vs-radio-${color}`, this.$attrs.class]"
-    :style="this.$attrs.style"
-    class="vs-component con-vs-radio">
+    :class="[`vs-radio-${color}`, $attrs.class]"
+    :style="$attrs.style"
+    class="vs-component con-vs-radio"
+  >
     <input
       v-bind="attrs"
       :checked="isChecked"
       :value="modelValue"
       :name="vsName || modelValue"
       type="radio"
-      class="vs-radio--input">
+      class="vs-radio--input"
+    >
     <span
-      class="vs-radio">
+      class="vs-radio"
+    >
       <span
         :style="styles"
-        class="vs-radio--borde"/>
+        class="vs-radio--borde"
+      />
       <span
         :style="styleCircle"
-        class="vs-radio--circle"/>
+        class="vs-radio--circle"
+      />
     </span>
     <span class="vs-radio--label">
-      <slot/>
+      <slot />
     </span>
   </label>
 </template>

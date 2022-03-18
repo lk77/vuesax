@@ -1,5 +1,5 @@
 import utils from '../../utils'
-import vsLoading from './index.vue'
+import vsLoading from './vsLoading.vue'
 
 export default {
   name: 'loading',

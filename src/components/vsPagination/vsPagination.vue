@@ -2,7 +2,8 @@
   <vs-row
     :vs-justify="description ? 'space-between' : 'center'"
     vs-type="flex"
-    vs-w="12">
+    vs-w="12"
+  >
     <vs-col
       v-if="description"
       class="vs-pagination--mb"
@@ -23,15 +24,18 @@
         <ul class="vs-pagination--array">
           <li
             v-for="(row,index) in descriptionItems"
-            :key="index">
+            :key="index"
+          >
             <span
               :style="styleDescription"
               :class="[`vs-description-${color}`,{ 'vs-pagination--bold': (index==indexRows)}]"
-              @click="changeRowMaxItems(index)">
+              @click="changeRowMaxItems(index)"
+            >
               {{ row }}
             </span>
             <span
-              v-if="index != (descriptionItems.length - 1)">
+              v-if="index != (descriptionItems.length - 1)"
+            >
               ,
             </span>
           </li>
@@ -45,17 +49,20 @@
       vs-justify="flex-end"
       vs-align="center"
       vs-sm="12"
-      vs-xs="12" >
+      vs-xs="12"
+    >
       <div
         :style="stylePagination"
         :class="[`vs-pagination-${color}`]"
-        class="con-vs-pagination">
+        class="con-vs-pagination"
+      >
         <nav class="vs-pagination--nav">
           <button
             :class="{disabled:current <= 1 ? 'disabled' : null}"
             :disabled="current === 1"
             class="vs-pagination--buttons btn-prev-pagination vs-pagination--button-prev"
-            @click="prevPage">
+            @click="prevPage"
+          >
             <vs-icon
               :icon-pack="iconPack"
               :icon="prevIcon ? prevIcon : defaultPrevIcon"
@@ -67,7 +74,8 @@
               :key="index"
               :class="{'is-current': page == current}"
               class="item-pagination vs-pagination--li"
-              @click="goTo(page)">
+              @click="goTo(page)"
+            >
               <span>
                 {{ page }}
               </span>
@@ -80,7 +88,8 @@
             :class="{disabled:current === total ? 'disabled' : null}"
             :disabled="current === total"
             class="vs-pagination--buttons btn-next-pagination vs-pagination--button-next"
-            @click="nextPage">
+            @click="nextPage"
+          >
             <vs-icon
               :icon-pack="iconPack"
               :icon="nextIcon ? nextIcon : defaultNextIcon"
@@ -93,7 +102,8 @@
             class="vs-pagination--input-goto"
             min="1"
             type="number"
-            @change="goTo">
+            @change="goTo"
+          >
         </nav>
       </div>
     </vs-col>

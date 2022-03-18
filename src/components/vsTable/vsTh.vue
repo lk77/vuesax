@@ -2,15 +2,18 @@
   <th
     colspan="1"
     rowspan="1"
-    @click="sortValue()">
+    @click="sortValue()"
+  >
     <div class="vs-table-text">
       <slot></slot>
       <span
         v-if="isColumnSelectedForSort && currentSort != 0"
-        class="sort-th">
+        class="sort-th"
+      >
         <vs-icon
           :icon="currentSort == 1 ? 'expand_less' : 'expand_more'"
-          class="th-sort-icon">
+          class="th-sort-icon"
+        >
         </vs-icon>
       </span>
     </div>

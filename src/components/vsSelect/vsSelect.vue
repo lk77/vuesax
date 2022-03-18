@@ -7,27 +7,35 @@
       'input-select-validate-danger':danger,
       'input-select-validate-warning':warning}, $attrs.class]"
     :style="[getWidth, $attrs.style]"
-    class="con-select">
+    class="con-select"
+  >
     <label
       v-if="label"
       ref="inputSelectLabel"
-      class="vs-select--label">{{ label }}</label>
+      class="vs-select--label"
+    >{{ label }}</label>
     <div class="input-select-con">
       <!-- v-model="modelValueFilter" -->
       <input
         v-bind="attrs"
-        :value="modelValuex"
         ref="inputselect"
+        :value="modelValuex"
         :readonly="!autocomplete"
         class="input-select vs-select--input"
         type="text"
-        @keydown.esc.stop.prevent="closeOptions">
-      <input :name="$attrs.name" type="hidden" :value="modelValue">
+        @keydown.esc.stop.prevent="closeOptions"
+      >
+      <input
+        :name="$attrs.name"
+        type="hidden"
+        :value="modelValue"
+      >
 
       <button
         :class="{'activeBtnClear': activeBtnClear}"
         class="icon-select-clear vs-select--icon-clear"
-        @click="clearValue">
+        @click="clearValue"
+      >
         <i class="material-icons">
           close
         </i>
@@ -46,12 +54,13 @@
           ref="vsSelectOptions"
           :style="cords"
           :class="[`vs-select-${color}`,{'scrollx':scrollx}]"
-          class="vs-select--options">
+          class="vs-select--options"
+        >
           <ul ref="ulx">
-            <slot/>
+            <slot />
           </ul>
           <ul v-show="clear">
-            <li @click="filterItems(''),changeValue()" >
+            <li @click="filterItems(''),changeValue()">
               {{ noData }}
             </li>
           </ul>
@@ -67,7 +76,8 @@
       <div
         v-if="success"
         key="success"
-        class="con-text-validation">
+        class="con-text-validation"
+      >
         <span class="span-text-validation span-text-validation-success">
           {{
             successText
@@ -77,7 +87,8 @@
       <div
         v-else-if="danger"
         key="danger"
-        class="con-text-validation span-text-validation-danger">
+        class="con-text-validation span-text-validation-danger"
+      >
         <span class="span-text-validation">
           {{
             dangerText
@@ -87,7 +98,8 @@
       <div
         v-else-if="warning"
         key="warning"
-        class="con-text-validation span-text-validation-warning">
+        class="con-text-validation span-text-validation-warning"
+      >
         <span class="span-text-validation">
           {{
             warningText
@@ -97,7 +109,8 @@
       <div
         v-if="descriptionText"
         key="description"
-        class="con-text-validation span-text-validation">
+        class="con-text-validation span-text-validation"
+      >
         <span class="span-text-validation">
           {{
             descriptionText

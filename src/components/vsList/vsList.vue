@@ -1,7 +1,8 @@
 <template lang="html">
   <div
-    class="vs-list">
-    <slot/>
+    class="vs-list"
+  >
+    <slot />
   </div>
 </template>
 

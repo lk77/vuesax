@@ -15,7 +15,7 @@
       class="vs-divider--text"
     >
       <template v-if="!icon">
-        <slot/>
+        <slot />
       </template>
 
       <vs-icon
@@ -99,6 +99,7 @@ export default {
       if (!_color.isColor(this.color)) {
         return _color.getColor(this.color)
       }
+      return '';
     },
     afterStyle() {
       const classes = {
@@ -132,11 +133,13 @@ export default {
       if (!_color.isColor(this.color)) {
         return _color.getColor(this.color !== 'rgba(0, 0, 0,.1)' ? this.color : null)
       }
+      return ''
     },
     backgroundColor() {
       if (!_color.isColor(this.background)) {
         return _color.getColor(this.background)
       }
+      return ''
     },
     textAndBackgroundClass() {
       const classes = {}

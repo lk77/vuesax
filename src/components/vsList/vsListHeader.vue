@@ -4,19 +4,25 @@
       'with-icon':icon,
     }]"
     :style="styleHeader"
-    class="vs-list--header">
+    class="vs-list--header"
+  >
     <div
       v-if="icon"
-      class="vs-list--icon">
+      class="vs-list--icon"
+    >
       <vs-icon
         :icon-pack="iconPack"
-        :icon="icon"></vs-icon>
+        :icon="icon"
+      ></vs-icon>
     </div>
     <div class="list-titles">
       <div
         v-if="title"
-        class="vs-list--title">{{ title }}</div>
-        <!-- <div class="list-subtitle" v-if="subtitle">{{subtitle}}</div> -->
+        class="vs-list--title"
+      >
+        {{ title }}
+      </div>
+      <!-- <div class="list-subtitle" v-if="subtitle">{{subtitle}}</div> -->
     </div>
   </div>
 </template>

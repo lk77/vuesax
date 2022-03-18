@@ -7,7 +7,8 @@
       'group-rightx': rightx
     }"
     class="vs-component vs-dropdown--group"
-    @click="clickGroup">
+    @click="clickGroup"
+  >
     <!-- @mouseout="toggleGroup($event)" -->
     <span
       v-if="vsCollapse"
@@ -16,7 +17,8 @@
     />
     <h3
       v-else
-      v-text="vsLabel"/>
+      v-text="vsLabel"
+    />
     <vs-icon
       v-if="vsCollapse"
       :icon-pack="iconPack"
@@ -33,9 +35,10 @@
       ref="ulx"
       :style="styleItems"
       :class="{'con-dropdown-group-no-cascading':!vsCollapse}"
-      class="con-dropdown--group-con-ul">
+      class="con-dropdown--group-con-ul"
+    >
       <ul class="con-dropdown--group-ul">
-        <slot/>
+        <slot />
       </ul>
     </div>
     <!-- </transition> -->

@@ -3,11 +3,12 @@
     v-bind="$attrs"
     :class="[`vs-align-${align}`, $attrs.class]"
     class="vs-breadcrumb"
-    aria-label="breadcrumb">
+    aria-label="breadcrumb"
+  >
     <ol class="vs-breadcrumb--ol">
-      <slot/>
+      <slot />
       <li
-        v-for="item in items"
+        v-for="item in dataItems"
         v-show="!hasSlot"
         :key="item.title"
         :class="{'vs-active':item.active,'disabled-link':item.disabled}"
@@ -63,6 +64,9 @@ export default {
       default:'left'
     }
   },
+  data() {
+    return {dataItems: []}
+  },
   computed: {
     textClass() {
       const classes = {}
@@ -84,7 +88,7 @@ export default {
   },
   created() {
     if(this.items) {
-      this.items = this.items.map(item => {
+      this.dataItems = this.items.map(item => {
         if (typeof item.title === "function") {
           return {
             ...item,

@@ -11,13 +11,14 @@
       :style="stylex"
       :class="[`vs-noti-${position}`,`vs-noti-${color}`,{'activeNoti':active}]"
       class="vs-component vs-notifications"
-      @click="clickNoti">
+      @click="clickNoti"
+    >
       <div class="content-noti">
         <div class="con-text-noti">
-          <h3 v-html="title"/>
-          <p v-html="text"/>
+          <h3 v-html="title" />
+          <p v-html="text" />
 
-          <slot/>
+          <slot />
         </div>
         <vs-icon
           v-if="icon"
@@ -28,7 +29,8 @@
       </div>
       <span
         :style="fillingStyle"
-        class="filling"/>
+        class="filling"
+      />
     </div>
   </transition>
 </template>

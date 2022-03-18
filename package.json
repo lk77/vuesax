@@ -46,6 +46,7 @@
     "postinstall": "node postinstall.js"
   },
   "dependencies": {
+    "@vue/cli-plugin-eslint": "^5.0.3",
     "babel-eslint": "^10.1.0",
     "chalk": "^4.1.2",
     "eslint": "^7.32.0",

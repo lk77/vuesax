@@ -9,12 +9,14 @@
       'input-icon-validate-warning':warning,
       'is-label-placeholder':labelPlaceholder
     }, $attrs.class]"
-    class="vs-component vs-con-input-label vs-input">
+    class="vs-component vs-con-input-label vs-input"
+  >
     <label
       v-if="labelPlaceholder?false:label"
       class="vs-input--label"
       for=""
-      @click="focusInput">{{ label }}</label>
+      @click="focusInput"
+    >{{ label }}</label>
     <div class="vs-con-input">
       <input
         v-bind="attrs"
@@ -29,7 +31,8 @@
         :placeholder="null"
         :value="modelValue"
         :type="$attrs.type?$attrs.type:'text'"
-        class="vs-inputx vs-input--input">
+        class="vs-inputx vs-input--input"
+      >
       <transition name="placeholderx">
         <span
           v-if="isValue&&(labelPlaceholder||$attrs.placeholder)"
@@ -40,9 +43,10 @@
             size,
             {
               'vs-placeholder-label': labelPlaceholder,
-          }]"
+            }]"
           class="input-span-placeholder vs-input--placeholder"
-          @click="focusInput">
+          @click="focusInput"
+        >
           {{ $attrs.placeholder || labelPlaceholder }}
         </span>
       </transition>
@@ -53,14 +57,16 @@
         :icon-pack="iconPack"
         :icon="icon"
         class="icon-inputx notranslate vs-input--icon"
-        @click="focusInput(); $emit('icon-click');">
+        @click="focusInput(); $emit('icon-click');"
+      >
       </vs-icon>
 
-      <transition name="icon-validate" >
+      <transition name="icon-validate">
         <span
           v-if="success || danger || warning"
           :class="{'icon-before':iconAfter}"
-          class="input-icon-validate vs-input--icon-validate">
+          class="input-icon-validate vs-input--icon-validate"
+        >
           <vs-icon
             :class="{'icon-before':iconAfter}"
             :icon-pack="valIconPack"
@@ -78,7 +84,8 @@
       <div
         v-if="success"
         key="success"
-        class="con-text-validation vs-input--text-validation">
+        class="con-text-validation vs-input--text-validation"
+      >
         <span class="span-text-validation span-text-validation-success vs-input--text-validation-span">
           {{
             successText
@@ -88,7 +95,8 @@
       <div
         v-else-if="danger"
         key="danger"
-        class="con-text-validation span-text-validation-danger vs-input--text-validation-span">
+        class="con-text-validation span-text-validation-danger vs-input--text-validation-span"
+      >
         <span class="span-text-validation">
           {{
             dangerText
@@ -98,7 +106,8 @@
       <div
         v-else-if="warning"
         key="warning"
-        class="con-text-validation span-text-validation-warning vs-input--text-validation-span">
+        class="con-text-validation span-text-validation-warning vs-input--text-validation-span"
+      >
         <span class="span-text-validation">
           {{
             warningText
@@ -108,7 +117,8 @@
       <div
         v-if="descriptionText"
         key="description"
-        class="con-text-validation span-text-validation vs-input--text-validation-span">
+        class="con-text-validation span-text-validation vs-input--text-validation-span"
+      >
         <span class="span-text-validation">
           {{
             descriptionText
@@ -116,9 +126,6 @@
         </span>
       </div>
     </transition-group>
-
-
-
   </div>
 </template>
 
@@ -127,6 +134,14 @@ import _color from '../../utils/color.js'
 import utils from '../../utils'
 export default {
   name:'VsInput',
+  inject: {
+    elForm: {
+      default: ''
+    },
+    elFormItem: {
+      default: ''
+    }
+  },
   inheritAttrs: false,
   props:{
     modelValue:{
@@ -213,14 +228,6 @@ export default {
       default: null,
       type:String
     },
-  },
-  inject: {
-    elForm: {
-      default: ''
-    },
-    elFormItem: {
-      default: ''
-    }
   },
   data:()=>({
     isFocus:false

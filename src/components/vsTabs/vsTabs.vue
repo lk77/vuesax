@@ -2,13 +2,16 @@
   <div
     :class="[`vs-tabs-${color}`,`vs-tabs-position-${position}`, $attrs.class]"
     :style="$attrs.style"
-    class="con-vs-tabs vs-tabs">
+    class="con-vs-tabs vs-tabs"
+  >
     <div
-      class="con-ul-tabs">
+      class="con-ul-tabs"
+    >
       <ul
         ref="ul"
         :class="[`ul-tabs-${alignment}`]"
-        class="ul-tabs vs-tabs--ul">
+        class="ul-tabs vs-tabs--ul"
+      >
         <li
           v-for="(child,index) in childrenItems"
           :ref="'li-' + index"
@@ -16,20 +19,23 @@
           :style="childActive == index ? styleTab : {}"
           class="vs-tabs--li"
           @mouseover="hover = true"
-          @mouseout="hover = false">
+          @mouseout="hover = false"
+        >
           <button
             v-bind="allowedAttrs(child.$attrs)"
             :style="styleAlignIcon(child.icon)"
             class="vs-tabs--btn"
             type="button"
             @click="activeChild(index)"
-            v-on="child.$attrs">
+            v-on="child.$attrs"
+          >
             <vs-icon
               v-if="child.icon"
               :icon-pack="child.iconPack"
               :icon="child.icon"
               :color="color"
-              class="vs-tabs--btn-icon"></vs-icon>
+              class="vs-tabs--btn-icon"
+            ></vs-icon>
             <span v-if="child.label">{{ child.label }}</span>
           </button>
 
@@ -41,16 +47,18 @@
             <vs-icon
               :icon-pack="child.iconPack"
               :icon="child.tag"
-              :color="child.tagColor"></vs-icon>
+              :color="child.tagColor"
+            ></vs-icon>
           </button>
         </li>
       </ul>
       <span
         :style="stylex"
-        class="line-vs-tabs"/>
+        class="line-vs-tabs"
+      />
     </div>
     <div class="con-slot-tabs">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
@@ -126,7 +134,7 @@ export default {
       const activeIndex = this.parseIndex(this.modelValue)
       this.childActive = activeIndex
       this.$nextTick(() => {
-          this.activeChild(activeIndex, true)
+        this.activeChild(activeIndex, true)
       })
     })
   },

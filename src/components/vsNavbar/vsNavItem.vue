@@ -5,11 +5,13 @@
     class="vs-navbar--item"
     @click="clickItem()"
     @mouseout="mouseout"
-    @mouseover="mouseover">
+    @mouseover="mouseover"
+  >
     <slot></slot>
     <span
       :style="[styleAfter]"
-      class="vs-navbar-after"></span>
+      class="vs-navbar-after"
+    ></span>
   </li>
 </template>
 <script>

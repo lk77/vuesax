@@ -5,39 +5,46 @@
       :style="style"
       :class="[`vs-loading-background-${background}`,`vs-loading-color-${color}`,{'textAfter':textAfter}]"
       class="con-vs-loading"
-      @click="effectClick">
+      @click="effectClick"
+    >
       <transition name="effect-click">
         <div
           v-if="activeEffectClick&&clickEffect"
           :style="styleEffectClick"
-          class="effect-click">
+          class="effect-click"
+        >
         </div>
       </transition>
 
       <h4
         v-if="text"
-        class="title-loading">{{ text }}</h4>
+        class="title-loading"
+      >
+        {{ text }}
+      </h4>
 
       <div
         :style="{
           transform:`scale(${scale})`
         }"
         :class="[type]"
-        class="vs-loading">
-
-
+        class="vs-loading"
+      >
         <div
           v-if="type!='material'"
           :style="styleEffect1"
-          class="effect-1 effects"></div>
+          class="effect-1 effects"
+        ></div>
         <div
           v-if="type!='material'"
           :style="styleEffect2"
-          class="effect-2 effects"></div>
+          class="effect-2 effects"
+        ></div>
         <div
           v-if="type!='material'"
           :style="styleEffect3"
-          class="effect-3 effects"></div>
+          class="effect-3 effects"
+        ></div>
 
         <img :src="src">
 
@@ -47,7 +54,8 @@
           width="50px"
           height="50px"
           viewBox="0 0 66 66"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <circle
             class="path"
             fill="none"
@@ -55,12 +63,10 @@
             stroke-linecap="round"
             cx="33"
             cy="33"
-            r="30"></circle>
+            r="30"
+          ></circle>
         </svg>
-
       </div>
-
-
     </div>
   </transition>
 </template>

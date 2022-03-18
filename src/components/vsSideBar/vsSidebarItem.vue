@@ -2,22 +2,27 @@
   <div
     :class="{'vs-sidebar-item-active':getActive}"
     class="vs-sidebar--item"
-    @click="setIndexActive">
+    @click="setIndexActive"
+  >
     <router-link
       v-if="to"
-      :to="to">
+      :to="to"
+    >
       <vs-icon
         :icon-pack="iconPack"
-        :icon="icon">
+        :icon="icon"
+      >
       </vs-icon>
       <slot></slot>
     </router-link>
     <a
       v-else
-      :href="href">
+      :href="href"
+    >
       <vs-icon
         :icon-pack="iconPack"
-        :icon="icon">
+        :icon="icon"
+      >
       </vs-icon>
       <slot></slot>
     </a>

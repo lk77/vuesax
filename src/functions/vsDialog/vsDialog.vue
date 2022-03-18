@@ -4,33 +4,40 @@
       v-if="isPrompt ? active : fActive"
       ref="con"
       :class="[`vs-dialog-${color}`]"
-      class="vs-component con-vs-dialog">
+      class="vs-component con-vs-dialog"
+    >
       <div
         class="vs-dialog-dark"
-        @click="handleClose($event,true)"/>
+        @click="handleClose($event,true)"
+      />
       <div
         ref="dialogx"
-        class="vs-dialog">
-
+        class="vs-dialog"
+      >
         <!-- //header -->
         <header
           :style="styleHeader"
-          class="vs-dialog-header">
+          class="vs-dialog-header"
+        >
           <div class="con-title-after">
             <span
               :style="styleAfter"
-              class="after"/>
-            <h3 class="dialog-title">{{ title }} </h3>
+              class="after"
+            />
+            <h3 class="dialog-title">
+              {{ title }}
+            </h3>
           </div>
           <vs-icon
             v-if="type=='alert'"
             :icon="closeIcon"
             :icon-pack="iconPack"
             class="vs-dialog-cancel vs-dialog-cancel--icon notranslate"
-            @click="handleClose"/>
+            @click="handleClose"
+          />
         </header>     <!-- // slots  -->
         <div class="vs-dialog-text">
-          <slot/>
+          <slot />
           {{ text }}
         </div>
         <!-- footer buttons -->
@@ -40,20 +47,29 @@
             :color="color"
             :type="buttonAccept"
             class="vs-dialog-accept-button"
-            @click="acceptDialog">{{ acceptText }}</vs-button>
+            @click="acceptDialog"
+          >
+            {{ acceptText }}
+          </vs-button>
           <vs-button
             :text-color="'rgba(0,0,0,.5)'"
             :type="buttonCancel"
             class="vs-dialog-cancel-button"
-            @click="cancelClose">{{ cancelText }}</vs-button>
+            @click="cancelClose"
+          >
+            {{ cancelText }}
+          </vs-button>
         </footer>
 
-        <footer v-if="type=='alert'&&!isPrompt" >
+        <footer v-if="type=='alert'&&!isPrompt">
           <vs-button
             :color="color"
             :type="buttonAccept"
             class="vs-dialog-accept-button"
-            @click="acceptDialog">{{ acceptText }}</vs-button>
+            @click="acceptDialog"
+          >
+            {{ acceptText }}
+          </vs-button>
         </footer>
       </div>
     </div>

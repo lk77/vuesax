@@ -1,43 +1,52 @@
 <template>
   <div
     :class="[{'stripe': stripe, 'hoverFlat': hoverFlat}, `vs-table-${color}`]"
-    class="vs-component vs-con-table">
+    class="vs-component vs-con-table"
+  >
     <!-- header -->
     <header class="header-table vs-table--header">
       <slot name="header"></slot>
       <div
         v-if="search"
-        class="con-input-search vs-table--search">
+        class="con-input-search vs-table--search"
+      >
         <input
           v-model="searchx"
           class="input-search vs-table--search-input"
-          type="text">
+          type="text"
+        >
         <vs-icon icon="search"></vs-icon>
       </div>
     </header>
     <div class="con-tablex vs-table--content">
       <div
         :style="styleConTbody"
-        class="vs-con-tbody vs-table--tbody ">
+        class="vs-con-tbody vs-table--tbody "
+      >
         <table
           ref="table"
-          class="vs-table vs-table--tbody-table">
+          class="vs-table vs-table--tbody-table"
+        >
           <thead
             ref="thead"
-            class="vs-table--thead">
+            class="vs-table--thead"
+          >
             <tr>
               <th
                 v-if="multiple || hasExpadableData"
-                class="td-check">
+                class="td-check"
+              >
                 <span
                   v-if="multiple"
-                  class="con-td-check">
+                  class="con-td-check"
+                >
                   <vs-checkbox
                     :key="isCheckedLine ? 'remove' : 'check'"
                     :icon="isCheckedLine ? 'remove' : 'check'"
                     :checked="isCheckedMultiple"
                     size="small"
-                    @change="changeCheckedMultiple"/>
+                    @change="changeCheckedMultiple"
+                  />
                 </span>
               </th>
               <slot name="thead"></slot>
@@ -48,13 +57,15 @@
       </div>
       <div
         v-if="isNoData"
-        class="not-data-table vs-table--not-data">
+        class="not-data-table vs-table--not-data"
+      >
         {{ noDataText }}
       </div>
 
       <div
         v-if="pagination"
-        class="con-pagination-table vs-table--pagination">
+        class="con-pagination-table vs-table--pagination"
+      >
         <vs-pagination
           v-model="currentx"
           :total="searchx && !sst ? getTotalPagesSearch : getTotalPages"
@@ -140,7 +151,7 @@ export default {
     },
     currentPage: {
       default: 1,
-      type: Number | String
+      type: [Number, String]
     },
     sst:{
       default: false,

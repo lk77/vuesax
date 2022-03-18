@@ -2,20 +2,24 @@
   <div
     :class="[`vs-checkbox-${color}`, `vs-checkbox-${size}`, $attrs.class]"
     :style="$attrs.style"
-    class="vs-component con-vs-checkbox">
+    class="vs-component con-vs-checkbox"
+  >
     <input
       v-bind="attrs"
       :checked="isChecked || $attrs.checked"
       :value="modelValue"
-      @change="toggleValue"
       type="checkbox"
-      class="vs-checkbox--input">
+      class="vs-checkbox--input"
+      @change="toggleValue"
+    >
     <span
       :style="style"
-      class="checkbox_x vs-checkbox">
+      class="checkbox_x vs-checkbox"
+    >
       <span
         :style="style_check"
-        class="vs-checkbox--check">
+        class="vs-checkbox--check"
+      >
         <vs-icon
           :icon="icon"
           :icon-pack="iconPack"
@@ -24,7 +28,7 @@
       </span>
     </span>
     <span class="con-slot-label">
-      <slot/>
+      <slot />
     </span>
   </div>
 </template>

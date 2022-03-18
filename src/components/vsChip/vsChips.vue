@@ -2,19 +2,22 @@
   <div class="">
     <div
       :class="{'no-items':value.length == 0}"
-      class="con-chips">
+      class="con-chips"
+    >
       <slot>
       </slot>
 
       <input
-        :placeholder="modelValue.length > 0 ? null : placeholder"
         v-model="newChip"
+        :placeholder="modelValue.length > 0 ? null : placeholder"
         type="text"
         class="con-chips--input"
-        @keypress.enter="addItem">
+        @keypress.enter="addItem"
+      >
       <div
         class="x-global con-chips--remove-all"
-        @click="removeTotalItems">
+        @click="removeTotalItems"
+      >
         <vs-icon
           :icon-pack="iconPack"
           :icon="removeIcon"
@@ -25,11 +28,11 @@
 </template>
 
 <script>
-import vsChip from './vsChip.vue'
+//import vsChip from './vsChip.vue'
 export default {
   name:'VsChips',
   components:{
-    vsChip
+    //vsChip
   },
   props:{
     modelValue:{},

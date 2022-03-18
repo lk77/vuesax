@@ -5,10 +5,12 @@
       ref="sidebarbackground"
       :class="$attrs.class"
       :style="$attrs.style"
-      class="vs-content-sidebar">
+      class="vs-content-sidebar"
+    >
       <div
         v-if="!hiddenBackground"
-        class="vs-sidebar--background"></div>
+        class="vs-sidebar--background"
+      ></div>
       <div
         ref="sidebarContainer"
         :class="[
@@ -22,7 +24,8 @@
             'vs-sidebar-reduceNotHoverExpand': reduceNotHoverExpand
           }
         ]"
-        class="vs-sidebar">
+        class="vs-sidebar"
+      >
         <header
           v-if="$slots.header"
           class="vs-sidebar--header"

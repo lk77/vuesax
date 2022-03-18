@@ -7,24 +7,27 @@
     class="con-vs-slider"
     @mousewheel.prevent="mousewheelx"
     @keydown.left="keydownLeft"
-    @keydown.right="keydownRight">
-
+    @keydown.right="keydownRight"
+  >
     <button
       ref="slider"
       :disabled="disabled"
       class="vs-slider"
       type="button"
-      @click="clickSlider($event),actived = true">
+      @click="clickSlider($event),actived = true"
+    >
       <span
         :style="styleLineOne"
         :class="{'hasTransition':effect}"
-        class="vs-slider-line-one"></span>
+        class="vs-slider-line-one"
+      ></span>
       <span class="vs-slider-line-two"></span>
 
       <span
         :class="{'run-effect':effect}"
         :style="styleEfect"
-        class="vs-slider-line-efect"></span>
+        class="vs-slider-line-efect"
+      ></span>
 
       <!-- vsTicks -->
       <template v-if="ticks&&tick">
@@ -32,7 +35,8 @@
           v-for="(tick,index) in countTicks"
           :class="{'isEnd':index == countTicks-1}"
           :style="styleTicks(index)"
-          class="vs-slider--tick">
+          class="vs-slider--tick"
+        >
         </span>
       </template>
     </button>
@@ -49,10 +53,12 @@
       class="vs-circle-slider vs-circles-slider vs-slider--circles vs-slider--circle"
       type="button"
       @touchstart="activeFocus($event),actived = true"
-      @mousedown="activeFocus($event),actived = true">
+      @mousedown="activeFocus($event),actived = true"
+    >
       <span
         :style="styleText"
-        class="text-circle-slider vs-slider--circle-text">
+        class="text-circle-slider vs-slider--circle-text"
+      >
         {{ valueCircle1 }}
         <span v-if="textFixed">
           {{ textFixed }}
@@ -62,7 +68,6 @@
           :icon="icon"
         ></vs-icon>
       </span>
-
     </button>
     <button
       v-if="Array.isArray(modelValue)"
@@ -78,11 +83,12 @@
       class="vs-circle-slider-two vs-circles-slider vs-slider--circles vs-slider--circle-two"
       type="button"
       @touchstart="activeFocus($event),two = true,actived = true"
-      @mousedown="activeFocus($event),two = true,actived = true">
-
+      @mousedown="activeFocus($event),two = true,actived = true"
+    >
       <span
         :style="styleText"
-        class="text-circle-slider vs-slider--circle-text">
+        class="text-circle-slider vs-slider--circle-text"
+      >
         {{ valueCircle2 }}
         <span v-if="textFixed">
           {{ textFixed }}
@@ -90,11 +96,11 @@
         <i
           v-if="icon"
           translate="no"
-          class="material-icons notranslate">
+          class="material-icons notranslate"
+        >
           {{ icon }}
         </i>
       </span>
-
     </button>
   </div>
 </template>

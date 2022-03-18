@@ -3,17 +3,20 @@
     v-bind="$attrs"
     :style="[avatarStyle, $attrs.style]"
     :class="[avatarClass, $attrs.class]"
-    class="con-vs-avatar">
+    class="con-vs-avatar"
+  >
     <div
       v-if="badge && badge > 0"
       :style="badgeStyle"
       :class="badgeClass"
-      class="dot-count vs-avatar--count">
+      class="dot-count vs-avatar--count"
+    >
       {{ typeof badge != 'boolean' ? badge : null }}
     </div>
     <div
       v-if="src"
-      class="con-img vs-avatar--con-img">
+      class="con-img vs-avatar--con-img"
+    >
       <img
         :src="src"
         :alt="text"
@@ -29,7 +32,6 @@
     >
       {{ text ? returnText : iconPack == 'material-icons' ? icon : '' }}
     </span>
-
   </div>
 </template>
 

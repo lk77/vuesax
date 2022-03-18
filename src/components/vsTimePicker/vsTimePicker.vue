@@ -1,7 +1,8 @@
 <template lang="html">
   <div
     v-bind="$attrs"
-    class="vs-component vs-timepicker">
+    class="vs-component vs-timepicker"
+  >
     <div class="con-vs-time">
       <div class="con-icon-timepicker">
         <vs-icon>
@@ -12,19 +13,23 @@
       <div
         ref="hours"
         class="time-h time"
-        @click="activeHours = true" >
+        @click="activeHours = true"
+      >
         {{ getHours }}
         <div
           v-show="activeHours"
           ref="ulhours"
           :style="styleUlHours"
-          class="con-ul-time">
+          class="con-ul-time"
+        >
           <ul
-            class="ul-time">
+            class="ul-time"
+          >
             <li
               v-for="hour in hours24"
               :class="{'active-time': hour == getHours}"
-              @click="changeHours(hour)" >
+              @click="changeHours(hour)"
+            >
               {{ hour }}
             </li>
           </ul>
@@ -36,26 +41,29 @@
       <div
         ref="minutes"
         class="time-m time"
-        @click="activeMinutes = true" >
+        @click="activeMinutes = true"
+      >
         {{ getMinutes }}
         <div
           v-show="activeMinutes"
           ref="ulminutes"
           :style="styleUlminutes"
-          class="con-ul-time">
+          class="con-ul-time"
+        >
           <ul
-            class="ul-time">
+            class="ul-time"
+          >
             <li
               v-for="minute in minutes"
               :class="{'active-time': minute == getMinutes}"
-              @click="changeMinutes(minute)" >
+              @click="changeMinutes(minute)"
+            >
               {{ minute }}
             </li>
           </ul>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 

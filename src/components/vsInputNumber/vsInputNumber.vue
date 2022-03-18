@@ -6,7 +6,9 @@
       {'isChangeValue':isChangeValue},
       $attrs.class
     ]"
-    class="vs-input-number" :style="$attrs.style">
+    class="vs-input-number"
+    :style="$attrs.style"
+  >
     <button
       v-repeat-click="less"
       :disabled="$attrs.disabled"
@@ -17,7 +19,8 @@
         background:getColor
       }"
       class="btn-less vs-input-number--button-less"
-      type="button">
+      type="button"
+    >
       <vs-icon
         :icon-pack="iconPack"
         :icon="iconDec"
@@ -33,7 +36,8 @@
       :min="min"
       :max="max"
       type="number"
-      class="vs-input-number--input">
+      class="vs-input-number--input"
+    >
     <button
       v-repeat-click="plus"
       :disabled="$attrs.disabled"
@@ -44,7 +48,8 @@
         background:getColor
       }"
       class="btn-plus vs-input-number--button-plus"
-      type="button">
+      type="button"
+    >
       <vs-icon
         :icon-pack="iconPack"
         :icon="iconInc"
@@ -61,7 +66,7 @@ export default {
   name:'VsInputNumber',
   directives: {
     repeatClick: {
-      beforeMount(el, binding, vnode) {
+      beforeMount(el, binding/*, vnode*/) {
         let intervalx = null;
         let startT;
         const functionx = binding.value;

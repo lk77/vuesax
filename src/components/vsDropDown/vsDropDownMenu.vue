@@ -17,13 +17,15 @@
       <!-- @mouseover="toggleMenu($event)" -->
       <ul
         v-if="!vsCustomContent"
-        class="vs-component vs-dropdown--menu">
-        <slot/>
+        class="vs-component vs-dropdown--menu"
+      >
+        <slot />
       </ul>
       <div
         v-else
-        class="vs-dropdown--custom vs-dropdown--menu">
-          <slot/>
+        class="vs-dropdown--custom vs-dropdown--menu"
+      >
+        <slot />
       </div>
       <div
         ref="menuAfter"

@@ -2,8 +2,8 @@
   <div
     :style="[style, $attrs.style]"
     :class="[`vs-textarea-${color}`, {'textarea-danger': counter ? (modelValue && modelValue.length > counter) : false, 'focusx': isFocus}, $attrs.class]"
-    class="vs-component vs-con-textarea">
-
+    class="vs-component vs-con-textarea"
+  >
     <h4 v-if="label">
       {{ label }}
     </h4>
@@ -11,15 +11,16 @@
     <textarea
       v-bind="attrs"
       :value="modelValue"
-      class="vs-textarea">
+      class="vs-textarea"
+    >
     </textarea>
 
     <div
       v-if="counter"
-      class="count vs-textarea--count">
+      class="count vs-textarea--count"
+    >
       {{ modelValue ? modelValue.length : 0 }} / {{ counter }}
     </div>
-
   </div>
 </template>
 

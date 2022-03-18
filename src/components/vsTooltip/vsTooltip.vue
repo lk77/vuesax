@@ -3,16 +3,20 @@
     ref="convstooltip"
     class="con-vs-tooltip"
     @mouseleave="mouseleavex"
-    @mouseenter="mouseenterx">
+    @mouseenter="mouseenterx"
+  >
     <transition name="tooltip-fade">
       <div
         v-show="activeTooltip"
         ref="vstooltip"
         :class="[`vs-tooltip-${positionx || position}`,`vs-tooltip-${color}`, {'after-none': noneAfter}]"
         :style="style"
-        class="vs-tooltip">
+        class="vs-tooltip"
+      >
         <slot name="content">
-          <h4 v-if="title">{{ title }}</h4>
+          <h4 v-if="title">
+            {{ title }}
+          </h4>
           {{ text }}
         </slot>
       </div>

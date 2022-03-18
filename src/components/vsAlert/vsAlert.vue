@@ -1,24 +1,26 @@
 <template lang="html">
   <transition
+    :class="$attrs.class"
+    :style="$attrs.style"
     @before-enter="beforeEnter"
     @enter="enter"
     @leave="leave"
-    :class="$attrs.class"
-    :style="$attrs.style">
-
+  >
     <div
-      v-bind="attrs"
       v-if="active"
+      v-bind="attrs"
       ref="alert"
       :class="[`con-vs-alert-${color}`,{
         'con-icon':icon,
       }]"
       :style="styleAlert"
-      class="con-vs-alert">
+      class="con-vs-alert"
+    >
       <div
         v-if="closable"
         class="con-x vs-alert--close"
-        @click="$emit('update:active',false)">
+        @click="$emit('update:active',false)"
+      >
         <vs-icon
           :icon-pack="iconPack"
           :icon="closeIcon"
@@ -34,14 +36,15 @@
 
       <div
         :class="{'con-icon': icon}"
-        class="vs-alert">
+        class="vs-alert"
+      >
         <vs-icon
           v-if="icon"
           :icon-pack="iconPack"
           :icon="icon"
           class="icon-alert"
         ></vs-icon>
-        <slot/>
+        <slot />
       </div>
     </div>
   </transition>

@@ -1,5 +1,5 @@
 import utils from '../../utils'
-import vsNotifications from './index.vue'
+import vsNotifications from './vsNotifications.vue'
 
 export default {
   name: 'notify',

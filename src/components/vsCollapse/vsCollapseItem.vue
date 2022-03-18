@@ -3,14 +3,17 @@
     :class="{'open-item': maxHeight != '0px', 'disabledx': disabled}"
     class="vs-collapse-item"
     @mouseover="mouseover"
-    @mouseout="mouseout">
+    @mouseout="mouseout"
+  >
     <header
       class="vs-collapse-item--header"
-      @click="toggleContent">
+      @click="toggleContent"
+    >
       <slot name="header"></slot>
       <span
         v-if="!notArrow"
-        class="icon-header vs-collapse-item--icon-header">
+        class="icon-header vs-collapse-item--icon-header"
+      >
         <vs-icon
           :icon-pack="iconPack"
           :icon="iconArrow"
@@ -20,21 +23,22 @@
     <div
       ref="content"
       :style="styleContent"
-      class="vs-collapse-item--content">
+      class="vs-collapse-item--content"
+    >
       <div class="con-content--item">
-        <slot/>
+        <slot />
       </div>
     </div>
   </div>
 </template>
 <script>
 
-import vsicon from '../vsIcon';
+import vsIcon from '../vsIcon';
 
 export default {
   name:'VsCollapseItem',
   components: {
-    vsicon
+    vsIcon
   },
   props:{
     open: {
