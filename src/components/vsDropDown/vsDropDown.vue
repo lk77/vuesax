@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     clickx(evt) {
-      let [dropdownMenu] = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
+      let dropdownMenu = this.childrenItems.find(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
       dropdownMenu.vsCustomContent = this.vsCustomContent
       dropdownMenu.vsTriggerClick = this.vsTriggerClick
       dropdownMenu.vsDropRight = this.vsDropRight
