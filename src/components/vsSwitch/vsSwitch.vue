@@ -55,7 +55,6 @@ import _color from '../../utils/color.js'
 import utils from '../../utils'
 export default {
   name:'VsSwitch',
-  emits: ['change'],
   inheritAttrs:false,
   props:{
     modelValue:{},
@@ -81,6 +80,7 @@ export default {
     },
     vsValue:{}
   },
+  emits: ['update:modelValue'],
   data:()=>({
     widthx:42,
     checkboxClicked: false,
@@ -119,19 +119,19 @@ export default {
       }
       else {
         this.$emit('update:modelValue', !this.modelValue)
-        this.$emit('change',evt)
+        //this.$emit('change',evt)
       }
     },
-    setArray(evt){
+    setArray(/*evt*/){
       const modelValue = this.modelValue.slice(0) // Copy Array.
       if(this.isArrayIncludes()){
         modelValue.splice(modelValue.indexOf(this.vsValue),1) // delete modelValue
         this.$emit('update:modelValue', modelValue)
-        this.$emit('change', evt)
+        //this.$emit('change', evt)
       } else {
         modelValue.push(this.vsValue) // add modelValue new
         this.$emit('update:modelValue', modelValue)
-        this.$emit('change', evt)
+        //this.$emit('change', evt)
       }
     },
     isArrayIncludes(){
