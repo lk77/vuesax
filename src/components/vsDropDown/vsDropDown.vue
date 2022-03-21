@@ -83,7 +83,8 @@ export default {
   },
   methods: {
     clickx(evt) {
-      let dropdownMenu = this.childrenItems.find(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
+      let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
+      console.log(dropdownMenu);
       dropdownMenu.vsCustomContent = this.vsCustomContent
       dropdownMenu.vsTriggerClick = this.vsTriggerClick
       dropdownMenu.vsDropRight = this.vsDropRight
@@ -108,7 +109,8 @@ export default {
       })*/
     },
     changePositionMenu() {
-      let [dropdownMenu] = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
+      let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
+      console.log(dropdownMenu);
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
       if (this.$refs.dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
         this.$nextTick(() => {
@@ -142,7 +144,7 @@ export default {
       if (evt.type == 'contextmenu') {
         evt.preventDefault()
       }
-      let [dropdownMenu] = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
+      let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
       if (this.vsTriggerClick || this.vsTriggerContextmenu) {
         if (this.vsDropdownVisible && !evt.target.closest('.vs-dropdown--menu')) {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
@@ -159,7 +161,7 @@ export default {
       this.$emit('click')
     },
     toggleMenu(typex, evt) {
-      let [dropdownMenu] = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'dropdownVisible'))
+      let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
       if (!this.vsTriggerClick && !this.vsTriggerContextmenu) {
         if (typex == 'over') {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = true

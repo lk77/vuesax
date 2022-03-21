@@ -1,7 +1,7 @@
 <template lang="html">
   <transition name="dropdownx">
     <div
-      v-if="dropdownVisible"
+      v-show="dropdownVisible"
       ref="options"
       :class="{'rightx':vsDropRight || $parent.rightx,'notHeight': notHeight}"
       :style="{
@@ -54,7 +54,7 @@ export default {
   }),
   watch:{
     dropdownVisible(val) {
-      let dropdownGroup = this.childrenItems.filter(item => Object.prototype.hasOwnProperty.call(item, 'activeGroup'))
+      let dropdownGroup = this.childrenItems.filter(item => item.activeGroup !== undefined)
       dropdownGroup.forEach((item_group)=>{
         item_group.activeGroup = false
       })

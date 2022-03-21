@@ -10,25 +10,14 @@
     @mouseover="hoverx=true"
     @mouseout="hoverx=false"
   >
-    <router-link
-      v-if="to"
+    <component :is="isVueRouterInstalled && to ? 'router-link' :  'a'"
       v-bind="attrs"
       :to="to"
       :class="{'disabled':disabled}"
       class="vs-dropdown--item-link"
     >
-      {{ $attrs.disabled }}
       <slot />
-    </router-link>
-
-    <a
-      v-else
-      v-bind="attrs"
-      :class="{'disabled':disabled}"
-      class="vs-dropdown--item-link"
-    >
-      <slot />
-    </a>
+    </component>
   </li>
 </template>
 
@@ -39,7 +28,9 @@ export default {
   name: "VsDropdownItem",
   inheritAttrs:false,
   props:{
-    to:{},
+    to:{
+      default: null
+    },
     disabled:{
       default:false,
       type:Boolean
@@ -55,6 +46,9 @@ export default {
     color: null,
   }),
   computed: {
+    isVueRouterInstalled() {
+      return !!this.$vs.app.config.globalProperties.$router;
+    },
     attrs() {
       return {
         ...utils.allowedAttrs(this.$attrs)
