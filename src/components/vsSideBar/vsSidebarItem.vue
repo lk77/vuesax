@@ -31,6 +31,7 @@
 <script>
 export default {
   name:'VsSidebarItem',
+  emits: ['click'],
   props:{
     icon: {
       default: null,

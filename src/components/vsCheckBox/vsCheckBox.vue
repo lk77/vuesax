@@ -38,6 +38,7 @@ import _color from '../../utils/color.js'
 import utils from '../../utils'
 export default {
   name:'VsCheckbox',
+  emits: ['change'],
   //inheritAttrs: false,
   props:{
     color:{

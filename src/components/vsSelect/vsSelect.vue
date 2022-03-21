@@ -125,6 +125,7 @@
 import utils from "../../utils";
 export default {
   name: "VsSelect",
+  emits: ['blur', 'focus', 'input-change', 'change'],
   props: {
     modelValue: {},
     noData: {

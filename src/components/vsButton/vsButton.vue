@@ -7,11 +7,11 @@
       'includeIcon':icon,
       'includeIconOnly':icon && !$slots.default,
       'vs-radius':radius
-    }, size, this.class]"
+    }, size, $attrs.class]"
     :style="[styles,{
       'width':/[px]/.test(size) ? `${size}` : null,
       'height':/[px]/.test(size) ? `${size}` : null
-    }, style]"
+    }, $attrs.style]"
     :type="button"
     class="vs-component vs-button"
     name="button"
@@ -56,6 +56,7 @@ import _color from '../../utils/color.js'
 export default {
   name:'VsButton',
   inheritAttrs:false,
+  emits: ['mouseover', 'mouseout', 'blur', 'click', 'routeErr'],
   props:{
     type:{
       default:'filled',

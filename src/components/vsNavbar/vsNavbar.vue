@@ -1,7 +1,7 @@
 <template lang="html">
   <header
-    :style="[styleNavbar, style]"
-    :class="[`vs-navbar-${type}`, `vs-navbar-color-${color}`, {'collapse':collapse}, this.class]"
+    :style="[styleNavbar, $attrs.style]"
+    :class="[`vs-navbar-${type}`, `vs-navbar-color-${color}`, {'collapse':collapse}, $attrs.class]"
     class="vs-navbar"
   >
     <div class="vs-navbar--header">

@@ -64,6 +64,7 @@ import utils from "../../utils";
 
 export default {
   name:'VsInputNumber',
+  emits: ['blur'],
   directives: {
     repeatClick: {
       beforeMount(el, binding/*, vnode*/) {

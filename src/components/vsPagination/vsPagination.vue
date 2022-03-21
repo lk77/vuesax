@@ -114,6 +114,7 @@ import _color from '../../utils/color.js'
 
 export default {
   name: 'VsPagination',
+  emits: ['change'],
   props:{
     color:{
       type:String,

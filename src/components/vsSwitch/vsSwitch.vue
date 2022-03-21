@@ -55,6 +55,7 @@ import _color from '../../utils/color.js'
 import utils from '../../utils'
 export default {
   name:'VsSwitch',
+  emits: ['change'],
   inheritAttrs:false,
   props:{
     modelValue:{},
