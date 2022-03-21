@@ -3342,15 +3342,15 @@ const vsSelectGroup_exports_ = /*#__PURE__*/exportHelper_default()(vsSelectGroup
   Vue.component(vsSelectItem.name, vsSelectItem);
   Vue.component(vsSelectGroup.name, vsSelectGroup);
 });
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsSwitch/vsSwitch.vue?vue&type=template&id=2293ac1a&lang=html
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsSwitch/vsSwitch.vue?vue&type=template&id=6b05aec6&lang=html
 
-var vsSwitchvue_type_template_id_2293ac1a_lang_html_hoisted_1 = ["disabled", "value"];
+var vsSwitchvue_type_template_id_6b05aec6_lang_html_hoisted_1 = ["disabled", "value"];
 
-var vsSwitchvue_type_template_id_2293ac1a_lang_html_hoisted_2 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
+var vsSwitchvue_type_template_id_6b05aec6_lang_html_hoisted_2 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
   class: "vs-circle-switch vs-switch--circle"
 }, null, -1);
 
-function vsSwitchvue_type_template_id_2293ac1a_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsSwitchvue_type_template_id_6b05aec6_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
@@ -3366,7 +3366,7 @@ function vsSwitchvue_type_template_id_2293ac1a_lang_html_render(_ctx, _cache, $p
     value: $props.modelValue,
     class: "input-switch vs-switch--input",
     type: "checkbox"
-  }), null, 16, vsSwitchvue_type_template_id_2293ac1a_lang_html_hoisted_1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
+  }), null, 16, vsSwitchvue_type_template_id_6b05aec6_lang_html_hoisted_1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
     ref: "on",
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([{
       'active-text': $options.isChecked || _ctx.$attrs.checked
@@ -3384,9 +3384,9 @@ function vsSwitchvue_type_template_id_2293ac1a_lang_html_render(_ctx, _cache, $p
     "icon-pack": $props.iconPack,
     icon: $props.vsIconOff || $props.vsIcon,
     class: "icons-switch vs-switch--icon"
-  }, null, 8, ["icon-pack", "icon"])], 2), vsSwitchvue_type_template_id_2293ac1a_lang_html_hoisted_2], 16);
+  }, null, 8, ["icon-pack", "icon"])], 2), vsSwitchvue_type_template_id_6b05aec6_lang_html_hoisted_2], 16);
 }
-// CONCATENATED MODULE: ./src/components/vsSwitch/vsSwitch.vue?vue&type=template&id=2293ac1a&lang=html
+// CONCATENATED MODULE: ./src/components/vsSwitch/vsSwitch.vue?vue&type=template&id=6b05aec6&lang=html
 
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsSwitch/vsSwitch.vue?vue&type=script&lang=js
 
@@ -3459,10 +3459,21 @@ function vsSwitchvue_type_template_id_2293ac1a_lang_html_render(_ctx, _cache, $p
   mounted: function mounted() {
     var _this2 = this;
 
-    this.$nextTick(function () {
-      var w = _this2.$refs.on.clientWidth > _this2.$refs.off.clientWidth ? _this2.$refs.on.clientWidth : _this2.$refs.off.clientWidth;
-      _this2.widthx = w + 24;
-    });
+    var tries = 0;
+
+    var updateWidthx = function updateWidthx() {
+      if (_this2.$refs.on && _this2.$refs.off) {
+        var w = _this2.$refs.on.clientWidth > _this2.$refs.off.clientWidth ? _this2.$refs.on.clientWidth : _this2.$refs.off.clientWidth;
+        _this2.widthx = w + 24;
+      } else if (tries < 5) {
+        setTimeout(function () {
+          _this2.$nextTick(updateWidthx);
+        }, 50);
+        tries++;
+      }
+    };
+
+    updateWidthx();
   },
   methods: {
     toggleValue: function toggleValue(evt) {
@@ -3503,7 +3514,7 @@ function vsSwitchvue_type_template_id_2293ac1a_lang_html_render(_ctx, _cache, $p
 
 
 
-const vsSwitch_exports_ = /*#__PURE__*/exportHelper_default()(vsSwitchvue_type_script_lang_js, [['render',vsSwitchvue_type_template_id_2293ac1a_lang_html_render]])
+const vsSwitch_exports_ = /*#__PURE__*/exportHelper_default()(vsSwitchvue_type_script_lang_js, [['render',vsSwitchvue_type_template_id_6b05aec6_lang_html_render]])
 
 /* harmony default export */ var vsSwitch = (vsSwitch_exports_);
 // CONCATENATED MODULE: ./src/components/vsSwitch/index.js
@@ -8925,9 +8936,9 @@ const vsSidebarGroup_exports_ = /*#__PURE__*/exportHelper_default()(vsSidebarGro
   Vue.component(vsSidebarItem.name, vsSidebarItem);
   Vue.component(vsSidebarGroup.name, vsSidebarGroup);
 });
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsDropDown/vsDropDown.vue?vue&type=template&id=9393951c&lang=html
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsDropDown/vsDropDown.vue?vue&type=template&id=f8540d32&lang=html
 
-function vsDropDownvue_type_template_id_9393951c_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsDropDownvue_type_template_id_f8540d32_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])($options.attrs, {
     ref: "dropdown",
     class: ['vs-con-dropdown parent-dropdown', _ctx.$attrs.class],
@@ -8935,7 +8946,7 @@ function vsDropDownvue_type_template_id_9393951c_lang_html_render(_ctx, _cache, 
     type: "button"
   }), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")], 16);
 }
-// CONCATENATED MODULE: ./src/components/vsDropDown/vsDropDown.vue?vue&type=template&id=9393951c&lang=html
+// CONCATENATED MODULE: ./src/components/vsDropDown/vsDropDown.vue?vue&type=template&id=f8540d32&lang=html
 
 // EXTERNAL MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.array.find.js
 var es_array_find = __webpack_require__("5a29");
@@ -9028,7 +9039,6 @@ var es_array_find = __webpack_require__("5a29");
       var dropdownMenu = this.childrenItems.find(function (item) {
         return item.dropdownVisible !== undefined;
       });
-      console.log(dropdownMenu);
       dropdownMenu.vsCustomContent = this.vsCustomContent;
       dropdownMenu.vsTriggerClick = this.vsTriggerClick;
       dropdownMenu.vsDropRight = this.vsDropRight;
@@ -9136,7 +9146,7 @@ var es_array_find = __webpack_require__("5a29");
 
 
 
-const vsDropDown_exports_ = /*#__PURE__*/exportHelper_default()(vsDropDownvue_type_script_lang_js, [['render',vsDropDownvue_type_template_id_9393951c_lang_html_render]])
+const vsDropDown_exports_ = /*#__PURE__*/exportHelper_default()(vsDropDownvue_type_script_lang_js, [['render',vsDropDownvue_type_template_id_f8540d32_lang_html_render]])
 
 /* harmony default export */ var vsDropDown = (vsDropDown_exports_);
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsDropDown/vsDropDownMenu.vue?vue&type=template&id=e957960c&lang=html
