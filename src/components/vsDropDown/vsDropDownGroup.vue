@@ -88,7 +88,7 @@ export default {
     searchParent(_this, callback) {
       let parent = _this.$parent
       if (!parent.$el.className) return
-      if (!Object.prototype.hasOwnProperty.call(parent, 'childrenItems')) {
+      if (!parent.childrenItems) {
         this.searchParent(parent, callback)
       } else {
         callback(parent)

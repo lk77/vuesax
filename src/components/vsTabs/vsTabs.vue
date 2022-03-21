@@ -167,8 +167,15 @@ export default {
       return activeIndex;
     },
     activeChild(index, initialAnimation){
+      if(!this.childrenItems[index]) {
+        index = 0;
+      }
+
       initialAnimation = !!initialAnimation;
-      const elem = this.$refs['li-' +index];
+      let elem = this.$refs['li-' +index];
+      if(Array.isArray(elem)) {
+        elem = elem.shift();
+      }
       if(this.childActive == index && !initialAnimation){
         this.these = true
         elem.classList.add('isActive')
@@ -204,15 +211,21 @@ export default {
 
     },
     changePositionLine(elem, initialAnimation){
+      if(!elem) {
+        return;
+      }
+
       if(this.position == 'left' || this.position == 'right'){
         this.topx = elem.offsetTop
         this.heightx = elem.offsetHeight
         this.widthx = 2
       } else {
         const update = () => {
-          this.leftx = elem.offsetLeft
-          this.widthx = elem.offsetWidth
-          this.topx = (elem.offsetHeight + (elem.getBoundingClientRect().top - this.$refs.ul.getBoundingClientRect().top))
+          if(elem) {
+            this.leftx = elem.offsetLeft
+            this.widthx = elem.offsetWidth
+            this.topx = (elem.offsetHeight + (elem.getBoundingClientRect().top - this.$refs.ul.getBoundingClientRect().top))
+          }
         }
         if (!initialAnimation) {
           update()
