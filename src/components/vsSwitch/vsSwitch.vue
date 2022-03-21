@@ -106,11 +106,20 @@ export default {
     },
   },
   mounted(){
-    this.$nextTick(()=>{
-      let w = this.$refs.on.clientWidth>this.$refs.off.clientWidth?this.$refs.on.clientWidth:this.$refs.off.clientWidth
-      this.widthx = w + 24
-    })
+    let tries = 0;
+    let updateWidthx = () => {
+      if(this.$refs.on && this.$refs.off) {
+        let w = this.$refs.on.clientWidth > this.$refs.off.clientWidth ? this.$refs.on.clientWidth : this.$refs.off.clientWidth
+        this.widthx = w + 24
+      } else if(tries < 5) {
+        setTimeout(() => {
+          this.$nextTick(updateWidthx);
+        }, 50);
+        tries++;
+      }
+    }
 
+    updateWidthx();
   },
   methods:{
     toggleValue(evt){

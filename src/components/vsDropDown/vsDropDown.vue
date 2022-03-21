@@ -84,7 +84,6 @@ export default {
   methods: {
     clickx(evt) {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
-      console.log(dropdownMenu);
       dropdownMenu.vsCustomContent = this.vsCustomContent
       dropdownMenu.vsTriggerClick = this.vsTriggerClick
       dropdownMenu.vsDropRight = this.vsDropRight
