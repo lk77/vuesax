@@ -8945,9 +8945,9 @@ const vsSidebarGroup_exports_ = /*#__PURE__*/exportHelper_default()(vsSidebarGro
   Vue.component(vsSidebarItem.name, vsSidebarItem);
   Vue.component(vsSidebarGroup.name, vsSidebarGroup);
 });
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsDropDown/vsDropDown.vue?vue&type=template&id=f8540d32&lang=html
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsDropDown/vsDropDown.vue?vue&type=template&id=be505fda&lang=html
 
-function vsDropDownvue_type_template_id_f8540d32_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsDropDownvue_type_template_id_be505fda_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])($options.attrs, {
     ref: "dropdown",
     class: ['vs-con-dropdown parent-dropdown', _ctx.$attrs.class],
@@ -8955,7 +8955,7 @@ function vsDropDownvue_type_template_id_f8540d32_lang_html_render(_ctx, _cache, 
     type: "button"
   }), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")], 16);
 }
-// CONCATENATED MODULE: ./src/components/vsDropDown/vsDropDown.vue?vue&type=template&id=f8540d32&lang=html
+// CONCATENATED MODULE: ./src/components/vsDropDown/vsDropDown.vue?vue&type=template&id=be505fda&lang=html
 
 // EXTERNAL MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/core-js/modules/es.array.find.js
 var es_array_find = __webpack_require__("5a29");
@@ -9048,15 +9048,18 @@ var es_array_find = __webpack_require__("5a29");
       var dropdownMenu = this.childrenItems.find(function (item) {
         return item.dropdownVisible !== undefined;
       });
-      dropdownMenu.vsCustomContent = this.vsCustomContent;
-      dropdownMenu.vsTriggerClick = this.vsTriggerClick;
-      dropdownMenu.vsDropRight = this.vsDropRight;
 
-      if ((this.vsTriggerClick || this.vsCustomContent) && this.vsDropdownVisible) {
-        if (evt.target !== this.$refs.dropdown && evt.target.parentNode !== this.$refs.dropdown && evt.target.parentNode.parentNode !== this.$refs.dropdown) {
-          if (!evt.target.closest('.vs-dropdown--menu')) {
-            dropdownMenu.dropdownVisible = this.vsDropdownVisible = false;
-            document.removeEventListener('click', this.clickx);
+      if (dropdownMenu) {
+        dropdownMenu.vsCustomContent = this.vsCustomContent;
+        dropdownMenu.vsTriggerClick = this.vsTriggerClick;
+        dropdownMenu.vsDropRight = this.vsDropRight;
+
+        if ((this.vsTriggerClick || this.vsCustomContent) && this.vsDropdownVisible) {
+          if (evt.target !== this.$refs.dropdown && evt.target.parentNode !== this.$refs.dropdown && evt.target.parentNode.parentNode !== this.$refs.dropdown) {
+            if (!evt.target.closest('.vs-dropdown--menu')) {
+              dropdownMenu.dropdownVisible = this.vsDropdownVisible = false;
+              document.removeEventListener('click', this.clickx);
+            }
           }
         }
       }
@@ -9155,7 +9158,7 @@ var es_array_find = __webpack_require__("5a29");
 
 
 
-const vsDropDown_exports_ = /*#__PURE__*/exportHelper_default()(vsDropDownvue_type_script_lang_js, [['render',vsDropDownvue_type_template_id_f8540d32_lang_html_render]])
+const vsDropDown_exports_ = /*#__PURE__*/exportHelper_default()(vsDropDownvue_type_script_lang_js, [['render',vsDropDownvue_type_template_id_be505fda_lang_html_render]])
 
 /* harmony default export */ var vsDropDown = (vsDropDown_exports_);
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/thread-loader/dist/cjs.js!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/babel-loader/lib??ref--12-1!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/vsDropDown/vsDropDownMenu.vue?vue&type=template&id=e957960c&lang=html
