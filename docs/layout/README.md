@@ -116,9 +116,9 @@ With the directive `vs-w` define the width of the column (`vs-col`) its value is
 
 </vs-col>
 </vs-row>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-row>
@@ -158,7 +158,7 @@ With the directive `vs-w` define the width of the column (`vs-col`) its value is
 </vs-row>
 ```
 
-</div>
+</template>
 
 </vuecode>
 
@@ -212,9 +212,9 @@ offset - 4
 
 </vs-col>
 </vs-row>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-row vs-w="12">
@@ -248,7 +248,7 @@ offset - 4
 </vs-row>
 ```
 
-</div>
+</template>
 
 </vuecode>
 
@@ -303,9 +303,9 @@ offset - 6
 
 </vs-col>
 </vs-row>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-row vs-w="12">
@@ -340,7 +340,7 @@ offset - 6
 </vs-row>
 ```
 
-</div>
+</template>
 
 </vuecode>
 
@@ -365,9 +365,9 @@ col - 3
 
 </vs-col>
 </vs-row>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html{2}
 <vs-row
@@ -379,7 +379,7 @@ col - 3
 </vs-row>
 ```
 
-</div>
+</template>
 
 </vuecode>
 
@@ -396,9 +396,9 @@ col - 3
 
 </vs-col>
 </vs-row>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html{2}
 <vs-row
@@ -410,7 +410,7 @@ col - 3
 </vs-row>
 ```
 
-</div>
+</template>
 
 </vuecode>
 
@@ -426,9 +426,9 @@ col - 3
 
 </vs-col>
 </vs-row>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html{2}
 <vs-row
@@ -440,7 +440,7 @@ col - 3
 </vs-row>
 ```
 
-</div>
+</template>
 
 </vuecode>
 
@@ -477,9 +477,9 @@ In some cases, we want to order the elements to our liking. To do this, use the 
 
 </vs-col>
 </vs-row>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html{3,8,13,18}
 <vs-row vs-type="flex">
@@ -506,7 +506,7 @@ In some cases, we want to order the elements to our liking. To do this, use the 
 </vs-row>
 ```
 
-</div>
+</template>
 
 </vuecode>
 </box>
@@ -541,9 +541,9 @@ vs-lg = 2
 
 </vs-col>
 </vs-row>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-row vs-w="12">
@@ -559,7 +559,7 @@ vs-lg = 2
 </vs-row>
 ```
 
-</div>
+</template>
 
 </vuecode>
 </box>

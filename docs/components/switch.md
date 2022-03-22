@@ -51,10 +51,10 @@ Simple and functional.
 To implement a switch element in the application, we add the component `vs-switch`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Switch-State/>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -92,7 +92,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -109,10 +109,10 @@ You can choose the default **Switch**. You are able to use the [Main Colors](/th
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Switch-Color/>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -162,7 +162,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -173,10 +173,10 @@ export default {
 You can add a descriptive text with the slot `on` or `off`. You can also join the text with the icons.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Switch-Text/>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -217,7 +217,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -235,10 +235,10 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Switch-Icons/>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -286,7 +286,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -302,10 +302,10 @@ For saving the values in an array, you could simply pass it as a value.
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Switch-Array/>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -355,7 +355,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

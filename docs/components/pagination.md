@@ -55,10 +55,10 @@ contributors:
 The pagination component consists of several elements, all of which are optional. So with no extra class, your pagination links will look as follow :
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <Demos-Pagination-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -75,7 +75,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -94,10 +94,10 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <Demos-Pagination-Icons />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -114,7 +114,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -133,10 +133,10 @@ Setting the `max` directive to a value lesser then `5` when the `total` is great
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <Demos-Pagination-Max />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -153,7 +153,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -168,10 +168,10 @@ If the value given is lower than **1** it will jump to page **1**. However if th
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <Demos-Pagination-Goto />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -188,7 +188,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -203,10 +203,10 @@ You can change the color of the component with the property `color`, you can use
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <Demos-Pagination-Colors />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -231,7 +231,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -243,10 +243,10 @@ export default {
 You can also update page number from outside of pagination component.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <Demos-Pagination-ProgrammaticChange />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -267,6 +267,6 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

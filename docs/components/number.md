@@ -63,10 +63,10 @@ API:
 If you need to add a component that handles a single number, use the component `vs-input-number`. You can also change the increment and decrement button icons using the properties `icon-inc` and `icon-dec` respectively.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Inputnumber-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -92,7 +92,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -108,10 +108,10 @@ You can change the color of the **Input-Number** with the property `color`. You 
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Inputnumber-Color />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -141,7 +141,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -152,10 +152,10 @@ export default {
 You can restrict the maximum number or the minimum with the properties `vs-min`, `vs-max`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Inputnumber-Minmax />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -175,7 +175,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -186,10 +186,10 @@ export default {
 To change the size of the component, you can use the property `vs-size`. The allowed values are: `medium`, `small`, and `mini`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Inputnumber-Size />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -215,7 +215,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -226,10 +226,10 @@ export default {
 To change the number to be added or decreased of the component, you can use the property `step`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Inputnumber-Step />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -249,7 +249,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -260,10 +260,10 @@ export default {
 Number Input also supports decimal values.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Inputnumber-Decimal />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -283,7 +283,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -294,10 +294,10 @@ export default {
 Number Input supports adding labels for number inputs.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Inputnumber-Label />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -317,6 +317,6 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

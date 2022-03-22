@@ -58,10 +58,10 @@ API:
 To implement a **Slider** we have the `vs-slider` component.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Slider-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -85,7 +85,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -97,10 +97,10 @@ export default {
 You can change the slider's color with the property `color`. You can also add the main colors like: `primary`, `success`,`danger`, `warning`,`dark`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Slider-Color />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -122,7 +122,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -133,10 +133,10 @@ export default {
 With Ticks you can allow the user to select a value inside a range of allowed values. With the property **step** you can change the distance between each Tick. If you want decimal steps, just set the property **step-decimals** to true.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Slider-Ticks />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -160,7 +160,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -171,10 +171,10 @@ export default {
 With Range you can allow the user to select a range inside a range of allowed values. You can use the v-model property with **Array** and a minimum and maximum value ​​represented as: `[min, max]`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Slider-Range />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -196,7 +196,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -211,10 +211,10 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Slider-Icons />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -238,7 +238,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -249,10 +249,10 @@ export default {
 Determine the text that will be fixed next to the value with the property `text-fixed`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Slider-Textfixed />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -276,7 +276,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -294,10 +294,10 @@ You can add a function that will be triggered every time the value changes with 
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Slider-Change />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -342,6 +342,6 @@ export default {
 
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

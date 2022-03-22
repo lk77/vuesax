@@ -112,13 +112,13 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
  <Demos-Select-Default/>
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -232,7 +232,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -247,13 +247,13 @@ You can change the color of the select with the property `color`
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
  <Demos-Select-Color />
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -313,7 +313,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -324,13 +324,13 @@ export default {
 You can add the autocomplete functionality in the desired selected with the property `autocomplete`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
  <Demos-Select-Autocomplete/>
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -406,7 +406,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -417,13 +417,13 @@ export default {
 You can have a selection with multiple selections with the property `multiple`. If you need the user to select only a certain number of options you can use the property `max-selected`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
  <Demos-Select-Multiple/>
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -499,7 +499,7 @@ export default {
 }
 </script>
 ```
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -510,13 +510,13 @@ export default {
 Add a label to the input with the property `label`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
  <Demos-Select-Labels/>
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -578,7 +578,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -594,13 +594,13 @@ You can add a state for example of in affirmative response to a validation with 
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
  <Demos-Select-Validation/>
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -681,7 +681,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -692,13 +692,13 @@ export default {
 You can validate if an option is selected with the property `is-selected.sync` and do with it multiple variants with changing the text of the selected options
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
  <Demos-Select-Selectedtext/>
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -751,7 +751,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -762,13 +762,13 @@ export default {
 You can group elements with the sub component `vs-select-group`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
  <Demos-Select-Group/>
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -911,7 +911,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -922,13 +922,13 @@ export default {
 You can set the width of the select width the `width` property
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
  <Demos-Select-Width/>
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -1007,6 +1007,6 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

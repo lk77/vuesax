@@ -92,10 +92,10 @@ To generate a dialog we have the global function `$vs.dialog` the parameters to 
 - **buttonCancel**: determines the type of cancel button - *Boolean*
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Dialogs-Alert />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -145,7 +145,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -162,10 +162,10 @@ If you need a dialog of type confirm you can do it just by changing the type as 
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Dialogs-Confirm />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -201,7 +201,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -227,10 +227,10 @@ To add a dialog of type prompt we have a global function a completely independen
 ```
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Dialogs-Prompt />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -342,7 +342,7 @@ export default {
 
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

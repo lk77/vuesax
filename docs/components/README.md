@@ -91,7 +91,7 @@ API:
 To define the type of button the directive is used `type` with the value of some type of button like it can be: `filled`.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button type="filled">Primary</vs-button>
 <vs-button color="success" type="filled">Success</vs-button>
 <vs-button color="danger" type="filled">Danger</vs-button>
@@ -99,9 +99,9 @@ To define the type of button the directive is used `type` with the value of some
 <vs-button color="dark" type="filled">Dark</vs-button>
 <vs-button color="rgb(11, 189, 135)" type="filled">RGB</vs-button>
 <vs-button disabled type="filled">Disabled</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button color="primary" type="filled">Primary</vs-button>
@@ -114,7 +114,7 @@ To define the type of button the directive is used `type` with the value of some
 <vs-button color="primary" type="filled" to="/components/list.html">Router</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -125,7 +125,7 @@ To define the type of button the directive is used `type` with the value of some
 To add a type of button with edges we change the value of `border`.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button color="primary" type="border">Primary</vs-button>
 <vs-button color="success" type="border">Success</vs-button>
 <vs-button color="danger" type="border">Danger</vs-button>
@@ -133,9 +133,9 @@ To add a type of button with edges we change the value of `border`.
 <vs-button color="dark" type="border">Dark</vs-button>
 <vs-button color="rgb(11, 189, 135)" type="border">RGB</vs-button>
 <vs-button disabled type="border">Disabled</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button color="primary" type="border">Primary</vs-button>
@@ -147,7 +147,7 @@ To add a type of button with edges we change the value of `border`.
 <vs-button disabled type="border">Disabled</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -159,7 +159,7 @@ To add a type of button with edges we change the value of `border`.
 To add a type of button with edges we change the value of `flat`.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button color="primary" type="flat">Primary</vs-button>
 <vs-button color="success" type="flat">Success</vs-button>
 <vs-button color="danger" type="flat">Danger</vs-button>
@@ -167,9 +167,9 @@ To add a type of button with edges we change the value of `flat`.
 <vs-button color="dark" type="flat">Dark</vs-button>
 <vs-button color="rgb(11, 189, 135)" type="flat">RGB</vs-button>
 <vs-button disabled type="flat">Disabled</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button color="primary" type="flat">Primary</vs-button>
@@ -181,7 +181,7 @@ To add a type of button with edges we change the value of `flat`.
 <vs-button disabled type="flat">Disabled</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -201,16 +201,16 @@ To add a type of button with edges we change the value of `type` by: `line`.
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button type="line">Primary</vs-button>
 <vs-button line-origin="left" color="success" type="line">Success</vs-button>
 <vs-button  color="danger" type="line">Danger</vs-button>
 <vs-button line-position="top" line-origin="left" color="warning" type="line">Warning</vs-button>
 <vs-button line-position="top" line-origin="right" color="dark" type="line">Dark</vs-button>
 <vs-button disabled type="line">Disabled</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button type="line">Primary</vs-button>
@@ -221,7 +221,7 @@ To add a type of button with edges we change the value of `type` by: `line`.
 <vs-button disabled type="line">Disabled</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -233,7 +233,7 @@ To add a type of button with edges we change the value of `type` by: `line`.
 To add a type of button with edges we change the value of `type` by: `gradient`
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 
 <vs-button type="gradient">primary</vs-button>
 <vs-button color="success" type="gradient">success</vs-button>
@@ -242,9 +242,9 @@ To add a type of button with edges we change the value of `type` by: `gradient`
 <vs-button color="dark" type="gradient">dark</vs-button>
 <vs-button color="#3dd495" gradient-color-secondary="rgb(130, 207, 23)" type="gradient">dark</vs-button>
 <vs-button disabled type="gradient">Disabled</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 
@@ -257,7 +257,7 @@ To add a type of button with edges we change the value of `type` by: `gradient`
 <vs-button disabled type="gradient">Disabled</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -269,7 +269,7 @@ To add a type of button with edges we change the value of `type` by: `gradient`
 To add a type of button with edges we change the value of `type` by: `relief`
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button type="relief">Primary</vs-button>
 
 <vs-button color="success" type="relief">Success</vs-button>
@@ -278,9 +278,9 @@ To add a type of button with edges we change the value of `type` by: `relief`
 <vs-button color="dark" type="relief">dark</vs-button>
 <vs-button color="rgb(187, 138, 200)" type="relief">Color</vs-button>
 <vs-button disabled type="relief">Disabled</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button type="relief">Primary</vs-button>
@@ -292,7 +292,7 @@ To add a type of button with edges we change the value of `type` by: `relief`
 <vs-button disabled type="relief">Disabled</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -308,13 +308,13 @@ If you need a gradient type button, to assign the color you have to use the prop
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 
   <Demos-Color/>
 
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -342,7 +342,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -354,7 +354,7 @@ export default {
 You can change the font color of buttons, need only set the prop `text-color` with your color.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <vs-button>Primary</vs-button>
   <vs-button color="success" text-color="rgb(10, 20, 30)">Success</vs-button>
   <vs-button color="danger" text-color="#aaffaa">Danger</vs-button>
@@ -362,9 +362,9 @@ You can change the font color of buttons, need only set the prop `text-color` wi
   <vs-button color="dark" text-color="rgb(255, 255, 255)">dark</vs-button>
   <vs-button color="rgb(187, 138, 200)" text-color="warning)">Color</vs-button>
   <vs-button disabled text-color="rgb(0, 0, 0)">Disabled</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button>Primary</vs-button>
@@ -376,7 +376,7 @@ You can change the font color of buttons, need only set the prop `text-color` wi
 <vs-button disabled text-color="rgb(0, 0, 0)">Disabled</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -396,16 +396,16 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button color="primary" type="border" icon="home">Home</vs-button>
 <vs-button color="warning" type="filled" icon="star">Star</vs-button>
 <vs-button color="success" type="flat" icon="done">Done</vs-button>
 <vs-button icon-after color="dark" type="line" icon="menu">menu</vs-button>
 <vs-button icon-after color="danger" type="gradient" icon="favorite">favorite</vs-button>
 <vs-button disabled color="primary" type="border" icon="home">Disabled</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button color="primary" type="border" icon="home">Home</vs-button>
@@ -416,7 +416,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 <vs-button disabled color="primary" type="border" icon="home">Disabled</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -431,7 +431,7 @@ You can have a button with only the icon you want with the property `icon` and n
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button color="primary" type="border" icon="search"></vs-button>
 <vs-button color="warning" type="filled" icon="public"></vs-button>
 <vs-button color="success" type="flat" icon="photo_camera"></vs-button>
@@ -446,8 +446,8 @@ You can have a button with only the icon you want with the property `icon` and n
 <vs-button radius color="dark" type="line" icon="event_note"></vs-button>
 <vs-button radius color="danger" type="gradient" icon="person_add"></vs-button>
 <vs-button disabled radius color="primary" type="border" icon="search"></vs-button>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-button color="primary" type="border" icon="search"></vs-button>
@@ -466,7 +466,7 @@ You can have a button with only the icon you want with the property `icon` and n
 <vs-button disabled radius color="primary" type="border" icon="search"></vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -478,13 +478,13 @@ To define the size of button the directive is used `size`. there are three type 
 It is not important to specify the size when the button is of type `default`
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button size="large">Large</vs-button>
 <vs-button>Default</vs-button>
 <vs-button size="small">Small</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button size="large">Large</vs-button>
@@ -492,7 +492,7 @@ It is not important to specify the size when the button is of type `default`
 <vs-button size="small">Small</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -504,14 +504,14 @@ You can send a string or object to directive `to`. This directive wrap a `$route
 you can use all programmatic navigation on vue router.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button color="primary" type="filled" to="/components/list.html">String literal</vs-button>
 <vs-button color="warning" type="filled" :to="{path: '/components/list.html'}">Object Path</vs-button>
 <vs-button color="success" type="filled" :to="{ name: 'user', params: { userId: 123 }}">Named Router</vs-button>
 <vs-button color="dark"    type="filled" :to="{ path: 'register', query: { plan: 'private' }}">With Query</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button color="primary" type="filled" to="/components/list.html">String literal</vs-button>
@@ -520,7 +520,7 @@ you can use all programmatic navigation on vue router.
 <vs-button color="dark"    type="filled" :to="{ path: 'register', query: { plan: 'private' } }">With Query</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -535,13 +535,13 @@ You can specify for `window.location.href`
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-button color="primary" target="_blank" type="filled" href="https://lusaxweb.github.io/vuesax/">String literal</vs-button>
 <vs-button color="primary" type="filled" :href="{url: 'https://lusaxweb.github.io/vuesax/'}">Object Path</vs-button>
 <vs-button color="primary" type="filled" target :href="{url: 'https://lusaxweb.github.io/vuesax/'}">Open Current Tab</vs-button>
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <vs-button color="primary" type="filled" href="https://lusaxweb.github.io/vuesax/">String literal</vs-button>
@@ -550,6 +550,6 @@ You can specify for `window.location.href`
 
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

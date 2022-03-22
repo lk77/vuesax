@@ -48,10 +48,10 @@ API:
 To add a tooltip we have the component `vs-tooltip`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tooltip-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -80,7 +80,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -93,10 +93,10 @@ export default {
 You can change the position at which the tooltip appears with the property `position`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tooltip-Position />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -117,7 +117,7 @@ You can change the position at which the tooltip appears with the property `posi
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -128,10 +128,10 @@ You can change the position at which the tooltip appears with the property `posi
 You can change the delay in appearing the tooltip with the property `delay`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tooltip-Delay />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -149,7 +149,7 @@ You can change the delay in appearing the tooltip with the property `delay`.
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -164,10 +164,10 @@ To change the color of the tooltip, use the property `color`. You are able to us
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tooltip-Color />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -200,7 +200,7 @@ To change the color of the tooltip, use the property `color`. You are able to us
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -211,10 +211,10 @@ To change the color of the tooltip, use the property `color`. You are able to us
 If necessary, you can add a title to the tooltip with the property `title`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tooltip-Title />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -229,7 +229,7 @@ If necessary, you can add a title to the tooltip with the property `title`
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 

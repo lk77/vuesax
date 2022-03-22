@@ -152,10 +152,10 @@ To implement a **data table** we have the component `vs-table`, also sub compone
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Default/>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -284,7 +284,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -296,10 +296,10 @@ export default {
 You can have a sebra effect by adding the property `stripe`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Striped />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -428,7 +428,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -441,10 +441,10 @@ export default {
 There are times when we need to add a state to our **tr** in the table so we have the property **state** inside the component `vs-tr`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-State />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -573,7 +573,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -590,10 +590,10 @@ You can add a **paginated table** with the `pagination` property
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Pagination />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -722,7 +722,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -739,10 +739,10 @@ You can add a **paginated table with description** with the `description` proper
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Description />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -889,7 +889,7 @@ export default {
 
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -905,10 +905,10 @@ You can add the functionality of select a specific **tr** to do this add the pro
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Single />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -1059,7 +1059,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -1072,10 +1072,10 @@ export default {
 To select multiples **tr** we have the property `multiple` and each of the selected items will be added to the` v-model`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Multiple />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -1210,7 +1210,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -1223,10 +1223,10 @@ export default {
 You can add the functionality of expanding a **tr** to visualize more data to make a structure of data or more complex functionalities
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Expandable />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -1397,7 +1397,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -1410,10 +1410,10 @@ export default {
 You can edit the data with **slot** `edit`, so you have better flexibility and mastery of what you need
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Edit />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -1560,7 +1560,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -1578,10 +1578,10 @@ You can use `queriedResults` property of table component to get queried results 
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Filter />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -1705,7 +1705,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -1718,10 +1718,10 @@ export default {
 You can add a **filtered, sorted, paginated and multi selected table** with combination of the `search`, `multiple` and `pagination` properties for example
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-Misc />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -1859,7 +1859,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -1871,10 +1871,10 @@ export default {
 The table stops doing its functionalities on the client side and proceeds to issue the functions that the user does to capture them and make the requests to the server's api making the change in the data
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Table-sst />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -2031,7 +2031,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

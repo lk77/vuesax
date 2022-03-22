@@ -60,7 +60,7 @@ contributors:
 Helps you represent simple data with colorful options.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <vs-chip>
     Basic Chip
   </vs-chip>
@@ -79,8 +79,8 @@ Helps you represent simple data with colorful options.
   <vs-chip closable close-icon='clear'>
     Closable chip
   </vs-chip>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -112,7 +112,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -124,7 +124,7 @@ export default {
 Change the background color of the chip.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <vs-chip color="primary">
     Basic Chip
   </vs-chip>
@@ -147,8 +147,8 @@ Change the background color of the chip.
     <vs-avatar src="https://randomuser.me/api/portraits/men/16.jpg"/>
     Closable chip
   </vs-chip>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -184,7 +184,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -197,7 +197,7 @@ export default {
 You can create chip which have transparent background using `transparent` prop.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <vs-chip transparent color="primary">
     Basic Chip
   </vs-chip>
@@ -220,12 +220,12 @@ You can create chip which have transparent background using `transparent` prop.
     <vs-avatar src="https://randomuser.me/api/portraits/men/16.jpg"/>
     Closable chip
   </vs-chip>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
-  <div slot="demo">
+  <template #demo>
     <vs-chip transparent color="primary">
       Basic Chip
     </vs-chip>
@@ -252,7 +252,7 @@ You can create chip which have transparent background using `transparent` prop.
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -269,7 +269,7 @@ Vuesax uses the **Google Material Icons** font library. For a list of all availa
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <vs-chip>
     <vs-avatar />
     Icon Default
@@ -294,8 +294,8 @@ Vuesax uses the **Google Material Icons** font library. For a list of all availa
     <vs-avatar icon="edit" />
     Icon edit
   </vs-chip>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -333,7 +333,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -345,10 +345,10 @@ export default {
 For making a chip closable.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Chips-Closable />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -398,7 +398,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -411,10 +411,10 @@ export default {
 You can add and remove chips with the `vs-chips` component. For the main parameter, pass the `items` property, which is an array representing each chip.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Chips-Addremove />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -459,7 +459,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -478,10 +478,10 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Chips-Changecloseclearicons />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -526,7 +526,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

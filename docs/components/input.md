@@ -140,10 +140,10 @@ contributors:
 The input is a functional part in an application, For implementing it we have the `vs-input` component.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Input-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -171,7 +171,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -183,10 +183,10 @@ export default {
 Add a label to the input with the property `label`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Input-Label />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -214,7 +214,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -231,10 +231,10 @@ This property overrides the `label` and the` placeholder`
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Input-Labelplaceholder />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -256,7 +256,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -276,10 +276,10 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` an
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Input-Icons />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -318,7 +318,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -334,10 +334,10 @@ There is only support for **HEX** and **RGB** colors
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Input-Colors />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -376,7 +376,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -393,10 +393,10 @@ You can add a state for example of in affirmative response to a validation with 
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Input-Validation />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -444,7 +444,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -456,10 +456,10 @@ export default {
 
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Input-Size />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -489,7 +489,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

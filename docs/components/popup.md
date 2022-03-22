@@ -60,10 +60,10 @@ API:
 To implement the popup we have the component `vs-popup`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Popup-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -89,7 +89,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -101,10 +101,10 @@ export default {
 You can add one popup inside another.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Popup-Nested />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -170,7 +170,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -182,10 +182,10 @@ export default {
 the popup can be full screen you just have to add the property `fullscreen`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Popup-Fullscreen />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -210,7 +210,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -222,10 +222,10 @@ export default {
 You can change the background of the property with the property `background-color` or if you want to change the color of the popup you can use the property `background-color-popup`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Popup-Background />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -259,6 +259,6 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

@@ -52,10 +52,10 @@ API:
 To implement the collapse we have the component `vs-collapse` and as sub-component for each item the component `vs-collapse-item`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Collapse-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -96,7 +96,7 @@ To implement the collapse we have the component `vs-collapse` and as sub-compone
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -107,10 +107,10 @@ To implement the collapse we have the component `vs-collapse` and as sub-compone
 You may need to show only one element and the others contract for this is the property `accordion`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Collapse-Accordion />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -151,7 +151,7 @@ You may need to show only one element and the others contract for this is the pr
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -166,10 +166,10 @@ You can easily change the style of the accordion with the `type` property, the s
 - margin
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Collapse-Type />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -241,7 +241,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -252,10 +252,10 @@ export default {
 If you want the items to open when you hover in, add the `open-hover` property in the component
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Collapse-Hover />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -300,7 +300,7 @@ If you want the items to open when you hover in, add the `open-hover` property i
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -318,10 +318,10 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Collapse-Changeicons />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -362,6 +362,6 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

@@ -73,10 +73,10 @@ For the examples, the request or the delay is simulated with `setTimeout`.
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Loading-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -99,7 +99,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -119,10 +119,10 @@ You can change the type of animation with the `type` property and the animations
 - material
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Loading-Type />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -209,7 +209,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -225,10 +225,10 @@ You can change the color of the loading with the property `color`.
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Loading-Color />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -257,7 +257,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -274,10 +274,10 @@ If you need to change the background of the loading, you can use the property `b
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Loading-Background />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -306,7 +306,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -322,10 +322,10 @@ For the examples, the request or the delay is simulated with `setTimeout`.
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Loading-Contained />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -389,7 +389,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

@@ -49,15 +49,15 @@ contributors:
 A basic list of items with `title` and `subtitle`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <vs-list>
     <vs-list-item title="One text"></vs-list-item>
     <vs-list-item title="Another text" subtitle="A little text"></vs-list-item>
     <vs-list-item title="Some more text"></vs-list-item>
     <vs-list-item title="Even more text" subtitle="Another little text"></vs-list-item>
   </vs-list>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
   <vs-list>
@@ -68,7 +68,7 @@ A basic list of items with `title` and `subtitle`.
   </vs-list>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -79,7 +79,7 @@ A basic list of items with `title` and `subtitle`.
 A `vs-list-header` separator with custom `color`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <vs-list>
     <vs-list-header title="Group 1"></vs-list-header>
     <vs-list-item title="Snickerdoodle" subtitle="An excellent companion"></vs-list-item>
@@ -88,8 +88,8 @@ A `vs-list-header` separator with custom `color`.
     <vs-list-item title="Enid's" subtitle="At night a bar, during the day a delicious brunch spot."></vs-list-item>
     <vs-list-item title="Veronika Ossi" subtitle="Has not watched anything recently"></vs-list-item>
   </vs-list>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
   <vs-list>
@@ -102,7 +102,7 @@ A `vs-list-header` separator with custom `color`.
   </vs-list>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -117,7 +117,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <vs-list>
     <vs-list-header icon="supervisor_account" title="Group 1"></vs-list-header>
     <vs-list-item icon="check" title="Snickerdoodle" subtitle="An excellent companion"></vs-list-item>
@@ -126,8 +126,8 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
     <vs-list-item icon="verified_user" title="Enid's" subtitle="At night a bar, during the day a delicious brunch spot."></vs-list-item>
     <vs-list-item icon="verified_user" title="Veronika Ossi" subtitle="Has not watched anything recently"></vs-list-item>
   </vs-list>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
   <vs-list>
@@ -140,7 +140,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
   </vs-list>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -151,7 +151,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 You can add custom content to the item. It will be pushed to the right side.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <vs-list>
     <vs-list-header title="Group 1"></vs-list-header>
     <vs-list-item title="Rachel" subtitle="Last seen watching Arrested Development just now.">
@@ -168,8 +168,8 @@ You can add custom content to the item. It will be pushed to the right side.
       <vs-switch color="warning"/>
     </vs-list-item>
   </vs-list>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
   <vs-list>
@@ -190,7 +190,7 @@ You can add custom content to the item. It will be pushed to the right side.
   </vs-list>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -201,7 +201,7 @@ You can add custom content to the item. It will be pushed to the right side.
 You can implement an avatar in the list with the `slot="avatar"` by putting a [vs-avatar] component (/components/avatar.html)
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <vs-list>
   <vs-list-header title="Users" color="primary"></vs-list-header>
   <vs-list-item title="Steve Jobes" subtitle="Top Contributor">
@@ -221,8 +221,8 @@ You can implement an avatar in the list with the `slot="avatar"` by putting a [v
     </template>
   </vs-list-item>
 </vs-list>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-list>
@@ -246,6 +246,6 @@ You can implement an avatar in the list with the `slot="avatar"` by putting a [v
 </vs-list>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

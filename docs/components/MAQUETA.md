@@ -21,16 +21,16 @@ API:
 ## title
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

@@ -117,10 +117,10 @@ One of the most common features is to have the hidden sidebar to show it when th
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <Demos-SideBar-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -206,7 +206,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -223,10 +223,10 @@ You can change the parent of the sidebar with the property `parent` that as a va
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-SideBar-Parent />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -317,7 +317,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -333,10 +333,10 @@ You can also use the sidebar in static mode with the property `static`
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-SideBar-Static />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -426,7 +426,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -442,10 +442,10 @@ You can have groups of sub menus with the component `vs-slider-group` that as a 
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <Demos-SideBar-Submenu />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -546,7 +546,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -562,10 +562,10 @@ A `static` sidebar will not appear on the right.
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-SideBar-Right />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -651,7 +651,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -667,10 +667,10 @@ You can have a reduced sidebar with the `reduce` property which by default makes
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-SideBar-Reduceexpand />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -768,6 +768,6 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

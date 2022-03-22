@@ -9,7 +9,7 @@ API:
    type: String
    parameters: null
    description: Radius name.
-   default: null  
+   default: null
  - name: color
    type: String
    parameters: primary,success,danger,warning,dark,RGB,HEX
@@ -44,10 +44,10 @@ The **Radio Button** is always going to replace the current value.
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Radio-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -81,7 +81,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -98,10 +98,10 @@ You can change the color with the property `color`. You are able to use the [Mai
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Radio-Colors />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -146,7 +146,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

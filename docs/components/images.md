@@ -37,10 +37,10 @@ API:
 You can create an image gallery easily with the components `vs-images` y `vs-image`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Images-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -65,7 +65,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -85,10 +85,10 @@ the types of hover are:
 - curtain
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Images-Hover />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -131,7 +131,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -142,10 +142,10 @@ export default {
 You can make changes in some details like removing the border-radius with the property `not-border-radius` or adding a different style of layout with the property `alternating`, you can also remove the margin between the images with the property `not- margin`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Images-More />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -170,6 +170,6 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

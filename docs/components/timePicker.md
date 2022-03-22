@@ -20,15 +20,15 @@ API:
 ## Default
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-TimePicker-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

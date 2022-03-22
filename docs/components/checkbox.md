@@ -42,10 +42,10 @@ Aggressive and impacting effect and the most important functional
 To add a checkBox, we have the `vs-checkbox` component which expects a principal parameter `v-model` that would be our value.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Checkbox-State />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -81,7 +81,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -97,10 +97,10 @@ You can change the color of the checkBox with the property `color`. You are able
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Checkbox-Color />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -148,7 +148,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -160,10 +160,10 @@ export default {
 In most cases you will need a boolean data type while working with checkBoxes. For making this possible you have to link a boolean value in `v-model`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Checkbox-Boolean />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -191,7 +191,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -204,10 +204,10 @@ export default {
 You can pass as a value a string by giving it as a value of the property `vs-value`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Checkbox-String />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -234,7 +234,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -247,10 +247,10 @@ export default {
 You can have several checkBoxs linked to the same array only by using `v-model` with a value of **array**.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Checkbox-Array />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -286,7 +286,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -299,10 +299,10 @@ export default {
 Sometimes you need to link an object as a value when selecting a checkBox for it, you only have to put it as value in `vs-value` an object either literal or linked.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Checkbox-Arrayobjects />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -332,7 +332,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -349,10 +349,10 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Checkbox-Icons />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -400,6 +400,6 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

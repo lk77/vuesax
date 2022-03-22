@@ -54,10 +54,10 @@ To add a navbar we have the component `vs-navbar`, there is a series of sub comp
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Navbar-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -90,7 +90,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -101,11 +101,11 @@ export default {
 You may need an entry in the menu to simply use the `vs-input` component, for example if you need a search engine.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <Demos-Navbar-Input />
 
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -139,7 +139,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -151,11 +151,11 @@ export default {
 If you want you can change the style of the buttons and the navbar by changing the property `type`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <Demos-Navbar-Type />
 
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -224,7 +224,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -239,11 +239,11 @@ You can change the color of the **Topbar** with the property `color`. You are ab
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <Demos-Navbar-Colors />
 
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 
@@ -300,7 +300,7 @@ export default {
 
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -311,10 +311,10 @@ export default {
 This property determines if the component starts hidden and with the option of clicking on the menu to open or saw the options
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Navbar-Collapse />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -347,7 +347,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 

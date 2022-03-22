@@ -42,10 +42,10 @@ API:
 To add a **Textarea** we have the component `vs-textarea`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Textarea-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -63,7 +63,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -74,10 +74,10 @@ export default {
 If you need to add a label you can use the `label` property
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Textarea-Label />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -95,7 +95,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -110,10 +110,10 @@ There are times when we need the user to only enter a certain number of characte
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Textarea-Counter />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -135,7 +135,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -146,10 +146,10 @@ export default {
 You can set the width of the textarea width the `width` property. You can also use css values like`10rem` or `50%` as value.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Textarea-Width />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -159,7 +159,7 @@ You can set the width of the textarea width the `width` property. You can also u
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -170,10 +170,10 @@ You can set the width of the textarea width the `width` property. You can also u
 You can set the height of the textarea with the `height` property. You can also use css values like`10rem` or `50%` as value.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Textarea-Height />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -183,6 +183,6 @@ You can set the height of the textarea with the `height` property. You can also 
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

@@ -93,10 +93,10 @@ API:
 You can upload files to the server with the `vs-upload` component, the requested parameter is `action` which is the URL of the server
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Upload-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -116,7 +116,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -127,10 +127,10 @@ export default {
 You can upload multiple files by adding the `multiple` property within the component.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Upload-Multiple />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -150,7 +150,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -162,10 +162,10 @@ export default {
 You can enable automatic submission with the `Automatic` property that executes the shipment by changing the value of the` input`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Upload-Automatic />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -185,6 +185,6 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

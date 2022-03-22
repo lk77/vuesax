@@ -1,6 +1,6 @@
 <template lang="html">
   <div :class="{'headerx':header}" class="con-box">
-    <div  class="box">
+    <div class="box">
       <slot>
       </slot>
     </div>

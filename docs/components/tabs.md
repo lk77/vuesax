@@ -87,10 +87,10 @@ For the title of each tab the `vs-tab` property is implemented in the` vs-tab` c
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tabs-Default />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -126,7 +126,7 @@ For the title of each tab the `vs-tab` property is implemented in the` vs-tab` c
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -142,10 +142,10 @@ You can change the color of the component with the property `color`, the paramet
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tabs-Color />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -189,7 +189,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -205,10 +205,10 @@ Change the alignment of the buttons with the property `alignments`. The allowed 
 - fixed
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tabs-Alignments />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -323,7 +323,7 @@ Change the alignment of the buttons with the property `alignments`. The allowed 
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -335,10 +335,10 @@ Change the alignment of the buttons with the property `alignments`. The allowed 
 You can change the position of the menu with the property `position` that as a value you can have: `top`, `right`,`bottom`, `left`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tabs-Position />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -453,7 +453,7 @@ You can change the position of the menu with the property `position` that as a v
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -465,10 +465,10 @@ You can change the position of the menu with the property `position` that as a v
 You can add a left icon inside each tab with the property `icon` that has the same values as the `icon` component.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Tabs-Icons />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -496,7 +496,7 @@ export default {
 </template>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

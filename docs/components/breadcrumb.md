@@ -46,7 +46,7 @@ contributors:
 Use the `items` in order to programatically generate the breadcrumb links.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-breadcrumb
 :items="
    [
@@ -68,8 +68,8 @@ Use the `items` in order to programatically generate the breadcrumb links.
      }
    ]"
 ></vs-breadcrumb>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-breadcrumb
@@ -95,7 +95,7 @@ Use the `items` in order to programatically generate the breadcrumb links.
 ></vs-breadcrumb>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -107,11 +107,11 @@ Use the `items` in order to programatically generate the breadcrumb links.
 Use the `color` directive like for any other component that supports it to customize the breadcrumbs links color.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <Demos-Breadcrumb-Color />
-</div>
+</template>
 
-<div slot="code">
+<template #code>
 
 ```html
 <template lang="html">
@@ -151,7 +151,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -167,7 +167,7 @@ You can change the separator dividing the links by either passing a string to th
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-breadcrumb separator="•"
 :items="
    [
@@ -252,8 +252,8 @@ You can change the separator dividing the links by either passing a string to th
      }
    ]"
 ></vs-breadcrumb>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-breadcrumb :items="[{...}, {...}]" separator="•"></vs-breadcrumb>
@@ -262,7 +262,7 @@ You can change the separator dividing the links by either passing a string to th
 <vs-breadcrumb :items="[{...}, {...}]" separator="chevron_right"></vs-breadcrumb>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -274,14 +274,14 @@ You can change the separator dividing the links by either passing a string to th
 A default Vue slot that can be used instead of passing in an array of object. This allows for greater control of the breadcrumbs
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-breadcrumb>
    <li><a href="#" title="Home">Home</a><span class="vs-breadcrum--separator">/</span></li>
    <li><a href="#" title="Profil">Profil</a><span class="vs-breadcrum--separator">/</span></li>
    <li aria-current="page" class="active">Infos</li>
 </vs-breadcrumb>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-breadcrumb>
@@ -291,7 +291,7 @@ A default Vue slot that can be used instead of passing in an array of object. Th
 </vs-breadcrumb>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -303,7 +303,7 @@ A default Vue slot that can be used instead of passing in an array of object. Th
 Use `align` to either align the breadcrumb to the left, center or right.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <vs-breadcrumb align="left">
    <li><a href="#" title="Home">Home</a><span class="vs-breadcrum--separator">/</span></li>
    <li><a href="#" title="Profil">Profil</a><span class="vs-breadcrum--separator">/</span></li>
@@ -319,8 +319,8 @@ Use `align` to either align the breadcrumb to the left, center or right.
    <li><a href="#" title="Profil">Profil</a><span class="vs-breadcrum--separator">/</span></li>
    <li aria-current="page" class="active">Infos</li>
 </vs-breadcrumb>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-breadcrumb align="left">...</vs-breadcrumb>
@@ -328,6 +328,6 @@ Use `align` to either align the breadcrumb to the left, center or right.
 <vs-breadcrumb align="right">...</vs-breadcrumb>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

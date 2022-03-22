@@ -29,10 +29,10 @@ We have a series of colors that are used by default. They include:
 For each color, we think has its functionality in the application as alerts of errors (**danger**), warnings to the user (**warning**), communications of approval (**success**), or main color of the application (**primary**).
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Colors-Defaultscolors />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -105,7 +105,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -138,9 +138,9 @@ Vue.use(Vuesax, {
 
 
 <vuecode md title="Example of the result">
-<div slot="demo">
+<template #demo>
   <Demos-Colors-Changecolors />
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -163,10 +163,10 @@ By doing this, all **Vuesax** components in the application that use a primary c
 Select one of the colors to change it and that all the components of this documentation have that color.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Colors-Changecolorsejecution />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -269,7 +269,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 

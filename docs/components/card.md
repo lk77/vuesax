@@ -50,7 +50,7 @@ contributors:
 To add a card we have the `vs-card` component, for the internal structure we use several **slots** (`header`, `footer`, `media`, ... )
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <vs-row vs-justify="center">
   <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
     <vs-card>
@@ -72,8 +72,8 @@ To add a card we have the `vs-card` component, for the internal structure we use
     </vs-card>
   </vs-col>
 </vs-row>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-row vs-justify="center">
@@ -99,7 +99,7 @@ To add a card we have the `vs-card` component, for the internal structure we use
 </vs-row>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -110,10 +110,10 @@ To add a card we have the `vs-card` component, for the internal structure we use
 There are cases in which you need to add an image or video on the card so we have the `slot="media"`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Card-Media />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -175,7 +175,7 @@ export default {
 </style>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -186,10 +186,10 @@ export default {
 If you need to set card with the same height, send the prop `fixed-height` and cards set to 100% of height.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Card-FixedHeight />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template>
@@ -253,7 +253,7 @@ export default {
 
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -264,7 +264,7 @@ export default {
 You can add hover functionality with the property `actionable`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
     <vs-row vs-justify="center">
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card actionable class="cardx">
@@ -309,8 +309,8 @@ You can add hover functionality with the property `actionable`
       </vs-card>
     </vs-col>
   </vs-row>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-row vs-justify="center">
@@ -359,7 +359,7 @@ You can add hover functionality with the property `actionable`
   </vs-row>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 

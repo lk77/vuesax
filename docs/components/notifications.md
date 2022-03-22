@@ -68,12 +68,12 @@ API:
 To add a notification we have the global function `$vs.notify`. The first parameter is a `json` with all the necessary attributes, or if we only want the standard notification we can only add a string with the text of the notification.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
   <Demos-Notifications-Defaults/>
 
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -109,7 +109,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -131,12 +131,12 @@ We can change the place where the notification appears with the property `positi
  :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
   <Demos-Notifications-Position/>
 
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -165,7 +165,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -179,12 +179,12 @@ Notifications can include icons to improve the user experience and to construct 
 Vuesax uses the **Google Material Icons** font library by default. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/). Other icon libraries can be used by providing the class for the respective pack in the icon-pack property. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
 :::
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
   <Demos-Notifications-Icons/>
 
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -214,7 +214,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -226,12 +226,12 @@ export default {
 Sometimes we need to execute a function when the user clicks on the notification. For this, pass a function to the click property. Example: `click:()=>{ ... }`
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 
   <Demos-Notifications-Click/>
 
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -265,7 +265,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -282,12 +282,12 @@ By default the notifications have a time of **2000** (2s)
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <vs-button @click="$vs.notify({title:'Time default',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary',icon:'query_builder'})" color="primary" type="flat">Time default</vs-button>
   <vs-button @click="$vs.notify({time:4000,title:'Time 4s (4000)',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary',icon:'query_builder'})" color="primary" type="flat">Time 4s (4000)</vs-button>
   <vs-button @click="$vs.notify({time:8000,title:'Time 8s (8000)',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary',icon:'query_builder'})" color="primary" type="flat">Time 8s (8000)</vs-button>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-button @click="$vs.notify({
@@ -314,7 +314,7 @@ By default the notifications have a time of **2000** (2s)
 })" color="primary" type="flat">Time 8s (8000)</vs-button>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>

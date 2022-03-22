@@ -69,14 +69,14 @@ If the text has more than 5 letters, only the first letter will be shown as in t
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <vs-avatar />
   <vs-avatar text="Luisdaniel"/>
   <vs-avatar text="Luisd"/>
   <vs-avatar text="Luis Daniel"/>
   <vs-avatar src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-avatar />
@@ -85,7 +85,7 @@ If the text has more than 5 letters, only the first letter will be shown as in t
 <vs-avatar src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>
 ```
 
-</div>
+</template>
 </vuecode>
 
 </box>
@@ -106,13 +106,13 @@ You can change the size of the Avatar with the property `size` the allowed value
 :::
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
   <vs-avatar size="small" />
   <vs-avatar text="Luis Daniel"/>
   <vs-avatar size="large" src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>
   <vs-avatar size="70px" src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-avatar size="small" />
@@ -121,7 +121,7 @@ You can change the size of the Avatar with the property `size` the allowed value
 <vs-avatar size="70px" src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -132,7 +132,7 @@ You can change the size of the Avatar with the property `size` the allowed value
 You can change the Avatar's color by using the property `color`. If needed you could also change the text's color with the property `text-color`.
 
 <vuecode md center>
-<div slot="demo">
+<template #demo>
 <vs-avatar color="primary" text="primary"/>
 <vs-avatar color="success" text="success"/>
 <vs-avatar color="danger" text="danger"/>
@@ -141,8 +141,8 @@ You can change the Avatar's color by using the property `color`. If needed you c
 <vs-avatar color="rgb(200, 21, 129)" text="RGB"/>
 <vs-avatar color="#18cd5b" text="HEX"/>
 <vs-avatar color="#26302a" text-color="rgb(246, 190, 16)" text="HEX RGB"/>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-avatar color="primary" text="primary"/>
@@ -155,7 +155,7 @@ You can change the Avatar's color by using the property `color`. If needed you c
 <vs-avatar color="#26302a" text-color="rgb(246, 190, 16)" text="HEX RGB"/>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -172,10 +172,10 @@ You could also change the badge's color by using the property `badge-color`. You
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Avatar-Badge />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -207,7 +207,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -226,10 +226,10 @@ This icon is only displayed when there is no property as `text` o `src`
 
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Avatar-Icons />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
   <vs-avatar />
@@ -240,6 +240,6 @@ This icon is only displayed when there is no property as `text` o `src`
   <vs-avatar color="dark" icon="watch" />
 ```
 
-</div>
+</template>
 </vuecode>
 </box>

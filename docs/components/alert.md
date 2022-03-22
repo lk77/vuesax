@@ -53,12 +53,12 @@ API:
 To add a notification use the `vs-alert` component. For the main parameter, pass the `active` property that determines if the alert is visible or not.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <vs-alert active="true">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
 </vs-alert>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-alert active="true">
@@ -66,7 +66,7 @@ To add a notification use the `vs-alert` component. For the main parameter, pass
 </vs-alert>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -77,12 +77,12 @@ To add a notification use the `vs-alert` component. For the main parameter, pass
 Add a title to the alert with the property `title`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <vs-alert title="Lorem ipsum dolor sit amet" color="rgb(231, 154, 23)" active="true">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
 </vs-alert>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-alert title="Lorem ipsum dolor sit amet" color="rgb(231, 154, 23)" active="true">
@@ -90,7 +90,7 @@ Add a title to the alert with the property `title`.
 </vs-alert>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -105,7 +105,7 @@ You can change the color of the alert with the property `color`. You are able to
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
 <vs-alert  title="Primary" active="true" color="primary">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
 </vs-alert>
@@ -127,8 +127,8 @@ You can change the color of the alert with the property `color`. You are able to
 <vs-alert style="margin-top: 10px" title="HEX" active="true" color="#842993">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
 </vs-alert>
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <vs-alert
@@ -156,7 +156,7 @@ You can change the color of the alert with the property `color`. You are able to
 </vs-alert>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -169,10 +169,10 @@ You can show and hide the alert by means of `active.sync` and a Boolean bind as 
 The property to determine if the alert can be closed is `closable`.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Alert-Closable />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -200,7 +200,7 @@ export default {
 ```
 
 
-</div>
+</template>
 </vuecode>
 
 <br/>
@@ -212,10 +212,10 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Alert-Closeicon />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -243,7 +243,7 @@ export default {
 ```
 
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -258,10 +258,10 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 :::
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Alert-Icons />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -288,7 +288,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 
@@ -299,10 +299,10 @@ export default {
 An example would be to have an input and when a condition is met show the **vs-alert**.
 
 <vuecode md>
-<div slot="demo">
+<template #demo>
   <Demos-Alert-Exampleofuse />
-</div>
-<div slot="code">
+</template>
+<template #code>
 
 ```html
 <template lang="html">
@@ -334,7 +334,7 @@ export default {
 </script>
 ```
 
-</div>
+</template>
 </vuecode>
 </box>
 

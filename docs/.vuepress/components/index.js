@@ -7,23 +7,27 @@ let componentsDir = path.join(__dirname);
 
 let components = {};
 
-let handleFile = (filepath, filename) => {
+let handleFile = (filepath, filename, prefix) => {
   if(filename.endsWith('.vue')) {
-    components[filename.split('.')[0]] = path.resolve(__dirname, filepath);
+    components[(prefix ? (prefix + '-') : '') + filename.split('.')[0]] = path.resolve(__dirname, filepath);
   }
 }
 
-let handleDir = (dir) => {
+let handleDir = (dir, prefix) => {
   fs.readdirSync(dir).forEach((file) => {
     if (fs.lstatSync(dir + '/' + file).isDirectory()) {
-      handleDir(dir + '/' + file);
+      let dirPrefix;
+      if(prefix) {
+        dirPrefix = prefix + '-' + file
+      }
+      handleDir(dir + '/' + file, dirPrefix);
     } else {
-      handleFile(dir + '/' + file, file);
+      handleFile(dir + '/' + file, file, prefix);
     }
   })
 }
 
-handleDir(Demos);
+handleDir(Demos, 'Demos');
 handleDir(contributors);
 handleDir(componentsDir);
 

@@ -23,6 +23,7 @@ module.exports = {
   description: 'We love what we do. Let us help you do what <b>You love.</b>',
   vueThemes: require('./theme/vueThemes'),
   themeConfig: require('./theme/themeConfig'),
+  //theme: '@vuepress/default',
   theme: path.resolve(__dirname, './theme'),
   plugins: [
     [
@@ -39,7 +40,7 @@ module.exports = {
     ],
   ],
   bundler: '@vuepress/bundler-webpack',
-  bundlerConfig: {
+  /*bundlerConfig: {
     configureWebpack: () => { return {
       resolve: {
         fallback: {
@@ -74,10 +75,10 @@ module.exports = {
         ]
       },
     }}
-  },
-  /*markdown: {
+  },*/
+  markdown: {
     extendMarkdown: md => {
       md.set({html: true})
     }
-  }*/
+  }
 }
