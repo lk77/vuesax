@@ -84,16 +84,18 @@ export default {
   methods: {
     clickx(evt) {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
-      dropdownMenu.vsCustomContent = this.vsCustomContent
-      dropdownMenu.vsTriggerClick = this.vsTriggerClick
-      dropdownMenu.vsDropRight = this.vsDropRight
-      if ((this.vsTriggerClick || this.vsCustomContent) && this.vsDropdownVisible) {
-        if ((evt.target !== this.$refs.dropdown &&
-          evt.target.parentNode !== this.$refs.dropdown &&
-          evt.target.parentNode.parentNode !== this.$refs.dropdown)) {
-          if (!evt.target.closest('.vs-dropdown--menu')) {
-            dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
-            document.removeEventListener('click', this.clickx)
+      if(dropdownMenu) {
+        dropdownMenu.vsCustomContent = this.vsCustomContent
+        dropdownMenu.vsTriggerClick = this.vsTriggerClick
+        dropdownMenu.vsDropRight = this.vsDropRight
+        if ((this.vsTriggerClick || this.vsCustomContent) && this.vsDropdownVisible) {
+          if ((evt.target !== this.$refs.dropdown &&
+            evt.target.parentNode !== this.$refs.dropdown &&
+            evt.target.parentNode.parentNode !== this.$refs.dropdown)) {
+            if (!evt.target.closest('.vs-dropdown--menu')) {
+              dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+              document.removeEventListener('click', this.clickx)
+            }
           }
         }
       }

@@ -46,21 +46,21 @@
     "postinstall": "node postinstall.js"
   },
   "dependencies": {
-    "@vue/cli-plugin-eslint": "^5.0.3",
-    "babel-eslint": "^10.1.0",
-    "chalk": "^4.1.2",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.5.0"
+    "chalk": "^4.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@vue/cli-plugin-babel": "^4.5.14",
+    "@vue/cli-plugin-eslint": "^5.0.3",
     "@vue/cli-service": "^4.5.14",
     "@vue/compat": "^3.2.20",
     "@vue/compiler-sfc": "^3.1.5",
     "@vuepress/plugin-register-components": "^2.0.0-beta.26",
+    "babel-eslint": "^10.1.0",
     "copy-webpack-plugin": "^6.4.1",
     "core-js": "^3.19.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.5.0",
     "file-loader": "^6.2.0",
     "path-browserify": "^0.0.1",
     "prefixfree": "^1.0.0",
