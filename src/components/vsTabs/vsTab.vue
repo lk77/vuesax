@@ -5,7 +5,8 @@
     :name="invert?vertical?'fade-tab-vertical-invert':'fade-tab-invert':vertical?'fade-tab-vertical':'fade-tab'"
   >
     <div
-      v-if="active"
+      v-if="active || useShow"
+      v-show="useShow ? active : true"
       class="con-tab vs-tabs--content"
     >
       <slot />
@@ -34,6 +35,10 @@ export default {
       type:String,
       default:'material-icons'
     },
+    useShow: {
+      type:Boolean,
+      default:false
+    }
   },
   data:()=>({
     vertical:false,

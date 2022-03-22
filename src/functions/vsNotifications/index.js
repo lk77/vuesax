@@ -17,7 +17,7 @@ export default {
       }
     };
 
-    console.log(this.getCurrentInstance(), getCurrentInstance);
+    console.log(this.getCurrentInstance(), getCurrentInstance());
     utils.mount(comp, {
       element: document.body,
       app: this.getCurrentInstance(),

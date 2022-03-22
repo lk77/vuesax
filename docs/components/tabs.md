@@ -60,6 +60,11 @@ API:
    parameters: Default Colors RGB, HEX
    description: Determine the color of the icon inside the tag.
    default: null
+ - name: useShow
+   type: Boolean
+   parameters:
+   description: Use a v-show instead of a v-if on active vs-tab.
+   default: false
 ---
 
 # Tabs
