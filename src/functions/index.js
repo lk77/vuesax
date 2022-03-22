@@ -6,7 +6,6 @@ import vsDialog from './vsDialog/index.js'
 //theme
 import vsTheme from '../utils/theme.js'
 
-
 const vsFunctions = {
   vsNotifications,
   vsLoading,
@@ -24,5 +23,7 @@ export default (vm, app) => {
   })
 
   vm.$vs.loading.close = vsLoading.close
-  vm.$vs.app = app;
+  vm.$vs.getCurrentInstance = () => {
+    return app;
+  };
 }

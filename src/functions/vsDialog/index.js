@@ -21,7 +21,7 @@ export default {
 
     utils.mount(comp, {
       element: document.body,
-      app: this.app,
+      app: this.getCurrentInstance(),
       props: {
         onAccept: props.accept || null,
         onCancel: props.cancel || null,

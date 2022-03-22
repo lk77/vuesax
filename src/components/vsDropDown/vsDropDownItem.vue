@@ -47,7 +47,7 @@ export default {
   }),
   computed: {
     isVueRouterInstalled() {
-      return !!this.$vs.app.config.globalProperties.$router;
+      return !!this.$vs.getCurrentInstance().config.globalProperties.$router;
     },
     attrs() {
       return {

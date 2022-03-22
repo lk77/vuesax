@@ -17,7 +17,7 @@ export default {
 
     utils.mount(comp, {
       element: containerx,
-      app: this.app,
+      app: this.getCurrentInstance(),
       props: {
         type: parameters.type || 'default',
         background: parameters.background,
