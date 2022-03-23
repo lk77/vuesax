@@ -28,7 +28,7 @@
 					<p class="actions">
 								<!-- {{data.vueThemes.actionsLinks}} -->
 							<ul>
-								<li @mouseenter="data.doc=true" @mouseleave="data.doc=false" v-for="action in $vueThemes.actionsLinks">
+								<li @mouseenter="data.doc=true" @mouseleave="data.doc=false" v-for="action in actions">
 									<router-link
 										class="nav-link"
 										:to="action.link"
@@ -191,11 +191,11 @@ const tagline = computed(() => {
 
 // action buttons
 const actions = computed(() => {
-  if (!isArray(frontmatter.value.actions)) {
+  if (!isArray(frontmatter.value.vueThemes.actionsLinks)) {
     return []
   }
 
-  return frontmatter.value.actions.map(({ text, link, type = 'primary' }) => ({
+  return frontmatter.value.vueThemes.actionsLinks.map(({ text, link, type = 'primary' }) => ({
     text,
     link,
     type,
