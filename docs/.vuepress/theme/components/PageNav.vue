@@ -81,7 +81,6 @@ const resolveFromSidebarItems = (
 
 const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
 const sidebarItems = useSidebarItems()
-console.log(sidebarItems);
 const route = useRoute()
 
 const prevNavLink = computed(() => {
@@ -107,7 +106,9 @@ const nextNavLink = computed(() => {
 
   let childResult = resolveFromSidebarItems(sidebarItems.value, route.path, 1);
 
-  childResult.text = childResult.text + ' >';
+  if(childResult) {
+    childResult.text = childResult.text + ' >';
+  }
 
   return childResult;
 })

@@ -1,24 +1,24 @@
 <template>
   <RouterLink
+    v-bind="$attrs"
     v-if="isRouterLink"
     class="nav-link"
     :class="{ 'router-link-active': isActive }"
     :to="item.link"
     :aria-label="linkAriaLabel"
-    v-bind="$attrs"
   >
     <slot name="before" />
     {{ item.text }}
     <slot name="after" />
   </RouterLink>
   <a
+    v-bind="$attrs"
     v-else
     class="nav-link external"
     :href="item.link"
     :rel="linkRel"
     :target="linkTarget"
     :aria-label="linkAriaLabel"
-    v-bind="$attrs"
   >
     <!--<slot name="before" />-->
     {{ item.text }}

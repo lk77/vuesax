@@ -68,7 +68,7 @@ With the directive `vs-w` define the width of the column (`vs-col`) its value is
 
 <vuecode md>
 
-<div class="gridx" slot="demo">
+<template class="gridx" #demo>
 <vs-row>
 <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
 
@@ -172,7 +172,7 @@ To give a distance with respect to the left we have the directive vs-offset that
 
 <vuecode md>
 
-<div class="gridx" slot="demo">
+<template class="gridx" #demo>
 <vs-row vs-w="12">
 <vs-col vs-offset="5" vs-type="flex" vs-justify="center" vs-align="center" vs-w="6">
 
@@ -262,7 +262,7 @@ If we need to align the elements horizontally, use the `vs-justify` directive th
 
 <vuecode md>
 
-<div class="gridx" slot="demo">
+<template class="gridx" #demo>
 <vs-row vs-w="12">
 <vs-col :key="index" v-for="col,index in 3" vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
 
@@ -357,7 +357,7 @@ To align the elements vertically we have the directive `vs-align` that as parame
 
 <vuecode md>
 
-<div class="gridx" slot="demo">
+<template class="gridx" #demo>
 <vs-row vs-type="flex" vs-align="flex-start" vs-justify="center" vs-w="12">
 <vs-col :key="index" v-for="col,index in 4" vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
 
@@ -388,7 +388,7 @@ col - 3
 
 <vuecode md>
 
-<div class="gridx" slot="demo">
+<template class="gridx" #demo>
 <vs-row vs-type="flex" vs-align="center" vs-justify="space-around" vs-w="12">
 <vs-col :key="index" v-for="col,index in 4" vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
 
@@ -418,7 +418,7 @@ col - 3
 
 <vuecode md>
 
-<div class="gridx" slot="demo">
+<template class="gridx" #demo>
 <vs-row vs-type="flex" vs-align="flex-end" vs-justify="space-between" vs-w="12">
 <vs-col :key="index" v-for="col,index in 4" vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
 
@@ -454,7 +454,7 @@ In some cases, we want to order the elements to our liking. To do this, use the 
 
 <vuecode md>
 
-<div class="gridx" slot="demo">
+<template class="gridx" #demo>
 <vs-row vs-type="flex">
 <vs-col vs-order="3" vs-type="flex" vs-justify="center" vs-align="center" vs-w="3">
 
@@ -523,7 +523,7 @@ There are some measures that can only be added in a specific size of the device,
 
 <vuecode md>
 
-<div class="gridx" slot="demo">
+<template class="gridx" #demo>
 <vs-row vs-w="12">
 <vs-col v-tooltip="'lg - 2 / sm - 4 / xs - 12'" vs-type="flex" vs-justify="center" vs-align="center" vs-lg="2" vs-sm="4" vs-xs="12" >
 

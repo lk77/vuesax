@@ -13,7 +13,7 @@ export default defineClientAppEnhance(({ app, router }) => {
     //app.component('CodeGroup', CodeGroup);
     //app.component('CodeGroupItem', CodeGroupItem);
     // unregister the built-in `<OutboundLink>` to avoid warning
-    //delete app._context.components.OutboundLink;
+    delete app._context.components.OutboundLink;
     // override the built-in `<OutboundLink>`
     app.component('OutboundLink', OutboundLink);
     // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
@@ -26,6 +26,7 @@ export default defineClientAppEnhance(({ app, router }) => {
     });
     // handle scrollBehavior with transition
     const scrollBehavior = router.options.scrollBehavior;
+    console.log(router);
     router.options.scrollBehavior = async (...args) => {
         await useScrollPromise().wait();
         return scrollBehavior(...args);

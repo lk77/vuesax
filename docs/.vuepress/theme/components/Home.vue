@@ -66,7 +66,7 @@
 					</p>-->
 				</header>
 			</div>
-    
+
 
     <!--<div v-if="features.length" class="features">
       <div v-for="feature in features" :key="feature.title" class="feature">
@@ -114,7 +114,7 @@
 							<trofeos/>
 						</div>
 					</div>
-				
+
 				<div class="theme-default-content custom">
 					<Content />
 				</div>
@@ -124,14 +124,14 @@
 					<!--<div v-if="footerHtml" class="footer" v-html="footer" />
 					<div v-else class="footer" v-text="footer" />
 				</template>-->
-			
-			
+
+
 			</div>
 
 			<Partners/>
 
 		</div>
-		
+
 		<Footer/>
 	</main>
 </template>
@@ -234,7 +234,6 @@ fetch('https://api.github.com/repos/lusaxweb/vuesax')
 const footer = computed(() => frontmatter.value.footer)
 const footerHtml = computed(() => frontmatter.value.footerHtml)
 </script>
-
 
 <style lang="scss">
 @use '../styles/config' as *;
@@ -455,7 +454,18 @@ const footerHtml = computed(() => frontmatter.value.footerHtml)
 		}
 	}
 }
+#main-title {
+  float: left!important;
+  margin-bottom:0!important;
+}
+.home .description {
+  float: left!important;
+  clear: left!important;
+  margin-top:0!important;
+}
 .home-init {
+  width: 100vw;
+  max-width: unset!important;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -474,6 +484,7 @@ const footerHtml = computed(() => frontmatter.value.footerHtml)
 	width: 100%;
 }
 .home {
+  margin:0;
 	top: 0px;
 	display: block;
 	position: relative;
