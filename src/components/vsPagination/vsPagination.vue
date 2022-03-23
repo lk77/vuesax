@@ -219,7 +219,7 @@ export default {
       this.getPages()
       this.calculateMinMax(val)
       this.$emit('update:modelValue', this.current)
-      this.$emit('change', this.current)
+      //this.$emit('change', this.current)
     },
     total() {
       this.getPages()
