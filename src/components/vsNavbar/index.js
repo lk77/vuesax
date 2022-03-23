@@ -6,7 +6,7 @@ import vsComponent5 from './vsNavbarItems'
 
 export default Vue => {
   Vue.component('VsNavbar', vsComponent)
-  Vue.component('VsNavItem', vsComponent2)
+  Vue.component('VsNavbarItem', vsComponent2)
   Vue.component('VsNavGroup', vsComponent3)
   Vue.component('VsNavbarTitle', vsComponent4)
   Vue.component('VsNavbarItems', vsComponent5)

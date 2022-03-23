@@ -33,7 +33,7 @@
 </template>
 <script>
 
-import vsIcon from '../vsIcon';
+import vsIcon from '../vsIcon/vsIcon';
 
 export default {
   name:'VsCollapseItem',

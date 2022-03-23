@@ -30,7 +30,7 @@
       ></span>
 
       <!-- vsTicks -->
-      <template v-if="ticks&&tick">
+      <template v-if="ticks">
         <span
           v-for="(tick,index) in countTicks"
           :class="{'isEnd':index == countTicks-1}"
@@ -47,7 +47,7 @@
         'hasTransition':effect,
         'isEquals':isEquals,
         'changeValue':changeValue,
-        'isEndValue':value == max
+        'isEndValue':modelValue == max
       }"
       :style="styleCircle"
       class="vs-circle-slider vs-circles-slider vs-slider--circles vs-slider--circle"
@@ -77,7 +77,7 @@
         'hasTransition':effect,
         'isEquals':isEquals,
         'changeValue':changeValue,
-        'isEndValue':value == max
+        'isEndValue':modelValue == max
       }"
       :style="styleCircleTwo"
       class="vs-circle-slider-two vs-circles-slider vs-slider--circles vs-slider--circle-two"
@@ -162,7 +162,7 @@ export default {
     actived: false,
     changeValue: false,
     valueCircle1: 0,
-    calueCircle2: 0
+    valueCircle2: 0
   }),
   computed: {
     isEquals() {

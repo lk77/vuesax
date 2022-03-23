@@ -103,7 +103,8 @@ export default {
     }
   },
   data: () => ({
-    currentIndex: 0
+    currentIndex: 0,
+    childrenItems: []
   }),
   watch:{
     modelValue() {

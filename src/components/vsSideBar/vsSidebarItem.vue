@@ -56,13 +56,31 @@ export default {
   },
   computed:{
     getActive () {
-      return this.$parent.getActive() == this.index
+      return this.parent.getActive() == this.index
     }
+  },
+  data() {
+    return {
+      parent: null
+    }
+  },
+  created() {
+    this.searchParent(this, (parent) => {
+      this.parent = parent;
+    })
   },
   methods:{
     setIndexActive () {
-      this.$parent.setIndexActive(this.index)
+      this.parent.setIndexActive(this.index)
       this.$emit('click')
+    },
+    searchParent(_this, callback) {
+      let parent = _this.$parent
+      if (!parent.childrenItems) {
+        this.searchParent(parent, callback)
+      } else {
+        callback(parent)
+      }
     }
   }
 }

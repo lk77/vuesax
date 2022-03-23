@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
     <div
-      :class="{'no-items':value.length == 0}"
+      :class="{'no-items':modelValue.length == 0}"
       class="con-chips"
     >
       <slot>
