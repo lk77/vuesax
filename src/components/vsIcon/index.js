@@ -1,6 +1,6 @@
 import vsComponent from './vsIcon'
 
 export default Vue => {
-  Vue.component('vsIcon', vsComponent)
+  Vue.component('VsIcon', vsComponent)
 }
 

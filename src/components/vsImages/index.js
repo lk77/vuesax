@@ -2,6 +2,6 @@ import vsComponent from './vsImages'
 import vsComponent2 from './vsImage'
 
 export default Vue => {
-  Vue.component('vsImages', vsComponent)
-  Vue.component('vsImage', vsComponent2)
+  Vue.component('VsImages', vsComponent)
+  Vue.component('VsImage', vsComponent2)
 }

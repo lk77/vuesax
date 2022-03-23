@@ -1,5 +1,5 @@
 import vsComponent from './vsProgress'
 
 export default Vue => {
-  Vue.component('vsProgress', vsComponent)
+  Vue.component('VsProgress', vsComponent)
 }

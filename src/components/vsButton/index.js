@@ -1,5 +1,5 @@
 import vsComponent from './vsButton'
 
 export default Vue => {
-  Vue.component('vsButton', vsComponent)
+  Vue.component('VsButton', vsComponent)
 }

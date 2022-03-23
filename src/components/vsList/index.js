@@ -3,7 +3,7 @@ import vsComponent2 from './vsListItem'
 import vsComponent3 from './vsListHeader'
 
 export default Vue => {
-  Vue.component('vsList', vsComponent)
-  Vue.component('vsListItem', vsComponent2)
-  Vue.component('vsListHeader', vsComponent3)
+  Vue.component('VsList', vsComponent)
+  Vue.component('VsListItem', vsComponent2)
+  Vue.component('VsListHeader', vsComponent3)
 }

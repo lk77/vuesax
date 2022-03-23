@@ -1,5 +1,5 @@
 import vsComponent from './vsPopup'
 
 export default Vue => {
-  Vue.component('vsPopup', vsComponent)
+  Vue.component('VsPopup', vsComponent)
 }

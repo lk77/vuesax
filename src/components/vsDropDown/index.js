@@ -4,8 +4,8 @@ import vsComponent3 from './vsDropDownItem'
 import vsComponent4 from './vsDropDownGroup'
 
 export default Vue => {
-  Vue.component('vsDropDown', vsComponent)
-  Vue.component('vsDropDownMenu', vsComponent2)
-  Vue.component('vsDropDownItem', vsComponent3)
-  Vue.component('vsDropDownGroup', vsComponent4)
+  Vue.component('VsDropdown', vsComponent)
+  Vue.component('VsDropdownMenu', vsComponent2)
+  Vue.component('VsDropdownItem', vsComponent3)
+  Vue.component('VsDropdownGroup', vsComponent4)
 }

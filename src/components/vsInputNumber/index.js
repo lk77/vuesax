@@ -1,5 +1,5 @@
 import vsComponent from './vsInputNumber'
 
 export default Vue => {
-  Vue.component('vsInputNumber', vsComponent)
+  Vue.component('VsInputNumber', vsComponent)
 }

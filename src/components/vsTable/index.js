@@ -4,8 +4,8 @@ import vsComponent3 from './vsTr'
 import vsComponent4 from './vsTd'
 
 export default Vue => {
-  Vue.component('vsTable', vsComponent)
-  Vue.component('vsTh', vsComponent2)
-  Vue.component('vsTr', vsComponent3)
-  Vue.component('vsTd', vsComponent4)
+  Vue.component('VsTable', vsComponent)
+  Vue.component('VsTh', vsComponent2)
+  Vue.component('VsTr', vsComponent3)
+  Vue.component('VsTd', vsComponent4)
 }
