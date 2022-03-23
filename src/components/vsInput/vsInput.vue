@@ -134,7 +134,7 @@ import _color from '../../utils/color.js'
 import utils from '../../utils'
 export default {
   name:'VsInput',
-  emits: ['focus', 'blur'],
+  emits: ['focus', 'blur', 'update:modelValue'],
   inject: {
     elForm: {
       default: ''

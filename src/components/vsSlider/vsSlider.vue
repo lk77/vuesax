@@ -109,7 +109,7 @@
 import _color from "../../utils/color.js";
 export default {
   name: "VsSlider",
-  emits: ['change'],
+  emits: ['change', 'update:modelValue'],
   props: {
     modelValue: {},
     disabled: {

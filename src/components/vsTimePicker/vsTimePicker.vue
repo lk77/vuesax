@@ -70,6 +70,7 @@
 <script>
 export default {
   name: "VsTimePicker",
+  emits: ['update:modelValue'],
   inheritAttrs:false,
   props:{
     modelValue:{}

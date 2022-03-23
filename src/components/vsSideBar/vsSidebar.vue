@@ -52,6 +52,7 @@
 <script>
 export default {
   name:'VsSidebar',
+  emits: ['update:modelValue'],
   props:{
     modelValue:{
       default: false

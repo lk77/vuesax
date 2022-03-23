@@ -1,6 +1,5 @@
 import utils from '../../utils'
 import vsNotifications from './vsNotifications.vue'
-import {getCurrentInstance} from 'vue';
 export default {
   name: 'notify',
   vsfunction(parameters = {}) {
@@ -17,7 +16,6 @@ export default {
       }
     };
 
-    console.log(this.getCurrentInstance(), getCurrentInstance());
     utils.mount(comp, {
       element: document.body,
       app: this.getCurrentInstance(),

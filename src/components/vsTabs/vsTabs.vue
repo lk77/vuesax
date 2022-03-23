@@ -70,6 +70,7 @@ import vsIcon from '../vsIcon/vsIcon.vue'
 export default {
   name:'VsTabs',
   components:{vsIcon},
+  emits: ['update:modelValue'],
   props:{
     modelValue: {
       default: 0,

@@ -34,7 +34,7 @@ import _color from '../../utils/color.js'
 
 export default {
   name:'VsChip',
-  emits: ['click'],
+  emits: ['click', 'vs-remove', 'update:modelValue'],
   props:{
     item:{
       type:Boolean,

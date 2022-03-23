@@ -87,6 +87,7 @@
 <script>
 export default {
   name: "VsTable",
+  emits: ['update:modelValue'],
   props:{
     modelValue:{},
     color: {

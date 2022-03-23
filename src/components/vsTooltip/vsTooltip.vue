@@ -29,6 +29,7 @@ import utils from '../../utils'
 import _color from '../../utils/color.js'
 export default {
   name:'VsTooltip',
+  emits: ['update:modelValue'],
   props:{
     title:{
       default:null,

@@ -32,6 +32,7 @@
 import _color from '../../utils/color.js'
 export default {
   name:'VsNavbar',
+  emits: ['update:modelValue'],
   props:{
     modelValue:{},
     type:{

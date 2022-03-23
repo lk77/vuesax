@@ -38,7 +38,6 @@ import _color from '../../utils/color.js'
 import utils from '../../utils'
 export default {
   name:'VsCheckbox',
-  emits: ['change'],
   //inheritAttrs: false,
   props:{
     color:{
@@ -63,6 +62,7 @@ export default {
       type: String
     }
   },
+  emits: ['update:modelValue'],
   computed:{
     attrs() {
       return {
@@ -87,7 +87,7 @@ export default {
     giveColor(color) {
       return _color.rColor(color)
     },
-    toggleValue(evt) {
+    toggleValue(/*evt*/) {
       if(this.isArrayx()) {
         this.setArray()
       } else if (typeof(this.vsValue) == 'string') {
@@ -95,7 +95,7 @@ export default {
       }
       else {
         this.$emit('update:modelValue', !this.modelValue)
-        this.$emit('change', evt)
+        //this.$emit('change', evt)
       }
     },
     setArray() {
@@ -104,20 +104,20 @@ export default {
       if(this.isArrayIncludes()) {
         modelValue.splice(modelValue.indexOf(this.vsValue), 1)
         this.$emit('update:modelValue', modelValue)
-        this.$emit('change', modelValue)
+        //this.$emit('change', modelValue)
       } else {
         modelValue.push(this.vsValue)
         this.$emit('update:modelValue', modelValue)
-        this.$emit('change', modelValue)
+        //this.$emit('change', modelValue)
       }
     },
     setValueString() {
       if(this.modelValue == this.vsValue) {
         this.$emit('update:modelValue', null)
-        this.$emit('change', null)
+        //this.$emit('change', null)
       } else {
         this.$emit('update:modelValue', this.vsValue)
-        this.$emit('change', this.vsValue)
+        //this.$emit('change', this.vsValue)
       }
     },
     isArrayIncludes() {
