@@ -128,14 +128,14 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
       label="Figuras"
       v-model="select1"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options1" />
     </vs-select>
     <vs-select
       class="selectExample"
       label="Figuras"
       v-model="select2"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options2" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options2" />
     </vs-select>
     <vs-select
       disabled
@@ -143,7 +143,7 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
       label="Figuras"
       v-model="select3"
       >
-      <vs-select-item :key="index" :disabled="index==2" :value="item.value" :text="item.text" v-for="item,index in options3" />
+      <vs-select-item :key="index" :disabled="index==2" :modelValue="item.value" :text="item.text" v-for="item,index in options3" />
     </vs-select>
     <vs-select
       class="selectExample"
@@ -151,7 +151,7 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
       v-model="select4"
       icon="arrow_downward"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options4" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options4" />
     </vs-select>
   </div>
 </template>
@@ -265,7 +265,7 @@ You can change the color of the select with the property `color`
       label="Figuras"
       v-model="select1"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options1" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="(item,index) in options1" />
     </vs-select>
     <vs-select
     :color="select2"
@@ -273,7 +273,7 @@ You can change the color of the select with the property `color`
       label="Figuras"
       v-model="select2"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="(item,index) in options2" />
     </vs-select>
   </div>
 </template>
@@ -342,7 +342,7 @@ You can add the autocomplete functionality in the desired selected with the prop
       label="Figuras"
       v-model="select1"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options1" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="(item,index) in options1" />
     </vs-select>
     <vs-select
       autocomplete
@@ -351,7 +351,7 @@ You can add the autocomplete functionality in the desired selected with the prop
       label="Figuras"
       v-model="select2"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="(item,index) in options2" />
     </vs-select>
     <vs-select
       autocomplete
@@ -361,7 +361,7 @@ You can add the autocomplete functionality in the desired selected with the prop
       label="Figuras"
       v-model="select3"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options3" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="(item,index) in options3" />
     </vs-select>
   </div>
 </template>
@@ -435,7 +435,7 @@ You can have a selection with multiple selections with the property `multiple`. 
       label="Figuras"
       v-model="select1"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options1" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="(item,index) in options1" />
     </vs-select>
     <vs-select
       placeholder="Multiple and autocomplete"
@@ -445,7 +445,7 @@ You can have a selection with multiple selections with the property `multiple`. 
       label="Figuras"
       v-model="select2"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="(item,index) in options2" />
     </vs-select>
     <vs-select
       placeholder="Max Selected"
@@ -455,7 +455,7 @@ You can have a selection with multiple selections with the property `multiple`. 
       label="Figuras"
       v-model="select3"
       >
-      <vs-select-item :key="index" :value="item.value"  :text="item.text" v-for="(item,index) in options3" />
+      <vs-select-item :key="index" :modelValue="item.value"  :text="item.text" v-for="(item,index) in options3" />
     </vs-select>
   </div>
 </template>
@@ -529,7 +529,7 @@ Add a label to the input with the property `label`.
       multiple
       v-model="select1"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options1" />
     </vs-select>
     <vs-select
       placeholder="Search and select"
@@ -540,7 +540,7 @@ Add a label to the input with the property `label`.
       autocomplete
       v-model="select2"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options2" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options2" />
     </vs-select>
   </div>
 </template>
@@ -614,7 +614,7 @@ You can add a state for example of in affirmative response to a validation with 
       multiple
       v-model="select1"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in exampleOptions" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in exampleOptions" />
     </vs-select>
        <vs-select
       :danger="true"
@@ -625,7 +625,7 @@ You can add a state for example of in affirmative response to a validation with 
       multiple
       v-model="select2"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in exampleOptions" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in exampleOptions" />
     </vs-select>
        <vs-select
       :warning="true"
@@ -636,7 +636,7 @@ You can add a state for example of in affirmative response to a validation with 
       multiple
       v-model="select3"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in exampleOptions" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in exampleOptions" />
     </vs-select>
        <vs-select
       description-text="Simple info for multiple select"
@@ -646,7 +646,7 @@ You can add a state for example of in affirmative response to a validation with 
       multiple
       v-model="select4"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in exampleOptions" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in exampleOptions" />
     </vs-select>
   </div>
 </template>
@@ -708,7 +708,7 @@ You can validate if an option is selected with the property `is-selected.sync` a
       label="Figuras"
       v-model="select1"
       >
-      <vs-select-item :is-selected.sync="item.isSelected" :key="index" :value="item.value" :text="item.isSelected?item.selectedText:item.label" v-for="item,index in options1" />
+      <vs-select-item :is-selected.sync="item.isSelected" :key="index" :modelValue="item.value" :text="item.isSelected?item.selectedText:item.label" v-for="item,index in options1" />
     </vs-select>
   </div>
 </template>
@@ -780,7 +780,7 @@ You can group elements with the sub component `vs-select-group`
         >
         <div :key="index" v-for="item,index in options1">
           <vs-select-group :title="item.title" v-if="item.group">
-            <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in item.group"/>
+            <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in item.group"/>
           </vs-select-group>
         </div>
     </vs-select>
@@ -792,7 +792,7 @@ You can group elements with the sub component `vs-select-group`
         >
         <div :key="index" v-for="item,index in options2">
           <vs-select-group :title="item.title" v-if="item.group">
-            <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in item.group"/>
+            <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in item.group"/>
           </vs-select-group>
         </div>
     </vs-select>
@@ -804,7 +804,7 @@ You can group elements with the sub component `vs-select-group`
         >
         <div :key="index" v-for="item,index in options3">
           <vs-select-group :title="item.title" v-if="item.group">
-            <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in item.group"/>
+            <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in item.group"/>
           </vs-select-group>
         </div>
     </vs-select>
@@ -939,7 +939,7 @@ You can set the width of the select width the `width` property
       v-model="select1"
       width="120px"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options1" />
     </vs-select>
     <vs-select
       class="selectExample"
@@ -947,7 +947,7 @@ You can set the width of the select width the `width` property
       v-model="select2"
       width="400px"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options2" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options2" />
     </vs-select>
   </div>
 </template>

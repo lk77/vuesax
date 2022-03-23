@@ -5,7 +5,7 @@
       label="Figuras"
       v-model="hover"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in hovers" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="(item,index) in hovers" />
     </vs-select>
     <div class="con-example-images">
       <vs-images :hover="hover">

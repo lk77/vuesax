@@ -6,7 +6,7 @@
       label="Figuras"
       v-model="type"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in types" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="(item,index) in types" />
     </vs-select>
 
     <vs-navbar :type="type" v-model="activeItem" class="nabarx">

@@ -179,7 +179,7 @@ The property to determine if the alert can be closed is `closable`.
   <div class="centerx">
     <vs-button @click="active1=!active1" color="primary" type="filled">{{!active1?'Open Alert':'Close Alert'}}</vs-button>
     <vs-alert
-    :active.sync="active1"
+    v-model:active="active1"
     closable
     close-icon="close">
       Lorem ip
@@ -222,7 +222,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
   <div class="centerx">
     <vs-button @click="active1=!active1" color="primary" type="filled">{{!active1?'Open Alert':'Close Alert'}}</vs-button>
     <vs-alert
-    :active.sync="active1"
+    v-model:active="active1"
     closable
     close-icon="cancel">
       Lorem ip

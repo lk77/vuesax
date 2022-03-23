@@ -5,7 +5,7 @@
       label="Figuras"
       v-model="select1"
       >
-      <vs-select-item :is-selected.sync="item.isSelected" :key="index" :value="item.value" :text="item.isSelected?item.selectedText:item.label" v-for="item,index in options1" />
+      <vs-select-item v-model:is-selected="item.isSelected" :key="index" :modelValue="item.value" :text="item.isSelected?item.selectedText:item.label" v-for="item,index in options1" />
     </vs-select>
   </div>
 </template>

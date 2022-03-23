@@ -13,13 +13,13 @@
 
 
         <vs-input
-    :valid.sync="valid.email"
+    v-model:valid="valid.email"
     success-text="Valid mail"
     danger-text="The email does not meet the requirements"
     type="email" label-placeholder="Email" v-model="value1"/>
 
     <vs-input
-        :valid.sync="valid.password"
+        v-model:valid="valid.password"
         success-text="Password Valida"
         danger-text="The password must have at least 8 characters, 1 number, 1 special character"
         type="password"

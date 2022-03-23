@@ -250,7 +250,7 @@ To add a dialog of type prompt we have a global function a completely independen
       @cancel="val=''"
       @accept="acceptAlert"
       @close="close"
-      :active.sync="activePrompt">
+      v-model:active="activePrompt">
        <div class="con-exemple-prompt">
           Enter the security code
          <vs-input placeholder="Code" v-model="val"/>
@@ -260,7 +260,7 @@ To add a dialog of type prompt we have a global function a completely independen
             label="Figuras"
             v-model="select1"
             >
-            <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
+            <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options1" />
           </vs-select>
        </div>
      </vs-prompt>
@@ -271,7 +271,7 @@ To add a dialog of type prompt we have a global function a completely independen
       @accept="acceptAlert"
       @close="close"
       :is-valid="validName"
-      :active.sync="activePrompt2">
+      v-model:active="activePrompt2">
        <div class="con-exemple-prompt">
        Enter your first and last name to <b>continue</b>.
          <vs-input placeholder="Name" v-model="valMultipe.value1"/>

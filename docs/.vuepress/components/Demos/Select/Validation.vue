@@ -9,7 +9,7 @@
       multiple
       v-model="select1"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in exampleOptions" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in exampleOptions" />
     </vs-select>
        <vs-select
       :danger="true"
@@ -20,7 +20,7 @@
       multiple
       v-model="select2"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in exampleOptions" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in exampleOptions" />
     </vs-select>
        <vs-select
       :warning="true"
@@ -31,7 +31,7 @@
       multiple
       v-model="select3"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in exampleOptions" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in exampleOptions" />
     </vs-select>
        <vs-select
       description-text="Simple info for multiple select"
@@ -41,7 +41,7 @@
       multiple
       v-model="select4"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in exampleOptions" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in exampleOptions" />
     </vs-select>
   </div>
 </template>

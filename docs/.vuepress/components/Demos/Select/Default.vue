@@ -5,14 +5,14 @@
       label="Figuras"
       v-model="select1"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options1" />
     </vs-select>
     <vs-select
       class="selectExample"
       label="Figuras"
       v-model="select2"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options2" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options2" />
     </vs-select>
     <vs-select
       disabled
@@ -20,7 +20,7 @@
       label="Figuras"
       v-model="select3"
       >
-      <vs-select-item :key="index" :disabled="index==2" :value="item.value" :text="item.text" v-for="item,index in options3" />
+      <vs-select-item :key="index" :disabled="index==2" :modelValue="item.value" :text="item.text" v-for="item,index in options3" />
     </vs-select>
     <vs-select
       class="selectExample"
@@ -28,7 +28,7 @@
       v-model="select4"
       icon="arrow_downward"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options4" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options4" />
     </vs-select>
   </div>
 </template>

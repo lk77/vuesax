@@ -6,7 +6,7 @@
       v-model="select1"
       width="120px"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options1" />
     </vs-select>
     <vs-select
       class="selectExample"
@@ -14,7 +14,7 @@
       v-model="select2"
       width="400px"
       >
-      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options2" />
+      <vs-select-item :key="index" :modelValue="item.value" :text="item.text" v-for="item,index in options2" />
     </vs-select>
   </div>
 </template>
