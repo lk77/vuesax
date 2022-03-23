@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 let Demos = path.join(__dirname, "Demos");
-let contributors = path.join(__dirname, "Demos");
+let contributors = path.join(__dirname, "contributors");
 let componentsDir = path.join(__dirname);
 
 let components = {};
@@ -13,22 +13,24 @@ let handleFile = (filepath, filename, prefix) => {
   }
 }
 
-let handleDir = (dir, prefix) => {
+let handleDir = (dir, prefix, recursive = false, ) => {
   fs.readdirSync(dir).forEach((file) => {
     if (fs.lstatSync(dir + '/' + file).isDirectory()) {
-      let dirPrefix;
-      if(prefix) {
-        dirPrefix = prefix + '-' + file
+      if(recursive) {
+        let dirPrefix;
+        if(prefix) {
+          dirPrefix = prefix + '-' + file
+        }
+        handleDir(dir + '/' + file, dirPrefix);
       }
-      handleDir(dir + '/' + file, dirPrefix);
     } else {
       handleFile(dir + '/' + file, file, prefix);
     }
   })
 }
 
-handleDir(Demos, 'Demos');
-handleDir(contributors);
+handleDir(Demos, 'Demos', true);
+handleDir(contributors, null, true);
 handleDir(componentsDir);
 
 module.exports = components;

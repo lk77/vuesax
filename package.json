@@ -56,6 +56,7 @@
     "@vue/compiler-sfc": "^3.2.31",
     "@vuepress/bundler-webpack": "^2.0.0-beta.36",
     "@vuepress/client": "^2.0.0-beta.35",
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.36",
     "@vuepress/plugin-external-link-icon": "^2.0.0-beta.36",
     "@vuepress/plugin-register-components": "^2.0.0-beta.36",
     "babel-eslint": "^10.1.0",

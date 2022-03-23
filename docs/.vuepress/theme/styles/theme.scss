@@ -7,6 +7,10 @@
 @use './arrow';
 @use './mobile';
 
+:root {
+  --c-brand: #5b3cc4!important;
+  --c-brand-light: #744dfc!important;
+}
 
 // new theme vuesax
 .pruebax {
@@ -412,4 +416,9 @@ hr {
 			padding-right: 0px !important;
 		}
 	}
+}
+
+// fix back-to-top
+.back-to-top {
+    -webkit-mask: url(/vuesax/back-to-top.svg)no-repeat;
 }

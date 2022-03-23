@@ -1,99 +1,112 @@
 <template lang="html">
-  <div class="con-contributors">
-    <ul class="menu">
-      <li :class="{'estas-contribucion':state==1}" @click="state=1">
-        Rank
-      </li>
-      <li :class="{'estas-contribucion':state==2}" @click="state=2">
-        Awards
-      </li>
-    </ul>
-    <div  class="con-contenedores">
-      <div v-if="state==1" class="con-rank">
-        <table>
-          <thead>
-            <tr>
-              <th>Pos</th>
-              <th>User</th>
-              <th>Name</th>
-              <th>Contribution</th>
-              <th>Pull Request</th>
-              <th>Commits</th>
-              <th>Points</th>
-              <th>GitHub</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="user,index in users" >
-              <td>{{index+1}}</td>
-              <td>
-                <img :src="user.author.avatar_url" alt="">
-              </td>
-              <td>{{user.author.login}}</td>
-              <td class="medals">
-                <c100 v-if="user.weeks > 100"/>
-                <c1k v-if="user.weeks > 1000"/>
-                <c10k v-if="user.weeks > 10000"/>
-                <c30k v-if="user.weeks > 30000"/>
-                <!-- {{awwards(user.weeks)}} -->
-              </td>
-              <td class="medals-pull">
-                <pull1 v-if="request[user.author.login] >= 1" />
-                <pull5 v-if="request[user.author.login] >= 5"/>
-                <pull20 v-if="request[user.author.login] >= 20"/>
-                <pull50 v-if="request[user.author.login] >= 50"/>
-                <!-- {{request(user.weeks)}} -->
-              </td>
-              <td>{{user.total}}</td>
-              <td>{{user.weeks}}</td>
-              <td class="iconx-github">
-                <a class="flaticon-github " :href="user.author.html_url"></a>
-              </td>
-              <!-- <td>{{user}}</td> -->
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div>
+    <Navbar>
+      <template #before>
+        <slot name="navbar-before"/>
+      </template>
+      <template #after>
+        <slot name="navbar-after"/>
+      </template>
+    </Navbar>
+    <div class="custom-layout">
+      <div class="con-contributors">
+        <ul class="menu">
+          <li :class="{'estas-contribucion':state==1}" @click="state=1">
+            Rank
+          </li>
+          <li :class="{'estas-contribucion':state==2}" @click="state=2">
+            Awards
+          </li>
+        </ul>
+        <div class="con-contenedores">
+          <div v-if="state==1" class="con-rank">
+            <table>
+              <thead>
+              <tr>
+                <th>Pos</th>
+                <th>User</th>
+                <th>Name</th>
+                <th>Contribution</th>
+                <th>Pull Request</th>
+                <th>Commits</th>
+                <th>Points</th>
+                <th>GitHub</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr v-for="user,index in users">
+                <td>{{ index + 1 }}</td>
+                <td>
+                  <img :src="user.author.avatar_url" alt="">
+                </td>
+                <td>{{ user.author.login }}</td>
+                <td class="medals">
+                  <c100 v-if="user.weeks > 100"/>
+                  <c1k v-if="user.weeks > 1000"/>
+                  <c10k v-if="user.weeks > 10000"/>
+                  <c30k v-if="user.weeks > 30000"/>
+                  <!-- {{awwards(user.weeks)}} -->
+                </td>
+                <td class="medals-pull">
+                  <pull1 v-if="request[user.author.login] >= 1"/>
+                  <pull5 v-if="request[user.author.login] >= 5"/>
+                  <pull20 v-if="request[user.author.login] >= 20"/>
+                  <pull50 v-if="request[user.author.login] >= 50"/>
+                  <!-- {{request(user.weeks)}} -->
+                </td>
+                <td>{{ user.total }}</td>
+                <td>{{ user.weeks }}</td>
+                <td class="iconx-github">
+                  <a class="flaticon-github " :href="user.author.html_url"></a>
+                </td>
+                <!-- <td>{{user}}</td> -->
+              </tr>
+              </tbody>
+            </table>
+          </div>
 
-      <div v-else class="con-awwards">
-        <div v-for="awward in awwards" class="con-awward">
-          <h2>{{awward.title}}</h2>
-          <ul>
-            <li v-for="medal in awward.medals">
-              <div class="con-card-awward">
-                <div :is="medal.name"></div>
-                <p>
-                  {{medal.description}}
-                </p>
-              </div>
-            </li>
-          </ul>
+          <div v-else class="con-awwards">
+            <div v-for="awward in awwards" class="con-awward">
+              <h2>{{ awward.title }}</h2>
+              <ul>
+                <li v-for="medal in awward.medals">
+                  <div class="con-card-awward">
+                    <component :is="medal.name"></component>
+                    <p>
+                      {{ medal.description }}
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+        <footer-contributors/>
+        <Footer/>
       </div>
     </div>
-
-    <footer-contributors/>
-    <Footer/>
   </div>
+
 </template>
 
 <script>
-import c100 from './contributors/contribution/100.vue'
-import c1k from './contributors/contribution/1k.vue'
-import c10k from './contributors/contribution/10k.vue'
-import c30k from './contributors/contribution/30k.vue'
+  import Navbar from '../theme/components/Navbar.vue'
+  import c100 from './contributors/contribution/100.vue'
+  import c1k from './contributors/contribution/1k.vue'
+  import c10k from './contributors/contribution/10k.vue'
+  import c30k from './contributors/contribution/30k.vue'
 
-// pull
-import pull1 from './contributors/pull/1pull.vue'
-import pull5 from './contributors/pull/5pull.vue'
-import pull20 from './contributors/pull/20pull.vue'
-import pull50 from './contributors/pull/50pull.vue'
+  // pull
+  import pull1 from './contributors/pull/1pull.vue'
+  import pull5 from './contributors/pull/5pull.vue'
+  import pull20 from './contributors/pull/20pull.vue'
+  import pull50 from './contributors/pull/50pull.vue'
 
-import footerContributors from './contributors/footerContributors.vue'
-import Footer from '../theme/components/Footer.vue'
+  import footerContributors from './contributors/footerContributors.vue'
+  import Footer from '../theme/components/Footer.vue'
 
-import api from './api.js'
-export default {
+  export default {
   components:{
     c100,
     c1k,
@@ -104,7 +117,8 @@ export default {
     pull20,
     pull50,
     footerContributors,
-    Footer
+    Footer,
+    Navbar
   },
   data:()=>({
     users:[],

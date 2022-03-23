@@ -42,6 +42,7 @@ export default {
   },
   computed: {
     showSuggestions () {
+      return false;
       let sg =
         this.focused &&
         this.suggestions &&
@@ -51,6 +52,7 @@ export default {
       return sg
     },
     suggestions () {
+      return [];
       const query = this.query.trim().toLowerCase()
       if (!query) {
         return

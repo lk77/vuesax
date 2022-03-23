@@ -4,7 +4,7 @@
 
     <transition name="contentx">
       <div class="content content-pagex" style="margin-top:50px;">
-        <Content :custom="false"/>
+        <Content :custom="true"/>
       </div>
 
     </transition>

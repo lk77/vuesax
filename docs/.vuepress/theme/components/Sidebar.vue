@@ -5,7 +5,7 @@
 
       <slot name="top" />
 
-      <div class="sponsor-sidebar">
+<!--      <div class="sponsor-sidebar">
         <h4>Sponsors</h4>
         <ul>
           <li title="Become a Sponsor" v-for="sponsor in 3">
@@ -14,9 +14,9 @@
             </a>
           </li>
         </ul>
-      </div>
+      </div>-->
 
-      <SearchBox v-if="$themeConfig.search !== false"/>
+<!--      <SearchBox v-if="$themeConfig.search !== false"/>-->
 
       <ul class="sidebar-links">
         <li v-for="item in sidebarItems">
@@ -137,5 +137,5 @@ const sidebarItems = useSidebarItems()
     }
   }
 }
-  
+
 </style>
