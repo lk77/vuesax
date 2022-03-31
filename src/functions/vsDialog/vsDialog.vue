@@ -156,6 +156,9 @@ export default {
     }
   },
   watch:{
+    isValid() {
+      this.$forceUpdate();
+    },
     active() {
       this.$nextTick(() => {
         if (this.active) {

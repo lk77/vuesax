@@ -56,12 +56,6 @@ export default {
         //click: () => this.$emit('update:modelValue', this.vsValue)
       }
     },
-    /*attrs(){
-      let attrsx = JSON.parse(JSON.stringify(this.$attrs))
-      return {
-        attrsx
-      }
-    },*/
     isChecked(){
       return this.vsValue == this.modelValue
     },

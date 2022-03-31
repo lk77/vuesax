@@ -16,7 +16,6 @@ export default ({
   })
   app.component('Demo',demo)
   app.component('Box',Box)
-
 }
 
 

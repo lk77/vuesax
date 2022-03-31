@@ -114,7 +114,7 @@ module.exports = {
           '/components/navbar',
           '/components/sideBar',
           '/components/dropDown',
-          '/components/table',
+          //'/components/table',
           '/components/textarea',
           '/components/collapse',
           '/components/images'

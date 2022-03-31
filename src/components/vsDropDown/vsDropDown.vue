@@ -16,7 +16,7 @@
 export default {
   name: "VsDropdown",
   emits: ['click', 'focus', 'blur'],
-  //inheritAttrs: false,
+  inheritAttrs: false,
   props: {
     vsTriggerClick: {
       default: false,

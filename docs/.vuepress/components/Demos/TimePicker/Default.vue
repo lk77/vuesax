@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     {{ timex }}
-    <vs-timePicker v-model="timex" />
+<!--    <vs-timePicker v-model="timex" />-->
   </div>
 </template>
 
