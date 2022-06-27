@@ -79,9 +79,7 @@
               </div>
             </div>
             <div class="con-img-feature">
-              <component v-if="feature.component" :is="feature.component">
-                {{ feature.img }}
-              </component>
+              <component v-if="feature.component" :is="feature.component"></component>
               <img v-if="feature.img && data.mounted" :src="$withBase(heroImage)" alt="">
             </div>
           </div>
@@ -512,6 +510,7 @@
   position: relative;
   padding: 3rem 2rem 0;
   width: 100%;
+  max-width: 100%!important;
 
   .hero {
     width: calc(100% - 200px);

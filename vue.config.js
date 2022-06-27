@@ -10,7 +10,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        'vue': '@vue/compat'
+        //'vue': '@vue/compat'
       }
     },
     plugins: [

@@ -286,8 +286,6 @@ To add a dialog of type prompt we have a global function a completely independen
 </template>
 
 <script>
-import Vue from 'vue'
-
 export default {
   data(){
     return {

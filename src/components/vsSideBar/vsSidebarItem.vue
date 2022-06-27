@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{'vs-sidebar-item-active':getActive}"
+    :class="{'vs-sidebar-item-active':active}"
     class="vs-sidebar--item"
     @click="setIndexActive"
   >
@@ -54,22 +54,30 @@ export default {
       type: [String, Number]
     },
   },
-  computed:{
-    getActive () {
-      return this.parent.getActive() == this.index
-    }
-  },
   data() {
     return {
-      parent: null
+      parent: null,
+      active: false,
     }
   },
   created() {
     this.searchParent(this, (parent) => {
       this.parent = parent;
+      this.active = this.getActive();
+      this.parent.childrenItems.push({
+        icon: this.icon,
+        iconPack: this.iconPack,
+        href: this.href,
+        to: this.to,
+        index: this.index,
+        active: this.active
+      });
     })
   },
   methods:{
+    getActive () {
+      return this.parent.getActive() === this.index
+    },
     setIndexActive () {
       this.parent.setIndexActive(this.index)
       this.$emit('click')

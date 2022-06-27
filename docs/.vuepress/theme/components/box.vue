@@ -54,7 +54,7 @@ export default {
 		text-align: center;
 		border-radius: 0px 0px 10px 10px !important;
 		box-shadow: 0 20px 40px -15px rgba(0,0,0,0) !important;
-		background: transparent !important;
+		background: transparent;
 		p {
 			text-align: left;
 			padding-left: 35px;
@@ -98,7 +98,7 @@ export default {
 		p {
 			width: 100%;
 			padding: 6px 20px;
-			background: transparent !important;
+			background: transparent;
 			margin-top: 0px;
 		}
 	}

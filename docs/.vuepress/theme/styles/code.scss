@@ -37,6 +37,10 @@
 	overflow: auto;
 	position: relative;
 }
+#header-anchor pre[class*=language-] {
+    background-color: #f5f7fb !important;
+    margin-left: unset!important;
+}
 .content pre code,
 .content pre[class*="language-"] code {
 	color: rgba(0,0,0,0.65) !important;
@@ -138,7 +142,7 @@
 	  }
 	}
   }
-  
+
   // narrow mobile
   @media (max-width: $MQMobileNarrow) {
 	.theme-default-content {

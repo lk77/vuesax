@@ -111,7 +111,7 @@ export default {
     },
     changePositionMenu() {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
-      console.log(dropdownMenu);
+
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
       if (this.$refs.dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
         this.$nextTick(() => {
