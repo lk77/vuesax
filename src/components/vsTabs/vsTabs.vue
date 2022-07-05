@@ -70,7 +70,6 @@ import vsIcon from '../vsIcon/vsIcon.vue'
 export default {
   name:'VsTabs',
   components:{vsIcon},
-  emits: ['update:modelValue'],
   props:{
     modelValue: {
       default: 0,
@@ -93,6 +92,7 @@ export default {
       type:String
     }
   },
+  emits: ['update:modelValue'],
   data:()=>({
     topx:'auto',
     heightx:2,

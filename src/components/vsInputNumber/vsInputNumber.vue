@@ -64,7 +64,6 @@ import utils from "../../utils";
 
 export default {
   name:'VsInputNumber',
-  emits: ['blur', 'update:modelValue'],
   directives: {
     repeatClick: {
       beforeMount(el, binding/*, vnode*/) {
@@ -141,6 +140,7 @@ export default {
       default: false,
     }
   },
+  emits: ['blur', 'update:modelValue'],
   data:()=>({
     isChangeValue:false
   }),

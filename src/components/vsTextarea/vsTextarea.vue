@@ -29,7 +29,6 @@ import _color from '../../utils/color.js'
 import utils from '../../utils'
 export default {
   name: "VsTextarea",
-  emits: ['focus', 'blur', 'update:modelValue'],
   inheritAttrs:false,
   props:{
     modelValue:{},
@@ -58,6 +57,7 @@ export default {
       type: String
     }
   },
+  emits: ['focus', 'blur', 'update:modelValue'],
   data:()=>({
     isFocus: false
   }),

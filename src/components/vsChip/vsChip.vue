@@ -34,7 +34,6 @@ import _color from '../../utils/color.js'
 
 export default {
   name:'VsChip',
-  emits: ['click', 'vs-remove', 'update:modelValue'],
   props:{
     item:{
       type:Boolean,
@@ -73,6 +72,7 @@ export default {
       default: false
     }
   },
+  emits: ['click', 'vs-remove', 'update:modelValue'],
   computed:{
     styleChip () {
       const background = this.transparent ? _color.getColor(this.color, .15) : _color.getColor(this.color, 1)

@@ -31,7 +31,6 @@
 //import vsChip from './vsChip.vue'
 export default {
   name:'VsChips',
-  emits: ['update:modelValue'],
   components:{
     //vsChip
   },
@@ -57,6 +56,7 @@ export default {
       default:'close',
     },
   },
+  emits: ['update:modelValue'],
   data: () => ({
     newChip:'',
     chip1:true,

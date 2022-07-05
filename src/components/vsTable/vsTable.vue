@@ -87,7 +87,6 @@
 <script>
 export default {
   name: "VsTable",
-  emits: ['update:modelValue'],
   props:{
     modelValue:{},
     color: {
@@ -167,6 +166,7 @@ export default {
       default: false
     }
   },
+  emits: ['update:modelValue'],
   data:()=>({
     headerWidth: '100%',
     trs: [],

@@ -125,7 +125,6 @@
 import utils from "../../utils";
 export default {
   name: "VsSelect",
-  emits: ['blur', 'focus', 'input-change', 'change', 'update:modelValue'],
   props: {
     modelValue: {},
     noData: {
@@ -197,6 +196,7 @@ export default {
       type: String
     }
   },
+  emits: ['blur', 'focus', 'input-change', 'change', 'update:modelValue'],
   data: () => ({
     modelValueFilter: "",
     active: false,

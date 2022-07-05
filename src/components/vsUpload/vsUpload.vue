@@ -133,7 +133,6 @@
   var lastTap = 0;
   export default {
     name: 'VsUpload',
-    emits: ['change'],
     components:{
       viewUpload
     },
@@ -180,6 +179,7 @@
         type: Boolean
       }
     },
+    emits: ['change'],
     data:()=>({
       inputValue:null,
       type:null,

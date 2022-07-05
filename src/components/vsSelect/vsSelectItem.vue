@@ -43,7 +43,6 @@
 
   export default {
     name:'VsSelectItem',
-    emits: ['mouseover', 'update:modelValue', 'update:isSelected'],
     inheritAttrs:false,
     props:{
       disabled:{
@@ -57,6 +56,7 @@
         default:null,
       }
     },
+    emits: ['mouseover', 'update:modelValue', 'update:isSelected'],
     data:()=>({
       hoverx:false,
       visible:true,

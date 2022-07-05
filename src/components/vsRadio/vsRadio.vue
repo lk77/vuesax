@@ -36,7 +36,6 @@ import utils from '../../utils'
 export default {
   name:'VsRadio',
   inheritAttrs:false,
-  emits: ['update:modelValue'],
   props:{
     modelValue:{},
     vsValue:{},
@@ -46,6 +45,7 @@ export default {
       type:String
     }
   },
+  emits: ['update:modelValue'],
   computed:{
     attrs(){
       return {

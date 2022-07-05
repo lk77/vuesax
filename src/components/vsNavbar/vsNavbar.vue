@@ -32,7 +32,6 @@
 import _color from '../../utils/color.js'
 export default {
   name:'VsNavbar',
-  emits: ['update:modelValue'],
   props:{
     modelValue:{},
     type:{
@@ -56,6 +55,7 @@ export default {
       default:'rgb(40,40,40)',
     },
   },
+  emits: ['update:modelValue'],
 
   data:() => ({
     activeMenuResponsive: false

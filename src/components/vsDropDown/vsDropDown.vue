@@ -15,7 +15,6 @@
 
 export default {
   name: "VsDropdown",
-  emits: ['click', 'focus', 'blur'],
   inheritAttrs: false,
   props: {
     vsTriggerClick: {
@@ -39,6 +38,7 @@ export default {
       type: Boolean
     }
   },
+  emits: ['click', 'focus', 'blur'],
   data: () => ({
     vsDropdownVisible: false,
     rightx: false,

@@ -10,7 +10,8 @@
     @mouseover="hoverx=true"
     @mouseout="hoverx=false"
   >
-    <component :is="isVueRouterInstalled && to ? 'router-link' :  'a'"
+    <component
+      :is="isVueRouterInstalled && to ? 'router-link' : 'a'"
       v-bind="attrs"
       :to="to"
       :class="{'disabled':disabled}"

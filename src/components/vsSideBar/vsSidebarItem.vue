@@ -31,7 +31,6 @@
 <script>
 export default {
   name:'VsSidebarItem',
-  emits: ['click'],
   props:{
     icon: {
       default: null,
@@ -54,6 +53,7 @@ export default {
       type: [String, Number]
     },
   },
+  emits: ['click'],
   data() {
     return {
       parent: null,

@@ -114,7 +114,6 @@ import _color from '../../utils/color.js'
 
 export default {
   name: 'VsPagination',
-  emits: ['change', 'update:modelValue'],
   props:{
     color:{
       type:String,
@@ -178,6 +177,7 @@ export default {
       default:'Pages'
     },
   },
+  emits: ['change', 'update:modelValue'],
   data: () => ({
     pages: [],
     current: 0,

@@ -52,7 +52,6 @@
 <script>
 export default {
   name:'VsSidebar',
-  emits: ['update:modelValue'],
   props:{
     modelValue:{
       default: false
@@ -102,6 +101,7 @@ export default {
       type: Boolean
     }
   },
+  emits: ['update:modelValue'],
   data: () => ({
     currentIndex: 0,
     childrenItems: []

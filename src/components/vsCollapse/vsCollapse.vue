@@ -9,7 +9,6 @@
 <script>
 export default {
   name: 'VsCollapse',
-  emits: ['change'],
   props:{
     accordion:{
       default:false,
@@ -24,6 +23,7 @@ export default {
       type: Boolean
     }
   },
+  emits: ['change'],
   methods:{
     emitChange() {
       this.$emit('change')

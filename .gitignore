@@ -32,3 +32,4 @@ yarn.lock
 docs/.vuepress/.cache
 docs/.vuepress/.temp
 docs/.vuepress/oldtheme
+docs/.vuepress/vuesax
