@@ -89,7 +89,11 @@ export default {
   },
   mounted(){
     setTimeout( () => {
-      this.widthx = this.$refs.noti.clientWidth
+      if(this.$refs.noti) {
+        this.widthx = this.$refs.noti.clientWidth
+      } else {
+        this.widthx = 0
+      }
     }, 0);
 
     if(!this.fixed){
