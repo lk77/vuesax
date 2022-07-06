@@ -14965,17 +14965,17 @@ var injectDirectionClass = function injectDirectionClass(dir) {
     }
   }
 };
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/functions/vsNotifications/vsNotifications.vue?vue&type=template&id=0ef68de0&lang=html
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/functions/vsNotifications/vsNotifications.vue?vue&type=template&id=9494581c&lang=html
 
-var vsNotificationsvue_type_template_id_0ef68de0_lang_html_hoisted_1 = {
+var vsNotificationsvue_type_template_id_9494581c_lang_html_hoisted_1 = {
   class: "content-noti"
 };
-var vsNotificationsvue_type_template_id_0ef68de0_lang_html_hoisted_2 = {
+var vsNotificationsvue_type_template_id_9494581c_lang_html_hoisted_2 = {
   class: "con-text-noti"
 };
-var vsNotificationsvue_type_template_id_0ef68de0_lang_html_hoisted_3 = ["innerHTML"];
-var vsNotificationsvue_type_template_id_0ef68de0_lang_html_hoisted_4 = ["innerHTML"];
-function vsNotificationsvue_type_template_id_0ef68de0_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+var vsNotificationsvue_type_template_id_9494581c_lang_html_hoisted_3 = ["innerHTML"];
+var vsNotificationsvue_type_template_id_9494581c_lang_html_hoisted_4 = ["innerHTML"];
+function vsNotificationsvue_type_template_id_9494581c_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
@@ -14995,11 +14995,11 @@ function vsNotificationsvue_type_template_id_0ef68de0_lang_html_render(_ctx, _ca
         onClick: _cache[0] || (_cache[0] = function () {
           return $options.clickNoti && $options.clickNoti.apply($options, arguments);
         })
-      }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsNotificationsvue_type_template_id_0ef68de0_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsNotificationsvue_type_template_id_0ef68de0_lang_html_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", {
+      }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsNotificationsvue_type_template_id_9494581c_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsNotificationsvue_type_template_id_9494581c_lang_html_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", {
         innerHTML: _ctx.title
-      }, null, 8, vsNotificationsvue_type_template_id_0ef68de0_lang_html_hoisted_3), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("p", {
+      }, null, 8, vsNotificationsvue_type_template_id_9494581c_lang_html_hoisted_3), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("p", {
         innerHTML: _ctx.text
-      }, null, 8, vsNotificationsvue_type_template_id_0ef68de0_lang_html_hoisted_4), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")]), _ctx.icon ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_vs_icon, {
+      }, null, 8, vsNotificationsvue_type_template_id_9494581c_lang_html_hoisted_4), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")]), _ctx.icon ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_vs_icon, {
         key: 0,
         icon: _ctx.icon,
         "icon-pack": _ctx.iconPack,
@@ -15012,7 +15012,7 @@ function vsNotificationsvue_type_template_id_0ef68de0_lang_html_render(_ctx, _ca
     _: 3
   }, 8, ["onBeforeEnter", "onEnter", "onLeave"]);
 }
-// CONCATENATED MODULE: ./src/functions/vsNotifications/vsNotifications.vue?vue&type=template&id=0ef68de0&lang=html
+// CONCATENATED MODULE: ./src/functions/vsNotifications/vsNotifications.vue?vue&type=template&id=9494581c&lang=html
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.fixed.js
 var es_string_fixed = __webpack_require__("c7cd");
@@ -15080,7 +15080,11 @@ var es_string_fixed = __webpack_require__("c7cd");
     var _this2 = this;
 
     setTimeout(function () {
-      _this2.widthx = _this2.$refs.noti.clientWidth;
+      if (_this2.$refs.noti) {
+        _this2.widthx = _this2.$refs.noti.clientWidth;
+      } else {
+        _this2.widthx = 0;
+      }
     }, 0);
 
     if (!this.fixed) {
@@ -15189,7 +15193,7 @@ var es_string_fixed = __webpack_require__("c7cd");
 
 
 
-const vsNotifications_exports_ = /*#__PURE__*/exportHelper_default()(vsNotificationsvue_type_script_lang_js, [['render',vsNotificationsvue_type_template_id_0ef68de0_lang_html_render]])
+const vsNotifications_exports_ = /*#__PURE__*/exportHelper_default()(vsNotificationsvue_type_script_lang_js, [['render',vsNotificationsvue_type_template_id_9494581c_lang_html_render]])
 
 /* harmony default export */ var vsNotifications = (vsNotifications_exports_);
 // CONCATENATED MODULE: ./src/functions/vsNotifications/index.js
