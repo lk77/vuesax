@@ -55,7 +55,9 @@ To add a navbar we have the component `vs-navbar`, there is a series of sub comp
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Navbar-Default />
+</div>
 </template>
 <template #code>
 
@@ -102,8 +104,10 @@ You may need an entry in the menu to simply use the `vs-input` component, for ex
 
 <vuecode md>
 <template #demo>
+<div>
 <Demos-Navbar-Input />
 
+</div>
 </template>
 <template #code>
 
@@ -152,8 +156,10 @@ If you want you can change the style of the buttons and the navbar by changing t
 
 <vuecode md>
 <template #demo>
+<div>
 <Demos-Navbar-Type />
 
+</div>
 </template>
 <template #code>
 
@@ -240,8 +246,10 @@ You can change the color of the **Topbar** with the property `color`. You are ab
 
 <vuecode md>
 <template #demo>
+<div>
 <Demos-Navbar-Colors />
 
+</div>
 </template>
 <template #code>
 
@@ -312,7 +320,9 @@ This property determines if the component starts hidden and with the option of c
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Navbar-Collapse />
+</div>
 </template>
 <template #code>
 

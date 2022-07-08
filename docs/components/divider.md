@@ -48,9 +48,11 @@ You can add a line to divide with the component `vs-divider`.
 
 <vuecode md>
 <template #demo>
+<div>
  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   <vs-divider/>
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</div>
 </template>
 <template #code>
 
@@ -72,11 +74,13 @@ You can add a text between the line to delimit two elements and have a descripti
 
 <vuecode md>
 <template #demo>
+<div>
  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   <vs-divider>
     My Text
   </vs-divider>
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</div>
 </template>
 <template #code>
 
@@ -107,6 +111,7 @@ You can guide the text in **5** ways with property `position`:
 
 <vuecode md>
 <template #demo>
+<div>
   <vs-divider position="left">
     left
   </vs-divider>
@@ -122,6 +127,7 @@ You can guide the text in **5** ways with property `position`:
   <vs-divider position="right">
     right
   </vs-divider>
+</div>
 </template>
 <template #code>
 
@@ -158,6 +164,7 @@ You can change the color of the component with the property `color`, you can use
 
 <vuecode md>
 <template #demo>
+<div>
   <vs-divider>Default</vs-divider>
   <vs-divider color="primary">Primary</vs-divider>
   <vs-divider color="success">Success</vs-divider>
@@ -166,11 +173,13 @@ You can change the color of the component with the property `color`, you can use
   <vs-divider color="dark">Dark</vs-divider>
   <vs-divider color="rgb(29, 222, 194)">RGB</vs-divider>
   <vs-divider color="#ad289f">HEX</vs-divider>
+</div>
 </template>
 <template #code>
 
 ```html
 <template #demo>
+<div>
   <vs-divider>Default</vs-divider>
   <vs-divider color="primary">Primary</vs-divider>
   <vs-divider color="success">Success</vs-divider>
@@ -198,6 +207,7 @@ You can change the background of the text with the property `background`, you ca
 
 <vuecode md>
 <template #demo>
+<div>
   <vs-divider>Default</vs-divider>
   <vs-divider background="primary" color="#ade6d4">Primary</vs-divider>
   <vs-divider background="success" color="#0a540a">Success</vs-divider>
@@ -206,11 +216,13 @@ You can change the background of the text with the property `background`, you ca
   <vs-divider background="dark" color="lightgrey">Dark</vs-divider>
   <vs-divider background="rgb(252, 243, 192)" color="rgb(29, 222, 194)">RGB</vs-divider>
   <vs-divider background="#fffaaa" color="#ad289f">HEX</vs-divider>
+</div>
 </template>
 <template #code>
 
 ```html
 <template #demo>
+<div>
   <vs-divider>Default</vs-divider>
   <vs-divider background="primary" color="#ade6d4">Primary</vs-divider>
   <vs-divider background="success" color="#0a540a">Success</vs-divider>
@@ -239,12 +251,14 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 
 <vuecode md>
 <template #demo>
+<div>
   <vs-divider position="left" icon="arrow_downward"></vs-divider>
   <vs-divider position="left-center" color="primary" icon="star"></vs-divider>
   <vs-divider color="success" icon="check"></vs-divider>
   <vs-divider position="right-center" color="danger" icon="delete_forever"></vs-divider>
   <vs-divider position="right" color="warning" icon="report_problem"></vs-divider>
   <vs-divider color="dark" icon="watch_later"></vs-divider>
+</div>
 </template>
 <template #code>
 
@@ -274,9 +288,11 @@ You can change line's style with the property `border-style`. The allowed values
 
 <vuecode md>
 <template #demo>
+<div>
   <vs-divider border-style="dotted" color="dark">dotted</vs-divider>
   <vs-divider border-style="dashed" color="dark">dashed</vs-divider>
   <vs-divider border-style="solid" color="dark">solid</vs-divider>
+</div>
 </template>
 <template #code>
 

@@ -59,6 +59,7 @@ FontAwesome and other fonts libraries are supported. Simply use the `icon-pack` 
 
 <vuecode md>
 <template #demo>
+<div>
 <span>
   <vs-icon icon="mood"></vs-icon>
 </span>
@@ -74,6 +75,7 @@ FontAwesome and other fonts libraries are supported. Simply use the `icon-pack` 
 <span>
   <vs-icon icon="polymer"></vs-icon>
 </span>
+</div>
 </template>
 <template #code>
 
@@ -107,6 +109,7 @@ You can change the color of the icons as well, using color names, RGB, HEX, or V
 
 <vuecode md>
 <template #demo>
+<div>
 <span>
   <vs-icon icon="mood"></vs-icon>
 </span>
@@ -122,6 +125,7 @@ You can change the color of the icons as well, using color names, RGB, HEX, or V
 <span>
   <vs-icon icon="polymer" color="#BC1254"></vs-icon>
 </span>
+</div>
 </template>
 <template #code>
 
@@ -163,6 +167,7 @@ You can change the size of the Avatar with the property `size` the allowed value
 
 <vuecode md>
 <template #demo>
+<div>
 <span>
   <vs-icon icon="mood"></vs-icon>
 </span>
@@ -178,6 +183,7 @@ You can change the size of the Avatar with the property `size` the allowed value
 <span>
   <vs-icon icon="polymer" size="75px" color="#BC1254"></vs-icon>
 </span>
+</div>
 </template>
 <template #code>
 
@@ -211,6 +217,7 @@ You can change the background color with the property `bg`.
 
 <vuecode md>
 <template #demo>
+<div>
 <span>
   <vs-icon icon="mood"></vs-icon>
 </span>
@@ -226,6 +233,7 @@ You can change the background color with the property `bg`.
 <span>
   <vs-icon icon="polymer" size="75px" bg="#BC1254"></vs-icon>
 </span>
+</div>
 </template>
 <template #code>
 
@@ -263,6 +271,7 @@ To make the icon round, pass the property `round`.
 
 <vuecode md>
 <template #demo>
+<div>
 <span>
   <vs-icon icon="mood"></vs-icon>
 </span>
@@ -278,6 +287,7 @@ To make the icon round, pass the property `round`.
 <span>
   <vs-icon icon="polymer" size="75px" bg="#BC1254" round></vs-icon>
 </span>
+</div>
 </template>
 <template #code>
 

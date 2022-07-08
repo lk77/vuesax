@@ -38,7 +38,9 @@ You can create an image gallery easily with the components `vs-images` y `vs-ima
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Images-Default />
+</div>
 </template>
 <template #code>
 
@@ -86,7 +88,9 @@ the types of hover are:
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Images-Hover />
+</div>
 </template>
 <template #code>
 
@@ -143,7 +147,9 @@ You can make changes in some details like removing the border-radius with the pr
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Images-More />
+</div>
 </template>
 <template #code>
 

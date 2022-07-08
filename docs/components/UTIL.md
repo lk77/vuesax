@@ -6,7 +6,9 @@ description
 
 <vuecode md>
 <template #demo>
+<div>
 
+</div>
 </template>
 <template #code>
 

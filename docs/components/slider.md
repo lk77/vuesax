@@ -59,7 +59,9 @@ To implement a **Slider** we have the `vs-slider` component.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Slider-Default />
+</div>
 </template>
 <template #code>
 
@@ -98,7 +100,9 @@ You can change the slider's color with the property `color`. You can also add th
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Slider-Color />
+</div>
 </template>
 <template #code>
 
@@ -134,7 +138,9 @@ With Ticks you can allow the user to select a value inside a range of allowed va
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Slider-Ticks />
+</div>
 </template>
 <template #code>
 
@@ -172,7 +178,9 @@ With Range you can allow the user to select a range inside a range of allowed va
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Slider-Range />
+</div>
 </template>
 <template #code>
 
@@ -212,7 +220,9 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Slider-Icons />
+</div>
 </template>
 <template #code>
 
@@ -250,7 +260,9 @@ Determine the text that will be fixed next to the value with the property `text-
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Slider-Textfixed />
+</div>
 </template>
 <template #code>
 
@@ -295,7 +307,9 @@ You can add a function that will be triggered every time the value changes with 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Slider-Change />
+</div>
 </template>
 <template #code>
 

@@ -54,9 +54,11 @@ To add a notification use the `vs-alert` component. For the main parameter, pass
 
 <vuecode md>
 <template #demo>
+<div>
 <vs-alert active="true">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
 </vs-alert>
+</div>
 </template>
 <template #code>
 
@@ -78,9 +80,11 @@ Add a title to the alert with the property `title`.
 
 <vuecode md>
 <template #demo>
+<div>
 <vs-alert title="Lorem ipsum dolor sit amet" color="rgb(231, 154, 23)" active="true">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
 </vs-alert>
+</div>
 </template>
 <template #code>
 
@@ -106,6 +110,7 @@ You can change the color of the alert with the property `color`. You are able to
 
 <vuecode md>
 <template #demo>
+<div>
 <vs-alert  title="Primary" active="true" color="primary">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
 </vs-alert>
@@ -127,6 +132,7 @@ You can change the color of the alert with the property `color`. You are able to
 <vs-alert style="margin-top: 10px" title="HEX" active="true" color="#842993">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
 </vs-alert>
+</div>
 </template>
 <template #code>
 
@@ -170,7 +176,9 @@ The property to determine if the alert can be closed is `closable`.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Alert-Closable />
+</div>
 </template>
 <template #code>
 
@@ -213,7 +221,9 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Alert-Closeicon />
+</div>
 </template>
 <template #code>
 
@@ -259,7 +269,9 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Alert-Icons />
+</div>
 </template>
 <template #code>
 
@@ -300,7 +312,9 @@ An example would be to have an input and when a condition is met show the **vs-a
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Alert-Exampleofuse />
+</div>
 </template>
 <template #code>
 

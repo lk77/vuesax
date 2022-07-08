@@ -43,7 +43,9 @@ To add a **Textarea** we have the component `vs-textarea`
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Textarea-Default />
+</div>
 </template>
 <template #code>
 
@@ -75,7 +77,9 @@ If you need to add a label you can use the `label` property
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Textarea-Label />
+</div>
 </template>
 <template #code>
 
@@ -111,7 +115,9 @@ There are times when we need the user to only enter a certain number of characte
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Textarea-Counter />
+</div>
 </template>
 <template #code>
 
@@ -147,7 +153,9 @@ You can set the width of the textarea width the `width` property. You can also u
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Textarea-Width />
+</div>
 </template>
 <template #code>
 
@@ -171,7 +179,9 @@ You can set the height of the textarea with the `height` property. You can also 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Textarea-Height />
+</div>
 </template>
 <template #code>
 

@@ -70,11 +70,13 @@ If the text has more than 5 letters, only the first letter will be shown as in t
 
 <vuecode md center>
 <template #demo>
+<div>
   <vs-avatar />
   <vs-avatar text="Luisdaniel"/>
   <vs-avatar text="Luisd"/>
   <vs-avatar text="Luis Daniel"/>
   <vs-avatar src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>
+</div>
 </template>
 <template #code>
 
@@ -107,10 +109,12 @@ You can change the size of the Avatar with the property `size` the allowed value
 
 <vuecode md center>
 <template #demo>
+<div>
   <vs-avatar size="small" />
   <vs-avatar text="Luis Daniel"/>
   <vs-avatar size="large" src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>
   <vs-avatar size="70px" src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>
+</div>
 </template>
 <template #code>
 
@@ -133,6 +137,7 @@ You can change the Avatar's color by using the property `color`. If needed you c
 
 <vuecode md center>
 <template #demo>
+<div>
 <vs-avatar color="primary" text="primary"/>
 <vs-avatar color="success" text="success"/>
 <vs-avatar color="danger" text="danger"/>
@@ -141,6 +146,7 @@ You can change the Avatar's color by using the property `color`. If needed you c
 <vs-avatar color="rgb(200, 21, 129)" text="RGB"/>
 <vs-avatar color="#18cd5b" text="HEX"/>
 <vs-avatar color="#26302a" text-color="rgb(246, 190, 16)" text="HEX RGB"/>
+</div>
 </template>
 <template #code>
 
@@ -173,7 +179,9 @@ You could also change the badge's color by using the property `badge-color`. You
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Avatar-Badge />
+</div>
 </template>
 <template #code>
 
@@ -227,7 +235,9 @@ This icon is only displayed when there is no property as `text` o `src`
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Avatar-Icons />
+</div>
 </template>
 <template #code>
 

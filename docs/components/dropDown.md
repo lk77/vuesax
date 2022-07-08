@@ -76,7 +76,9 @@ To add the Dropdown we have three types of components the main `vs-dropdown` tha
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-DropDown-Default />
+</div>
 </template>
 <template #code>
 
@@ -162,7 +164,9 @@ You can change the color of the component with the property `color`
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-DropDown-Color />
+</div>
 </template>
 <template #code>
 
@@ -240,7 +244,9 @@ If you need to group the options you can use the subcomponent `vs-dropdown-group
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-DropDown-Group />
+</div>
 </template>
 <template #code>
 
@@ -372,7 +378,9 @@ Sometimes when we need something more personalized and not necessarily a menu fo
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-DropDown-Custom />
+</div>
 </template>
 <template #code>
 
@@ -489,7 +497,9 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-DropDown-Button />
+</div>
 </template>
 <template #code>
 

@@ -61,6 +61,7 @@ Helps you represent simple data with colorful options.
 
 <vuecode md center>
 <template #demo>
+<div>
   <vs-chip>
     Basic Chip
   </vs-chip>
@@ -79,6 +80,7 @@ Helps you represent simple data with colorful options.
   <vs-chip closable close-icon='clear'>
     Closable chip
   </vs-chip>
+</div>
 </template>
 <template #code>
 
@@ -125,6 +127,7 @@ Change the background color of the chip.
 
 <vuecode md center>
 <template #demo>
+<div>
   <vs-chip color="primary">
     Basic Chip
   </vs-chip>
@@ -147,6 +150,7 @@ Change the background color of the chip.
     <vs-avatar src="https://randomuser.me/api/portraits/men/16.jpg"/>
     Closable chip
   </vs-chip>
+</div>
 </template>
 <template #code>
 
@@ -198,6 +202,7 @@ You can create chip which have transparent background using `transparent` prop.
 
 <vuecode md center>
 <template #demo>
+<div>
   <vs-chip transparent color="primary">
     Basic Chip
   </vs-chip>
@@ -220,12 +225,14 @@ You can create chip which have transparent background using `transparent` prop.
     <vs-avatar src="https://randomuser.me/api/portraits/men/16.jpg"/>
     Closable chip
   </vs-chip>
+</div>
 </template>
 <template #code>
 
 ```html
 <template lang="html">
   <template #demo>
+<div>
     <vs-chip transparent color="primary">
       Basic Chip
     </vs-chip>
@@ -270,6 +277,7 @@ Vuesax uses the **Google Material Icons** font library. For a list of all availa
 
 <vuecode md center>
 <template #demo>
+<div>
   <vs-chip>
     <vs-avatar />
     Icon Default
@@ -294,6 +302,7 @@ Vuesax uses the **Google Material Icons** font library. For a list of all availa
     <vs-avatar icon="edit" />
     Icon edit
   </vs-chip>
+</div>
 </template>
 <template #code>
 
@@ -346,7 +355,9 @@ For making a chip closable.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Chips-Closable />
+</div>
 </template>
 <template #code>
 
@@ -412,7 +423,9 @@ You can add and remove chips with the `vs-chips` component. For the main paramet
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Chips-Addremove />
+</div>
 </template>
 <template #code>
 
@@ -479,7 +492,9 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Chips-Changecloseclearicons />
+</div>
 </template>
 <template #code>
 

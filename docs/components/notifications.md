@@ -69,9 +69,11 @@ To add a notification we have the global function `$vs.notify`. The first parame
 
 <vuecode md>
 <template #demo>
+<div>
 
   <Demos-Notifications-Defaults/>
 
+</div>
 </template>
 <template #code>
 
@@ -132,9 +134,11 @@ We can change the place where the notification appears with the property `positi
 
 <vuecode md>
 <template #demo>
+<div>
 
   <Demos-Notifications-Position/>
 
+</div>
 </template>
 <template #code>
 
@@ -180,9 +184,11 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 :::
 <vuecode md>
 <template #demo>
+<div>
 
   <Demos-Notifications-Icons/>
 
+</div>
 </template>
 <template #code>
 
@@ -227,9 +233,11 @@ Sometimes we need to execute a function when the user clicks on the notification
 
 <vuecode md>
 <template #demo>
+<div>
 
   <Demos-Notifications-Click/>
 
+</div>
 </template>
 <template #code>
 
@@ -283,9 +291,11 @@ By default the notifications have a time of **2000** (2s)
 
 <vuecode md center>
 <template #demo>
+<div>
   <vs-button @click="$vs.notify({title:'Time default',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary',icon:'query_builder'})" color="primary" type="flat">Time default</vs-button>
   <vs-button @click="$vs.notify({time:4000,title:'Time 4s (4000)',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary',icon:'query_builder'})" color="primary" type="flat">Time 4s (4000)</vs-button>
   <vs-button @click="$vs.notify({time:8000,title:'Time 8s (8000)',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary',icon:'query_builder'})" color="primary" type="flat">Time 8s (8000)</vs-button>
+</div>
 </template>
 <template #code>
 

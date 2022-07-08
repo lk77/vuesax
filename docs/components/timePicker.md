@@ -21,7 +21,9 @@ API:
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-TimePicker-Default />
+</div>
 </template>
 <template #code>
 

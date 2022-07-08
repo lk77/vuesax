@@ -61,7 +61,9 @@ To implement the popup we have the component `vs-popup`.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Popup-Default />
+</div>
 </template>
 <template #code>
 
@@ -102,7 +104,9 @@ You can add one popup inside another.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Popup-Nested />
+</div>
 </template>
 <template #code>
 
@@ -183,7 +187,9 @@ the popup can be full screen you just have to add the property `fullscreen`.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Popup-Fullscreen />
+</div>
 </template>
 <template #code>
 
@@ -223,7 +229,9 @@ You can change the background of the property with the property `background-colo
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Popup-Background />
+</div>
 </template>
 <template #code>
 

@@ -45,7 +45,9 @@ The **Radio Button** is always going to replace the current value.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Radio-Default />
+</div>
 </template>
 <template #code>
 
@@ -99,7 +101,9 @@ You can change the color with the property `color`. You are able to use the [Mai
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Radio-Colors />
+</div>
 </template>
 <template #code>
 

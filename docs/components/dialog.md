@@ -93,7 +93,9 @@ To generate a dialog we have the global function `$vs.dialog` the parameters to 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Dialogs-Alert />
+</div>
 </template>
 <template #code>
 
@@ -163,7 +165,9 @@ If you need a dialog of type confirm you can do it just by changing the type as 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Dialogs-Confirm />
+</div>
 </template>
 <template #code>
 
@@ -228,7 +232,9 @@ To add a dialog of type prompt we have a global function a completely independen
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Dialogs-Prompt />
+</div>
 </template>
 <template #code>
 

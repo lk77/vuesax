@@ -53,7 +53,9 @@ To implement the collapse we have the component `vs-collapse` and as sub-compone
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Collapse-Default />
+</div>
 </template>
 <template #code>
 
@@ -108,7 +110,9 @@ You may need to show only one element and the others contract for this is the pr
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Collapse-Accordion />
+</div>
 </template>
 <template #code>
 
@@ -167,7 +171,9 @@ You can easily change the style of the accordion with the `type` property, the s
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Collapse-Type />
+</div>
 </template>
 <template #code>
 
@@ -253,7 +259,9 @@ If you want the items to open when you hover in, add the `open-hover` property i
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Collapse-Hover />
+</div>
 </template>
 <template #code>
 
@@ -319,7 +327,9 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Collapse-Changeicons />
+</div>
 </template>
 <template #code>
 

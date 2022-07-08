@@ -49,7 +49,9 @@ To add a tooltip we have the component `vs-tooltip`
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tooltip-Default />
+</div>
 </template>
 <template #code>
 
@@ -94,7 +96,9 @@ You can change the position at which the tooltip appears with the property `posi
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tooltip-Position />
+</div>
 </template>
 <template #code>
 
@@ -129,7 +133,9 @@ You can change the delay in appearing the tooltip with the property `delay`.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tooltip-Delay />
+</div>
 </template>
 <template #code>
 
@@ -165,7 +171,9 @@ To change the color of the tooltip, use the property `color`. You are able to us
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tooltip-Color />
+</div>
 </template>
 <template #code>
 
@@ -212,7 +220,9 @@ If necessary, you can add a title to the tooltip with the property `title`
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tooltip-Title />
+</div>
 </template>
 <template #code>
 

@@ -113,9 +113,11 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 
 <vuecode md>
 <template #demo>
+<div>
 
  <Demos-Select-Default/>
 
+</div>
 </template>
 
 <template #code>
@@ -248,9 +250,11 @@ You can change the color of the select with the property `color`
 
 <vuecode md>
 <template #demo>
+<div>
 
  <Demos-Select-Color />
 
+</div>
 </template>
 
 <template #code>
@@ -325,9 +329,11 @@ You can add the autocomplete functionality in the desired selected with the prop
 
 <vuecode md>
 <template #demo>
+<div>
 
  <Demos-Select-Autocomplete/>
 
+</div>
 </template>
 
 <template #code>
@@ -418,9 +424,11 @@ You can have a selection with multiple selections with the property `multiple`. 
 
 <vuecode md>
 <template #demo>
+<div>
 
  <Demos-Select-Multiple/>
 
+</div>
 </template>
 
 <template #code>
@@ -511,9 +519,11 @@ Add a label to the input with the property `label`.
 
 <vuecode md>
 <template #demo>
+<div>
 
  <Demos-Select-Labels/>
 
+</div>
 </template>
 
 <template #code>
@@ -595,9 +605,11 @@ You can add a state for example of in affirmative response to a validation with 
 
 <vuecode md>
 <template #demo>
+<div>
 
  <Demos-Select-Validation/>
 
+</div>
 </template>
 
 <template #code>
@@ -693,9 +705,11 @@ You can validate if an option is selected with the property `is-selected.sync` a
 
 <vuecode md>
 <template #demo>
+<div>
 
  <Demos-Select-Selectedtext/>
 
+</div>
 </template>
 
 <template #code>
@@ -763,9 +777,11 @@ You can group elements with the sub component `vs-select-group`
 
 <vuecode md>
 <template #demo>
+<div>
 
  <Demos-Select-Group/>
 
+</div>
 </template>
 
 <template #code>
@@ -923,9 +939,11 @@ You can set the width of the select width the `width` property
 
 <vuecode md>
 <template #demo>
+<div>
 
  <Demos-Select-Width/>
 
+</div>
 </template>
 
 <template #code>

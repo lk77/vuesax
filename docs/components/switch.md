@@ -52,7 +52,9 @@ To implement a switch element in the application, we add the component `vs-switc
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Switch-State/>
+</div>
 </template>
 <template #code>
 
@@ -110,7 +112,9 @@ You can choose the default **Switch**. You are able to use the [Main Colors](/th
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Switch-Color/>
+</div>
 </template>
 <template #code>
 
@@ -174,7 +178,9 @@ You can add a descriptive text with the slot `on` or `off`. You can also join th
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Switch-Text/>
+</div>
 </template>
 <template #code>
 
@@ -236,7 +242,9 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Switch-Icons/>
+</div>
 </template>
 <template #code>
 
@@ -303,7 +311,9 @@ For saving the values in an array, you could simply pass it as a value.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Switch-Array/>
+</div>
 </template>
 <template #code>
 

@@ -56,7 +56,9 @@ The pagination component consists of several elements, all of which are optional
 
 <vuecode md center>
 <template #demo>
+<div>
   <Demos-Pagination-Default />
+</div>
 </template>
 <template #code>
 
@@ -95,7 +97,9 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` wi
 
 <vuecode md center>
 <template #demo>
+<div>
   <Demos-Pagination-Icons />
+</div>
 </template>
 <template #code>
 
@@ -134,7 +138,9 @@ Setting the `max` directive to a value lesser then `5` when the `total` is great
 
 <vuecode md center>
 <template #demo>
+<div>
 <Demos-Pagination-Max />
+</div>
 </template>
 <template #code>
 
@@ -169,7 +175,9 @@ If the value given is lower than **1** it will jump to page **1**. However if th
 
 <vuecode md center>
 <template #demo>
+<div>
 <Demos-Pagination-Goto />
+</div>
 </template>
 <template #code>
 
@@ -204,7 +212,9 @@ You can change the color of the component with the property `color`, you can use
 
 <vuecode md>
 <template #demo>
+<div>
 <Demos-Pagination-Colors />
+</div>
 </template>
 <template #code>
 
@@ -244,7 +254,9 @@ You can also update page number from outside of pagination component.
 
 <vuecode md>
 <template #demo>
+<div>
 <Demos-Pagination-ProgrammaticChange />
+</div>
 </template>
 <template #code>
 

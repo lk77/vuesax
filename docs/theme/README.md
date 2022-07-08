@@ -30,7 +30,9 @@ For each color, we think has its functionality in the application as alerts of e
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Colors-Defaultscolors />
+</div>
 </template>
 <template #code>
 
@@ -139,7 +141,9 @@ Vue.use(Vuesax, {
 
 <vuecode md title="Example of the result">
 <template #demo>
+<div>
   <Demos-Colors-Changecolors />
+</div>
 </template>
 </vuecode>
 </box>
@@ -164,7 +168,9 @@ Select one of the colors to change it and that all the components of this docume
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Colors-Changecolorsejecution />
+</div>
 </template>
 <template #code>
 

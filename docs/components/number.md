@@ -64,7 +64,9 @@ If you need to add a component that handles a single number, use the component `
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Inputnumber-Default />
+</div>
 </template>
 <template #code>
 
@@ -109,7 +111,9 @@ You can change the color of the **Input-Number** with the property `color`. You 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Inputnumber-Color />
+</div>
 </template>
 <template #code>
 
@@ -153,7 +157,9 @@ You can restrict the maximum number or the minimum with the properties `vs-min`,
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Inputnumber-Minmax />
+</div>
 </template>
 <template #code>
 
@@ -187,7 +193,9 @@ To change the size of the component, you can use the property `vs-size`. The all
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Inputnumber-Size />
+</div>
 </template>
 <template #code>
 
@@ -227,7 +235,9 @@ To change the number to be added or decreased of the component, you can use the 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Inputnumber-Step />
+</div>
 </template>
 <template #code>
 
@@ -261,7 +271,9 @@ Number Input also supports decimal values.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Inputnumber-Decimal />
+</div>
 </template>
 <template #code>
 
@@ -295,7 +307,9 @@ Number Input supports adding labels for number inputs.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Inputnumber-Label />
+</div>
 </template>
 <template #code>
 

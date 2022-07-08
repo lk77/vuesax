@@ -94,7 +94,9 @@ You can upload files to the server with the `vs-upload` component, the requested
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Upload-Default />
+</div>
 </template>
 <template #code>
 
@@ -128,7 +130,9 @@ You can upload multiple files by adding the `multiple` property within the compo
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Upload-Multiple />
+</div>
 </template>
 <template #code>
 
@@ -163,7 +167,9 @@ You can enable automatic submission with the `Automatic` property that executes 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Upload-Automatic />
+</div>
 </template>
 <template #code>
 

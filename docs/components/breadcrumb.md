@@ -47,6 +47,7 @@ Use the `items` in order to programatically generate the breadcrumb links.
 
 <vuecode md center>
 <template #demo>
+<div>
 <vs-breadcrumb
 :items="
    [
@@ -68,6 +69,7 @@ Use the `items` in order to programatically generate the breadcrumb links.
      }
    ]"
 ></vs-breadcrumb>
+</div>
 </template>
 <template #code>
 
@@ -108,7 +110,9 @@ Use the `color` directive like for any other component that supports it to custo
 
 <vuecode md center>
 <template #demo>
+<div>
   <Demos-Breadcrumb-Color />
+</div>
 </template>
 
 <template #code>
@@ -168,6 +172,7 @@ You can change the separator dividing the links by either passing a string to th
 
 <vuecode md center>
 <template #demo>
+<div>
 <vs-breadcrumb separator="•"
 :items="
    [
@@ -252,6 +257,7 @@ You can change the separator dividing the links by either passing a string to th
      }
    ]"
 ></vs-breadcrumb>
+</div>
 </template>
 <template #code>
 
@@ -275,11 +281,13 @@ A default Vue slot that can be used instead of passing in an array of object. Th
 
 <vuecode md center>
 <template #demo>
+<div>
 <vs-breadcrumb>
    <li><a href="#" title="Home">Home</a><span class="vs-breadcrum--separator">/</span></li>
    <li><a href="#" title="Profil">Profil</a><span class="vs-breadcrum--separator">/</span></li>
    <li aria-current="page" class="active">Infos</li>
 </vs-breadcrumb>
+</div>
 </template>
 <template #code>
 
@@ -304,6 +312,7 @@ Use `align` to either align the breadcrumb to the left, center or right.
 
 <vuecode md>
 <template #demo>
+<div>
 <vs-breadcrumb align="left">
    <li><a href="#" title="Home">Home</a><span class="vs-breadcrum--separator">/</span></li>
    <li><a href="#" title="Profil">Profil</a><span class="vs-breadcrum--separator">/</span></li>
@@ -319,7 +328,9 @@ Use `align` to either align the breadcrumb to the left, center or right.
    <li><a href="#" title="Profil">Profil</a><span class="vs-breadcrum--separator">/</span></li>
    <li aria-current="page" class="active">Infos</li>
 </vs-breadcrumb>
+</div>
 </template>
+
 <template #code>
 
 ```html

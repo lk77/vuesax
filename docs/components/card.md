@@ -51,6 +51,7 @@ To add a card we have the `vs-card` component, for the internal structure we use
 
 <vuecode md>
 <template #demo>
+<div>
 <vs-row vs-justify="center">
   <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
     <vs-card>
@@ -72,6 +73,7 @@ To add a card we have the `vs-card` component, for the internal structure we use
     </vs-card>
   </vs-col>
 </vs-row>
+</div>
 </template>
 <template #code>
 
@@ -111,7 +113,9 @@ There are cases in which you need to add an image or video on the card so we hav
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Card-Media />
+</div>
 </template>
 <template #code>
 
@@ -187,7 +191,9 @@ If you need to set card with the same height, send the prop `fixed-height` and c
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Card-FixedHeight />
+</div>
 </template>
 <template #code>
 
@@ -265,6 +271,7 @@ You can add hover functionality with the property `actionable`
 
 <vuecode md>
 <template #demo>
+<div>
     <vs-row vs-justify="center">
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card actionable class="cardx">
@@ -309,6 +316,7 @@ You can add hover functionality with the property `actionable`
       </vs-card>
     </vs-col>
   </vs-row>
+</div>
 </template>
 <template #code>
 

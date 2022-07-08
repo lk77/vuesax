@@ -43,7 +43,9 @@ To add a checkBox, we have the `vs-checkbox` component which expects a principal
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Checkbox-State />
+</div>
 </template>
 <template #code>
 
@@ -98,7 +100,9 @@ You can change the color of the checkBox with the property `color`. You are able
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Checkbox-Color />
+</div>
 </template>
 <template #code>
 
@@ -161,7 +165,9 @@ In most cases you will need a boolean data type while working with checkBoxes. F
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Checkbox-Boolean />
+</div>
 </template>
 <template #code>
 
@@ -205,7 +211,9 @@ You can pass as a value a string by giving it as a value of the property `vs-val
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Checkbox-String />
+</div>
 </template>
 <template #code>
 
@@ -248,7 +256,9 @@ You can have several checkBoxs linked to the same array only by using `v-model` 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Checkbox-Array />
+</div>
 </template>
 <template #code>
 
@@ -300,7 +310,9 @@ Sometimes you need to link an object as a value when selecting a checkBox for it
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Checkbox-Arrayobjects />
+</div>
 </template>
 <template #code>
 
@@ -350,7 +362,9 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Checkbox-Icons />
+</div>
 </template>
 <template #code>
 

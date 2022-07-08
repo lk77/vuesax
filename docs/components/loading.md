@@ -74,7 +74,9 @@ For the examples, the request or the delay is simulated with `setTimeout`.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Loading-Default />
+</div>
 </template>
 <template #code>
 
@@ -120,7 +122,9 @@ You can change the type of animation with the `type` property and the animations
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Loading-Type />
+</div>
 </template>
 <template #code>
 
@@ -226,7 +230,9 @@ You can change the color of the loading with the property `color`.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Loading-Color />
+</div>
 </template>
 <template #code>
 
@@ -275,7 +281,9 @@ If you need to change the background of the loading, you can use the property `b
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Loading-Background />
+</div>
 </template>
 <template #code>
 
@@ -323,7 +331,9 @@ For the examples, the request or the delay is simulated with `setTimeout`.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Loading-Contained />
+</div>
 </template>
 <template #code>
 

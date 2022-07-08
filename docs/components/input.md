@@ -141,7 +141,9 @@ The input is a functional part in an application, For implementing it we have th
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Input-Default />
+</div>
 </template>
 <template #code>
 
@@ -184,7 +186,9 @@ Add a label to the input with the property `label`.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Input-Label />
+</div>
 </template>
 <template #code>
 
@@ -232,7 +236,9 @@ This property overrides the `label` and the` placeholder`
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Input-Labelplaceholder />
+</div>
 </template>
 <template #code>
 
@@ -277,7 +283,9 @@ FontAwesome and other fonts library are supported. Simply use the `icon-pack` an
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Input-Icons />
+</div>
 </template>
 <template #code>
 
@@ -335,7 +343,9 @@ There is only support for **HEX** and **RGB** colors
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Input-Colors />
+</div>
 </template>
 <template #code>
 
@@ -394,7 +404,9 @@ You can add a state for example of in affirmative response to a validation with 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Input-Validation />
+</div>
 </template>
 <template #code>
 
@@ -457,7 +469,9 @@ export default {
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Input-Size />
+</div>
 </template>
 <template #code>
 

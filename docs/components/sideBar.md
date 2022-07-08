@@ -118,7 +118,9 @@ One of the most common features is to have the hidden sidebar to show it when th
 
 <vuecode md center>
 <template #demo>
+<div>
   <Demos-SideBar-Default />
+</div>
 </template>
 <template #code>
 
@@ -224,7 +226,9 @@ You can change the parent of the sidebar with the property `parent` that as a va
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-SideBar-Parent />
+</div>
 </template>
 <template #code>
 
@@ -334,7 +338,9 @@ You can also use the sidebar in static mode with the property `static`
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-SideBar-Static />
+</div>
 </template>
 <template #code>
 
@@ -443,7 +449,9 @@ You can have groups of sub menus with the component `vs-slider-group` that as a 
 
 <vuecode md center>
 <template #demo>
+<div>
   <Demos-SideBar-Submenu />
+</div>
 </template>
 <template #code>
 
@@ -563,7 +571,9 @@ A `static` sidebar will not appear on the right.
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-SideBar-Right />
+</div>
 </template>
 <template #code>
 
@@ -668,7 +678,9 @@ You can have a reduced sidebar with the `reduce` property which by default makes
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-SideBar-Reduceexpand />
+</div>
 </template>
 <template #code>
 

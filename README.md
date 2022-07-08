@@ -31,64 +31,53 @@ The framework is focused on facilitating the development of applications, improv
 
 ## Vuesax 3 for Vue 3
 
-This fork bring vue 3 support to vuesax 3,
-There is still a lot of work to do, and there is still issues
-with some components, like VsTable and VsSwitch.
+This package is bringing support for Vue 3 to original package [Vuesax](https://www.npmjs.com/package/vuesax)
 
-You should look for vuesax-next for vuesax 4, which is still in alpha.
+Only 2 components remain uncompatible with Vue 3 for now :
 
-Please note that Vue 3 changes have not been applied to the documentation examples,
-so do not forget for example to replace instances of :value by :modelValue, or instances of :active.sync by v-model:active
+- VsTable
+- VsCollapse
 
 ## Links
 
 - 📘 [Documentation](https://lk77.github.io/vuesax/)
 
-## Status
-
-| Status  | Number of Components | Percentage   |
-|---------|----------------------|--------------|
-| Vue 3   | 26                   | 87%          |
-| Vue 2   | 4                    | 13%          |
-
 ## Components
 
-- [Buttons](https://lk77.github.io/vuesax/components/buttons.html) - <b>vue3</b>
-- [Selects](https://lk77.github.io/vuesax/components/selects.html) - <b>vue3</b>
-- [Notifications](https://lk77.github.io/vuesax/components/notifications.html) - <b>vue3</b>
-- [Switch](https://lk77.github.io/vuesax/components/switch.html) - <b>vue3</b>
-- [CheckBox](https://lk77.github.io/vuesax/components/checkbox.html) - <b>vue3</b>
-- [Radio](https://lk77.github.io/vuesax/components/radio.html) - <b>vue3</b>
-- [Input](https://lk77.github.io/vuesax/components/input.html) - <b>vue3</b>
-- [Dialogs](https://lk77.github.io/vuesax/components/dialog.html) - <b>vue3</b>
-- [Tabs](https://lk77.github.io/vuesax/components/tabs.html) - <b>vue3</b>
-- [Slider](https://lk77.github.io/vuesax/components/slider.html) - <b>vue3</b>
-- [InputNumber](https://lk77.github.io/vuesax/components/number.html) - <b>vue3</b>
-- [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html) - <b>vue3</b>
-- [Upload](https://lk77.github.io/vuesax/components/upload.html) - <b>vue3</b>
-- [Loading](https://lk77.github.io/vuesax/components/loading.html) - <b>vue3</b>
-- [Popup](https://lk77.github.io/vuesax/components/popup.html) - <b>vue3</b>
-- [Avatar](https://lk77.github.io/vuesax/components/avatar.html) - <b>vue3</b>
-- [Breadcrumb](https://lk77.github.io/vuesax/components/breadcrumb.html) - <i>vue2</i>
-- [Alert](https://lk77.github.io/vuesax/components/alert.html) - <b>vue3</b>
-- [Divider](https://lk77.github.io/vuesax/components/divider.html) - <b>vue3</b>
-- [Chip](https://lk77.github.io/vuesax/components/chip.html) - <b>vue3</b>
-- [Progress](https://lk77.github.io/vuesax/components/progress.html) - <b>vue3</b>
-- [Card](https://lk77.github.io/vuesax/components/card.html) - <b>vue3</b>
-- [List](https://lk77.github.io/vuesax/components/list.html) - <b>vue3</b>
-- [Pagination](https://lk77.github.io/vuesax/components/pagination.html) - <b>vue3</b>
-- [Navbar](https://lk77.github.io/vuesax/components/navbar.html) - <b>vue3</b> (style/class binding issues)
-- [SideBar](https://lk77.github.io/vuesax/components/sideBar.html) - <i>vue2</i>
-- [DropDown](https://lk77.github.io/vuesax/components/dropDown.html) - <b>vue3</b>
+- [Buttons](https://lk77.github.io/vuesax/components/buttons.html)
+- [Selects](https://lk77.github.io/vuesax/components/selects.html)
+- [Notifications](https://lk77.github.io/vuesax/components/notifications.html)
+- [Switch](https://lk77.github.io/vuesax/components/switch.html)
+- [CheckBox](https://lk77.github.io/vuesax/components/checkbox.html)
+- [Radio](https://lk77.github.io/vuesax/components/radio.html)
+- [Input](https://lk77.github.io/vuesax/components/input.html)
+- [Dialogs](https://lk77.github.io/vuesax/components/dialog.html)
+- [Tabs](https://lk77.github.io/vuesax/components/tabs.html)
+- [Slider](https://lk77.github.io/vuesax/components/slider.html)
+- [InputNumber](https://lk77.github.io/vuesax/components/number.html)
+- [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html)
+- [Upload](https://lk77.github.io/vuesax/components/upload.html)
+- [Loading](https://lk77.github.io/vuesax/components/loading.html)
+- [Popup](https://lk77.github.io/vuesax/components/popup.html)
+- [Avatar](https://lk77.github.io/vuesax/components/avatar.html)
+- [Breadcrumb](https://lk77.github.io/vuesax/components/breadcrumb.html)
+- [Alert](https://lk77.github.io/vuesax/components/alert.html)
+- [Divider](https://lk77.github.io/vuesax/components/divider.html)
+- [Chip](https://lk77.github.io/vuesax/components/chip.html)
+- [Progress](https://lk77.github.io/vuesax/components/progress.html)
+- [Card](https://lk77.github.io/vuesax/components/card.html)
+- [List](https://lk77.github.io/vuesax/components/list.html)
+- [Pagination](https://lk77.github.io/vuesax/components/pagination.html)
+- [Navbar](https://lk77.github.io/vuesax/components/navbar.html)
+- [SideBar](https://lk77.github.io/vuesax/components/sideBar.html)
+- [DropDown](https://lk77.github.io/vuesax/components/dropDown.html)
+- [Textarea](https://lk77.github.io/vuesax/components/textarea.html)
+- [Images](https://lk77.github.io/vuesax/components/images.html)
+
+
 - [Table](https://lk77.github.io/vuesax/components/table.html) - <i>vue2</i>
-- [Textarea](https://lk77.github.io/vuesax/components/textarea.html) - <b>vue3</b>
-- [Collapse](https://lk77.github.io/vuesax/components/collapse.html) - <i>vue2</i> (style issue)
-- [Images](https://lk77.github.io/vuesax/components/images.html) - <b>vue3</b>
+- [Collapse](https://lk77.github.io/vuesax/components/collapse.html) - <i>vue2</i>
 
-## To Be Fixed
-
-- usages of vue router
-- material icons
 
 ## Browser Support
 Recent versions of **Firefox**, **Chrome**, **Edge**, **Opera** and **Safari**. **IE11+**

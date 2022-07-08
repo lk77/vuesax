@@ -88,7 +88,9 @@ For the title of each tab the `vs-tab` property is implemented in the` vs-tab` c
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tabs-Default />
+</div>
 </template>
 <template #code>
 
@@ -143,7 +145,9 @@ You can change the color of the component with the property `color`, the paramet
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tabs-Color />
+</div>
 </template>
 <template #code>
 
@@ -206,7 +210,9 @@ Change the alignment of the buttons with the property `alignments`. The allowed 
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tabs-Alignments />
+</div>
 </template>
 <template #code>
 
@@ -336,7 +342,9 @@ You can change the position of the menu with the property `position` that as a v
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tabs-Position />
+</div>
 </template>
 <template #code>
 
@@ -466,7 +474,9 @@ You can add a left icon inside each tab with the property `icon` that has the sa
 
 <vuecode md>
 <template #demo>
+<div>
   <Demos-Tabs-Icons />
+</div>
 </template>
 <template #code>
 
