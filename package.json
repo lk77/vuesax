@@ -27,6 +27,7 @@
   "main": "dist/vuesax.common.js",
   "unpkg": "dist/vuesax.umd.min.js",
   "jsdelivr": "dist/vuesax.umd.min.js",
+  "types": "index.d.ts",
   "private": false,
   "scripts": {
     "dev": "vuepress dev docs",
