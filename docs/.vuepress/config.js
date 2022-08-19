@@ -47,15 +47,6 @@ if(location.hostname == 'lk77.github.io') {
     ],
   ],
   bundler: '@vuepress/bundler-webpack',
-  bundlerConfig: {
-    configureWebpack: (config, isServer) => {
-      return  {
-        optimization: {
-          runtimeChunk: false
-        }
-      }
-    }
-  },
   /*bundlerConfig: {
     configureWebpack: () => { return {
       resolve: {
@@ -95,11 +86,6 @@ if(location.hostname == 'lk77.github.io') {
   markdown: {
     extendMarkdown: md => {
       md.set({html: true})
-    }
-  },
-  shouldPreload: (file, type) => {
-    if(type == 'style') {
-      return false;
     }
   }
 }

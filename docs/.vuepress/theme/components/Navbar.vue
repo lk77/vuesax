@@ -3,7 +3,7 @@
     <!--<ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />-->
 
     <span ref="siteBrand" class="con-btns-header">
-      <RouterLink :to="siteBrandLink" class="home-link">
+      <RouterLink :to="siteBrandLink" class="home-link" style="min-width:140px">
         <!-- logo could be different in dark mode, so we make it client-only to avoid ssr-mismatch -->
         <ClientOnly>
           <div class="con-logo">

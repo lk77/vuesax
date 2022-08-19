@@ -25,7 +25,7 @@
 
           <p v-if="tagline" class="description" v-html="tagline"></p>
 
-          <p class="actions">
+          <p class="actions" v-if="data.mounted">
             <!-- {{data.vueThemes.actionsLinks}} -->
           <ul>
             <li @mouseenter="data.doc=true" @mouseleave="data.doc=false" v-for="action in actions">
