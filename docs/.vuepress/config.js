@@ -6,6 +6,14 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: `/favicon-vuesax.png` }],
     ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/icon?family=Material+Icons` }],
+    ['script', { src: 'https://browser.sentry-cdn.com/7.3.0/bundle.min.js', integrity: 'sha384-SMm9LrmlAek2bjM6vZh0NHrmBfZuqEOnedawNH2iknxYwrBRgcHL0WSBsA/vvlSt', crossorigin: 'anonymous' }],
+    ['script', {}, `
+if(location.hostname == 'lk77.github.io') {
+    Sentry.init({
+      dsn: "https://1adc65e681bc4e0fa2b52ecfffb57d52@o1300626.ingest.sentry.io/6535424"
+    });
+ }
+    `]
     // ['script',{},`(function(h,o,t,j,a,r){
     //         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
     //         h._hjSettings={hjid:816179,hjsv:6};
@@ -39,6 +47,15 @@ module.exports = {
     ],
   ],
   bundler: '@vuepress/bundler-webpack',
+  bundlerConfig: {
+    configureWebpack: (config, isServer) => {
+      return  {
+        optimization: {
+          runtimeChunk: false
+        }
+      }
+    }
+  },
   /*bundlerConfig: {
     configureWebpack: () => { return {
       resolve: {
@@ -78,6 +95,11 @@ module.exports = {
   markdown: {
     extendMarkdown: md => {
       md.set({html: true})
+    }
+  },
+  shouldPreload: (file, type) => {
+    if(type == 'style') {
+      return false;
     }
   }
 }
