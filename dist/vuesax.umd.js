@@ -15605,19 +15605,21 @@ var vsFunctions = {
   vsTheme: theme,
   vsDialog: functions_vsDialog
 };
-/* harmony default export */ var functions = (function (vm, app) {
+/* harmony default export */ var functions = (function ($vs, app) {
   Object.values(vsFunctions).forEach(function (vsFunctions) {
     if (Object.prototype.hasOwnProperty.call(vsFunctions, 'subName')) {
-      vm.$vs[vsFunctions.name][vsFunctions.subName] = vsFunctions.vsfunction;
+      $vs[vsFunctions.name][vsFunctions.subName] = vsFunctions.vsfunction;
     } else {
-      vm.$vs[vsFunctions.name] = vsFunctions.vsfunction;
+      $vs[vsFunctions.name] = vsFunctions.vsfunction;
     }
   });
-  vm.$vs.loading.close = functions_vsLoading.close;
+  $vs.loading.close = functions_vsLoading.close;
 
-  vm.$vs.getCurrentInstance = function () {
+  $vs.getCurrentInstance = function () {
     return app;
   };
+
+  return $vs;
 });
 // CONCATENATED MODULE: ./src/defineGlobalMixin.js
 
@@ -15629,6 +15631,8 @@ var vsFunctions = {
  */
 
 /* harmony default export */ var defineGlobalMixin = (function (app, options) {
+  var $vs = functions(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["reactive"])(options), app);
+  app.provide('$vs', $vs);
   app.mixin({
     watch: {
       '$vs.rtl': {
@@ -15638,12 +15642,8 @@ var vsFunctions = {
       }
     },
     beforeCreate: function beforeCreate() {
-      // create $vs property if not exist
       if (!this.$vs) {
-        // define $vs reactive properties
-        this.$vs = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["reactive"])(options); // define $vs functions
-
-        functions(this, app);
+        this.$vs = $vs;
       }
     },
     mounted: function mounted() {
