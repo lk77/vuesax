@@ -13,17 +13,19 @@ const vsFunctions = {
   vsDialog
 }
 
-export default (vm, app) => {
+export default ($vs, app) => {
   Object.values(vsFunctions).forEach((vsFunctions) => {
     if(Object.prototype.hasOwnProperty.call(vsFunctions, 'subName')){
-      vm.$vs[vsFunctions.name][vsFunctions.subName] = vsFunctions.vsfunction
+      $vs[vsFunctions.name][vsFunctions.subName] = vsFunctions.vsfunction
     } else {
-      vm.$vs[vsFunctions.name] = vsFunctions.vsfunction
+      $vs[vsFunctions.name] = vsFunctions.vsfunction
     }
   })
 
-  vm.$vs.loading.close = vsLoading.close
-  vm.$vs.getCurrentInstance = () => {
+  $vs.loading.close = vsLoading.close
+  $vs.getCurrentInstance = () => {
     return app;
   };
+
+  return $vs;
 }

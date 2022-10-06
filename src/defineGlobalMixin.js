@@ -7,6 +7,9 @@ import { reactive } from "vue"
  */
 
 export default (app, options) => {
+  let $vs = vsFunctions(reactive(options), app);
+  app.provide('$vs', $vs);
+
   app.mixin({
     watch: {
       '$vs.rtl': {
@@ -16,12 +19,8 @@ export default (app, options) => {
       }
     },
     beforeCreate() {
-      // create $vs property if not exist
       if(!this.$vs) {
-        // define $vs reactive properties
-        this.$vs = reactive(options);
-        // define $vs functions
-        vsFunctions(this, app);
+        this.$vs = $vs;
       }
     },
     mounted() {
