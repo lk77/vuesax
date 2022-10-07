@@ -26,7 +26,7 @@
       class="vs-collapse-item--content"
     >
       <div class="con-content--item">
-        <slot/>
+        <slot />
       </div>
     </div>
   </div>

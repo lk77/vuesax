@@ -118,6 +118,23 @@ export default {
 
 <box>
 
+::: tip
+For Composition API, you can use inject to retrieve $vs :
+
+```js
+import { inject } from 'vue'
+
+const $vs = inject('$vs')
+
+$vs.notify({
+  title: 'Notification',
+  text: 'Lorem ipsum dolor sit amet, consectetur'
+})
+```
+
+<i> since vuesax3@^4.0.24 </i>
+:::
+
 ## Positions
 
 We can change the place where the notification appears with the property `position`. A practical example would be: `position: 'top-right'`. The supported values are:

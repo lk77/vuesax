@@ -109,6 +109,23 @@ export default {
 <!-- Default -->
 <box>
 
+::: tip
+For Composition API, you can use inject to retrieve $vs :
+
+```js
+import { inject } from 'vue'
+
+const $vs = inject('$vs')
+
+$vs.loading()
+setTimeout( ()=> {
+  $vs.loading.close()
+}, 2000);
+```
+
+<i> since vuesax3@^4.0.24 </i>
+:::
+
 ## Type
 
 You can change the type of animation with the `type` property and the animations so far are:

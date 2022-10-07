@@ -155,6 +155,24 @@ export default {
 
 <box>
 
+::: tip
+For Composition API, you can use inject to retrieve $vs :
+
+```js
+import { inject } from 'vue'
+
+const $vs = inject('$vs')
+
+$vs.dialog({
+  title: 'Dialog',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+})
+```
+
+<i> since vuesax3@^4.0.24 </i>
+:::
+
+
 ## Confirm
 
 If you need a dialog of type confirm you can do it just by changing the type as a parameter inside the main function.
