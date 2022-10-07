@@ -14394,14 +14394,14 @@ const vsTextarea_exports_ = /*#__PURE__*/exportHelper_default()(vsTextareavue_ty
 /* harmony default export */ var components_vsTextarea = (function (Vue) {
   Vue.component('VsTextarea', vsTextarea);
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsCollapse/vsCollapse.vue?vue&type=template&id=bb97147c
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsCollapse/vsCollapse.vue?vue&type=template&id=897c5664
 
-function vsCollapsevue_type_template_id_bb97147c_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsCollapsevue_type_template_id_897c5664_render(_ctx, _cache, $props, $setup, $data, $options) {
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([[$props.type], "vs-collapse"])
   }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")], 2);
 }
-// CONCATENATED MODULE: ./src/components/vsCollapse/vsCollapse.vue?vue&type=template&id=bb97147c
+// CONCATENATED MODULE: ./src/components/vsCollapse/vsCollapse.vue?vue&type=template&id=897c5664
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsCollapse/vsCollapse.vue?vue&type=script&lang=js
 
@@ -14422,12 +14422,17 @@ function vsCollapsevue_type_template_id_bb97147c_render(_ctx, _cache, $props, $s
     }
   },
   emits: ['change'],
+  data: function data() {
+    return {
+      childrenItems: []
+    };
+  },
   methods: {
     emitChange: function emitChange() {
       this.$emit('change');
     },
     closeAllItems: function closeAllItems(el) {
-      var children = this.$children;
+      var children = this.childrenItems;
       children.map(function (item) {
         if (item.$el !== el) {
           item.maxHeight = '0px';
@@ -14444,19 +14449,19 @@ function vsCollapsevue_type_template_id_bb97147c_render(_ctx, _cache, $props, $s
 
 
 
-const vsCollapse_exports_ = /*#__PURE__*/exportHelper_default()(vsCollapsevue_type_script_lang_js, [['render',vsCollapsevue_type_template_id_bb97147c_render]])
+const vsCollapse_exports_ = /*#__PURE__*/exportHelper_default()(vsCollapsevue_type_script_lang_js, [['render',vsCollapsevue_type_template_id_897c5664_render]])
 
 /* harmony default export */ var vsCollapse = (vsCollapse_exports_);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsCollapse/vsCollapseItem.vue?vue&type=template&id=e9de2ac2
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsCollapse/vsCollapseItem.vue?vue&type=template&id=362ab8ce
 
-var vsCollapseItemvue_type_template_id_e9de2ac2_hoisted_1 = {
+var vsCollapseItemvue_type_template_id_362ab8ce_hoisted_1 = {
   key: 0,
   class: "icon-header vs-collapse-item--icon-header"
 };
-var vsCollapseItemvue_type_template_id_e9de2ac2_hoisted_2 = {
+var vsCollapseItemvue_type_template_id_362ab8ce_hoisted_2 = {
   class: "con-content--item"
 };
-function vsCollapseItemvue_type_template_id_e9de2ac2_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsCollapseItemvue_type_template_id_362ab8ce_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
@@ -14475,16 +14480,16 @@ function vsCollapseItemvue_type_template_id_e9de2ac2_render(_ctx, _cache, $props
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.toggleContent && $options.toggleContent.apply($options, arguments);
     })
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "header"), !$props.notArrow ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("span", vsCollapseItemvue_type_template_id_e9de2ac2_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_vs_icon, {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "header"), !$props.notArrow ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("span", vsCollapseItemvue_type_template_id_362ab8ce_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_vs_icon, {
     "icon-pack": $props.iconPack,
     icon: $props.iconArrow
   }, null, 8, ["icon-pack", "icon"])])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     ref: "content",
     style: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeStyle"])($options.styleContent),
     class: "vs-collapse-item--content"
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsCollapseItemvue_type_template_id_e9de2ac2_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")])], 4)], 34);
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsCollapseItemvue_type_template_id_362ab8ce_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")])], 4)], 34);
 }
-// CONCATENATED MODULE: ./src/components/vsCollapse/vsCollapseItem.vue?vue&type=template&id=e9de2ac2
+// CONCATENATED MODULE: ./src/components/vsCollapse/vsCollapseItem.vue?vue&type=template&id=362ab8ce
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsCollapse/vsCollapseItem.vue?vue&type=script&lang=js
 
@@ -14550,17 +14555,33 @@ function vsCollapseItemvue_type_template_id_e9de2ac2_render(_ctx, _cache, $props
     }
   },
   mounted: function mounted() {
+    var _this2 = this;
+
     window.addEventListener('resize', this.changeHeight);
     var maxHeightx = this.$refs.content.scrollHeight;
 
     if (this.open) {
       this.maxHeight = "".concat(maxHeightx, "px");
     }
+
+    this.searchParent(this, function (parent) {
+      parent.childrenItems.push(_this2);
+    });
   },
   beforeUnmount: function beforeUnmount() {
     window.removeEventListener('resize', this.changeHeight);
   },
   methods: {
+    searchParent: function searchParent(_this, callback) {
+      var parent = _this.$parent;
+      if (!parent.$el.className) return;
+
+      if (!parent.childrenItems) {
+        this.searchParent(parent, callback);
+      } else {
+        callback(parent);
+      }
+    },
     changeHeight: function changeHeight() {
       var maxHeightx = this.$refs.content.scrollHeight;
 
@@ -14569,7 +14590,7 @@ function vsCollapseItemvue_type_template_id_e9de2ac2_render(_ctx, _cache, $props
       }
     },
     toggleContent: function toggleContent() {
-      var _this = this;
+      var _this3 = this;
 
       if (this.openHover || this.disabled) return;
 
@@ -14580,9 +14601,9 @@ function vsCollapseItemvue_type_template_id_e9de2ac2_render(_ctx, _cache, $props
       if (this.sst && !this.dataReady) {
         this.$emit('fetch', {
           done: function done() {
-            _this.initMaxHeight();
+            _this3.initMaxHeight();
 
-            _this.dataReady = true;
+            _this3.dataReady = true;
           }
         });
       } else {
@@ -14621,7 +14642,7 @@ function vsCollapseItemvue_type_template_id_e9de2ac2_render(_ctx, _cache, $props
 
 
 
-const vsCollapseItem_exports_ = /*#__PURE__*/exportHelper_default()(vsCollapseItemvue_type_script_lang_js, [['render',vsCollapseItemvue_type_template_id_e9de2ac2_render]])
+const vsCollapseItem_exports_ = /*#__PURE__*/exportHelper_default()(vsCollapseItemvue_type_script_lang_js, [['render',vsCollapseItemvue_type_template_id_362ab8ce_render]])
 
 /* harmony default export */ var vsCollapseItem = (vsCollapseItem_exports_);
 // CONCATENATED MODULE: ./src/components/vsCollapse/index.js
