@@ -24,12 +24,15 @@ export default {
     }
   },
   emits: ['change'],
+  data: () => ({
+    childrenItems: []
+  }),
   methods:{
     emitChange() {
       this.$emit('change')
     },
     closeAllItems(el) {
-      let children = this.$children
+      let children = this.childrenItems
       children.map((item) => {
         if(item.$el !== el) {
           item.maxHeight = '0px'

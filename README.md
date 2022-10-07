@@ -33,10 +33,9 @@ The framework is focused on facilitating the development of applications, improv
 
 This package is bringing support for Vue 3 to original package [Vuesax](https://www.npmjs.com/package/vuesax)
 
-Only 2 components remain uncompatible with Vue 3 for now :
+Only one component remain uncompatible with Vue 3 for now :
 
 - VsTable
-- VsCollapse
 
 ## Links
 
@@ -72,11 +71,12 @@ Only 2 components remain uncompatible with Vue 3 for now :
 - [SideBar](https://lk77.github.io/vuesax/components/sideBar.html)
 - [DropDown](https://lk77.github.io/vuesax/components/dropDown.html)
 - [Textarea](https://lk77.github.io/vuesax/components/textarea.html)
+- [Collapse](https://lk77.github.io/vuesax/components/collapse.html)
 - [Images](https://lk77.github.io/vuesax/components/images.html)
 
 
 - [Table](https://lk77.github.io/vuesax/components/table.html) - <i>vue2</i>
-- [Collapse](https://lk77.github.io/vuesax/components/collapse.html) - <i>vue2</i>
+
 
 
 ## Browser Support
