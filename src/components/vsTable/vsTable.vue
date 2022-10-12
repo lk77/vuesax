@@ -166,7 +166,7 @@ export default {
       default: false
     }
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'selected', 'dblSelection', 'change-page', 'search'],
   data:()=>({
     headerWidth: '100%',
     trs: [],
@@ -263,16 +263,16 @@ export default {
       }
     }
   },
-  mounted () {
+  mounted() {
     window.addEventListener('resize', this.listenerChangeWidth)
     this.maxItemsx = this.maxItems
     this.loadData()
 
-    // this.$nextTick(() => {
-    //   if(this.datax.length > 0) {
-    //     this.changeTdsWidth()
-    //   }
-    // })
+    this.$nextTick(() => {
+      if (this.datax.length > 0) {
+        this.changeTdsWidth()
+      }
+    })
   },
   destroyed () {
     window.removeEventListener('resize', this.listenerChangeWidth)
@@ -333,7 +333,7 @@ export default {
     },
     getValues: function getValues(obj) {
       function flattenDeep(val) {
-        return Object.modelValues(val || []).reduce((acc, val) => (typeof val === 'object') ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+        return Object.values(val || []).reduce((acc, val) => (typeof val === 'object') ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
       }
 
       return flattenDeep(obj).filter(function (item) {
@@ -397,7 +397,7 @@ export default {
 
       // Adding condition removes querySelector none error - if tbody isnot present
       if(tbody) {
-        let trvs = tbody.querySelector('.tr-modelValues')
+        let trvs = tbody.querySelector('.tr-values')
         if (trvs === undefined || trvs === null ) return
         let tds = trvs.querySelectorAll('.td')
 

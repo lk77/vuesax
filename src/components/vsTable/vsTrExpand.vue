@@ -11,6 +11,7 @@
           <button
             v-if="close"
             class="tr-expand--close"
+            @click="$emit('close')"
           >
             <i class="material-icons">
               clear

@@ -33,9 +33,7 @@ The framework is focused on facilitating the development of applications, improv
 
 This package is bringing support for Vue 3 to original package [Vuesax](https://www.npmjs.com/package/vuesax)
 
-Only one component remain uncompatible with Vue 3 for now :
-
-- VsTable
+All components and functions works with Vue 3.
 
 ## Links
 
@@ -43,40 +41,38 @@ Only one component remain uncompatible with Vue 3 for now :
 
 ## Components
 
-- [Buttons](https://lk77.github.io/vuesax/components/buttons.html)
-- [Selects](https://lk77.github.io/vuesax/components/selects.html)
-- [Notifications](https://lk77.github.io/vuesax/components/notifications.html)
-- [Switch](https://lk77.github.io/vuesax/components/switch.html)
-- [CheckBox](https://lk77.github.io/vuesax/components/checkbox.html)
-- [Radio](https://lk77.github.io/vuesax/components/radio.html)
-- [Input](https://lk77.github.io/vuesax/components/input.html)
-- [Dialogs](https://lk77.github.io/vuesax/components/dialog.html)
-- [Tabs](https://lk77.github.io/vuesax/components/tabs.html)
-- [Slider](https://lk77.github.io/vuesax/components/slider.html)
-- [InputNumber](https://lk77.github.io/vuesax/components/number.html)
-- [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html)
-- [Upload](https://lk77.github.io/vuesax/components/upload.html)
-- [Loading](https://lk77.github.io/vuesax/components/loading.html)
-- [Popup](https://lk77.github.io/vuesax/components/popup.html)
+
+- [Alert](https://lk77.github.io/vuesax/components/alert.html)
 - [Avatar](https://lk77.github.io/vuesax/components/avatar.html)
 - [Breadcrumb](https://lk77.github.io/vuesax/components/breadcrumb.html)
-- [Alert](https://lk77.github.io/vuesax/components/alert.html)
-- [Divider](https://lk77.github.io/vuesax/components/divider.html)
-- [Chip](https://lk77.github.io/vuesax/components/chip.html)
-- [Progress](https://lk77.github.io/vuesax/components/progress.html)
+- [Buttons](https://lk77.github.io/vuesax/components/buttons.html)
 - [Card](https://lk77.github.io/vuesax/components/card.html)
-- [List](https://lk77.github.io/vuesax/components/list.html)
-- [Pagination](https://lk77.github.io/vuesax/components/pagination.html)
-- [Navbar](https://lk77.github.io/vuesax/components/navbar.html)
-- [SideBar](https://lk77.github.io/vuesax/components/sideBar.html)
-- [DropDown](https://lk77.github.io/vuesax/components/dropDown.html)
-- [Textarea](https://lk77.github.io/vuesax/components/textarea.html)
+- [Checkbox](https://lk77.github.io/vuesax/components/checkbox.html)
+- [Chip](https://lk77.github.io/vuesax/components/chip.html)
 - [Collapse](https://lk77.github.io/vuesax/components/collapse.html)
+- [Dialog](https://lk77.github.io/vuesax/components/dialog.html)
+- [Divider](https://lk77.github.io/vuesax/components/divider.html)
+- [DropDown](https://lk77.github.io/vuesax/components/dropDown.html)
 - [Images](https://lk77.github.io/vuesax/components/images.html)
-
-
-- [Table](https://lk77.github.io/vuesax/components/table.html) - <i>vue2</i>
-
+- [Input](https://lk77.github.io/vuesax/components/input.html)
+- [List](https://lk77.github.io/vuesax/components/list.html)
+- [Loading](https://lk77.github.io/vuesax/components/loading.html)
+- [Navbar](https://lk77.github.io/vuesax/components/navbar.html)
+- [Notifications](https://lk77.github.io/vuesax/components/notifications.html)
+- [Number](https://lk77.github.io/vuesax/components/number.html)
+- [Pagination](https://lk77.github.io/vuesax/components/pagination.html)
+- [Popup](https://lk77.github.io/vuesax/components/popup.html)
+- [Progress](https://lk77.github.io/vuesax/components/progress.html)
+- [Radio](https://lk77.github.io/vuesax/components/radio.html)
+- [Selects](https://lk77.github.io/vuesax/components/selects.html)
+- [SideBar](https://lk77.github.io/vuesax/components/sideBar.html)
+- [Slider](https://lk77.github.io/vuesax/components/slider.html)
+- [Switch](https://lk77.github.io/vuesax/components/switch.html)
+- [Table](https://lk77.github.io/vuesax/components/table.html)
+- [Tabs](https://lk77.github.io/vuesax/components/tabs.html)
+- [Textarea](https://lk77.github.io/vuesax/components/textarea.html)
+- [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html)
+- [Upload](https://lk77.github.io/vuesax/components/upload.html)
 
 
 ## Browser Support

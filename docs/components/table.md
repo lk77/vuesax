@@ -148,7 +148,7 @@ To implement a **data table** we have the component `vs-table`, also sub compone
 - header: Slot
 
 :::tip
- In order to manipulate the data within the table, it is necessary to add the property: `data="myDataTable"` and thus be able to use the `slot-scope="{data}"`
+ In order to manipulate the data within the table, it is necessary to add the property: `data="myDataTable"` and thus be able to use the `v-slot="{data}"`
 :::
 
 <vuecode md>
@@ -163,12 +163,12 @@ To implement a **data table** we have the component `vs-table`, also sub compone
 <template lang="html">
   <div>
     <vs-table :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -183,7 +183,7 @@ To implement a **data table** we have the component `vs-table`, also sub compone
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}
@@ -309,12 +309,12 @@ You can have a sebra effect by adding the property `stripe`
 <template lang="html">
   <div>
     <vs-table stripe :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -329,7 +329,7 @@ You can have a sebra effect by adding the property `stripe`
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}
@@ -456,12 +456,12 @@ There are times when we need to add a state to our **tr** in the table so we hav
 <template lang="html">
   <div>
     <vs-table :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -476,7 +476,7 @@ There are times when we need to add a state to our **tr** in the table so we hav
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :state="indextr == 2 || indextr == 5?'success':indextr == 6?'danger':null" :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}
@@ -607,12 +607,12 @@ You can add a **paginated table** with the `pagination` property
 <template lang="html">
   <div>
     <vs-table max-items="3" pagination :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -627,7 +627,7 @@ You can add a **paginated table** with the `pagination` property
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}
@@ -767,12 +767,12 @@ You can add a **paginated table with description** with the `description` proper
       description-connector="of"
       description-body="Pages">
 
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -787,7 +787,7 @@ You can add a **paginated table with description** with the `description` proper
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}
@@ -930,12 +930,12 @@ You can add the functionality of select a specific **tr** to do this add the pro
       @selected="handleSelected"
       @dblSelection="doubleSelection"
       :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -950,7 +950,7 @@ You can add the functionality of select a specific **tr** to do this add the pro
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}
@@ -1098,12 +1098,12 @@ To select multiples **tr** we have the property `multiple` and each of the selec
       multiple
       v-model="selected"
       :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -1118,7 +1118,7 @@ To select multiples **tr** we have the property `multiple` and each of the selec
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}
@@ -1249,12 +1249,12 @@ You can add the functionality of expanding a **tr** to visualize more data to ma
   <div>
     <vs-table
       :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -1269,7 +1269,7 @@ You can add the functionality of expanding a **tr** to visualize more data to ma
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="tr.email">
             {{tr.email}}
@@ -1287,7 +1287,7 @@ You can add the functionality of expanding a **tr** to visualize more data to ma
             {{tr.id}}
           </vs-td>
 
-          <template class="expand-user" slot="expand">
+          <template class="expand-user" #expand>
             <div class="con-expand-users">
               <div class="con-btns-user">
                 <div class="con-userx">
@@ -1437,7 +1437,7 @@ You can edit the data with **slot** `edit`, so you have better flexibility and m
 <template lang="html">
   <div>
     <vs-table :data="users">
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -1452,7 +1452,7 @@ You can edit the data with **slot** `edit`, so you have better flexibility and m
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="tr.email">
             {{tr.email}}
@@ -1607,12 +1607,12 @@ You can use `queriedResults` property of table component to get queried results 
 <template lang="html">
   <div>
     <vs-table search :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th sort-key="email">
           Email
         </vs-th>
@@ -1624,7 +1624,7 @@ You can use `queriedResults` property of table component to get queried results 
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}
@@ -1755,12 +1755,12 @@ You can add a **filtered, sorted, paginated and multi selected table** with comb
       max-items="3"
       search
       :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th sort-key="email">
           Email
         </vs-th>
@@ -1775,7 +1775,7 @@ You can add a **filtered, sorted, paginated and multi selected table** with comb
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}
@@ -1914,12 +1914,12 @@ The table stops doing its functionalities on the client side and proceeds to iss
       max-items="3"
       search
       :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th sort-key="email">
           Email
         </vs-th>
@@ -1934,7 +1934,7 @@ The table stops doing its functionalities on the client side and proceeds to iss
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}

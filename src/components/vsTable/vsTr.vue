@@ -2,7 +2,7 @@
   <tr
     ref="tableTr"
     :class="[`tr-table-state-${state}`, {'is-selected':isSelected, 'selected': data, 'is-expand': maxHeight != '0px', 'activeEdit': activeEdit, 'hoverFlat': $parent.hoverFlat}]"
-    class="tr-modelValues vs-table--tr"
+    class="tr-values vs-table--tr"
     @dblclick="dblclicktr"
     @click="clicktr"
   >
@@ -26,8 +26,9 @@
   </tr>
 </template>
 <script>
-//import {createApp} from 'vue';
-//import trExpand from './vsTrExpand.vue'
+import {h} from 'vue'
+import utils from '../../utils'
+import trExpand from './vsTrExpand.vue'
 export default {
   name: 'VsTr',
   props:{
@@ -102,7 +103,7 @@ export default {
     dblclicktr () {
       this.$parent.dblclicktr(this.data, true)
     },
-    /*clicktd (evt) {
+    clicktd (evt) {
       if(this.$parent.multiple || !this.$slots.expand) return
       let tr = evt.target.closest('tr')
       if(this.expanded) {
@@ -111,13 +112,23 @@ export default {
         this.expanded = false
       } else {
         tr.classList.add('tr-expandedx');
-        //let instance = createApp({extends: trExpand, parent: this, propsData: {colspan: this.colspan}});
-        instance.vm = instance.mount();
-        var newTR = document.createElement('tr').appendChild(instance.vm.$el);
-        this.insertAfter(tr, newTR)
+
+        let comp = {
+          render: () => {
+            return h(trExpand, { colspan: this.colspan }, this.$slots.expand)
+          },
+          parent: this
+        };
+        const fragment = new DocumentFragment();
+        utils.mount(comp, {
+          element: fragment,
+          app: this.$vs.getCurrentInstance(),
+          props: {}
+        });
+        this.insertAfter(tr, fragment)
         this.expanded = true
       }
-    },*/
+    },
     collapseExpandedData() {
       if(this.expanded){
         const tr = this.$refs.tableTr

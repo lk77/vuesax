@@ -1,12 +1,12 @@
 <template lang="html">
   <div>
     <vs-table :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -21,7 +21,7 @@
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :state="indextr == 2 || indextr == 5?'success':indextr == 6?'danger':null" :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].email">
             {{data[indextr].email}}

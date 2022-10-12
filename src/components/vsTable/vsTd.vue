@@ -20,7 +20,7 @@
       </span>
     </span>
 
-    <!-- <transition name="td">
+<!--    <transition name="td">
       <div
         v-if="activeEdit"
         class="con-edit-td">
@@ -32,13 +32,15 @@
           type="flat"
           @click="close"></vs-button>
       </div>
-    </transition> -->
+    </transition>-->
   </td>
 </template>
 <script>
-//import {createApp} from 'vue';
-//import trExpand from './vsTrExpand.vue'
-export default {
+  import {h} from 'vue';
+  import trExpand from './vsTrExpand.vue'
+  import utils from "../../utils";
+
+  export default {
   name: 'VsTd',
   props:{
     data:{
@@ -61,23 +63,34 @@ export default {
         e.parentNode.appendChild(i);
       }
     },
-    /*clicktd (evt) {
+    clicktd (evt) {
       if(this.$slots.edit) {
         let tr = evt.target.closest('tr')
         if(!this.activeEdit) {
-          let instance = Vue.createApp({extends: trExpand, parent: this, propsData: {colspan: this.$parent.colspan, close: true});
-          instance.$slots.default = this.$slots.edit
-          instance.vm = instance.mount();
-          instance.$on('click', this.close)
-          var nuevo_parrafo = document.createElement('tr').appendChild(instance.vm.$el);
-          this.insertAfter(tr, nuevo_parrafo)
+          let comp = {
+            render: () => {
+              return h(trExpand, {
+                colspan: this.$parent.colspan,
+                close: true,
+                onClose: this.close
+              }, this.$slots.edit)
+            },
+            parent: this
+          };
+          const fragment = new DocumentFragment();
+          utils.mount(comp, {
+            element: fragment,
+            app: this.$vs.getCurrentInstance(),
+            props: {}
+          });
+          this.insertAfter(tr, fragment)
           this.activeEdit = true
           setTimeout(()=>{
             window.addEventListener('click', this.closeEdit)
           }, 20)
         }
       }
-    },*/
+    },
     closeEdit (evt) {
       if (!evt.target.closest('.tr-expand') && !evt.target.closest('.vs-select--options')) {
         this.close()

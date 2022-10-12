@@ -291,6 +291,7 @@ export default {
   },
   mounted() {
     this.$refs.inputselect.value = this.modelValue
+    this.modelValuex = this.modelValue;
     this.changeValue();
     if (this.active) {
       utils.insertBody(this.$refs.vsSelectOptions);

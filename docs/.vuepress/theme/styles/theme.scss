@@ -422,3 +422,8 @@ hr {
 .back-to-top {
     -webkit-mask: url(/vuesax/back-to-top.svg)no-repeat;
 }
+
+// fix vs-table
+table.vs-table {
+  display: table!important;
+}

@@ -2,12 +2,12 @@
   <div>
     <vs-table
       :data="users">
-      <template slot="header">
+      <template #header>
         <h3>
           Users
         </h3>
       </template>
-      <template slot="thead">
+      <template #thead>
         <vs-th>
           Email
         </vs-th>
@@ -22,7 +22,7 @@
         </vs-th>
       </template>
 
-      <template slot-scope="{data}">
+      <template v-slot="{data}">
         <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="tr.email">
             {{tr.email}}
@@ -40,7 +40,7 @@
             {{tr.id}}
           </vs-td>
 
-          <template class="expand-user" slot="expand">
+          <template class="expand-user" #expand>
             <div class="con-expand-users">
               <div class="con-btns-user">
                 <div class="con-userx">
@@ -146,20 +146,28 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
-.con-expand-users
-  width 100%
-  .con-btns-user
-    display flex
-    padding 10px
-    padding-bottom 0px
-    align-items center
-    justify-content space-between
-    .con-userx
-      display flex
-      align-items center
-      justify-content flex-start
-  .list-icon
-    i
-      font-size .9rem !important
+<style lang="scss">
+.con-expand-users {
+  width: 100%;
+
+  .con-btns-user {
+    display: flex;
+    padding: 10px;
+    padding-bottom: 0px;
+    align-items: center;
+    justify-content: space-between;
+
+    .con-userx {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  .list-icon {
+    i {
+      font-size: 0.9rem !important;
+    }
+  }
+}
 </style>
