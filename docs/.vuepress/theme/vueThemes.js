@@ -11,10 +11,10 @@ module.exports = {
             text:'GitHub',
             link:'https://github.com/lusaxweb/vuesax'
           },
-          {
+          /*{
             text:'Discord',
             link:'https://discord.gg/6AZNXEa'
-          },
+          },*/
           {
             text:'Twitter',
             link:'https://twitter.com/vuesax'

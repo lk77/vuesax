@@ -12,9 +12,9 @@
       <div v-if="data.mounted" :class="{'git-activo':data.git}" class="flaticon-github git-img">
 
       </div>
-      <div :class="{'git-activo':data.discord}" class="doc-img">
+      <!--<div :class="{'git-activo':data.discord}" class="doc-img">
         <img v-if="data.mounted" :src="$withBase('/Discord-Logo-White.svg')" alt="">
-      </div>
+      </div>-->
       <div :class="{'homeBackgroundComponent':heroBackgroundComponent}" class="home-init">
         <component class="heroBackgroundComponent" :is="heroBackgroundComponent" v-if="data.mounted"></component>
         <header class="hero">
@@ -36,7 +36,7 @@
               >{{ action.text }}
               </router-link>
             </li>
-            <li @mouseenter="data.discord=true" @mouseleave="data.discord=false">
+            <!--<li @mouseenter="data.discord=true" @mouseleave="data.discord=false">
               <a
                 target="_blank"
                 href="https://discord.gg/6AZNXEa"
@@ -46,7 +46,7 @@
                 <img v-if="data.mounted" :src="$withBase('/Discord-Logo-White.png')" alt="" style="height:25px!important">
                 Discord
               </a>
-            </li>
+            </li>-->
             <li class="starx">
               <a @mouseenter="data.git=true" @mouseleave="data.git=false" class="flaticon-github fgithub" :href="$vueThemes.github">
                 <span class="stargazers_count">{{ data.star }}</span>
@@ -199,7 +199,7 @@
     star: 0,
     git: false,
     doc: false,
-    discord: false,
+    //discord: false,
     mounted: false
   });
 
