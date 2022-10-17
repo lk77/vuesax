@@ -1,27 +1,26 @@
 <p align="center">
-  <a href="https://lusaxweb.github.io/vuesax/">
-<img width="40%" src="https://raw.githubusercontent.com/lusaxweb/vuesax/master/public/vuesax-logo-beta.png" alt="vuesax" />
-<img src="https://raw.githubusercontent.com/lusaxweb/vuesax/master/public/vuesax-components.gif" alt="vuesax" />
-   </a>
-  </p>
-
-  </br>
-
-  <p align="center">
+  <a href="https://l777.github.io/vuesax/">
+    <img width="40%" src="https://raw.githubusercontent.com/lk77/vuesax/next/public/vuesax-logo-beta.png" alt="vuesax" />
+    <img src="https://raw.githubusercontent.com/lk77/vuesax/next/public/vuesax-components.gif" alt="vuesax" />
+  </a>
+</p>
+</br>
+<p align="center">
   <a href="https://www.npmjs.com/package/vuesax3">
     <img src="https://img.shields.io/npm/dm/vuesax3.svg" alt="Downloads">
   </a>
   <a href="https://www.npmjs.com/package/vuesax3">
     <img src="https://img.shields.io/npm/v/vuesax3.svg" alt="Version">
   </a>
-  <a href="https://www.npmjs.com/package/vuesax"><img src="https://img.shields.io/npm/l/vuesax.svg" /></a>
+  <a href="https://www.npmjs.com/package/vuesax"><img src="https://img.shields.io/npm/l/vuesax3.svg" /></a>
 </p>
 
 ## Introduction
 
-[Vuesax](https://lusaxweb.github.io/vuesax/) is a framework of components based on [vue.js](https://vuejs.org/), it is a framework that is designed from scratch to be incrementally adoptable.
+[Vuesax](https://lk77.github.io/vuesax/) is a framework of components based on [vue.js](https://vuejs.org/), it is a framework that is designed from scratch to be incrementally adoptable.
 
-The framework is focused on facilitating the development of applications, improving the design of the same without removing the necessary functionality. we want all the components to be independent in colors, shapes and design for a freedom that we like all front-end but without losing the speed of creation and production.
+The framework is focused on facilitating the development of applications, improving the design of the same without removing the necessary functionality. we want all the components to be independent in
+colors, shapes and design for a freedom that we like all front-end but without losing the speed of creation and production.
 
 ## Vuesax 3 for Vue 3
 
@@ -34,7 +33,6 @@ All components and functions works with Vue 3.
 - 📘 [Documentation](https://lk77.github.io/vuesax/)
 
 ## Components
-
 
 - [Alert](https://lk77.github.io/vuesax/components/alert.html)
 - [Avatar](https://lk77.github.io/vuesax/components/avatar.html)
@@ -68,8 +66,8 @@ All components and functions works with Vue 3.
 - [Tooltip](https://lk77.github.io/vuesax/components/tooltip.html)
 - [Upload](https://lk77.github.io/vuesax/components/upload.html)
 
-
 ## Browser Support
+
 Recent versions of **Firefox**, **Chrome**, **Edge**, **Opera** and **Safari**. **IE11+**
 
 ## Quick-start CDN
@@ -99,6 +97,7 @@ Recent versions of **Firefox**, **Chrome**, **Edge**, **Opera** and **Safari**. 
 ```
 
 # Install inside a NPM project
+
 ``` bash
 # npm
 npm install vuesax3
@@ -135,7 +134,8 @@ app.use(vsPrompt)
 ```
 
 ## Contribution
-Please make sure to read the [Contributing Guide](https://raw.githubusercontent.com/lk77/vuesax/master/CONTRIBUTING.md) before making a pull request.
+
+Please make sure to read the [Contributing Guide](https://raw.githubusercontent.com/lk77/vuesax/next/CONTRIBUTING.md) before making a pull request.
 
 ## Lusaxweb
 
@@ -143,4 +143,4 @@ The upstream library was created and was supported by [Lusaxweb](http://lusaxweb
 
 ## License
 
-[MIT](https://raw.githubusercontent.com/lk77/vuesax/master/LICENSE)
+[MIT](https://raw.githubusercontent.com/lk77/vuesax/next/LICENSE)
