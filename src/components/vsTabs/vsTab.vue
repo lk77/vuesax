@@ -38,7 +38,11 @@ export default {
     useShow: {
       type:Boolean,
       default:false
-    }
+    },
+    color:{
+      default:'primary',
+      type: String
+    },
   },
   data:()=>({
     vertical:false,

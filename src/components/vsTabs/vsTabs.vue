@@ -1,6 +1,6 @@
 <template lang="html">
   <div
-    :class="[`vs-tabs-${color}`,`vs-tabs-position-${position}`, $attrs.class]"
+    :class="[`vs-tabs-position-${position}`, $attrs.class]"
     :style="$attrs.style"
     class="con-vs-tabs vs-tabs"
   >
@@ -15,11 +15,15 @@
         <li
           v-for="(child,index) in childrenItems"
           :ref="'li-' + index"
-          :class="{'activeChild':childActive == index}"
-          :style="childActive == index ? styleTab : {}"
+          :class="[{'activeChild':childActive == index}, `vs-tabs-${child.color}`]"
+          :style="
+          [
+            childActive == index ? styleActiveTab : {},
+            hoverActive == index ? styleHoverTab: {}
+          ]"
           class="vs-tabs--li"
-          @mouseover="hover = true"
-          @mouseout="hover = false"
+          @mouseover="hover = true;hoverActive = index"
+          @mouseout="hover = false;hoverActive = -1"
         >
           <button
             v-bind="allowedAttrs(child.$attrs)"
@@ -33,7 +37,7 @@
               v-if="child.icon"
               :icon-pack="child.iconPack"
               :icon="child.icon"
-              :color="color"
+              :color="colorActive"
               class="vs-tabs--btn-icon"
             ></vs-icon>
             <span v-if="child.label">{{ child.label }}</span>
@@ -97,7 +101,9 @@ export default {
     topx:'auto',
     heightx:2,
     hover:false,
+    hoverActive:0,
     childActive:0,
+    colorActive: 'primary',
     leftx:0,
     widthx:0,
     these:false,
@@ -105,9 +111,26 @@ export default {
     childrenItems: []
   }),
   computed:{
-    styleTab(){
+    styleHoverTab() {
+      if(this.childrenItems && this.childrenItems[this.hoverActive] && this.childrenItems[this.hoverActive].color !== undefined) {
+        return {
+          color: _color.rColor(this.childrenItems[this.hoverActive].color,1)
+        }
+      }
+
       return {
-        color: _color.getColor(this.color,1),
+        color: _color.rColor(this.color,1),
+      }
+    },
+    styleActiveTab(){
+      if(this.childrenItems && this.childrenItems[this.childActive] && this.childrenItems[this.childActive].color !== undefined) {
+        return {
+          color: _color.rColor(this.childrenItems[this.childActive].color,1)
+        }
+      }
+
+      return {
+        color: _color.rColor(this.color,1),
       }
     },
     stylex(){
@@ -116,8 +139,8 @@ export default {
         left: `${this.leftx}px`,
         width: `${this.widthx}px`,
         height: `${this.heightx}px`,
-        background: `linear-gradient(30deg, ${_color.getColor(this.color,1)} 0%, ${_color.getColor(this.color,.5)} 100%)`,
-        boxShadow: `0px 0px 8px 0px ${_color.getColor(this.color,.5)}`,
+        background: `linear-gradient(30deg, ${_color.getColor(this.styleActiveTab.color,1)} 0%, ${_color.getColor(this.styleActiveTab.color,.5)} 100%)`,
+        boxShadow: `0px 0px 8px 0px ${_color.getColor(this.styleActiveTab.color,.5)}`,
         transform: `scaleX(${this.these?1.3:1})`
       }
     }
@@ -202,6 +225,7 @@ export default {
 
       this.childrenItems[index].active = true
       this.childActive = index
+      this.colorActive = this.childrenItems[index].color || this.color;
       this.$emit('update:modelValue', this.childActive)
 
       if(this.position == 'left' || this.position == 'right'){

@@ -148,6 +148,12 @@ You can change the color of the component with the property `color`, the paramet
   Only **RGB** and **HEX** colors are supported.
 :::
 
+:::tip
+The `color` property defined on vs-tabs is the default value for all tabs, but you can override it by defining it on a vs-tab.
+
+<i>Since vuesax3@4.1.0</i>
+:::
+
 <vuecode md>
 <template #demo>
 <div>
