@@ -17,10 +17,10 @@
           :ref="'li-' + index"
           :class="[{'activeChild':childActive == index}, `vs-tabs-${child.color}`]"
           :style="
-          [
-            childActive == index ? styleActiveTab : {},
-            childActive != index && hoverActive == index ? styleHoverTab: {}
-          ]"
+            [
+              childActive == index ? styleActiveTab : {},
+              childActive != index && hoverActive == index ? styleHoverTab: {}
+            ]"
           class="vs-tabs--li"
           @mouseover="hover = true;hoverActive = index"
           @mouseout="hover = false;hoverActive = -1"
@@ -143,11 +143,11 @@ export default {
       }
 
       return {
-          color: color,
-          'border-width': ' 0 0 2px 0',
-          'border-color': color,
-          'border-style': 'solid'
-        }
+        color: color,
+        'border-width': ' 0 0 2px 0',
+        'border-color': color,
+        'border-style': 'solid'
+      }
     },
     /*stylex(){
       return {
