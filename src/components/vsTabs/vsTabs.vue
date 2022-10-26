@@ -17,10 +17,10 @@
           :ref="'li-' + index"
           :class="[{'activeChild':childActive == index}, `vs-tabs-${child.color}`]"
           :style="
-          [
-            childActive == index ? styleActiveTab : {},
-            hoverActive == index ? styleHoverTab: {}
-          ]"
+            [
+              childActive == index ? styleActiveTab : {},
+              childActive != index && hoverActive == index ? styleHoverTab: {}
+            ]"
           class="vs-tabs--li"
           @mouseover="hover = true;hoverActive = index"
           @mouseout="hover = false;hoverActive = -1"
@@ -37,7 +37,7 @@
               v-if="child.icon"
               :icon-pack="child.iconPack"
               :icon="child.icon"
-              :color="colorActive"
+              :color="child.color || color"
               class="vs-tabs--btn-icon"
             ></vs-icon>
             <span v-if="child.label">{{ child.label }}</span>
@@ -56,10 +56,10 @@
           </button>
         </li>
       </ul>
-      <span
+      <!--<span
         :style="stylex"
         class="line-vs-tabs"
-      />
+      />-->
     </div>
     <div class="con-slot-tabs">
       <slot />
@@ -83,6 +83,10 @@ export default {
       default:'primary',
       type: String
     },
+    hoverLine: {
+      default: false,
+      type:Boolean
+    },
     tagColor:{
       default:'primary',
       type: String
@@ -98,42 +102,54 @@ export default {
   },
   emits: ['update:modelValue'],
   data:()=>({
-    topx:'auto',
-    heightx:2,
+    //topx:'auto',
+    //heightx:2,
     hover:false,
     hoverActive:0,
     childActive:0,
     colorActive: 'primary',
-    leftx:0,
-    widthx:0,
+    //leftx:0,
+    //widthx:0,
     these:false,
     refsLi: [],
     childrenItems: []
   }),
   computed:{
     styleHoverTab() {
+      let color = this.color;
+
       if(this.childrenItems && this.childrenItems[this.hoverActive] && this.childrenItems[this.hoverActive].color !== undefined) {
+        color = this.childrenItems[this.hoverActive].color;
+      }
+
+      if(this.hoverLine) {
         return {
-          color: _color.rColor(this.childrenItems[this.hoverActive].color,1)
+          color: _color.rColor(color, 1),
+          'border-width': ' 0 0 2px 0',
+          'border-color': _color.rColor(color, 0.3),
+          'border-style': 'solid'
         }
       }
 
       return {
-        color: _color.rColor(this.color,1),
+        color: _color.rColor(color, 1),
       }
     },
     styleActiveTab(){
+      let color = _color.rColor(this.color,1);
+
       if(this.childrenItems && this.childrenItems[this.childActive] && this.childrenItems[this.childActive].color !== undefined) {
-        return {
-          color: _color.rColor(this.childrenItems[this.childActive].color,1)
-        }
+        color = _color.rColor(this.childrenItems[this.childActive].color,1);
       }
 
       return {
-        color: _color.rColor(this.color,1),
+        color: color,
+        'border-width': ' 0 0 2px 0',
+        'border-color': color,
+        'border-style': 'solid'
       }
     },
-    stylex(){
+    /*stylex(){
       return {
         top: `${this.topx}px`,
         left: `${this.leftx}px`,
@@ -143,7 +159,7 @@ export default {
         boxShadow: `0px 0px 8px 0px ${_color.getColor(this.styleActiveTab.color,.5)}`,
         transform: `scaleX(${this.these?1.3:1})`
       }
-    }
+    }*/
   },
   watch: {
     modelValue(index) {
@@ -232,10 +248,9 @@ export default {
         this.childrenItems[index].vertical = true
       }
 
-      this.changePositionLine(elem, initialAnimation)
-
+      //this.changePositionLine(elem, initialAnimation)
     },
-    changePositionLine(elem, initialAnimation){
+    /*changePositionLine(elem, initialAnimation){
       if(!elem) {
         return;
       }
@@ -258,7 +273,7 @@ export default {
           setTimeout(update, 100)
         }
       }
-    }
+    }*/
   }
 }
 </script>

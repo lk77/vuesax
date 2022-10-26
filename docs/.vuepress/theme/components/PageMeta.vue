@@ -5,12 +5,16 @@
       <OutboundLink/>
     </div>
 
-    <div v-if="lastUpdated" class="meta-item last-updated">
-      <span class="meta-item-label">{{ themeLocale.lastUpdatedText }}: </span>
-      <span class="meta-item-info">{{ lastUpdated }}</span>
+    <div class="content con-api">
+      <Api />
     </div>
 
-    <div
+<!--    <div v-if="lastUpdated" class="meta-item last-updated">
+      <span class="meta-item-label">{{ themeLocale.lastUpdatedText }}: </span>
+      <span class="meta-item-info">{{ lastUpdated }}</span>
+    </div>-->
+
+<!--    <div
       v-if="contributors && contributors.length"
       class="meta-item contributors"
     >
@@ -23,7 +27,7 @@
           <template v-if="index !== contributors.length - 1">, </template>
         </template>
       </span>
-    </div>
+    </div>-->
   </footer>
 </template>
 
@@ -39,10 +43,11 @@ import type {
   DefaultThemeNormalPageFrontmatter,
   DefaultThemePageData,
   NavLink as NavLinkType,
-} from '../../shared'
+} from '@vuepress/theme-default/lib/shared'
 import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
 import { resolveEditLink } from '@vuepress/theme-default/lib/client/utils'
 import NavLink from './NavLink.vue'
+import Api from './Api.vue'
 
 const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
   const themeLocale = useThemeLocaleData()

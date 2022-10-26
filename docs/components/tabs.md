@@ -23,8 +23,12 @@ API:
  - name: color
    type: String
    parameters: RGB, HEX
-   description: Color of the tabs component.
+   description: Color of the tabs component. Can be set on vs-tabs or vs-tab.
    default: null
+ - name: hover-line
+   type: Boolean
+   description: Display translucent line on hover below vs-tab
+   default: false
  - name: alignment
    type: String
    parameters: left (default), right, center, fixed
@@ -142,7 +146,9 @@ For the title of each tab the `vs-tab` property is implemented in the` vs-tab` c
 
 ## Color
 
-You can change the color of the component with the property `color`, the parameter allows the main colors and HEX or RGB
+You can change the color of the component with the property `color`, the parameter allows the main colors and HEX or RGB.
+
+You can use `hover-line` property to display a translucent line on hover, below the vs-tab.
 
 :::warning
   Only **RGB** and **HEX** colors are supported.
@@ -164,31 +170,36 @@ The `color` property defined on vs-tabs is the default value for all tabs, but y
 
 ```html
 <template lang="html">
-  <div>
-    <vs-tabs :color="colorx">
-      <vs-tab @click="colorx = 'success'" label="Success">
+  <div class="">
+    <vs-tabs hover-line>
+      <vs-tab color="success" label="Success">
         <div class="con-tab-ejemplo">
           Success
         </div>
       </vs-tab>
-      <vs-tab @click="colorx = 'danger'" label="Danger">
+      <vs-tab color="danger" label="Danger">
         <div class="con-tab-ejemplo">
           Danger
         </div>
       </vs-tab>
-      <vs-tab @click="colorx = 'warning'" label="Warning">
+      <vs-tab color="warning" label="Warning">
         <div class="con-tab-ejemplo">
           Warning
         </div>
       </vs-tab>
-      <vs-tab @click="colorx = 'dark'" label="Dark">
+      <vs-tab color="dark" label="Dark">
         <div class="con-tab-ejemplo">
           Dark
         </div>
       </vs-tab>
-        <vs-tab @click="colorx = 'rgb(16, 233, 179)'" label="RGB | HEX">
+      <vs-tab color="rgb(16, 233, 179)" label="RGB | HEX">
         <div class="con-tab-ejemplo">
           RGB | HEX
+        </div>
+      </vs-tab>
+      <vs-tab label="Default">
+        <div class="con-tab-ejemplo">
+          Default
         </div>
       </vs-tab>
     </vs-tabs>

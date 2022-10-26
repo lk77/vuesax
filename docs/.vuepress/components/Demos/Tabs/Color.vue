@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-    <vs-tabs color="rgb(16, 233, 179)">
+    <vs-tabs hover-line>
       <vs-tab color="success" label="Success">
         <div class="con-tab-ejemplo">
           Success
