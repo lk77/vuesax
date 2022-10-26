@@ -40,7 +40,6 @@ export default {
       default:false
     },
     color:{
-      default:'primary',
       type: String
     },
   },

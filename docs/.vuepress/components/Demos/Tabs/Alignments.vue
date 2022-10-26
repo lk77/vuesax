@@ -19,7 +19,7 @@
 
         </div>
       </vs-tab>
-      <vs-tab label="Ecosistem">
+      <vs-tab label="Ecosystem">
         <div>
 
         </div>
@@ -45,7 +45,7 @@
 
         </div>
       </vs-tab>
-      <vs-tab label="Ecosistem">
+      <vs-tab label="Ecosystem">
         <div>
 
         </div>
@@ -71,7 +71,7 @@
 
         </div>
       </vs-tab>
-      <vs-tab label="Ecosistem">
+      <vs-tab label="Ecosystem">
         <div>
 
         </div>
@@ -98,7 +98,7 @@
 
         </div>
       </vs-tab>
-      <vs-tab label="Ecosistem">
+      <vs-tab label="Ecosystem">
         <div>
 
         </div>
