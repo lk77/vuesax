@@ -6582,7 +6582,7 @@ var es_regexp_test = __webpack_require__("00b4");
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsButton/vsButton.vue?vue&type=template&id=cd18880c&lang=html
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsButton/vsButton.vue?vue&type=template&id=206bd65c&lang=html
 
 
 
@@ -6592,7 +6592,7 @@ var _hoisted_2 = {
   key: 2,
   class: "vs-button-text vs-button--text"
 };
-function vsButtonvue_type_template_id_cd18880c_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsButtonvue_type_template_id_206bd65c_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _normalizeStyle2;
 
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
@@ -6630,7 +6630,7 @@ function vsButtonvue_type_template_id_cd18880c_lang_html_render(_ctx, _cache, $p
     class: "vs-button-linex"
   }, null, 4)], 16, _hoisted_1);
 }
-// CONCATENATED MODULE: ./src/components/vsButton/vsButton.vue?vue&type=template&id=cd18880c&lang=html
+// CONCATENATED MODULE: ./src/components/vsButton/vsButton.vue?vue&type=template&id=206bd65c&lang=html
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js
 
@@ -7116,6 +7116,8 @@ var es_string_trim = __webpack_require__("498a");
           } else {
             setTimeout(function () {
               _this4.timeOpacity = .15;
+              _this4.opacity = 0;
+              _this4.isActive = false;
             }, _this4.time * 1100);
           }
         }
@@ -7138,7 +7140,7 @@ var exportHelper_default = /*#__PURE__*/__webpack_require__.n(exportHelper);
 
 
 
-const __exports__ = /*#__PURE__*/exportHelper_default()(vsButtonvue_type_script_lang_js, [['render',vsButtonvue_type_template_id_cd18880c_lang_html_render]])
+const __exports__ = /*#__PURE__*/exportHelper_default()(vsButtonvue_type_script_lang_js, [['render',vsButtonvue_type_template_id_206bd65c_lang_html_render]])
 
 /* harmony default export */ var vsButton = (__exports__);
 // CONCATENATED MODULE: ./src/components/vsButton/index.js
