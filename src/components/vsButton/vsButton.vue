@@ -304,6 +304,8 @@
             } else {
               setTimeout(() => {
                 this.timeOpacity = .15
+                this.opacity = 0
+                this.isActive = false
               }, this.time * 1100)
             }
           }
