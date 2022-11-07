@@ -4,8 +4,8 @@ const components = require('./components');
 module.exports = {
   base: '/vuesax/',
   head: [
-    ['link', { rel: 'icon', href: `/favicon-vuesax.png` }],
-    ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/icon?family=Material+Icons` }],
+    ['link', { rel: 'icon', href: `/vuesax/favicon-vuesax.png` }],
+    //['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/icon?family=Material+Icons` }],
     ['script', { src: 'https://browser.sentry-cdn.com/7.3.0/bundle.min.js', integrity: 'sha384-SMm9LrmlAek2bjM6vZh0NHrmBfZuqEOnedawNH2iknxYwrBRgcHL0WSBsA/vvlSt', crossorigin: 'anonymous' }],
     ['script', {}, `
 if(location.hostname == 'lk77.github.io') {
