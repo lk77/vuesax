@@ -1,12 +1,12 @@
 <template lang="html">
   <div class="">
-    <vs-tabs hover-line>
-      <vs-tab color="success" label="Success">
+    <vs-tabs hover-line="100%">
+      <vs-tab color="success" defaultColor="success" label="Success">
         <div class="con-tab-ejemplo">
           Success
         </div>
       </vs-tab>
-      <vs-tab color="danger" label="Danger">
+      <vs-tab color="danger" defaultColor="danger" label="Danger">
         <div class="con-tab-ejemplo">
           Danger
         </div>

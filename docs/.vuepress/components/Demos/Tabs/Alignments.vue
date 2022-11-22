@@ -3,7 +3,7 @@
     <h3>
       Default
     </h3>
-    <vs-tabs>
+    <vs-tabs :hover-line="true" :hover-text="true">
       <vs-tab label="Home">
         <div>
 
@@ -29,7 +29,7 @@
     <h3>
       Center
     </h3>
-    <vs-tabs alignment="center">
+    <vs-tabs alignment="center" hover-line="0.3" hover-text="1">
       <vs-tab label="Home">
         <div>
 
@@ -55,7 +55,7 @@
     <h3>
       Right
     </h3>
-    <vs-tabs alignment="right">
+    <vs-tabs alignment="right" hover-line="30%" hover-text="100%">
       <vs-tab label="Home">
         <div>
 
@@ -82,7 +82,7 @@
     <h3>
       Fixed
     </h3>
-    <vs-tabs alignment="fixed">
+    <vs-tabs alignment="fixed" hover-line hover-text>
       <vs-tab label="Home">
         <div>
 

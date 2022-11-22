@@ -25,9 +25,15 @@ API:
    parameters: RGB, HEX
    description: Color of the tabs component. Can be set on vs-tabs or vs-tab.
    default: null
+ - name: hover-text
+   type: Boolean, Number, String
+   parameters: alpha or percent opacity
+   description: Apply color property on hover to the text, opaque by default
+   default: true
  - name: hover-line
-   type: Boolean
-   description: Display translucent line on hover below vs-tab
+   type: Boolean, Number, String
+   parameters: alpha or percent opacity
+   description: Apply color property on hover to the line below vs-tab, 0.3 opacity by default
    default: false
  - name: alignment
    type: String
@@ -148,7 +154,14 @@ For the title of each tab the `vs-tab` property is implemented in the` vs-tab` c
 
 You can change the color of the component with the property `color`, the parameter allows the main colors and HEX or RGB.
 
-You can use `hover-line` property to display a translucent line on hover, below the vs-tab.
+You can use `hover-line` property to display a translucent line, on hover, below the vs-tab.<br>
+You can pass an alpha/percent opacity to `hover-line`, default opacity is 0.3.
+
+The `hover-text` property is enabled by default, and apply color to the text on hover.<br>
+You can pass an alpha/percent opacity to `hover-text`, opaque by default.
+
+You can provide a boolean to both `hover-line` / `hover-text` properties, to enable/disable them.<br>
+In that case default opacity will be used.
 
 :::warning
   Only **RGB** and **HEX** colors are supported.
@@ -171,13 +184,13 @@ The `color` property defined on vs-tabs is the default value for all tabs, but y
 ```html
 <template lang="html">
   <div class="">
-    <vs-tabs hover-line>
-      <vs-tab color="success" label="Success">
+    <vs-tabs hover-line="100%">
+      <vs-tab color="success" defaultColor="success" label="Success">
         <div class="con-tab-ejemplo">
           Success
         </div>
       </vs-tab>
-      <vs-tab color="danger" label="Danger">
+      <vs-tab color="danger" defaultColor="danger" label="Danger">
         <div class="con-tab-ejemplo">
           Danger
         </div>
@@ -205,14 +218,6 @@ The `color` property defined on vs-tabs is the default value for all tabs, but y
     </vs-tabs>
   </div>
 </template>
-
-<script>
-export default {
-  data:()=>({
-    colorx:'success'
-  }),
-}
-</script>
 ```
 
 </template>
@@ -244,7 +249,7 @@ Change the alignment of the buttons with the property `alignments`. The allowed 
     <h3>
       Default
     </h3>
-    <vs-tabs>
+    <vs-tabs :hover-line="true" :hover-text="true">
       <vs-tab label="Home">
         <div>
 
@@ -270,7 +275,7 @@ Change the alignment of the buttons with the property `alignments`. The allowed 
     <h3>
       Center
     </h3>
-    <vs-tabs alignment="center">
+    <vs-tabs alignment="center" hover-line="0.3" hover-text="1">
       <vs-tab label="Home">
         <div>
 
@@ -296,7 +301,7 @@ Change the alignment of the buttons with the property `alignments`. The allowed 
     <h3>
       Right
     </h3>
-    <vs-tabs alignment="right">
+    <vs-tabs alignment="right" hover-line="30%" hover-text="100%">
       <vs-tab label="Home">
         <div>
 
@@ -323,7 +328,7 @@ Change the alignment of the buttons with the property `alignments`. The allowed 
     <h3>
       Fixed
     </h3>
-    <vs-tabs alignment="fixed">
+    <vs-tabs alignment="fixed" hover-line hover-text>
       <vs-tab label="Home">
         <div>
 

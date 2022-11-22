@@ -15,15 +15,11 @@
         <li
           v-for="(child,index) in childrenItems"
           :ref="'li-' + index"
-          :class="[{'activeChild':childActive == index}, `vs-tabs-${child.color}`]"
-          :style="
-            [
-              childActive == index ? styleActiveTab : {},
-              childActive != index && hoverActive == index ? styleHoverTab: {}
-            ]"
+          :class="[{'activeChild':childActive == index}, {'hoverChild': childHover == index}, `vs-tabs-${child.color}`]"
+          :style="child.style"
           class="vs-tabs--li"
-          @mouseover="hover = true;hoverActive = index"
-          @mouseout="hover = false;hoverActive = -1"
+          @mouseover="child.hover = true; childHover = index"
+          @mouseout="child.hover = false; childHover = -1"
         >
           <button
             v-bind="allowedAttrs(child.$attrs)"
@@ -68,7 +64,6 @@
 </template>
 
 <script>
-import _color from '../../utils/color.js'
 import vsIcon from '../vsIcon/vsIcon.vue'
 
 export default {
@@ -79,25 +74,33 @@ export default {
       default: 0,
       type: [Number, String],
     },
-    color:{
-      default:'primary',
+    defaultColor:{
+      default: null,
       type: String
     },
+    color:{
+      default: 'primary',
+      type: String
+    },
+    hoverText: {
+      default: true,
+      type: [Boolean, Number, String]
+    },
     hoverLine: {
-      default: false,
-      type:Boolean
+      default: 0,
+      type: [Boolean, Number, String]
     },
     tagColor:{
-      default:'primary',
+      default: 'primary',
       type: String
     },
     alignment:{
-      default:'left',
-      type:String,
+      default: 'left',
+      type: String,
     },
     position:{
-      default:'top',
-      type:String
+      default: 'top',
+      type: String
     }
   },
   emits: ['update:modelValue'],
@@ -105,7 +108,7 @@ export default {
     //topx:'auto',
     //heightx:2,
     hover:false,
-    hoverActive:0,
+    childHover:0,
     childActive:0,
     colorActive: 'primary',
     //leftx:0,
@@ -114,53 +117,6 @@ export default {
     refsLi: [],
     childrenItems: []
   }),
-  computed:{
-    styleHoverTab() {
-      let color = this.color;
-
-      if(this.childrenItems && this.childrenItems[this.hoverActive] && this.childrenItems[this.hoverActive].color !== undefined) {
-        color = this.childrenItems[this.hoverActive].color;
-      }
-
-      if(this.hoverLine) {
-        return {
-          color: _color.rColor(color, 1),
-          'border-width': ' 0 0 2px 0',
-          'border-color': _color.rColor(color, 0.3),
-          'border-style': 'solid'
-        }
-      }
-
-      return {
-        color: _color.rColor(color, 1),
-      }
-    },
-    styleActiveTab(){
-      let color = _color.rColor(this.color,1);
-
-      if(this.childrenItems && this.childrenItems[this.childActive] && this.childrenItems[this.childActive].color !== undefined) {
-        color = _color.rColor(this.childrenItems[this.childActive].color,1);
-      }
-
-      return {
-        color: color,
-        'border-width': ' 0 0 2px 0',
-        'border-color': color,
-        'border-style': 'solid'
-      }
-    },
-    /*stylex(){
-      return {
-        top: `${this.topx}px`,
-        left: `${this.leftx}px`,
-        width: `${this.widthx}px`,
-        height: `${this.heightx}px`,
-        background: `linear-gradient(30deg, ${_color.getColor(this.styleActiveTab.color,1)} 0%, ${_color.getColor(this.styleActiveTab.color,.5)} 100%)`,
-        boxShadow: `0px 0px 8px 0px ${_color.getColor(this.styleActiveTab.color,.5)}`,
-        transform: `scaleX(${this.these?1.3:1})`
-      }
-    }*/
-  },
   watch: {
     modelValue(index) {
       this.$nextTick(() => {
@@ -247,33 +203,7 @@ export default {
       if(this.position == 'left' || this.position == 'right'){
         this.childrenItems[index].vertical = true
       }
-
-      //this.changePositionLine(elem, initialAnimation)
-    },
-    /*changePositionLine(elem, initialAnimation){
-      if(!elem) {
-        return;
-      }
-
-      if(this.position == 'left' || this.position == 'right'){
-        this.topx = elem.offsetTop
-        this.heightx = elem.offsetHeight
-        this.widthx = 2
-      } else {
-        const update = () => {
-          if(elem) {
-            this.leftx = elem.offsetLeft
-            this.widthx = elem.offsetWidth
-            this.topx = (elem.offsetHeight + (elem.getBoundingClientRect().top - this.$refs.ul.getBoundingClientRect().top))
-          }
-        }
-        if (!initialAnimation) {
-          update()
-        } else {
-          setTimeout(update, 100)
-        }
-      }
-    }*/
+    }
   }
 }
 </script>

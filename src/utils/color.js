@@ -34,7 +34,9 @@ export default {
   },
   isColor(colorx){
     let vscolors = ['primary','secondary','success','danger','warning','dark', 'light']
-    return vscolors.includes(colorx)
+
+    // allow user defined --vs colors
+    return vscolors.includes(colorx) || getComputedStyle(document.documentElement).getPropertyValue('--vs-' + colorx).length > 0;
   },
   RandomColor(){
     function getRandomInt(min, max) {
@@ -46,7 +48,7 @@ export default {
     if(/^[#]/.test(colorx)){
       let c = this.hexToRgb(colorx)
       colorx = `rgba(${c.r},${c.g},${c.b},${opacity})`
-    } else if (/^[rgb]/.test(colorx)){
+    } else if (/^rgb/.test(colorx)){
       let colorSplit = colorx.split(')')[0]
       if(!/^[rgba]/.test(colorx)){
         colorSplit.replace('rgb','rgba')
@@ -58,12 +60,11 @@ export default {
       colorx = colorSplit
     }
 
-    let vscolors = ['primary','success','danger','warning','dark']
     if(colorx){
       if(/[#()]/.test(colorx)){
         return colorx
       } else {
-        if(vscolors.includes(colorx)){
+        if(this.isColor(colorx)){
           return `rgba(var(--vs-${colorx}),${opacity})`
         } else {
           return `rgba(var(--vs-primary),${opacity})`
