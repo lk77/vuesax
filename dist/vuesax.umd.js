@@ -6738,8 +6738,9 @@ var es_string_trim = __webpack_require__("498a");
     return colorx;
   },
   isColor: function isColor(colorx) {
-    var vscolors = ['primary', 'secondary', 'success', 'danger', 'warning', 'dark', 'light'];
-    return vscolors.includes(colorx);
+    var vscolors = ['primary', 'secondary', 'success', 'danger', 'warning', 'dark', 'light']; // allow user defined --vs colors
+
+    return vscolors.includes(colorx) || getComputedStyle(document.documentElement).getPropertyValue('--vs-' + colorx).length > 0;
   },
   RandomColor: function RandomColor() {
     function getRandomInt(min, max) {
@@ -6754,7 +6755,7 @@ var es_string_trim = __webpack_require__("498a");
     if (/^[#]/.test(colorx)) {
       var c = this.hexToRgb(colorx);
       colorx = "rgba(".concat(c.r, ",").concat(c.g, ",").concat(c.b, ",").concat(opacity, ")");
-    } else if (/^[rgb]/.test(colorx)) {
+    } else if (/^rgb/.test(colorx)) {
       var colorSplit = colorx.split(')')[0];
 
       if (!/^[rgba]/.test(colorx)) {
@@ -6768,13 +6769,11 @@ var es_string_trim = __webpack_require__("498a");
       colorx = colorSplit;
     }
 
-    var vscolors = ['primary', 'success', 'danger', 'warning', 'dark'];
-
     if (colorx) {
       if (/[#()]/.test(colorx)) {
         return colorx;
       } else {
-        if (vscolors.includes(colorx)) {
+        if (this.isColor(colorx)) {
           return "rgba(var(--vs-".concat(colorx, "),").concat(opacity, ")");
         } else {
           return "rgba(var(--vs-primary),".concat(opacity, ")");
@@ -9070,27 +9069,27 @@ const vsInput_exports_ = /*#__PURE__*/exportHelper_default()(vsInputvue_type_scr
 /* harmony default export */ var components_vsInput = (function (Vue) {
   Vue.component('VsInput', vsInput);
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsTabs/vsTabs.vue?vue&type=template&id=0df6eec0&lang=html
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsTabs/vsTabs.vue?vue&type=template&id=7fe4e441&lang=html
 
-var vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_1 = {
+var vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_1 = {
   class: "con-ul-tabs"
 };
-var vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_2 = ["onMouseover"];
-var vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_3 = ["onClick"];
-var vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_4 = {
+var vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_2 = ["onMouseover", "onMouseout"];
+var vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_3 = ["onClick"];
+var vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_4 = {
   key: 1
 };
-var vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_5 = ["onClick"];
-var vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_6 = {
+var vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_5 = ["onClick"];
+var vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_6 = {
   class: "con-slot-tabs"
 };
-function vsTabsvue_type_template_id_0df6eec0_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsTabsvue_type_template_id_7fe4e441_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("vs-icon");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([["vs-tabs-position-".concat($props.position), _ctx.$attrs.class], "con-vs-tabs vs-tabs"]),
     style: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeStyle"])(_ctx.$attrs.style)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("ul", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("ul", {
     ref: "ul",
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([["ul-tabs-".concat($props.alignment)], "ul-tabs vs-tabs--ul"])
   }, [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])(_ctx.childrenItems, function (child, index) {
@@ -9099,16 +9098,18 @@ function vsTabsvue_type_template_id_0df6eec0_lang_html_render(_ctx, _cache, $pro
       ref: 'li-' + index,
       class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])([[{
         'activeChild': _ctx.childActive == index
+      }, {
+        'hoverChild': _ctx.childHover == index
       }, "vs-tabs-".concat(child.color)], "vs-tabs--li"]),
-      style: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeStyle"])([_ctx.childActive == index ? $options.styleActiveTab : {}, _ctx.childActive != index && _ctx.hoverActive == index ? $options.styleHoverTab : {}]),
+      style: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeStyle"])(child.style),
       onMouseover: function onMouseover($event) {
-        _ctx.hover = true;
-        _ctx.hoverActive = index;
+        child.hover = true;
+        _ctx.childHover = index;
       },
-      onMouseout: _cache[0] || (_cache[0] = function ($event) {
-        _ctx.hover = false;
-        _ctx.hoverActive = -1;
-      })
+      onMouseout: function onMouseout($event) {
+        child.hover = false;
+        _ctx.childHover = -1;
+      }
     }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("button", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])($options.allowedAttrs(child.$attrs), {
       style: $options.styleAlignIcon(child.icon),
       class: "vs-tabs--btn",
@@ -9122,7 +9123,7 @@ function vsTabsvue_type_template_id_0df6eec0_lang_html_render(_ctx, _cache, $pro
       icon: child.icon,
       color: child.color || $props.color,
       class: "vs-tabs--btn-icon"
-    }, null, 8, ["icon-pack", "icon", "color"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), child.label ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("span", vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(child.label), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 16, vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_3), child.tag ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", {
+    }, null, 8, ["icon-pack", "icon", "color"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), child.label ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("span", vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(child.label), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 16, vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_3), child.tag ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", {
       key: 0,
       class: "vs-tabs--btn-tag",
       onClick: function onClick($event) {
@@ -9132,10 +9133,10 @@ function vsTabsvue_type_template_id_0df6eec0_lang_html_render(_ctx, _cache, $pro
       "icon-pack": child.iconPack,
       icon: child.tag,
       color: child.tagColor
-    }, null, 8, ["icon-pack", "icon", "color"])], 8, vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_5)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 46, vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_2);
-  }), 256))], 2)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsTabsvue_type_template_id_0df6eec0_lang_html_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")])], 6);
+    }, null, 8, ["icon-pack", "icon", "color"])], 8, vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_5)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 46, vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_2);
+  }), 256))], 2)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", vsTabsvue_type_template_id_7fe4e441_lang_html_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")])], 6);
 }
-// CONCATENATED MODULE: ./src/components/vsTabs/vsTabs.vue?vue&type=template&id=0df6eec0&lang=html
+// CONCATENATED MODULE: ./src/components/vsTabs/vsTabs.vue?vue&type=template&id=7fe4e441&lang=html
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsIcon/vsIcon.vue?vue&type=template&id=1f2104ab
 
@@ -9249,7 +9250,6 @@ const vsIcon_exports_ = /*#__PURE__*/exportHelper_default()(vsIconvue_type_scrip
 
 
 
-
 /* harmony default export */ var vsTabsvue_type_script_lang_js = ({
   name: 'VsTabs',
   components: {
@@ -9260,13 +9260,21 @@ const vsIcon_exports_ = /*#__PURE__*/exportHelper_default()(vsIconvue_type_scrip
       default: 0,
       type: [Number, String]
     },
+    defaultColor: {
+      default: null,
+      type: String
+    },
     color: {
       default: 'primary',
       type: String
     },
+    hoverText: {
+      default: true,
+      type: [Boolean, Number, String]
+    },
     hoverLine: {
-      default: false,
-      type: Boolean
+      default: 0,
+      type: [Boolean, Number, String]
     },
     tagColor: {
       default: 'primary',
@@ -9287,7 +9295,7 @@ const vsIcon_exports_ = /*#__PURE__*/exportHelper_default()(vsIconvue_type_scrip
       //topx:'auto',
       //heightx:2,
       hover: false,
-      hoverActive: 0,
+      childHover: 0,
       childActive: 0,
       colorActive: 'primary',
       //leftx:0,
@@ -9296,54 +9304,6 @@ const vsIcon_exports_ = /*#__PURE__*/exportHelper_default()(vsIconvue_type_scrip
       refsLi: [],
       childrenItems: []
     };
-  },
-  computed: {
-    styleHoverTab: function styleHoverTab() {
-      var color = this.color;
-
-      if (this.childrenItems && this.childrenItems[this.hoverActive] && this.childrenItems[this.hoverActive].color !== undefined) {
-        color = this.childrenItems[this.hoverActive].color;
-      }
-
-      if (this.hoverLine) {
-        return {
-          color: utils_color.rColor(color, 1),
-          'border-width': ' 0 0 2px 0',
-          'border-color': utils_color.rColor(color, 0.3),
-          'border-style': 'solid'
-        };
-      }
-
-      return {
-        color: utils_color.rColor(color, 1)
-      };
-    },
-    styleActiveTab: function styleActiveTab() {
-      var color = utils_color.rColor(this.color, 1);
-
-      if (this.childrenItems && this.childrenItems[this.childActive] && this.childrenItems[this.childActive].color !== undefined) {
-        color = utils_color.rColor(this.childrenItems[this.childActive].color, 1);
-      }
-
-      return {
-        color: color,
-        'border-width': ' 0 0 2px 0',
-        'border-color': color,
-        'border-style': 'solid'
-      };
-    }
-    /*stylex(){
-      return {
-        top: `${this.topx}px`,
-        left: `${this.leftx}px`,
-        width: `${this.widthx}px`,
-        height: `${this.heightx}px`,
-        background: `linear-gradient(30deg, ${_color.getColor(this.styleActiveTab.color,1)} 0%, ${_color.getColor(this.styleActiveTab.color,.5)} 100%)`,
-        boxShadow: `0px 0px 8px 0px ${_color.getColor(this.styleActiveTab.color,.5)}`,
-        transform: `scaleX(${this.these?1.3:1})`
-      }
-    }*/
-
   },
   watch: {
     modelValue: function modelValue(index) {
@@ -9443,33 +9403,8 @@ const vsIcon_exports_ = /*#__PURE__*/exportHelper_default()(vsIconvue_type_scrip
 
       if (this.position == 'left' || this.position == 'right') {
         this.childrenItems[index].vertical = true;
-      } //this.changePositionLine(elem, initialAnimation)
-
+      }
     }
-    /*changePositionLine(elem, initialAnimation){
-      if(!elem) {
-        return;
-      }
-       if(this.position == 'left' || this.position == 'right'){
-        this.topx = elem.offsetTop
-        this.heightx = elem.offsetHeight
-        this.widthx = 2
-      } else {
-        const update = () => {
-          if(elem) {
-            this.leftx = elem.offsetLeft
-            this.widthx = elem.offsetWidth
-            this.topx = (elem.offsetHeight + (elem.getBoundingClientRect().top - this.$refs.ul.getBoundingClientRect().top))
-          }
-        }
-        if (!initialAnimation) {
-          update()
-        } else {
-          setTimeout(update, 100)
-        }
-      }
-    }*/
-
   }
 });
 // CONCATENATED MODULE: ./src/components/vsTabs/vsTabs.vue?vue&type=script&lang=js
@@ -9480,30 +9415,32 @@ const vsIcon_exports_ = /*#__PURE__*/exportHelper_default()(vsIconvue_type_scrip
 
 
 
-const vsTabs_exports_ = /*#__PURE__*/exportHelper_default()(vsTabsvue_type_script_lang_js, [['render',vsTabsvue_type_template_id_0df6eec0_lang_html_render]])
+const vsTabs_exports_ = /*#__PURE__*/exportHelper_default()(vsTabsvue_type_script_lang_js, [['render',vsTabsvue_type_template_id_7fe4e441_lang_html_render]])
 
 /* harmony default export */ var vsTabs = (vsTabs_exports_);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsTabs/vsTab.vue?vue&type=template&id=325ff18f&lang=html
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsTabs/vsTab.vue?vue&type=template&id=61a078dc&lang=html
 
-var vsTabvue_type_template_id_325ff18f_lang_html_hoisted_1 = {
+var vsTabvue_type_template_id_61a078dc_lang_html_hoisted_1 = {
   key: 0,
   class: "con-tab vs-tabs--content"
 };
-function vsTabvue_type_template_id_325ff18f_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsTabvue_type_template_id_61a078dc_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])(_ctx.$attrs.class),
     style: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeStyle"])(_ctx.$attrs.style),
     name: _ctx.invert ? _ctx.vertical ? 'fade-tab-vertical-invert' : 'fade-tab-invert' : _ctx.vertical ? 'fade-tab-vertical' : 'fade-tab'
   }, {
     default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-      return [_ctx.active || $props.useShow ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", vsTabvue_type_template_id_325ff18f_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")], 512)), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], $props.useShow ? _ctx.active : true]]) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
+      return [_ctx.active || $props.useShow ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", vsTabvue_type_template_id_61a078dc_lang_html_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")], 512)), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], $props.useShow ? _ctx.active : true]]) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
     }),
     _: 3
   }, 8, ["class", "style", "name"]);
 }
-// CONCATENATED MODULE: ./src/components/vsTabs/vsTab.vue?vue&type=template&id=325ff18f&lang=html
+// CONCATENATED MODULE: ./src/components/vsTabs/vsTab.vue?vue&type=template&id=61a078dc&lang=html
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--1-1!./src/components/vsTabs/vsTab.vue?vue&type=script&lang=js
+
+
 /* harmony default export */ var vsTabvue_type_script_lang_js = ({
   name: 'VsTab',
   inheritAttrs: false,
@@ -9521,25 +9458,78 @@ function vsTabvue_type_template_id_325ff18f_lang_html_render(_ctx, _cache, $prop
       type: String
     },
     iconPack: {
-      type: String,
-      default: 'material-icons'
+      default: 'material-icons',
+      type: String
     },
     useShow: {
-      type: Boolean,
-      default: false
+      default: false,
+      type: Boolean
+    },
+    defaultColor: {
+      default: undefined,
+      type: String
     },
     color: {
+      default: undefined,
       type: String
+    },
+    hoverText: {
+      default: undefined,
+      type: [Boolean, Number, String]
+    },
+    hoverLine: {
+      default: undefined,
+      type: [Boolean, Number, String]
     }
   },
   data: function data() {
     return {
       vertical: false,
       active: false,
+      hover: false,
       id: null,
       invert: false,
       parent: null
     };
+  },
+  computed: {
+    style: function style() {
+      var _this$defaultColor, _this$color;
+
+      var style = {};
+      var defaultColor = (_this$defaultColor = this.defaultColor) !== null && _this$defaultColor !== void 0 ? _this$defaultColor : this.parent.defaultColor;
+      var color = (_this$color = this.color) !== null && _this$color !== void 0 ? _this$color : this.parent.color;
+
+      if (defaultColor) {
+        style['color'] = utils_color.rColor(defaultColor, 1);
+      }
+
+      if (this.hover) {
+        var _this$hoverLine, _this$hoverText;
+
+        var hoverLine = (_this$hoverLine = this.hoverLine) !== null && _this$hoverLine !== void 0 ? _this$hoverLine : this.parent.hoverLine;
+        var hoverText = (_this$hoverText = this.hoverText) !== null && _this$hoverText !== void 0 ? _this$hoverText : this.parent.hoverText;
+
+        if (hoverLine) {
+          style['border-width'] = ' 0 0 2px 0';
+          style['border-color'] = utils_color.rColor(color, typeof hoverLine == 'boolean' ? 0.3 : hoverLine);
+          style['border-style'] = 'solid';
+        }
+
+        if (hoverText) {
+          style['color'] = utils_color.rColor(color, typeof hoverText == 'boolean' ? 1 : hoverText);
+        }
+      }
+
+      if (this.active) {
+        style['color'] = utils_color.rColor(color, 1);
+        style['border-width'] = ' 0 0 2px 0';
+        style['border-color'] = utils_color.rColor(color, 1);
+        style['border-style'] = 'solid';
+      }
+
+      return style;
+    }
   },
   mounted: function mounted() {
     var _this2 = this;
@@ -9571,7 +9561,7 @@ function vsTabvue_type_template_id_325ff18f_lang_html_render(_ctx, _cache, $prop
 
 
 
-const vsTab_exports_ = /*#__PURE__*/exportHelper_default()(vsTabvue_type_script_lang_js, [['render',vsTabvue_type_template_id_325ff18f_lang_html_render]])
+const vsTab_exports_ = /*#__PURE__*/exportHelper_default()(vsTabvue_type_script_lang_js, [['render',vsTabvue_type_template_id_61a078dc_lang_html_render]])
 
 /* harmony default export */ var vsTab = (vsTab_exports_);
 // CONCATENATED MODULE: ./src/components/vsTabs/index.js
