@@ -126,6 +126,7 @@ export default {
       setTimeout( () => {
         done()
         this.moverNotis()
+        this.$emit('destroy');
       }, 150);
     },
     closeNoti(){
