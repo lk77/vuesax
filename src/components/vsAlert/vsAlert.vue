@@ -111,12 +111,12 @@ export default {
     }
   },
   mounted () {
-    if(this.$refs.alert) {
-      this.$nextTick(() => {
+    this.$nextTick(() => {
+      if(this.$refs.alert) {
         let h = this.$refs.alert.scrollHeight
         this.$refs.alert.style.height = h + 'px'
-      })
-    }
+      }
+    })
   },
   methods:{
     beforeEnter(el) {
