@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button id="button-with-loading" class="vs-con-loading__container" @click="openLoadingContained" type="relief" color="primary">Button with Loading</vs-button>
     <vs-button @click="openLoadingInDiv" type="relief" color="primary">Div with Loading</vs-button>

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div :class="{'headerx':header}" class="con-box">
     <div class="box">
       <slot>

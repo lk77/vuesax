@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-textarea label="Label in Textarea" v-model="textarea" />
   </div>

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <input v-model="colorx2" type="color" name="">
     <vs-button :color="colorx2" @click="popupActivo6=true" color="dark" type="border">Open color button popup</vs-button>

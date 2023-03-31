@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx labelPlaceholder">
     <vs-input label-placeholder="Label-placeholder" v-model="value1"/>
     <vs-input disabled="true" label-placeholder="Label-placeholder-disabled" v-model="value2"/>

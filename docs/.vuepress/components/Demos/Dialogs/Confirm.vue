@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button @click="openConfirm()" color="danger" type="gradient">Alert Primary</vs-button>
   </div>

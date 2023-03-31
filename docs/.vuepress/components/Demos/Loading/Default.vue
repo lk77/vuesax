@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button @click="openLoading" type="filled" color="primary">Loading Default</vs-button>
   </div>

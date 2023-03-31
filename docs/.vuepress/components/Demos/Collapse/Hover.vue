@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-collapse open-hover >
      <vs-collapse-item>

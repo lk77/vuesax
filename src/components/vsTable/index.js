@@ -1,7 +1,7 @@
-import vsComponent from './vsTable'
-import vsComponent2 from './vsTh'
-import vsComponent3 from './vsTr'
-import vsComponent4 from './vsTd'
+import vsComponent from './vsTable.vue'
+import vsComponent2 from './vsTh.vue'
+import vsComponent3 from './vsTr.vue'
+import vsComponent4 from './vsTd.vue'
 
 export default Vue => {
   Vue.component('VsTable', vsComponent)

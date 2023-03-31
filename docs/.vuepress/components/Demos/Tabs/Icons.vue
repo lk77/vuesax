@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-tabs color="#8B0000">
       <vs-tab label="Pets"  tag="close" icon="pets">

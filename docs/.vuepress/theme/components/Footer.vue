@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <footer class="footerx_theme">
     <bosque class="bosque"/>
 
@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<!--<style lang="stylus" scoped>
 @use '../styles/config' as *;
 
 footer {
@@ -199,4 +199,4 @@ footer {
   }
 }
 
-</style>
+</style>-->

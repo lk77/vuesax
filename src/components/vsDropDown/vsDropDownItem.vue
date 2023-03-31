@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <li
     :class="[{'divider':divider}, $attrs.class]"
     :style="[{

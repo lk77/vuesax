@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <vs-card vsColor="success">
       <vs-card-media vsMedia="https://placeimg.com/640/480/any"></vs-card-media>

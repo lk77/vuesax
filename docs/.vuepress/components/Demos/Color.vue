@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <input type="color" v-model="colorx" name="">
     <input type="color" v-model="colorx2" name="">

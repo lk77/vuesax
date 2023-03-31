@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-table :data="users">
       <template #header>

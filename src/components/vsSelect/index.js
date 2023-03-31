@@ -1,6 +1,6 @@
-import vsComponent from './vsSelect'
-import vsComponent2 from './vsSelectItem'
-import vsComponent3 from './vsSelectGroup'
+import vsComponent from './vsSelect.vue'
+import vsComponent2 from './vsSelectItem.vue'
+import vsComponent3 from './vsSelectGroup.vue'
 
 export default Vue => {
   Vue.component('VsSelect', vsComponent)

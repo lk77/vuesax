@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-collapse accordion>
       <vs-collapse-item>

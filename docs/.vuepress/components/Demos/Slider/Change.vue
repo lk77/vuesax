@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-slider :min="50" @change="cambio" color="rgb(45, 208, 129)" v-model="value1"/>
     <div :style="{'width':widthx+'px','height':heightx+'px'}" class="cuadrox">

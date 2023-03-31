@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button @click="active=!active" type="filled">{{!active?'Open Alert':'Close Alert'}}</vs-button>
     <vs-alert v-model:active="active" closable closeIcon='close'>

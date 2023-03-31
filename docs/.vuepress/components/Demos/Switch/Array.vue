@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <ul class="ul examplex">
     <li class="modelx">
       {{switchArray}}

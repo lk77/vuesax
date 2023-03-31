@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <header
     :style="[styleNavbar, $attrs.style]"
     :class="[`vs-navbar-${type}`, `vs-navbar-color-${color}`, {'collapse':collapse}, $attrs.class]"

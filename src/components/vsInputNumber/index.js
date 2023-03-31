@@ -1,4 +1,4 @@
-import vsComponent from './vsInputNumber'
+import vsComponent from './vsInputNumber.vue'
 
 export default Vue => {
   Vue.component('VsInputNumber', vsComponent)

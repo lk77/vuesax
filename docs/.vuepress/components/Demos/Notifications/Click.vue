@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button @click="myFunction()" color="primary" type="flat">Run Example</vs-button>
   </div>

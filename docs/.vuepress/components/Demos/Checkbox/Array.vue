@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <ul class="centerx">
       <li class="modelx">

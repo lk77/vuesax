@@ -1,4 +1,4 @@
-import vsComponent from './vsAvatar'
+import vsComponent from './vsAvatar.vue'
 
 export default Vue => {
   Vue.component('VsAvatar', vsComponent)

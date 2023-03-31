@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <input v-model="colorx" type="color" name="">
     <vs-breadcrumb

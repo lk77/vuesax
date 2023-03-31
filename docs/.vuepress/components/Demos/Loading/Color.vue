@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <input type="color" v-model="colorLoading" name="">
     <vs-button @click="openLoadingColor" type="gradient" color="danger">Danger</vs-button>

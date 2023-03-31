@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div v-if="api"  id="vs-api" class="con-api">
     <h2 class="h2">API <a href="#vs-api">#</a> </h2>
     <table>

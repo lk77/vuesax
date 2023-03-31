@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <transition
     :class="$attrs.class"
     :style="$attrs.style"

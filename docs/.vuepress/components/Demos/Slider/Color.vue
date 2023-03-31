@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <input type="color" v-model="colorx" name="" >
     <vs-slider :color="colorx" v-model="value1"/>

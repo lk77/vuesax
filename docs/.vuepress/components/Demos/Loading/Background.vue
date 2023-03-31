@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <input type="color" v-model="backgroundLoading" name="">
     <vs-button @click="openLoadingBackground" type="gradient" color="success">Success</vs-button>

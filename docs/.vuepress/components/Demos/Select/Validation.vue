@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="con-select-example">
     <vs-select
      :success="true"

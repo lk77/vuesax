@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div
     :class="[`vs-tabs-position-${position}`, $attrs.class]"
     :style="$attrs.style"

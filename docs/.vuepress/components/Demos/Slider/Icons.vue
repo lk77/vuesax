@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <vs-slider icon="volume_up" max=10 v-model="value1"/>
     <vs-slider icon="group_add" ticks step=25 v-model="value2"/>

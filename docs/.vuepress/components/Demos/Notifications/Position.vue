@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="con-notifications-position">
     <vs-button @click="$vs.notify({title:'Position Default',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary'})" color="primary" type="flat">Position Default</vs-button>
     <vs-button @click="$vs.notify({title:'Position top-right',text:'Lorem ipsum dolor sit amet, consectetur',color:'success',position:'top-right'})" color="success" type="flat">Position Top Right</vs-button>

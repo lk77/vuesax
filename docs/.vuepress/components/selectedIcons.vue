@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="con-select-icons">
     <div class="con-btn-icon">
       <vs-button :class="{

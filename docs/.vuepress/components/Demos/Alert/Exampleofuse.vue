@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-input vs-label="Enter only numbers" placeholder="0123456789" v-model="value"/>
 

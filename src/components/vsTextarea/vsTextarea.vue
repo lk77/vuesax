@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div
     :style="[style, $attrs.style]"
     :class="[`vs-textarea-${color}`, {'textarea-danger': counter ? (modelValue && modelValue.length > counter) : false, 'focusx': isFocus}, $attrs.class]"

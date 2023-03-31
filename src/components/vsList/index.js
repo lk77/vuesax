@@ -1,6 +1,6 @@
-import vsComponent from './vsList'
-import vsComponent2 from './vsListItem'
-import vsComponent3 from './vsListHeader'
+import vsComponent from './vsList.vue'
+import vsComponent2 from './vsListItem.vue'
+import vsComponent3 from './vsListHeader.vue'
 
 export default Vue => {
   Vue.component('VsList', vsComponent)

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="con-select-example">
     <input v-model="colorx" type="color" name="">
     <vs-select

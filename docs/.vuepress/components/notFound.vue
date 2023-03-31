@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2248.85 3243.66">
     <defs>
       <linearGradient id="linear-gradient-404" x1="1359.52" y1="1318.58" x2="1357.98" y2="1588.45" gradientUnits="userSpaceOnUse">

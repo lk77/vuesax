@@ -1,8 +1,8 @@
-import vsComponent from './vsNavbar'
-import vsComponent2 from './vsNavItem'
-import vsComponent3 from './vsNavGroup'
-import vsComponent4 from './vsNavbarTitle'
-import vsComponent5 from './vsNavbarItems'
+import vsComponent from './vsNavbar.vue'
+import vsComponent2 from './vsNavItem.vue'
+import vsComponent3 from './vsNavGroup.vue'
+import vsComponent4 from './vsNavbarTitle.vue'
+import vsComponent5 from './vsNavbarItems.vue'
 
 export default Vue => {
   Vue.component('VsNavbar', vsComponent)

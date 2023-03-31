@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button @click="openAlert('primary')" color="primary" type="flat">Alert Primary</vs-button>
     <vs-button @click="openAlert('success')" color="success" type="flat">Alert success</vs-button>

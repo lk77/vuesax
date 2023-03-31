@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-select
       class="selectExample"

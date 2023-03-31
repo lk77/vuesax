@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-tabs >
       <vs-tab label="Home">

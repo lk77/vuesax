@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3064.91 3402.71">
     <defs>
       <linearGradient id="linear-gradient-trofeos" x1="1392.44" y1="75.85" x2="1123.92" y2="-701.96" gradientTransform="translate(1450.67 695.77) rotate(154.05)" gradientUnits="userSpaceOnUse">

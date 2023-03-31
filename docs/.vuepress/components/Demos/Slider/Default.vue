@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <vs-slider v-model="value1"/>
     <vs-slider disabled="true" v-model="value2"/>

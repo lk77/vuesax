@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-upload action="https://jsonplaceholder.typicode.com/posts/" @on-success="successUpload" />
   </div>

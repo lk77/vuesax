@@ -1,5 +1,9 @@
-const { path } = require('@vuepress/utils')
-const components = require('./components');
+import {webpackBundler} from '@vuepress/bundler-webpack'
+//import {registerComponentsPlugin} from '@vuepress/plugin-register-components'
+//import {themeDataPlugin} from '@vuepress/plugin-theme-data'
+//import theme from './theme';
+
+//const components = require('./components');
 
 module.exports = {
   base: '/vuesax/',
@@ -29,60 +33,18 @@ if(location.hostname == 'lk77.github.io') {
   port: 7070,
   title: 'Vue.js Framework Components - Vuesax',
   description: 'We love what we do. Let us help you do what <b>You love.</b>',
-  vueThemes: require('./theme/vueThemes'),
-  themeConfig: require('./theme/themeConfig'),
-  theme: path.resolve(__dirname, './theme'),
+  //vueThemes: require('./theme/vueThemes'),
+  //themeConfig: require('./theme/themeConfig'),
+  //theme: theme,
   plugins: [
-    [
-      '@vuepress/register-components',
-      {
-        components: components
-      },
-    ],
-    [
-      '@vuepress/plugin-theme-data',
-      {
-        themeData: require('./theme/themeConfig'),
-      },
-    ],
+    /*registerComponentsPlugin({
+      components: components
+    }),*/
+    /*themeDataPlugin({
+      themeData: require('./theme/themeConfig'),
+    })*/
   ],
-  bundler: '@vuepress/bundler-webpack',
-  /*bundlerConfig: {
-    configureWebpack: () => { return {
-      resolve: {
-        fallback: {
-          "os": false,
-          "stream": false,
-          "path": require.resolve('path-browserify'),
-          "constants": false,
-          "fs": false,
-          "readline": false
-        }
-      },
-      module: {
-        exprContextCritical: false,
-        rules: [
-          {
-            test: /\.vue$/,
-            use: [
-              {
-                loader: "vue-loader",
-                options: {
-                  compilerOptions: {
-                    directiveTransforms: {
-                      "repeat-click": () => ({
-                        props: [],
-                      }),
-                    },
-                  },
-                },
-              },
-            ],
-          },
-        ]
-      },
-    }}
-  },*/
+  bundler: webpackBundler(),
   markdown: {
     extendMarkdown: md => {
       md.set({html: true})

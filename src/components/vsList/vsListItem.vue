@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="vs-list--item">
     <div
       v-if="$slots.avatar"

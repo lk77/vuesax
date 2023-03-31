@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centex examplex">
     <vs-switch v-model="switch1">
       <span slot="on">On</span>

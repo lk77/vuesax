@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-input-number min="13" max="21" v-model="number1"/>
   </div>

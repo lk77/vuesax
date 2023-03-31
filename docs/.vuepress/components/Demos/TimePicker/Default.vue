@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     {{ timex }}
 <!--    <vs-timePicker v-model="timex" />-->

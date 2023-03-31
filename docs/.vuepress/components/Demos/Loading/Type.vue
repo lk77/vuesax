@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx example-loading">
     <div
       class="fill-row-loading">

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-input-number color="danger" v-model="number1"/>
     <vs-input-number color="success" v-model="number2"/>

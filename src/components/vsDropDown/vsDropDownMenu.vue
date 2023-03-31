@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <transition name="dropdownx">
     <div
       v-show="dropdownVisible"

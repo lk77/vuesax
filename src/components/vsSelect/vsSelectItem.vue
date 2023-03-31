@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <li
     v-if="parent"
     v-show="visible"

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-divider/>
     <vs-divider>

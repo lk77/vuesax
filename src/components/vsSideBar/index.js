@@ -1,6 +1,6 @@
-import vsComponent from './vsSidebar'
-import vsComponent2 from './vsSidebarItem'
-import vsComponent3 from './vsSidebarGroup'
+import vsComponent from './vsSidebar.vue'
+import vsComponent2 from './vsSidebarItem.vue'
+import vsComponent3 from './vsSidebarGroup.vue'
 
 export default Vue => {
   Vue.component('VsSidebar', vsComponent)

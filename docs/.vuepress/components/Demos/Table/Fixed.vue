@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-table max-height="200px" :data="users">
       <template #header>

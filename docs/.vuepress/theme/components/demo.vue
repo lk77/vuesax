@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="demo">
     <slot>
     </slot>
@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<!--<style lang="stylus">
 .con-toggle-code
   position: relative;
   padding: 10px;
@@ -37,4 +37,4 @@ export default {
   .toggle-code
     display: block;
     // color: $accentColor
-</style>
+</style>-->
