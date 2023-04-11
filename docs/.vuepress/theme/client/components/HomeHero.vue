@@ -12,11 +12,12 @@ const siteLocale = useSiteLocaleData()
 const isDarkMode = useDarkMode()
 
 const heroImage = computed(() => {
-  if (isDarkMode.value && frontmatter.value.heroImageDark !== undefined) {
-    return frontmatter.value.heroImageDark
-  }
-  return frontmatter.value.heroImage
-})
+    if (!frontmatter.value.heroImage) {
+      return null
+    }
+
+    return withBase(frontmatter.value.heroImage)
+  })
 const heroAlt = computed(
   () => frontmatter.value.heroAlt || heroText.value || 'hero'
 )
@@ -114,7 +115,12 @@ const heroBackgroundComponent = computed(() => {
   </header>
 </template>-->
 <template>
-  <div :class="{'homeBackgroundComponent':heroBackgroundComponent}" class="home-init">
+  <div>
+    <div class="logo-g">
+      <img v-if="heroImage" :src="heroImage" alt="hero">
+    </div>
+    <div class="home">
+      <div :class="{'homeBackgroundComponent':heroBackgroundComponent}" class="home-init">
         <component class="heroBackgroundComponent" :is="heroBackgroundComponent" v-if="data.mounted"></component>
         <header class="hero">
           <!--<img v-if="heroImage" :src="heroImage" :alt="heroAlt" class="hero-image"/>-->
@@ -126,14 +132,15 @@ const heroBackgroundComponent = computed(() => {
 
           <p class="actions" v-if="data.mounted">
           <ul>
-            <AutoLink
-                @mouseenter="data.doc=true" @mouseleave="data.doc=false"
+            <li @mouseenter="data.doc=true" @mouseleave="data.doc=false">
+              <AutoLink
                 v-for="action in actions"
                 :key="action.text"
-                class="action-button"
+                class="nav-link"
                 :class="[action.type]"
                 :item="action"
               />
+            </li>
             <!--<li @mouseenter="data.discord=true" @mouseleave="data.discord=false">
               <a
                 target="_blank"
@@ -155,6 +162,9 @@ const heroBackgroundComponent = computed(() => {
           </p>
         </header>
       </div>
+      <slot></slot>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">

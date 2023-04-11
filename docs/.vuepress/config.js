@@ -133,7 +133,8 @@ if(location.hostname == 'lk77.github.io') {
           /*New Component*/
         ]
       },
-    ]
+    ],
+    logo:'/vuesax-logo-vertical.png',
   }),
   bundler: webpackBundler(),
   markdown: {

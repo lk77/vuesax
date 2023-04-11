@@ -5,28 +5,27 @@ import HomeFooter from '@theme/HomeFooter.vue'
 import HomeHero from '@theme/HomeHero.vue'
 import {computed} from "vue";
 import {useDarkMode} from "../composables";
-import {usePageFrontmatter} from "@vuepress/client";
+import {usePageFrontmatter, withBase} from "@vuepress/client";
 import {DefaultThemeHomePageFrontmatter} from "../../shared";
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const isDarkMode = useDarkMode()
 const heroImage = computed(() => {
-  if (isDarkMode.value && frontmatter.value.heroImageDark !== undefined) {
-    return frontmatter.value.heroImageDark
-  }
-  return frontmatter.value.heroImage
-})
+    if (!frontmatter.value.heroImage) {
+      return null
+    }
+
+    return withBase(frontmatter.value.heroImage)
+  })
 </script>
 
 <template>
   <main class="con-home vs-component">
-<!--    <div class="logo-g">
-      <img v-if="heroImage" :src="heroImage" alt="hero">
-    </div>-->
-    <div class="home">
-      <HomeHero />
-    </div>
-<!--    <HomeFeatures />
-    <HomeContent />
+   <HomeHero>
+     <div class="contenedor">
+        <HomeFeatures />
+      </div>
+   </HomeHero>
+    <!--<HomeContent />
     <HomeFooter />-->
   </main>
 </template>

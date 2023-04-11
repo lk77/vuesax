@@ -44,12 +44,12 @@ const NavbarBrandLogo: FunctionalComponent = () => {
   <RouterLink :to="navbarBrandLink">
     <NavbarBrandLogo />
 
-    <span
+<!--    <span
       v-if="navbarBrandTitle"
       class="site-name"
       :class="{ 'can-hide': navbarBrandLogo }"
     >
       {{ navbarBrandTitle }}
-    </span>
+    </span>-->
   </RouterLink>
 </template>

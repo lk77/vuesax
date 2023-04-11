@@ -16,8 +16,10 @@ const features = computed(() => {
 <template>
   <div v-if="features.length" class="features">
     <div v-for="feature in features" :key="feature.title" class="feature">
-      <h2 v-html="feature.title"/>
-      <p v-html="feature.details"/>
+      <div class="con-text-feature">
+        <h2 v-html="feature.title"/>
+        <p v-html="feature.details"/>
+      </div>
     </div>
   </div>
 </template>
