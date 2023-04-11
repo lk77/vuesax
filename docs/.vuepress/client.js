@@ -1,29 +1,25 @@
 import { defineClientConfig } from '@vuepress/client'
 
-/*import { defineClientAppSetup } from '@vuepress/client';
-import { setupDarkMode, setupSidebarItems } from '@vuepress/theme-default/lib/client/composables';*/
-
-/*import Vuesax from '../../src'
+import Vuesax from '../../src'
 import Vuecode from './vc/dist/vuecode.common.js'
 import './vc/dist/vuecode.css'
-import demo from './theme/components/demo.vue'
-import Box from './theme/components/box.vue'
 
-import Home from './theme/components/Home.vue';
-import Layout from './theme/layouts/Layout.vue';
-import Navbar from './theme/components/Navbar.vue';*/
+import demo from './theme/client/components/demo.vue'
+import Box from './theme/client/components/box.vue'
+import Contributors from './theme/client/components/contributors.vue'
 
-//import theme from './theme'
-import clientAppEnhance from './clientAppEnhance';
+//import { useDarkMode,  useSidebarItems } from '@vuepress/theme-default/lib/client/composables';
 
 export default defineClientConfig({
-  enhance({ app, router, siteData }){
-    clientAppEnhance(app, router, siteData)
+  enhance({ app, router, siteData }) {
+    app.use(Vuesax)
+    app.use(Vuecode,{
+      theme:'flat'
+    })
+    app.component('Demo',demo)
+    app.component('Box',Box)
+    app.component('Contributors',Contributors)
   },
-  setup(){
-    //setupDarkMode();
-    //setupSidebarItems();
-  },
-  layouts: {},
+  setup() {},
   rootComponents: [],
 })
