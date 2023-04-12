@@ -11,6 +11,7 @@ const features = computed(() => {
   }
   return []
 })
+const github = computed(() => frontmatter.value.github)
 </script>
 
 <template>
@@ -19,6 +20,22 @@ const features = computed(() => {
       <div class="con-text-feature">
         <h2 v-html="feature.title"/>
         <p v-html="feature.details"/>
+        <div v-if="feature.button" class="con-btns-features">
+          <button type="button" name="button">
+                  <router-link
+                    class="nav-link"
+                    :to="feature.button.link"
+                    :exact="feature.button.link === '/'"
+                  >{{ feature.button.text ? feature.button.text : 'see more' }}
+                  </router-link>
+                </button>
+                <!-- <button v-if="feature.github" type="button" name="button"> -->
+                <a target="_blank" class="flaticon-github githubx" :href="github" rel="noopener noreferrer"></a>
+                <!-- </button> -->
+        </div>
+      </div>
+      <div class="con-img-feature">
+        <component v-if="feature.component" :is="feature.component"></component>
       </div>
     </div>
   </div>

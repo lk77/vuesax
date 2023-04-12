@@ -22,6 +22,7 @@ const heroAlt = computed(
   () => frontmatter.value.heroAlt || heroText.value || 'hero'
 )
 const heroHeight = computed(() => frontmatter.value.heroHeight || 280)
+const github = computed(() => frontmatter.value.github)
 
 const heroText = computed(() => {
   if (frontmatter.value.heroText === null) {
@@ -42,11 +43,11 @@ const tagline = computed(() => {
 })
 
 const actions = computed(() => {
-  if (!isArray(frontmatter.value.vueThemes.actionsLinks)) {
+  if (!isArray(frontmatter.value.actions)) {
     return []
   }
 
-  return frontmatter.value.vueThemes.actionsLinks.map(({ text, link, type = 'primary' }) => ({
+  return frontmatter.value.actions.map(({ text, link, type = 'primary' }) => ({
     text,
     link,
     type,
@@ -153,7 +154,7 @@ const heroBackgroundComponent = computed(() => {
               </a>
             </li>-->
             <li class="starx">
-              <a @mouseenter="data.git=true" @mouseleave="data.git=false" class="flaticon-github fgithub" :href="$vueThemes.github">
+              <a @mouseenter="data.git=true" @mouseleave="data.git=false" class="flaticon-github fgithub" :href="github">
                 <span class="stargazers_count">{{ data.star }}</span>
               </a>
             </li>

@@ -60,7 +60,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
   <header ref="navbar" class="navbar">
     <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
 
-    <span ref="navbarBrand">
+    <span ref="navbarBrand" class="con-btns-header">
       <NavbarBrand />
     </span>
 

@@ -30,7 +30,10 @@ export interface DefaultThemeHomePageFrontmatter
     details: string
   }[]
   footer?: string
-  footerHtml?: boolean
+  footerHtml?: boolean,
+  github?: string,
+  heroBackgroundComponent?: string,
+  repo?: string,
 }
 
 export interface DefaultThemeNormalPageFrontmatter

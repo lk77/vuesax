@@ -30,10 +30,10 @@ features:
     link: /development/
 
 footer: MIT Licensed | Copyright © 2018-present Evan You
-vueThemes:
-  github: 'https://github.com/lusaxweb/vuesax'
-  actionsLinks:
-  - link: '/development/'
-    text: 'Get Started'
+github: 'https://github.com/lk77/vuesax'
+actions:
+- link: '/development/'
+  text: 'Get Started'
 contributors: all
+repo: 'lk77/vuesax'
 ---

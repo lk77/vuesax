@@ -281,4 +281,6 @@ export interface DefaultThemeLocaleData extends LocaleData {
    * A11y text for sidebar toggle button
    */
   toggleSidebar?: string
+
+  footer?: Array
 }
