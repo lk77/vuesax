@@ -216,7 +216,8 @@ if(location.hostname == 'lk77.github.io') {
           },
         ]
       }
-    ]
+    ],
+    repoLink: 'https://github.com/lk77/vuesax',
   }),
   bundler: webpackBundler(),
   markdown: {

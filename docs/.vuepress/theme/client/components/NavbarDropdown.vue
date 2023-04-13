@@ -50,7 +50,7 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
 
 <template>
   <div class="navbar-dropdown-wrapper" :class="{ open }">
-    <a class="navbar-dropdown-title" @mouseenter="handleDropdown(true)" @mouseleave="handleDropdown(false)" @click="handleDropdown">
+    <a class="navbar-dropdown-title" @mouseenter="handleDropdown(true)" @click="handleDropdown">
       <span class="title">{{ item.text }}</span>
       <!-- <span class="arrow" :class="open ? 'down' : 'right'"></span> -->
       <vs-icon class="" icon="keyboard_arrow_down"></vs-icon>
