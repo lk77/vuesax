@@ -183,3 +183,84 @@ onMounted(() => {
     </div>
   </nav>
 </template>
+
+<style lang="scss">
+@use '../styles/config' as *;
+
+.repoLink {
+	position: relative;
+}
+.iconx {
+	margin-left: 0px !important;
+}
+.navbar-items {
+	display: inline-block;
+	padding-right: 0px;
+	a {
+		color: inherit;
+		padding: 0.7rem;
+		transition: all 0.2s ease;
+		position: relative;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 0%;
+			left: 50%;
+			transform: translate(-50%);
+			height: 3px;
+			border-radius: 0px 0px 2px 2px;
+			background: $accentColor;
+			transition: all 0.2s ease;
+			top: -1px;
+		}
+		&:hover {
+			&:after {
+				width: 40% !important;
+			}
+		}
+	}
+	.navbar-item {
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		margin-left: 0.4rem;
+		font-weight: 500;
+		position: relative;
+	}
+	.github-link {
+		margin-left: 1.5rem;
+	}
+}
+.navbar-items a:hover,
+.navbar-items a.router-link-active {
+	color: $accentColor;
+}
+
+
+@media (max-width: $MQMobile) {
+  .navbar-items .navbar-item,
+  .navbar-items .github-link {
+    margin-left: 0;
+  }
+  .navbar-items .navbar-item a,
+  .navbar-items .github-link a {
+    padding: 0px !important;
+  }
+  .navbar-items {
+    .repo-link {
+      display: none !important;
+    }
+  }
+}
+@media (min-width: $MQMobile) {
+  .navbar-items a:hover,
+  .navbar-items a.router-link-active {
+    color: $accentColor;
+  }
+  .navbar-items a:hover:after,
+  .navbar-items a.router-link-active:after {
+    width: 40% !important;
+  }
+}
+</style>
