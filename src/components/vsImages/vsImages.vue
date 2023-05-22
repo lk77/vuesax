@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div
     :class="[`vs-images-hover-${hover}`, {'alternating': alternating, 'notBorderRadius': notBorderRadius, 'notMargin': notMargin}, $attrs.class]"
     class="vs-component vs-images"

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <ul class="leftx">
       <li class="modelx">

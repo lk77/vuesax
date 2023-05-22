@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx default-input">
      <vs-input size="large" class="inputx" placeholder="Size large" v-model="value1"/>
      <vs-input class="inputx" placeholder="Size Default" v-model="value2"/>

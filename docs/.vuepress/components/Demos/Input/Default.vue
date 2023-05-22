@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx default-input">
      <vs-input class="inputx" placeholder="Placeholder" v-model="value1"/>
      <vs-input disabled class="inputx" placeholder="Disabled" v-model="value2"/>

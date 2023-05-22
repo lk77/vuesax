@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx labelx">
     <vs-input label="Name" placeholder="Placeholder" v-model="value1"/>
     <vs-input type="password" label="Password" placeholder="Disabled" v-model="value2"/>

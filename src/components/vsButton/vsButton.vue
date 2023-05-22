@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <button
     v-bind="attrs"
     ref="btn"

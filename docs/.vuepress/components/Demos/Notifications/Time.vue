@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centex">
     <vs-button @click="$vs.notify({title:'Time default',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary',icon:'query_builder'})" type="flat">Time default</vs-button>
     <vs-button @click="$vs.notify({time:4000,title:'Time 4s (4000)',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary',icon:'query_builder'})" type="flat">Time 4s (4000)</vs-button>

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-table :max-items="descriptionItems[0]" pagination :data="users" description :description-items="descriptionItems" description-title="Registries" description-connector="of" description-body="Pages">
       <template #header>

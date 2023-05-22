@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <selected-icons v-model:vs-icon="icon1"/>
    <vs-alert active="true" color="rgb(111, 38, 224)" :icon="icon1" >

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <div
       :class="{'no-items':modelValue.length == 0}"

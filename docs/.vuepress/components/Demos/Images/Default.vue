@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="con-example-images">
     <vs-images>
       <vs-image :key="index" :src="`https://picsum.photos/400/400?image=2${index}`" v-for="(image, index) in 9" />

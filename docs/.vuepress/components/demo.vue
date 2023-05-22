@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     hola soy el demo
   </div>

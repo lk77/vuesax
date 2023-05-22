@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
 
 let Demos = path.join(__dirname, "Demos");
 let contributors = path.join(__dirname, "contributors");

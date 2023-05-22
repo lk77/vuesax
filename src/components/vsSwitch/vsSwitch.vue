@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <button
     :class="[
       `vs-switch-${color}`,

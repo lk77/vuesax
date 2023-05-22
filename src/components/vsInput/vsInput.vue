@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div
     ref="coninput"
     :style="[styleLabel, $attrs.style]"

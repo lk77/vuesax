@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="vs-component vs-divider">
     <span
       :class="borderClass"

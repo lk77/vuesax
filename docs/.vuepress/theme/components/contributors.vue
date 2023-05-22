@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div v-if="contribuitorsx.length > 0" class="con-contribuitor">
     <h3 :class="{'allcontribuitors':contributors == 'all'}">{{title || 'contributors of'}} <b>Vuesax</b>  </h3>
     <ul>

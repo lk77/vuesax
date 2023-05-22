@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx examplex">
     <vs-tooltip text="Tooltip default delay">
       <vs-button>Delay default</vs-button>

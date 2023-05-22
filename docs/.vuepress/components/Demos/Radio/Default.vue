@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <ul class="leftx">
     <li class="modelx">
       {{radios1}}

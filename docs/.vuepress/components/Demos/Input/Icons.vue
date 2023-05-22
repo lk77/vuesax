@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx icons-example">
     <vs-input icon="search" placeholder="Search" v-model="value1" icon-after="true" icon-no-border />
     <vs-input icon="search" placeholder="Search" v-model="value1"/>

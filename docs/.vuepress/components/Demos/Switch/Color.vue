@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <ul class="con-s examplex">
     <li>
       <label for="">Primary</label>

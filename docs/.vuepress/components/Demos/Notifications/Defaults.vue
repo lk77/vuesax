@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="con-notifications">
     <vs-button @click="$vs.notify({title:'Default',text:'Lorem ipsum dolor sit amet, consectetur'})" color="primary" type="border">Notification white</vs-button>
     <vs-button @click="$vs.notify({title:'Primary',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary'})" color="primary" type="flat">Notification Primary</vs-button>

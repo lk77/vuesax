@@ -1,4 +1,4 @@
-import vsComponent from './vsButton'
+import vsComponent from './vsButton.vue'
 
 export default Vue => {
   Vue.component('VsButton', vsComponent)

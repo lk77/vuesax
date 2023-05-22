@@ -2,9 +2,10 @@
 
   "root": true,
   "parserOptions": {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "ecmaVersion": 2017,
-    "sourceType": "module"
+    "sourceType": "module",
+    "requireConfigFile": false
   },
   "plugins": [
     "vue"
@@ -46,7 +47,7 @@
       "error",
       "shorthand"
     ],
-    "vue/name-property-casing": [
+    "vue/component-definition-name-casing": [
       "error",
       "PascalCase"
     ],

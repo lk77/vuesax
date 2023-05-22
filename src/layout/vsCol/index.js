@@ -1,4 +1,4 @@
-import vsComponent from './vsCol'
+import vsComponent from './vsCol.vue'
 
 export default Vue => {
   Vue.component('VsCol', vsComponent)

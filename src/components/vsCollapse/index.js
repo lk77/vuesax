@@ -1,5 +1,5 @@
-import vsComponent from './vsCollapse'
-import vsComponent2 from './vsCollapseItem'
+import vsComponent from './vsCollapse.vue'
+import vsComponent2 from './vsCollapseItem.vue'
 
 export default Vue => {
   Vue.component('VsCollapse', vsComponent)

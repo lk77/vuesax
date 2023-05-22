@@ -10,6 +10,7 @@ import vueThemes from './vueThemes';
 import themeConfig from './themeConfig';
 import tooltip from './directives/tooltip.js';
 import "./styles/tooltip.css";
+
 export default defineClientAppEnhance(({ app, router }) => {
     app.component('OutboundLink', OutboundLink);
 
@@ -23,4 +24,6 @@ export default defineClientAppEnhance(({ app, router }) => {
     };
     app.config.globalProperties.$vueThemes = vueThemes;
     app.config.globalProperties.$themeConfig = themeConfig;
+
+    app.provide('pageLayout', 'test')
 });

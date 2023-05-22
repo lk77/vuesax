@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <nav
     v-bind="$attrs"
     :class="[`vs-align-${align}`, $attrs.class]"

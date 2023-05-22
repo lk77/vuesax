@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="con-colors">
     <ul>
       <li class="colorprimaryx">

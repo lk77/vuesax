@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="con-icons-avatar">
     <vs-avatar />
     <vs-avatar color="primary" icon="date_range" />

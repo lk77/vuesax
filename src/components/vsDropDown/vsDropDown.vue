@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <!-- @contextmenu.capture.prevent -->
   <button
     v-bind="attrs"

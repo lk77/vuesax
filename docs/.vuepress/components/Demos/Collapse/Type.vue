@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <div class="con-radios-example">
       <vs-radio v-model="type" vs-value="default">Default</vs-radio>

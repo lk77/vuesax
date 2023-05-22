@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <vs-slider color="success" text-fixed=% v-model="value1"/>
     <vs-slider color="danger" text-fixed=Min ticks step=25 v-model="value2"/>

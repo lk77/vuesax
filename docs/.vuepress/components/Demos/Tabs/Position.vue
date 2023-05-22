@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <vs-tabs color="rgb(32, 201, 192)">
       <vs-tab label="Top">

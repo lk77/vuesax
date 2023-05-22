@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx colors-example">
     <vs-input label-placeholder="Default" v-model="value1"/>
     <vs-input color="success" label-placeholder="Success" v-model="value2"/>

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
 
   <div ref="parentSidebar" id="parent-sidebar">
 

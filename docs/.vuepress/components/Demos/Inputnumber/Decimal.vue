@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-input-number v-model="number0" :step="1.43" size="large"/>
   </div>

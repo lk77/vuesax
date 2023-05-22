@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button @click="$vs.notify({title:'Icon mail',text:'Lorem ipsum dolor sit amet, consectetur',color:'primary',icon:'mail'})" color="primary" type="flat">Icon Mail</vs-button>
     <vs-button @click="$vs.notify({title:'Icon mail',text:'Lorem ipsum dolor sit amet, consectetur',color:'success',icon:'check_box'})" color="success" type="flat">Icon check_box</vs-button>

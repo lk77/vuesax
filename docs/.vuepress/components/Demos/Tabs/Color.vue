@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <vs-tabs hover-line="100%">
       <vs-tab color="success" defaultColor="success" label="Success">

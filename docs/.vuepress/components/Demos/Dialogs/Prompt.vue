@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx con-exemple-prompt">
     <!-- <vs-button @click="openPrompt" color="primary" type="border">Run prompt</vs-button> -->
     <div class="modelx">

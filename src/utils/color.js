@@ -33,10 +33,16 @@ export default {
     return colorx
   },
   isColor(colorx){
-    let vscolors = ['primary','secondary','success','danger','warning','dark', 'light']
+    let vscolors = ['primary','secondary','success','danger','warning','dark', 'light'];
 
-    // allow user defined --vs colors
-    return vscolors.includes(colorx) || getComputedStyle(document.documentElement).getPropertyValue('--vs-' + colorx).length > 0;
+    let included = vscolors.includes(colorx);
+
+    if(typeof getComputedStyle === 'function' && !included) {
+      // allow user defined --vs colors
+      included = getComputedStyle(document.documentElement).getPropertyValue('--vs-' + colorx).length > 0;
+    }
+
+    return included;
   },
   RandomColor(){
     function getRandomInt(min, max) {

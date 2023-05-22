@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="con-avatarsx">
     <div class="con-avatar-solo">
     <vs-avatar badge />

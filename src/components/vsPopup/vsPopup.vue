@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <transition name="popup-t">
     <div
       v-show="active"

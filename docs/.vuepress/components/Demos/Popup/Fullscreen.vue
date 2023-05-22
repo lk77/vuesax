@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button @click="popupActivo4=true" color="danger" type="border">Open fullscreen popup</vs-button>
     <vs-popup fullscreen title="fullscreen" v-model:active="popupActivo4">

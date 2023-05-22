@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-button @click="users = users2">
       click me

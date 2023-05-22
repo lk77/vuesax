@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <vs-table max-items="3" pagination :data="users">
       <template #header>

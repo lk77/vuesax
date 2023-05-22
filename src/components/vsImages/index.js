@@ -1,5 +1,5 @@
-import vsComponent from './vsImages'
-import vsComponent2 from './vsImage'
+import vsComponent from './vsImages.vue'
+import vsComponent2 from './vsImage.vue'
 
 export default Vue => {
   Vue.component('VsImages', vsComponent)

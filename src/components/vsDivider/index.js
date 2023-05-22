@@ -1,4 +1,4 @@
-import vsComponent from './vsDivider'
+import vsComponent from './vsDivider.vue'
 
 export default Vue => {
   Vue.component('VsDivider', vsComponent)

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div
     :class="[`vs-checkbox-${color}`, `vs-checkbox-${size}`, $attrs.class]"
     :style="$attrs.style"

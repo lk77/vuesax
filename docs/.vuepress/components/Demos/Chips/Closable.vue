@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button v-if="chips.length == 0" @click="reset" type="filled">Reset Chips</vs-button>
     <vs-chip :key="chip" @click="remove(chip)" v-for="chip in chips" closable>

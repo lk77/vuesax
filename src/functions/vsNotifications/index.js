@@ -1,5 +1,6 @@
 import utils from '../../utils'
 import vsNotifications from './vsNotifications.vue'
+
 export default {
   name: 'notify',
   vsfunction(parameters = {}) {
@@ -9,6 +10,9 @@ export default {
       }
     }
 
+    let el = document.createElement('div');
+    el.setAttribute('class', 'vs-notifications-container');
+
     const comp = {
       extends: vsNotifications,
       data() {
@@ -16,12 +20,17 @@ export default {
       }
     };
 
-    utils.mount(comp, {
-      element: document.body,
+    let mount = utils.mount(comp, {
+      element: el,
       app: this.getCurrentInstance(),
       props: {
         onClick: parameters.click || null,
+        onDestroy: () => {
+          mount.el.remove();
+        }
       }
     });
+
+    utils.insertBody(mount.el);
   },
 }

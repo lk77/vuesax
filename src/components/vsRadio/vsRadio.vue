@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <label
     :class="[`vs-radio-${color}`, $attrs.class]"
     :style="$attrs.style"

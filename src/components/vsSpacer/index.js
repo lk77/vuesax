@@ -1,4 +1,4 @@
-import vsComponent from './vsSpacer'
+import vsComponent from './vsSpacer.vue'
 
 export default Vue => {
   Vue.component('VsSpacer', vsComponent)

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="examplex">
     <vs-button class="btnx" type="filled">Dropdown</vs-button>
     <vs-dropdown @focus="logx">

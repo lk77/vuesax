@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div
     :class="[`vs-header-list-${color}`,{
       'with-icon':icon,

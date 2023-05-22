@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <vs-button @click="popupActivo=true" color="primary" type="border">Open Default popup</vs-button>
     <vs-popup class="holamundo"  title="Lorem ipsum dolor sit amet" v-model:active="popupActivo">

@@ -32,7 +32,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<!--<style lang="stylus">
 .con-partners
   width 100%
   height auto
@@ -74,4 +74,4 @@ export default {
       &.vue-book
         img
           width 60% !important
-</style>
+</style>-->

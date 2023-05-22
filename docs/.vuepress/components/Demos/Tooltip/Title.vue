@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx examplex">
     <vs-tooltip
       title="Are you sure?"

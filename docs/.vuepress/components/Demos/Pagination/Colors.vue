@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="centerx">
     <input class="input-color" v-model="colorx" type="color">
     <vs-pagination :color="colorx" :total="20" v-model="currentx"></vs-pagination>
