@@ -58,6 +58,7 @@ module.exports = {
       },
       //{ text: 'Vuesax 4', link: 'https://vuesax.com/', new: true },
     ],
+    sidebarDepth: 0,
     sidebar: [
       {
         text: 'Development',

@@ -1,5 +1,5 @@
 <template>
-  <div class="theme-default-content">
+  <div class="theme-default-content content">
     <Content />
   </div>
 </template>

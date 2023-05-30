@@ -17,7 +17,7 @@ export const DEFAULT_LOCALE_OPTIONS: DefaultThemeLocaleOptions = {
 
   // sidebar
   sidebar: 'auto',
-  sidebarDepth: 2,
+  sidebarDepth: 0,
 
   // page meta
   editLink: true,
