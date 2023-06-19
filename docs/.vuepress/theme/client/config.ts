@@ -7,6 +7,7 @@ import {
   useScrollPromise,
 } from './composables'
 import Layout from './layouts/Layout.vue'
+import ContributorsLayout from './layouts/ContributorsLayout.vue';
 import NotFound from './layouts/NotFound.vue'
 
 import './styles/index.scss'
@@ -60,6 +61,7 @@ export default defineClientConfig({
 
   layouts: {
     Layout,
+    ContributorsLayout,
     NotFound,
   },
 })
