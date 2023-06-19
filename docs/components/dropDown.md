@@ -506,7 +506,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 ```html
 <template lang="html">
   <div class="examplex">
-    <vs-button class="btnx" type="filled">Dropdown</vs-button>
+    <vs-button class="btnx withDropdown" type="filled">Dropdown</vs-button>
     <vs-dropdown>
       <vs-button class="btn-drop" type="filled" icon="expand_more"></vs-button>
       <!-- <a href="#">Hola mundo</a> -->
@@ -518,7 +518,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
         <vs-dropdown-item>
           option 2
         </vs-dropdown-item>
-        <vs-dropdown-group >
+        <vs-dropdown-group>
           <vs-dropdown-item>
             option 1
           </vs-dropdown-item>
@@ -534,7 +534,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
     </vs-dropdown>
 
 
-    <vs-button class="btnx" type="success-gradient">Dropdown</vs-button>
+    <vs-button class="btnx withDropdown" type="success-gradient">Dropdown</vs-button>
     <vs-dropdown>
       <vs-button class="btn-drop" type="success-gradient" icon="more_horiz"></vs-button>
       <!-- <a href="#">Hola mundo</a> -->
@@ -553,7 +553,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
     </vs-dropdown>
 
 
-    <vs-button class="btnx" type="danger-line-down">Icons</vs-button>
+    <vs-button class="btnx withDropdown" type="danger-line-down">Icons</vs-button>
     <vs-dropdown>
       <vs-button class="btn-drop" type="danger-line-down" icon="mood"></vs-button>
       <!-- <a href="#">Hola mundo</a> -->
