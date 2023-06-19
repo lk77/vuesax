@@ -596,6 +596,7 @@ export default {
   button
     margin: 0px !important;
     &.btnx
+      height: 38px!important;
       margin-left: 10px !important;
       border-radius: 5px 0px 0px 5px;
     &.btn-drop

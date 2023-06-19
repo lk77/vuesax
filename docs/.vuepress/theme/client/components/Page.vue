@@ -5,21 +5,17 @@ import PageNav from '@theme/PageNav.vue'
 
 <template>
   <main class="page">
-    <slot name="top" />
+    <slot name="content-top" />
 
-    <div class="/*theme-default-content*/ content content-pagex" style="margin-top: 25px;">
-      <slot name="content-top" />
-
-      <Content />
-
-      <slot name="content-bottom" />
-    </div>
+    <transition name="contentx">
+        <Content :custom="true" class="content content-pagex" style="margin-top:50px;"/>
+    </transition>
 
     <PageMeta />
 
     <PageNav />
 
-    <slot name="bottom" />
+    <slot name="content-bottom" />
   </main>
 </template>
 
@@ -113,13 +109,13 @@ import PageNav from '@theme/PageNav.vue'
 	}
 	.content {
 		p {
-			padding: 10px;
+			padding: 10px!important;
 			border-radius: 10px;
-			margin-top: 6px;
+			margin-top: 6px!important;
 		}
 		h1 {
-			padding: 15px;
-			padding-left: 0px;
+			padding: 15px!important;
+			padding-left: 0px!important;
 			color: #5b3cc4;
 			border-radius: 0px;
 			font-size: 30px;

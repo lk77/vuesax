@@ -10,6 +10,7 @@ import type {
 } from '../../shared/index.js'
 import { useThemeLocaleData } from '../composables/index.js'
 import { resolveEditLink } from '../utils/index.js'
+import Api from './Api.vue'
 
 const useEditNavLink = (): ComputedRef<null | NavLink> => {
   const themeLocale = useThemeLocaleData()
@@ -99,14 +100,18 @@ const contributors = useContributors()
       <AutoLink class="meta-item-label" :item="editNavLink" />
     </div>
 
-    <div v-if="lastUpdated" class="meta-item last-updated">
+    <div class="content con-api">
+      <Api />
+    </div>
+
+<!--    <div v-if="lastUpdated" class="meta-item last-updated">
       <span class="meta-item-label">{{ themeLocale.lastUpdatedText }}: </span>
       <ClientOnly>
         <span class="meta-item-info">{{ lastUpdated }}</span>
       </ClientOnly>
-    </div>
+    </div>-->
 
-    <div
+<!--    <div
       v-if="contributors && contributors.length"
       class="meta-item contributors"
     >
@@ -119,6 +124,6 @@ const contributors = useContributors()
           <template v-if="index !== contributors.length - 1">, </template>
         </template>
       </span>
-    </div>
+    </div>-->
   </footer>
 </template>

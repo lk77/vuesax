@@ -78,7 +78,7 @@ export default {
 		}
 		h2 {
 			border-radius: 6px 6px 0px 0px;
-			/*padding: 10px;*/
+			padding: 10px;
 			width: calc(100% - 30px);
 			border-bottom: 0px !important;
 			transition: all 0.25s ease;
