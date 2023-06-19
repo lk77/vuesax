@@ -2,7 +2,7 @@
   <div v-if="api"  id="vs-api" class="con-api">
     <h2 class="h2">API <a href="#vs-api">#</a> </h2>
     <table>
-      <thead>
+      <thead style="width:100%">
         <tr>
           <th>Name</th>
           <th>Type</th>
@@ -11,7 +11,7 @@
           <th>default</th>
         </tr>
       </thead>
-      <tbody v-for="tr in api">
+      <tbody v-for="tr in api" style="width:100%">
         <tr>
           <td width="120px">{{tr.name}}</td>
           <td>{{tr.type}}</td>

@@ -95,7 +95,7 @@ const contributors = useContributors()
 </script>
 
 <template>
-  <footer class="page-meta">
+  <footer class="page-meta" style="max-width:1200px!important;">
     <div v-if="editNavLink" class="meta-item edit-link">
       <AutoLink class="meta-item-label" :item="editNavLink" />
     </div>
