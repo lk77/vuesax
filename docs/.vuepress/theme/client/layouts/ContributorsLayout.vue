@@ -15,7 +15,7 @@ import {
 import c10k from "../components/contributors/contribution/10k.vue";
 import footerContributors from "../components/contributors/footerContributors.vue";
 import pull5 from "../components/contributors/pull/5pull.vue";
-import c100 from "../components/contributors/contribution/100.vue";
+import c100 from "../components/contributors/contribution/c100.vue";
 import pull1 from "../components/contributors/pull/1pull.vue";
 import pull20 from "../components/contributors/pull/20pull.vue";
 import c30k from "../components/contributors/contribution/30k.vue";
@@ -73,7 +73,7 @@ const weeks = (array) => {
   return aporte
 }
 const consultContributors = () => {
-  fetch('https://api.github.com/repos/lusaxweb/vuesax/stats/contributors')
+  fetch('https://api.github.com/repos/lk77/vuesax/stats/contributors?t='+Date.now())
     .then(response => response.json())
     .then(json => {
       // console.log(JSON.stringify(json));
@@ -99,7 +99,7 @@ const consultContributors = () => {
     })
 }
 const consultarPulls = () => {
-  fetch('https://api.github.com/repos/lusaxweb/vuesax/pulls?state=all')
+  fetch('https://api.github.com/repos/lk77/vuesax/pulls?state=all&?t='+Date.now())
     .then(response => response.json())
     .then(json => {
       let jsonx = []
@@ -139,7 +139,7 @@ onUnmounted(() => {
 const scrollPromise = useScrollPromise()
 const onBeforeEnter = scrollPromise.resolve
 const onBeforeLeave = scrollPromise.pending
-
+console.log(c100);
 const data = reactive({
   users: [],
   request: {},
@@ -149,19 +149,19 @@ const data = reactive({
       title: 'Contribution',
       medals: [
         {
-          name: 'c100',
+          name: c100,
           description: 'Have 100 points of contribution to vuesax'
         },
         {
-          name: 'c1k',
+          name: c1k,
           description: 'Have 1k points of contribution to vuesax'
         },
         {
-          name: 'c10k',
+          name: c10k,
           description: 'Have 10k points of contribution to vuesax'
         },
         {
-          name: 'c30k',
+          name: c30k,
           description: 'Have 30k points of contribution to vuesax'
         },
       ]
@@ -170,19 +170,19 @@ const data = reactive({
       title: 'Pull Request',
       medals: [
         {
-          name: 'pull1',
+          name: pull1,
           description: 'Have 1 Pull Request on github for vuesax'
         },
         {
-          name: 'pull5',
+          name: pull5,
           description: 'Have 5 Pull Request on github for vuesax'
         },
         {
-          name: 'pull20',
+          name: pull20,
           description: 'Have 20 Pull Request on github for vuesax'
         },
         {
-          name: 'pull50',
+          name: pull50,
           description: 'Have 50 Pull Request on github for vuesax'
         },
       ]
@@ -276,6 +276,11 @@ const data = reactive({
                 </td>
                 <!-- <td>{{user}}</td> -->
               </tr>
+              <tr v-if="data.users.length === 0">
+                <td colspan="8" id="loading" style="text-align:center">
+                  loading
+                </td>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -297,8 +302,8 @@ const data = reactive({
           </div>
         </div>
 
-<!--        <footer-contributors/>
-        <Footer/>-->
+       <footer-contributors/>
+        <!-- <Footer/>-->
       </div>
     </div>
     </slot>
@@ -306,7 +311,7 @@ const data = reactive({
 </template>
 
 <style lang="scss">
-//@use '../theme/styles/config' as *;
+@use '../styles/config' as *;
 
 .con-contenedores {
 	margin-top: 20px;
@@ -329,7 +334,7 @@ const data = reactive({
 				&:before {
 					width: 0%;
 					height: 2px;
-					//background: $accentColor;
+					background: $accentColor;
 					position: absolute;
 					content: '';
 					bottom: 0px;
@@ -366,6 +371,7 @@ const data = reactive({
 				th {
 					padding: 15px;
 					font-weight: normal;
+          width:13.5%;
 				}
 			}
 			tr {

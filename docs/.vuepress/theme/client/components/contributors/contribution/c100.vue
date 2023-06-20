@@ -32,6 +32,7 @@
 
 <script>
 export default {
+  name: 'c100'
 }
 </script>
 
