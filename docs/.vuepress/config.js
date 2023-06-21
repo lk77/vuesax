@@ -8,7 +8,7 @@ import {defaultTheme} from './theme/node/index';
 const __dirname = getDirname(import.meta.url)
 
 export default defineUserConfig({
-  base: '/vuesax/',
+  base: '/vuesax/next-docs/',
   head: [
     ['link', {rel: 'icon', href: `/vuesax/favicon-vuesax.png`}],
     //['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/icon?family=Material+Icons` }],
