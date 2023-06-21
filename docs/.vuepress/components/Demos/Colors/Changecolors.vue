@@ -32,7 +32,6 @@ export default {
   justify-content: center;
 }
 .con-colors li{
-  display: block;
   position: relative;
   width: 100px;
   height: 100px;
