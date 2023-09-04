@@ -188,6 +188,12 @@ body {
 	box-sizing: border-box;
 	transition: all 0.3s ease;
 	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0);
+  justify-content: unset!important;
+}
+.sidebar-button .icon {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 .sidebar-mask {
 	position: fixed;

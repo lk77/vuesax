@@ -115,7 +115,6 @@ import PageNav from '@theme/PageNav.vue'
 		}
 		h1 {
 			padding: 15px!important;
-			padding-left: 0px!important;
 			color: #5b3cc4;
 			border-radius: 0px;
 			font-size: 30px;

@@ -4,6 +4,7 @@ import {getDirname, path} from '@vuepress/utils'
 import {webpackBundler} from '@vuepress/bundler-webpack'
 
 import {defaultTheme} from './theme/node/index';
+//import {defaultTheme} from '@vuepress/theme-default';
 
 const __dirname = getDirname(import.meta.url)
 
