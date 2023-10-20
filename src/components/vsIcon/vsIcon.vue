@@ -2,10 +2,10 @@
   <i
     v-bind="$attrs"
     :style="[iconStyle, $attrs.style]"
-    :class="[iconPack, iconPack !='material-icons' ? icon : '',iconClass,getBg,getBgSize,{'round':round}, $attrs.class]"
+    :class="[iconPack, iconPack.includes('material') ? '' : icon,iconClass,getBg,getBgSize,{'round':round}, $attrs.class]"
     class="vs-icon notranslate icon-scale"
   >
-    {{ iconPack == 'material-icons' ? icon : '' }}
+    <slot>{{ iconPack.includes('material') ? icon : '' }}</slot>
   </i>
 </template>
 <script>
