@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvuesax3=self.webpackChunkvuesax3||[]).push([[5044],{5044:function(e,t,n){n.r(t),n.d(t,{default:function(){return s}});var u=n(6252);const r={};var s=(0,n(3744).Z)(r,[["render",function(e,t){const n=(0,u.up)("vs-textarea");return(0,u.wg)(),(0,u.iD)("div",null,[(0,u.Wm)(n,{label:"Height set to 200px",height:"200px"})])}]])}}]);
