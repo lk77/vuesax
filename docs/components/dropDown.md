@@ -6,9 +6,9 @@ API:
    description: Change the color of the dropdown.
    default: primary
  - name: vs-trigger-click
-   type: Boolean
-   parameters: null
-   description: Determine if the dropdown opens when you click, changing the default functionality.
+   type: Boolean, String
+   parameters: mouseleave
+   description: Determine if the dropdown opens when you click, changing the default functionality. You can pass mouseleave to allow to close the dropdown without clicking
    default: false
  - name: divider
    type: Boolean
@@ -373,6 +373,8 @@ Sometimes when we need something more personalized and not necessarily a menu fo
 
 :::tip
   For better functionality in the user's aspect when doing some interaction with the custom dropdown you can add that it is only activated and deactivated by a click event with the property `vs-trigger-click`
+
+  Since vuesax3@^4.2.2 you can pass `mouseleave` to `vs-trigger-click` if you want to open the dropdown with a click but still close it when the mouse leave the menu.
 :::
 
 
@@ -388,7 +390,7 @@ Sometimes when we need something more personalized and not necessarily a menu fo
 <template lang="html">
   <div class="examplex">
 
-    <vs-dropdown vs-custom-content vs-trigger-click >
+    <vs-dropdown vs-custom-content vs-trigger-click="mouseleave">
       <a class="a-icon" href.prevent>
         Click me open login
         <vs-icon class="" icon="expand_more"></vs-icon>

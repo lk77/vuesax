@@ -78,7 +78,7 @@ export default {
       }
     },
     mouseleavex() {
-      if (!this.vsTriggerClick) {
+      if (!this.vsTriggerClick || this.vsTriggerClick === 'mouseleave') {
         this.dropdownVisible = false
         this.widthx = this.$el.clientWidth
       }
@@ -98,7 +98,7 @@ export default {
       }, 100)
     },
     toggleMenu(event){
-      if(event.type == 'mouseover' && !this.vsTriggerClick){
+      if(event.type === 'mouseover' && (!this.vsTriggerClick)){
         this.dropdownVisible = true
       }
       else if (!this.vsTriggerClick) {

@@ -1,7 +1,7 @@
 <template>
   <div class="examplex">
 
-    <vs-dropdown vs-custom-content vs-trigger-click >
+    <vs-dropdown vs-custom-content vs-trigger-click="mouseleave">
       <a class="a-icon" href.prevent>
         Click me open login
         <vs-icon icon="expand_more"></vs-icon>
@@ -13,19 +13,19 @@
 
 
         <vs-input
-    v-model:valid="valid.email"
-    success-text="Valid mail"
-    danger-text="The email does not meet the requirements"
-    type="email" label-placeholder="Email" v-model="value1"/>
+          v-model:valid="valid.email"
+          success-text="Valid mail"
+          danger-text="The email does not meet the requirements"
+          type="email" label-placeholder="Email" v-model="value1"/>
 
-    <vs-input
-        v-model:valid="valid.password"
-        success-text="Password Valida"
-        danger-text="The password must have at least 8 characters, 1 number, 1 special character"
-        type="password"
-        label-placeholder="Password" v-model="value2"/>
+        <vs-input
+          v-model:valid="valid.password"
+          success-text="Password Valida"
+          danger-text="The password must have at least 8 characters, 1 number, 1 special character"
+          type="password"
+          label-placeholder="Password" v-model="value2"/>
 
-        <vs-button width="100%" color="success" type="gradient">Login</vs-button>
+        <vs-button style="margin-top:10px" width="100%" color="success" type="gradient">Login</vs-button>
       </vs-dropdown-menu>
     </vs-dropdown>
   </div>

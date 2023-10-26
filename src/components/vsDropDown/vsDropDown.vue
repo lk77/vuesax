@@ -19,7 +19,7 @@ export default {
   props: {
     vsTriggerClick: {
       default: false,
-      type: Boolean
+      type: [Boolean,String]
     },
     vsTriggerContextmenu: {
       default: false,
@@ -163,10 +163,12 @@ export default {
     },
     toggleMenu(typex, evt) {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
-      if (!this.vsTriggerClick && !this.vsTriggerContextmenu) {
-        if (typex == 'over') {
+      if(typex === 'over') {
+        if(!this.vsTriggerClick && !this.vsTriggerContextmenu) {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = true
-        } else {
+        }
+      } else {
+        if((!this.vsTriggerClick || this.vsTriggerClick === 'mouseleave') && !this.vsTriggerContextmenu) {
           if (!evt.relatedTarget.classList.contains('vs-dropdown-menu')) {
             dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
           }
