@@ -8,7 +8,7 @@ API:
  - name: vs-trigger-click
    type: Boolean, String
    parameters: mouseleave
-   description: Determine if the dropdown opens when you click, changing the default functionality. You can pass mouseleave to allow to close the dropdown without clicking
+   description: Determine if the dropdown opens when you click, changing the default functionality. You can pass "mouseleave",  in which case the dropdown opens when you click, but closes automatically when the mouse leave the dropdown.
    default: false
  - name: divider
    type: Boolean
@@ -40,6 +40,11 @@ API:
    parameters: Icon Pack Class Name
    description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
    default: material-icons
+ - name: vs-insert
+   type: String
+   parameters: css selector
+   description: You can specify in which element the dropdown will be created, with a selector
+   default: body
 ---
 
 # DropDown
@@ -469,6 +474,7 @@ export default {
 
 </template>
 </vuecode>
+<div id="vs-insert-container"></div>
 </box>
 
 

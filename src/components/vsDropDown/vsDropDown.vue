@@ -7,7 +7,7 @@
     :style="$attrs.style"
     type="button"
   >
-    <slot />
+    <slot/>
   </button>
 </template>
 
@@ -15,6 +15,11 @@
 
 export default {
   name: "VsDropdown",
+  provide: function() {
+    return {
+      vsInsert: this.vsInsert
+    }
+  },
   inheritAttrs: false,
   props: {
     vsTriggerClick: {
@@ -36,6 +41,10 @@ export default {
     vsDropRight: {
       default: false,
       type: Boolean
+    },
+    vsInsert: {
+      default: 'body',
+      type: String
     }
   },
   emits: ['click', 'focus', 'blur'],
@@ -65,7 +74,7 @@ export default {
   },
   watch: {
     vsDropdownVisible() {
-      this.changePositionMenu()
+      this.$nextTick(this.changePositionMenu);
       if (this.vsDropdownVisible) {
         this.$emit('focus')
         document.addEventListener('click', this.clickx)
@@ -110,36 +119,34 @@ export default {
       })*/
     },
     changePositionMenu() {
+      let dropdown = this.$refs.dropdown;
+      let container = document.querySelector(this.vsInsert);
+
+      let dropdownTop = dropdown.getBoundingClientRect().top;
+      let dropdownRight = dropdown.getBoundingClientRect().right;
+      let dropdownLeft = dropdown.getBoundingClientRect().left;
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
 
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
-      if (this.$refs.dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
-        this.$nextTick(() => {
-          dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top - dropdownMenu.$el.clientHeight - 7) + scrollTopx
-          dropdownMenu.notHeight = true
-        })
-      } else {
-        dropdownMenu.notHeight = false
-        dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top + this.$refs.dropdown.clientHeight) + scrollTopx - 5
+      if(container.tagName !== 'BODY') {
+        scrollTopx = container.offsetTop - container.getBoundingClientRect().top;
       }
 
-      this.$nextTick(() => {
-        var w = window.innerWidth
-          || document.documentElement.clientWidth
-          || document.body.clientWidth
+      if (dropdownTop + 300 >= window.innerHeight) {
+        dropdownMenu.topx = (dropdownTop - dropdownMenu.$el.clientHeight - 7) + scrollTopx
+        dropdownMenu.notHeight = true
+      } else {
+        dropdownMenu.notHeight = false
+        dropdownMenu.topx = (dropdownTop + dropdown.clientHeight) + scrollTopx - 5
+      }
 
-
-        if (this.$refs.dropdown.getBoundingClientRect().left + dropdownMenu.$el.offsetWidth >= w - 25) {
-          // this.rightx = true
-        }
-
-        if (this.$refs.dropdown.getBoundingClientRect().right < (dropdownMenu.$el.clientWidth + 25)) {
-          dropdownMenu.leftx = dropdownMenu.$el.clientWidth + this.$refs.dropdown.getBoundingClientRect().left
-          this.rightx = true
-          return
-        }
-        dropdownMenu.leftx = this.$refs.dropdown.getBoundingClientRect().left + (this.vsDropRight ? dropdownMenu.$el.clientWidth : this.$refs.dropdown.clientWidth);
-      })
+      if (dropdownRight < (dropdownMenu.$el.clientWidth + 25)) {
+        dropdownMenu.leftx = dropdownMenu.$el.clientWidth + dropdownLeft - container.getBoundingClientRect().left
+        this.rightx = true
+      } else {
+        dropdownMenu.leftx = dropdownLeft + (this.vsDropRight ? dropdownMenu.$el.clientWidth : this.$refs.dropdown.clientWidth) - container.getBoundingClientRect().left;
+        this.rightx = false
+      }
     },
     clickToogleMenu(evt) {
       if (evt.type == 'contextmenu') {

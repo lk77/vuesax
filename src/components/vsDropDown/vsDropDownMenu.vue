@@ -38,6 +38,7 @@
 <script>
 export default {
   name: "VsDropdownMenu",
+  inject: ['vsInsert'],
   data: () => ({
     dropdownVisible: false,
     leftAfter: 20,
@@ -85,16 +86,18 @@ export default {
     },
     setDirection() {
       setTimeout(() => {
-        const dropdown = this.parentNode
+        //const dropdown = this.parentNode
         const menuAfter = this.$refs.menuAfter
         if (!menuAfter) return
-        if(dropdown && menuAfter && dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
-          // const hasGroup = this.$childrenItems.find(it=>Object.prototype.hasOwnProperty.call(it, 'activeGroup'))
+        if(this.notHeight) {
           menuAfter.style.bottom = '-5px'
+          menuAfter.style.top = ''
           menuAfter.style.transform = 'rotate(225deg)'
-          return
+        } else {
+          menuAfter.style.top = '10px'
+          menuAfter.style.bottom = ''
+          menuAfter.style.transform = ''
         }
-        menuAfter.style.top = '10px'
       }, 100)
     },
     toggleMenu(event){
@@ -109,7 +112,7 @@ export default {
     insertBody(){
       let elp = this.$el
       this.parentNode = this.$root.$el.parentNode
-      document.body.prepend(elp)
+      document.querySelector(this.vsInsert).prepend(elp)
     }
   }
 }
