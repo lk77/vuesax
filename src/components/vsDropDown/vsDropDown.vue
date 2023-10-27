@@ -49,6 +49,7 @@ export default {
   },
   emits: ['click', 'focus', 'blur'],
   data: () => ({
+    vsDropdownVisible: false,
     rightx: false,
     childrenItems: []
   }),
@@ -127,6 +128,8 @@ export default {
     changePositionMenu() {
       let dropdown = this.$refs.dropdown;
       let container = document.querySelector(this.vsInsert);
+
+      console.log(container);
 
       let dropdownTop = dropdown.getBoundingClientRect().top;
       let dropdownRight = dropdown.getBoundingClientRect().right;

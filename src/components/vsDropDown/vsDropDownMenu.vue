@@ -62,6 +62,8 @@ export default {
       this.setDirection()
 
       !val ? this.$parent.rightx = false : null
+
+      this.$parent.vsDropdownVisible = val;
     },
     topx(val) {
       if(val < 0) {
