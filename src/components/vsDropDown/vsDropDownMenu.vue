@@ -62,6 +62,12 @@ export default {
       this.setDirection()
 
       !val ? this.$parent.rightx = false : null
+    },
+    topx(val) {
+      if(val < 0) {
+        this.dropdownVisible = false
+        this.widthx = this.$el.clientWidth
+      }
     }
   },
   mounted() {

@@ -86,11 +86,18 @@ export default {
   mounted() {
     this.changeColor()
     document.addEventListener('click', this.clickx)
+    document.querySelector(this.vsInsert).addEventListener('scroll', this.scroll)
   },
   beforeUnmount() {
     document.removeEventListener('click', this.clickx)
+    document.querySelector(this.vsInsert).removeEventListener('scroll', this.scroll)
   },
   methods: {
+    scroll() {
+      if (this.vsDropdownVisible) {
+        this.$nextTick(this.changePositionMenu);
+      }
+    },
     clickx(evt) {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
       if(dropdownMenu) {
@@ -103,6 +110,7 @@ export default {
             evt.target.parentNode.parentNode !== this.$refs.dropdown)) {
             if (!evt.target.closest('.vs-dropdown--menu')) {
               dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+              dropdownMenu.dropdownVisible = false
               document.removeEventListener('click', this.clickx)
             }
           }
@@ -156,11 +164,15 @@ export default {
       if (this.vsTriggerClick || this.vsTriggerContextmenu) {
         if (this.vsDropdownVisible && !evt.target.closest('.vs-dropdown--menu')) {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+        if (dropdownMenu.dropdownVisible && !evt.target.closest('.vs-dropdown--menu')) {
+          dropdownMenu.dropdownVisible = false
         } else {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = true
+          dropdownMenu.dropdownVisible = true
           window.addEventListener('click', () => {
             if (!evt.target.closest('.vs-con-dropdown') && !evt.target.closest('.vs-dropdown--menu')) {
               dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+              dropdownMenu.dropdownVisible = false
             }
           })
         }
@@ -173,11 +185,13 @@ export default {
       if(typex === 'over') {
         if(!this.vsTriggerClick && !this.vsTriggerContextmenu) {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = true
+          dropdownMenu.dropdownVisible = true
         }
       } else {
         if((!this.vsTriggerClick || this.vsTriggerClick === 'mouseleave') && !this.vsTriggerContextmenu) {
           if (!evt.relatedTarget.classList.contains('vs-dropdown-menu')) {
             dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+            dropdownMenu.dropdownVisible = false
           }
         }
       }
