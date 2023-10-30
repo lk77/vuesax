@@ -94,9 +94,7 @@ export default {
   },
   methods: {
     scroll() {
-      if (this.vsDropdownVisible) {
-        this.$nextTick(this.changePositionMenu);
-      }
+      this.$nextTick(this.changePositionMenu);
     },
     clickx(evt) {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
@@ -109,7 +107,7 @@ export default {
             evt.target.parentNode !== this.$refs.dropdown &&
             evt.target.parentNode.parentNode !== this.$refs.dropdown)) {
             if (!evt.target.closest('.vs-dropdown--menu')) {
-              dropdownMenu.dropdownVisible = false
+              dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
               document.removeEventListener('click', this.clickx)
             }
           }
@@ -128,8 +126,7 @@ export default {
     changePositionMenu() {
       let dropdown = this.$refs.dropdown;
       let container = document.querySelector(this.vsInsert);
-
-      console.log(container);
+      let relative = window.getComputedStyle(container).position === 'relative';
 
       let dropdownTop = dropdown.getBoundingClientRect().top;
       let dropdownRight = dropdown.getBoundingClientRect().right;
@@ -138,10 +135,14 @@ export default {
 
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
       if(container.tagName !== 'BODY') {
-        scrollTopx = container.offsetTop - container.getBoundingClientRect().top;
+        if(!relative) {
+          scrollTopx = container.offsetTop - container.getBoundingClientRect().top;
+        } else {
+          scrollTopx = 0;
+        }
       }
 
-      if (dropdownTop + 300 >= window.innerHeight) {
+      if (dropdown.offsetTop + 300 >= container.scrollHeight) {
         dropdownMenu.topx = (dropdownTop - dropdownMenu.$el.clientHeight - 7) + scrollTopx
         dropdownMenu.notHeight = true
       } else {
@@ -164,12 +165,12 @@ export default {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
       if (this.vsTriggerClick || this.vsTriggerContextmenu) {
         if (dropdownMenu.dropdownVisible && !evt.target.closest('.vs-dropdown--menu')) {
-          dropdownMenu.dropdownVisible = false
+          dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
         } else {
-          dropdownMenu.dropdownVisible = true
+          dropdownMenu.dropdownVisible = this.vsDropdownVisible = true
           window.addEventListener('click', () => {
             if (!evt.target.closest('.vs-con-dropdown') && !evt.target.closest('.vs-dropdown--menu')) {
-              dropdownMenu.dropdownVisible = false
+              dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
             }
           })
         }
@@ -181,12 +182,12 @@ export default {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
       if(typex === 'over') {
         if(!this.vsTriggerClick && !this.vsTriggerContextmenu) {
-          dropdownMenu.dropdownVisible = true
+          dropdownMenu.dropdownVisible = this.vsDropdownVisible = true
         }
       } else {
         if((!this.vsTriggerClick || this.vsTriggerClick === 'mouseleave') && !this.vsTriggerContextmenu) {
           if (!evt.relatedTarget.classList.contains('vs-dropdown-menu')) {
-            dropdownMenu.dropdownVisible = false
+            dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
           }
         }
       }

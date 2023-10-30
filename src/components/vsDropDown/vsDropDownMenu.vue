@@ -66,9 +66,23 @@ export default {
       this.$parent.vsDropdownVisible = val;
     },
     topx(val) {
-      if(val < 0) {
-        this.dropdownVisible = false
-        this.widthx = this.$el.clientWidth
+      if(this.dropdownVisible) {
+        let dropdown = this.$parent.$refs.dropdown;
+        let dropdownTop = dropdown.getBoundingClientRect().top;
+        let dropdownHeight = dropdown.clientHeight;
+        let scrollTop =  document.querySelector(this.vsInsert).scrollTop;
+
+        if(this.notHeight) {
+          if(dropdownTop+dropdownHeight > scrollTop) {
+            this.dropdownVisible = this.$parent.vsDropdownVisible = false
+            this.widthx = this.$el.clientWidth
+          }
+        } else {
+          if(val-dropdownHeight < 0) {
+            this.dropdownVisible = this.$parent.vsDropdownVisible = false
+            this.widthx = this.$el.clientWidth
+          }
+        }
       }
     }
   },
@@ -82,13 +96,13 @@ export default {
   methods:{
     mouseenterx() {
       if (!this.vsTriggerClick) {
-        this.dropdownVisible = true
+        this.dropdownVisible = this.$parent.vsDropdownVisible = true
         this.widthx = this.$el.clientWidth
       }
     },
     mouseleavex() {
       if (!this.vsTriggerClick || this.vsTriggerClick === 'mouseleave') {
-        this.dropdownVisible = false
+        this.dropdownVisible = this.$parent.vsDropdownVisible = false
         this.widthx = this.$el.clientWidth
       }
     },
@@ -110,10 +124,10 @@ export default {
     },
     toggleMenu(event){
       if(event.type === 'mouseover' && (!this.vsTriggerClick)){
-        this.dropdownVisible = true
+        this.dropdownVisible = this.$parent.vsDropdownVisible = true
       }
       else if (!this.vsTriggerClick) {
-        this.dropdownVisible = false
+        this.dropdownVisible = this.$parent.vsDropdownVisible = false
       }
       this.widthx = this.$el.clientWidth
     },

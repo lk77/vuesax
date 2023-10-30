@@ -1,7 +1,7 @@
 <template>
   <div class="examplex">
 
-    <vs-dropdown vs-custom-content vs-insert="#vs-insert-container" vs-trigger-click="mouseleave">
+    <vs-dropdown vs-custom-content vs-trigger-click="mouseleave">
       <a class="a-icon" href.prevent>
         Click me open login
         <vs-icon icon="expand_more"></vs-icon>

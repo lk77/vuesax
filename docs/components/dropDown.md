@@ -379,7 +379,7 @@ Sometimes when we need something more personalized and not necessarily a menu fo
 :::tip
   For better functionality in the user's aspect when doing some interaction with the custom dropdown you can add that it is only activated and deactivated by a click event with the property `vs-trigger-click`
 
-  Since vuesax3@^4.2.2 you can pass `mouseleave` to `vs-trigger-click` if you want to open the dropdown with a click but still close it when the mouse leave the menu.
+  Since vuesax3@^4.3.0 you can pass `mouseleave` to `vs-trigger-click` if you want to open the dropdown with a click but still close it when the mouse leave the menu.
 :::
 
 
@@ -474,7 +474,233 @@ export default {
 
 </template>
 </vuecode>
-<div id="vs-insert-container"></div>
+</box>
+
+
+<box class="vs-insert-box">
+
+## VsInsert
+<i>Since vuesax3@^4.3.0</i>
+
+Sometimes we need to insert the dropdown menu into another element than body, you can pass a css selector to the property `vs-insert` and the dropdown will be inserted there.
+
+<vuecode md>
+<template #demo>
+<div>
+  <Demos-DropDown-VsInsert />
+</div>
+</template>
+<template #code>
+
+```html
+<template>
+  <div class="examplex" style="flex-direction: column;">
+    <div id="vs-insert-container">
+      <div id="vs-insert">
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+            <vs-button class="btn-drop" type="filled" icon="expand_more"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="success">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="success"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="danger">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="danger"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="warning">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="warning"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="dark">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="dark"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="rgb(134, 4, 98)">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="rgb(134, 4, 98)"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style lang="stylus">
+.vs-insert-box .box
+  overflow:visible!important;
+#vs-insert-container
+  height: 400px;
+  width: 100%;
+  background-color: #fafafa;
+  overflow: scroll;
+  #vs-insert
+    width: 100%;
+.examplex
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .a-icon
+    outline: none;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i
+      font-size: 18px;
+</style>
+```
+
+</template>
+</vuecode>
 </box>
 
 
