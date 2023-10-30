@@ -36,9 +36,10 @@
 </template>
 
 <script>
+import waitForElementToExist from "../../utils/waitForElementToExist";
 export default {
   name: "VsDropdownMenu",
-  inject: ['vsInsert'],
+  inject: ['vsInsert', 'vsBlurOnScroll'],
   data: () => ({
     dropdownVisible: false,
     leftAfter: 20,
@@ -64,26 +65,6 @@ export default {
       !val ? this.$parent.rightx = false : null
 
       this.$parent.vsDropdownVisible = val;
-    },
-    topx(val) {
-      if(this.dropdownVisible) {
-        let dropdown = this.$parent.$refs.dropdown;
-        let dropdownTop = dropdown.getBoundingClientRect().top;
-        let dropdownHeight = dropdown.clientHeight;
-        let scrollTop =  document.querySelector(this.vsInsert).scrollTop;
-
-        if(this.notHeight) {
-          if(dropdownTop+dropdownHeight > scrollTop) {
-            this.dropdownVisible = this.$parent.vsDropdownVisible = false
-            this.widthx = this.$el.clientWidth
-          }
-        } else {
-          if(val-dropdownHeight < 0) {
-            this.dropdownVisible = this.$parent.vsDropdownVisible = false
-            this.widthx = this.$el.clientWidth
-          }
-        }
-      }
     }
   },
   mounted() {
@@ -131,10 +112,28 @@ export default {
       }
       this.widthx = this.$el.clientWidth
     },
+    blurOnScroll(vsInsertEl, elp) {
+      if ('IntersectionObserver' in window) {
+        setTimeout(() => {
+          let observer = new IntersectionObserver((entries) => {
+            if (entries.length > 0 && entries[0].intersectionRatio === 0) {
+              this.dropdownVisible = this.$parent.vsDropdownVisible = false
+            }
+          }, {root: vsInsertEl})
+          observer.observe(elp);
+        }, 0)
+      }
+    },
     insertBody(){
       let elp = this.$el
       this.parentNode = this.$root.$el.parentNode
-      document.querySelector(this.vsInsert).prepend(elp)
+      waitForElementToExist(this.vsInsert).then(vsInsertEl => {
+        vsInsertEl.prepend(elp)
+
+        if(this.vsBlurOnScroll) {
+          this.blurOnScroll(vsInsertEl, elp)
+        }
+      })
     }
   }
 }

@@ -12,12 +12,13 @@
 </template>
 
 <script>
-
+import waitForElementToExist from "../../utils/waitForElementToExist";
 export default {
   name: "VsDropdown",
   provide: function() {
     return {
-      vsInsert: this.vsInsert
+      vsInsert: this.vsInsert,
+      vsBlurOnScroll: this.vsBlurOnScroll
     }
   },
   inheritAttrs: false,
@@ -45,6 +46,10 @@ export default {
     vsInsert: {
       default: 'body',
       type: String
+    },
+    vsBlurOnScroll: {
+      default: false,
+      type: Boolean
     }
   },
   emits: ['click', 'focus', 'blur'],
@@ -86,15 +91,22 @@ export default {
   mounted() {
     this.changeColor()
     document.addEventListener('click', this.clickx)
-    document.querySelector(this.vsInsert).addEventListener('scroll', this.scroll)
+    waitForElementToExist(this.vsInsert).then(vsInsertEl => {
+      vsInsertEl.addEventListener('scroll', this.scroll)
+    })
   },
   beforeUnmount() {
     document.removeEventListener('click', this.clickx)
-    document.querySelector(this.vsInsert).removeEventListener('scroll', this.scroll)
+    let vsInsertEl = document.querySelector(this.vsInsert)
+    if(vsInsertEl) {
+      vsInsertEl.removeEventListener('scroll', this.scroll)
+    }
   },
   methods: {
     scroll() {
-      this.$nextTick(this.changePositionMenu);
+      if(this.vsDropdownVisible) {
+        this.$nextTick(this.changePositionMenu);
+      }
     },
     clickx(evt) {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
@@ -126,6 +138,10 @@ export default {
     changePositionMenu() {
       let dropdown = this.$refs.dropdown;
       let container = document.querySelector(this.vsInsert);
+      if(!container) {
+        container = document.body;
+      }
+
       let relative = window.getComputedStyle(container).position === 'relative';
 
       let dropdownTop = dropdown.getBoundingClientRect().top;
@@ -135,10 +151,11 @@ export default {
 
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
       if(container.tagName !== 'BODY') {
-        if(!relative) {
-          scrollTopx = container.offsetTop - container.getBoundingClientRect().top;
+        if(relative) {
+          scrollTopx = container.scrollTop;
+          dropdownTop -= container.getBoundingClientRect().top;
         } else {
-          scrollTopx = 0;
+          scrollTopx = container.offsetTop - container.getBoundingClientRect().top;
         }
       }
 

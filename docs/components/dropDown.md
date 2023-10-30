@@ -484,6 +484,12 @@ export default {
 
 Sometimes we need to insert the dropdown menu into another element than body, you can pass a css selector to the property `vs-insert` and the dropdown will be inserted there.
 
+by default, the dropdown menu will remain open even if it's not visible due to the scroll, you can use `:vs-blur-on-scroll="true"` to automatically close the dropdown menu when it goes out of view.
+
+:::tip
+  You want to use `position: relative` on the container, for a better scrolling experience, and to avoid overflow issues related to `position: static`
+:::
+
 <vuecode md>
 <template #demo>
 <div>
@@ -499,7 +505,7 @@ Sometimes we need to insert the dropdown menu into another element than body, yo
       <div id="vs-insert">
         <div class="examplex" style="height:200px;">
           <vs-button class="btnx withDropdown" type="filled">Dropdown</vs-button>
-          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
             <vs-button class="btn-drop" type="filled" icon="expand_more"></vs-button>
             <!-- <a href="#">Hola mundo</a> -->
 
@@ -527,7 +533,7 @@ Sometimes we need to insert the dropdown menu into another element than body, yo
         </div>
         <div class="examplex" style="height:200px;">
           <vs-button class="btnx withDropdown" type="filled" color="success">Dropdown</vs-button>
-          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
             <vs-button class="btn-drop" type="filled" icon="expand_more" color="success"></vs-button>
             <!-- <a href="#">Hola mundo</a> -->
 
@@ -555,7 +561,7 @@ Sometimes we need to insert the dropdown menu into another element than body, yo
         </div>
         <div class="examplex" style="height:200px;">
           <vs-button class="btnx withDropdown" type="filled" color="danger">Dropdown</vs-button>
-          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
             <vs-button class="btn-drop" type="filled" icon="expand_more" color="danger"></vs-button>
             <!-- <a href="#">Hola mundo</a> -->
 
@@ -583,7 +589,7 @@ Sometimes we need to insert the dropdown menu into another element than body, yo
         </div>
         <div class="examplex" style="height:200px;">
           <vs-button class="btnx withDropdown" type="filled" color="warning">Dropdown</vs-button>
-          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
             <vs-button class="btn-drop" type="filled" icon="expand_more" color="warning"></vs-button>
             <!-- <a href="#">Hola mundo</a> -->
 
@@ -611,7 +617,7 @@ Sometimes we need to insert the dropdown menu into another element than body, yo
         </div>
         <div class="examplex" style="height:200px;">
           <vs-button class="btnx withDropdown" type="filled" color="dark">Dropdown</vs-button>
-          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
             <vs-button class="btn-drop" type="filled" icon="expand_more" color="dark"></vs-button>
             <!-- <a href="#">Hola mundo</a> -->
 
@@ -639,7 +645,7 @@ Sometimes we need to insert the dropdown menu into another element than body, yo
         </div>
         <div class="examplex" style="height:200px;">
           <vs-button class="btnx withDropdown" type="filled" color="rgb(134, 4, 98)">Dropdown</vs-button>
-          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container">
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
             <vs-button class="btn-drop" type="filled" icon="expand_more" color="rgb(134, 4, 98)"></vs-button>
             <!-- <a href="#">Hola mundo</a> -->
 
@@ -678,6 +684,7 @@ export default {}
 .vs-insert-box .box
   overflow:visible!important;
 #vs-insert-container
+  position: relative;
   height: 400px;
   width: 100%;
   background-color: #fafafa;
