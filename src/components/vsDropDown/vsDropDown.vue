@@ -18,7 +18,9 @@ export default {
   provide: function() {
     return {
       vsInsert: this.vsInsert,
-      vsBlurOnScroll: this.vsBlurOnScroll
+      vsBlurOnScroll: this.vsBlurOnScroll,
+      vsLeaveDelay: parseInt(this.vsLeaveDelay),
+      vsLeaveTolerance: parseInt(this.vsLeaveTolerance)
     }
   },
   inheritAttrs: false,
@@ -50,6 +52,14 @@ export default {
     vsBlurOnScroll: {
       default: false,
       type: Boolean
+    },
+    vsLeaveTolerance: {
+      default: 0,
+      type: [Number, String]
+    },
+    vsLeaveDelay: {
+      default: 0,
+      type: [Number, String]
     }
   },
   emits: ['click', 'focus', 'blur'],
@@ -200,11 +210,19 @@ export default {
       if(typex === 'over') {
         if(!this.vsTriggerClick && !this.vsTriggerContextmenu) {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = true
+          if(dropdownMenu.leaveTimeout) {
+            clearTimeout(dropdownMenu.leaveTimeout);
+            dropdownMenu.leaveTimeout = null;
+          }
         }
       } else {
         if((!this.vsTriggerClick || this.vsTriggerClick === 'mouseleave') && !this.vsTriggerContextmenu) {
           if (!evt.relatedTarget.classList.contains('vs-dropdown-menu')) {
-            dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+            if(dropdownMenu.leaveTimeout === null) {
+              dropdownMenu.leaveTimeout = setTimeout(() => {
+                dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+              }, parseInt(this.vsLeaveDelay))
+            }
           }
         }
       }

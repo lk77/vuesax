@@ -43,8 +43,18 @@ API:
  - name: vs-insert
    type: String
    parameters: css selector
-   description: You can specify in which element the dropdown will be created, with a selector
+   description: You can specify in which element the dropdown will be created, with a selector.
    default: body
+ - name: vs-leave-tolerance
+   type: Number
+   parameters: px
+   description: You can specify a tolerance in px around the dropdown. The dropdown will not close itself if the mouse remain within that tolerance. Useful without 'vs-trigger-click' or with 'vs-trigger-click="mouseleave"'.
+   default: 0
+ - name: vs-leave-delay
+   type: Number
+   parameters: ms
+   description: You can specify a delay in ms before the dropdown closes. The dropdown will not close itself if the mouse re-enter the dropdown within that delay. Useful without 'vs-trigger-click' or with 'vs-trigger-click="mouseleave"'.
+   default: 0
 ---
 
 # DropDown

@@ -5,8 +5,10 @@
       ref="options"
       :class="{'rightx':vsDropRight || $parent.rightx,'notHeight': notHeight}"
       :style="{
-        'left':`${leftx}px`,
-        'top':`${topx}px`
+        'left':`${leftx+(vsLeaveTolerance*2)}px`,
+        'top':`${topx+(notHeight ? (vsLeaveTolerance*2) : 0)}px`,
+        'padding' : `${vsLeaveTolerance+(notHeight ? 0 : 10)}px`,
+        'margin' : `-${vsLeaveTolerance}px`
       }"
       class="con-vs-dropdown--menu vs-dropdown-menu"
       style="position:absolute!important;"
@@ -29,6 +31,9 @@
       </div>
       <div
         ref="menuAfter"
+        :style="{
+          'margin': `${vsLeaveTolerance}px`
+        }"
         :class="[ vsDropRight ? 'vs-dropdown-right--menu--after' : 'vs-dropdown--menu--after']"
       ></div>
     </div>
@@ -39,7 +44,7 @@
 import waitForElementToExist from "../../utils/waitForElementToExist";
 export default {
   name: "VsDropdownMenu",
-  inject: ['vsInsert', 'vsBlurOnScroll'],
+  inject: ['vsInsert', 'vsBlurOnScroll', 'vsLeaveTolerance', 'vsLeaveDelay'],
   data: () => ({
     dropdownVisible: false,
     leftAfter: 20,
@@ -53,6 +58,7 @@ export default {
     vsCustomContent: false,
     parentNode: null,
     childrenItems: [],
+    leaveTimeout: null
   }),
   watch:{
     dropdownVisible(val) {
@@ -78,13 +84,24 @@ export default {
     mouseenterx() {
       if (!this.vsTriggerClick) {
         this.dropdownVisible = this.$parent.vsDropdownVisible = true
+        if(this.leaveTimeout) {
+          clearTimeout(this.leaveTimeout);
+          this.leaveTimeout = null;
+        }
         this.widthx = this.$el.clientWidth
+      } else if(this.vsTriggerClick === 'mouseleave') {
+        if(this.leaveTimeout) {
+          clearTimeout(this.leaveTimeout);
+          this.leaveTimeout = null;
+        }
       }
     },
     mouseleavex() {
-      if (!this.vsTriggerClick || this.vsTriggerClick === 'mouseleave') {
-        this.dropdownVisible = this.$parent.vsDropdownVisible = false
-        this.widthx = this.$el.clientWidth
+      if (!this.vsTriggerClick || (this.vsTriggerClick === 'mouseleave' && this.leaveTimeout === null)) {
+        this.leaveTimeout = setTimeout(() => {
+          this.dropdownVisible = this.$parent.vsDropdownVisible = false
+          this.widthx = this.$el.clientWidth
+        }, this.vsLeaveDelay)
       }
     },
     setDirection() {
