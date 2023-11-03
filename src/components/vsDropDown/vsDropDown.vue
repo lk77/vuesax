@@ -125,9 +125,8 @@ export default {
         dropdownMenu.vsTriggerClick = this.vsTriggerClick
         dropdownMenu.vsDropRight = this.vsDropRight
         if ((this.vsTriggerClick || this.vsCustomContent) && this.vsDropdownVisible) {
-          if ((evt.target !== this.$refs.dropdown &&
-            evt.target.parentNode !== this.$refs.dropdown &&
-            evt.target.parentNode.parentNode !== this.$refs.dropdown)) {
+          let nodes = [evt.target, evt.target?.parentNode, evt.target?.parentNode?.parentNode].filter(Boolean);
+          if(!nodes.includes(this.$refs.dropdown)) {
             if (!evt.target.closest('.vs-dropdown--menu')) {
               dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
               document.removeEventListener('click', this.clickx)
