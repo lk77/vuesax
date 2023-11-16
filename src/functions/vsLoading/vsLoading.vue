@@ -73,19 +73,33 @@
 <script>
   import _color from '../../utils/color.js'
   export default {
+    props: {
+      type: {
+        default: 'default'
+      },
+      background: {
+        default: 'rgba(255,255,255,.6)'
+      },
+      color: {
+        default: null
+      },
+      scale: {
+        default: 1
+      },
+      text: {
+        default: null
+      },
+      clickEffect: {
+        default: false
+      }
+    },
     data:()=>({
       active:false,
-      type:'default',
-      color:null,
-      background:'rgba(255,255,255,.6)',
       src:'',
       leftx:0,
       topx:0,
-      clickEffect:false,
       activeEffectClick:false,
-      scale:1,
-      textAfter:false,
-      text:null,
+      textAfter:false
     }),
     computed:{
       styleEffectClick(){

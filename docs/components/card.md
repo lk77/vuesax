@@ -55,21 +55,21 @@ To add a card we have the `vs-card` component, for the internal structure we use
 <vs-row vs-justify="center">
   <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
     <vs-card>
-      <div slot="header">
+      <template v-slot:header>
         <h3>
           Hello world !
         </h3>
-      </div>
+      </template>
       <div>
         <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
       </div>
-      <div slot="footer">
+      <template v-slot:footer>
         <vs-row vs-justify="flex-end">
           <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
           <vs-button color="primary" icon="turned_in_not"></vs-button>
           <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
         </vs-row>
-      </div>
+      </template>
     </vs-card>
   </vs-col>
 </vs-row>
@@ -81,21 +81,24 @@ To add a card we have the `vs-card` component, for the internal structure we use
 <vs-row vs-justify="center">
   <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
     <vs-card>
-      <div slot="header">
+      <template v-slot:header>
         <h3>
           Hello world !
         </h3>
-      </div>
-      <div>
+      </template>
+      <template v-slot>
+        <div>
         <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
-      </div>
-      <div slot="footer">
+        </div>
+      </template>
+
+      <template v-slot:footer>
         <vs-row vs-justify="flex-end">
           <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
           <vs-button color="primary" icon="turned_in_not"></vs-button>
           <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
         </vs-row>
-      </div>
+      </template>
     </vs-card>
   </vs-col>
 </vs-row>
@@ -124,46 +127,46 @@ There are cases in which you need to add an image or video on the card so we hav
   <vs-row vs-justify="center">
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card class="cardx">
-        <div slot="header">
+        <template #header>
           <h3>
             Hello world !
           </h3>
-        </div>
-        <div slot="media">
+        </template>
+        <template #media>
           <img :src="$withBase('/card.png')">
-        </div>
+        </template>
         <div>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
         </div>
-        <div slot="footer">
+        <template #footer>
           <vs-row vs-justify="flex-end">
             <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
             <vs-button color="primary" icon="turned_in_not"></vs-button>
             <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
           </vs-row>
-        </div>
+        </template>
       </vs-card>
     </vs-col>
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card class="cardx">
-        <div slot="header">
+        <template #header>
           <h3>
             Hello world !
           </h3>
-        </div>
-        <div slot="media">
+        </template>
+        <template #media>
           <img :src="$withBase('/card2.png')">
-        </div>
+        </template>
         <div>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
         </div>
-        <div slot="footer">
+        <template #footer>
           <vs-row vs-justify="flex-end">
             <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
             <vs-button color="primary" icon="turned_in_not"></vs-button>
             <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
           </vs-row>
-        </div>
+        </template>
       </vs-card>
     </vs-col>
   </vs-row>
@@ -202,47 +205,47 @@ If you need to set card with the same height, send the prop `fixed-height` and c
   <vs-row vs-justify="center">
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card class="cardx" fixedHeight>
-        <div slot="header">
+        <template #header>
           <h3>
             Hello world !
           </h3>
-        </div>
-        <div slot="media">
+        </template>
+        <template #media>
           <img :src="$withBase('/card.png')">
-        </div>
+        </template>
         <div>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
         </div>
-        <div slot="footer">
+        <template #footer>
           <vs-row vs-justify="flex-end">
             <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
             <vs-button color="primary" icon="turned_in_not"></vs-button>
             <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
           </vs-row>
-        </div>
+        </template>
       </vs-card>
     </vs-col>
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card class="cardx" fixedHeight>
-        <div slot="header">
+        <template #header>
           <h3>
             Hello world !
           </h3>
-        </div>
-        <div slot="media">
+        </template>
+        <template #media>
           <img :src="$withBase('/card2.png')">
-        </div>
+        </template>
         <div>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
         </div>
-        <div slot="footer">
+        <template #footer>
           <vs-row vs-justify="flex-end">
             <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
             <vs-button color="primary" icon="turned_in_not"></vs-button>
             <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
           </vs-row>
-        </div>
+        </template>
       </vs-card>
     </vs-col>
   </vs-row>
@@ -275,44 +278,44 @@ You can add hover functionality with the property `actionable`
     <vs-row vs-justify="center">
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card actionable class="cardx">
-        <div slot="header">
+        <template #header>
           <h3>
             Hello world !
           </h3>
-        </div>
-        <div slot="media">
+        </template>
+        <template #media>
           <img :src="$withBase('/card.png')">
-        </div>
+        </template>
         <div>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
         </div>
-        <div slot="footer">
+        <template #footer>
           <vs-row vs-justify="flex-end">
             <vs-button color="primary" type="gradient" >View</vs-button>
             <vs-button color="danger" type="gradient">Delete</vs-button>
           </vs-row>
-        </div>
+        </template>
       </vs-card>
     </vs-col>
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card actionable class="cardx">
-        <div slot="header">
+        <template #header>
           <h3>
             Hello world !
           </h3>
-        </div>
-        <div slot="media">
+        </template>
+        <template #media>
           <img :src="$withBase('/card2.png')">
-        </div>
+        </template>
         <div>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
         </div>
-        <div slot="footer">
+        <template #footer>
           <vs-row vs-justify="flex-end">
             <vs-button color="primary" type="gradient" >View</vs-button>
             <vs-button color="danger" type="gradient" >Delete</vs-button>
           </vs-row>
-        </div>
+        </template>
       </vs-card>
     </vs-col>
   </vs-row>
@@ -324,44 +327,44 @@ You can add hover functionality with the property `actionable`
 <vs-row vs-justify="center">
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card actionable class="cardx">
-        <div slot="header">
+        <template #header>
           <h3>
             Hello world !
           </h3>
-        </div>
-        <div slot="media">
+        </template>
+        <template #media>
           <img :src="$withBase('/card.png')">
-        </div>
+        </template>
         <div>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
         </div>
-        <div slot="footer">
+        <template #footer>
           <vs-row vs-justify="flex-end">
             <vs-button color="primary" type="gradient" >View</vs-button>
             <vs-button color="danger" type="gradient">Delete</vs-button>
           </vs-row>
-        </div>
+        </template>
       </vs-card>
     </vs-col>
     <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="6">
       <vs-card actionable class="cardx">
-        <div slot="header">
+        <template #header>
           <h3>
             Hello world !
           </h3>
-        </div>
-        <div slot="media">
+        </template>
+        <template #media>
           <img :src="$withBase('/card2.png')">
-        </div>
+        </template>
         <div>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
         </div>
-        <div slot="footer">
+        <template #footer>
           <vs-row vs-justify="flex-end">
             <vs-button color="primary" type="gradient" >View</vs-button>
             <vs-button color="danger" type="gradient" >Delete</vs-button>
           </vs-row>
-        </div>
+        </template>
       </vs-card>
     </vs-col>
   </vs-row>

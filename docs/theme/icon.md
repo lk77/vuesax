@@ -52,9 +52,15 @@ API:
 To use the icon, use the `vs-icon` component. For the main parameter, pass the `icon` property that determines which icon to show. By default, the icon uses the **Google Material Icons** font library. Another library can be selected by passing the css class/classes for the library to `icon-pack`.  Only the Material Icons library is bundled with the framework.  Other libraries will have to be included implicitly.
 
 ::: tip
-Vuesax uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://material.io/icons/).
+Vuesax uses the **Google Material Icons** font library. For a list of all available icons, visit the official [Material Icons page](https://fonts.google.com/icons?icon.set=Material+Icons).
+
+**Google Material Symbols** are supported since <i>vuesax3@^4.2.2</i>. For a list of all available symbols, visit the official [Material Symbols page](https://fonts.google.com/icons?icon.set=Material+Symbols).
+
+You will have to set `icon-pack` to either material-symbols-outlined, material-symbols-rounded or material-symbols-sharp.
+You still need to include the Google Material Symbols in your project.
 
 FontAwesome and other fonts libraries are supported. Simply use the `icon-pack` with `fa` or `fas`. You still need to include the Font Awesome icons in your project.
+
 :::
 
 <vuecode md>
@@ -76,6 +82,20 @@ FontAwesome and other fonts libraries are supported. Simply use the `icon-pack` 
   <vs-icon icon="polymer"></vs-icon>
 </span>
 </div>
+<br/>
+<h5>Google Symbols ( outlined / rounded / sharp ) : </h5>
+<br/>
+<div>
+<span>
+  <vs-icon icon="tv" icon-pack="material-symbols-outlined"></vs-icon>
+</span>
+<span>
+  <vs-icon icon="encrypted" icon-pack="material-symbols-rounded"></vs-icon>
+</span>
+<span>
+  <vs-icon icon="dns" icon-pack="material-symbols-sharp"></vs-icon>
+</span>
+</div>
 </template>
 <template #code>
 
@@ -94,6 +114,17 @@ FontAwesome and other fonts libraries are supported. Simply use the `icon-pack` 
 </span>
 <span>
   <vs-icon icon="polymer"></vs-icon>
+</span>
+
+
+<span>
+  <vs-icon icon="tv" icon-pack="material-symbols-outlined"></vs-icon>
+</span>
+<span>
+  <vs-icon icon="encrypted" icon-pack="material-symbols-rounded"></vs-icon>
+</span>
+<span>
+  <vs-icon icon="dns" icon-pack="material-symbols-sharp"></vs-icon>
 </span>
 ```
 

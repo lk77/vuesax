@@ -1,0 +1,163 @@
+@use './config' as *;
+
+.content {
+  code {
+    color: #777398;
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+    font-size: 0.85em;
+    background-color: #f5f7fb;
+    border-radius: 4px;
+  }
+
+  .header {
+    background: #fafafa !important;
+    border-radius: 0px !important;
+  }
+
+  .highlighted-line {
+    background-color: rgba(0, 0, 0, 0.66);
+    display: block;
+    margin: 0 -1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  &:not(.line-numbers-mode) {
+    .line-numbers {
+      display: none;
+    }
+  }
+}
+
+.content pre,
+.content pre[class*="language-"] {
+  background-color: #f5f7fb !important;
+  line-height: 1.4;
+  border-radius: 6px;
+  padding: 0.6rem 1rem !important;
+  margin: 0.85rem 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow: auto;
+  position: relative;
+}
+
+#header-anchor pre[class*=language-] {
+  background-color: #f5f7fb !important;
+  margin-left: unset !important;
+}
+
+.content pre code,
+.content pre[class*="language-"] code {
+  color: rgba(0, 0, 0, 0.65) !important;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.content pre code .punctuation,
+.content pre[class*="language-"] code .punctuation {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.content pre:before,
+.content pre[class*="language-"]:before {
+  position: absolute;
+  top: 0.8em;
+  right: 1em;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #ec5975;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: #3eaf7c;
+}
+
+@each $lang in $codeLang {
+  div[class*='language-'].ext-#{$lang} {
+    &:before {
+      content: '' + $lang;
+    }
+  }
+}
+
+// narrow mobile
+@media (max-width: $MQMobileNarrow) {
+  .theme-default-content {
+    div[class*='language-'] {
+      margin: 0.85rem -1.5rem;
+      border-radius: 0;
+    }
+  }
+}

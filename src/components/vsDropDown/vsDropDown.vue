@@ -12,14 +12,22 @@
 </template>
 
 <script>
-
+import waitForElementToExist from "../../utils/waitForElementToExist";
 export default {
   name: "VsDropdown",
+  provide: function() {
+    return {
+      vsInsert: this.vsInsert,
+      vsBlurOnScroll: this.vsBlurOnScroll,
+      vsLeaveDelay: parseInt(this.vsLeaveDelay),
+      vsLeaveTolerance: parseInt(this.vsLeaveTolerance)
+    }
+  },
   inheritAttrs: false,
   props: {
     vsTriggerClick: {
       default: false,
-      type: Boolean
+      type: [Boolean,String]
     },
     vsTriggerContextmenu: {
       default: false,
@@ -36,6 +44,22 @@ export default {
     vsDropRight: {
       default: false,
       type: Boolean
+    },
+    vsInsert: {
+      default: 'body',
+      type: String
+    },
+    vsBlurOnScroll: {
+      default: false,
+      type: Boolean
+    },
+    vsLeaveTolerance: {
+      default: 0,
+      type: [Number, String]
+    },
+    vsLeaveDelay: {
+      default: 0,
+      type: [Number, String]
     }
   },
   emits: ['click', 'focus', 'blur'],
@@ -65,7 +89,7 @@ export default {
   },
   watch: {
     vsDropdownVisible() {
-      this.changePositionMenu()
+      this.$nextTick(this.changePositionMenu);
       if (this.vsDropdownVisible) {
         this.$emit('focus')
         document.addEventListener('click', this.clickx)
@@ -77,11 +101,23 @@ export default {
   mounted() {
     this.changeColor()
     document.addEventListener('click', this.clickx)
+    waitForElementToExist(this.vsInsert).then(vsInsertEl => {
+      vsInsertEl.addEventListener('scroll', this.scroll)
+    })
   },
   beforeUnmount() {
     document.removeEventListener('click', this.clickx)
+    let vsInsertEl = document.querySelector(this.vsInsert)
+    if(vsInsertEl) {
+      vsInsertEl.removeEventListener('scroll', this.scroll)
+    }
   },
   methods: {
+    scroll() {
+      if(this.vsDropdownVisible) {
+        this.$nextTick(this.changePositionMenu);
+      }
+    },
     clickx(evt) {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
       if(dropdownMenu) {
@@ -89,9 +125,8 @@ export default {
         dropdownMenu.vsTriggerClick = this.vsTriggerClick
         dropdownMenu.vsDropRight = this.vsDropRight
         if ((this.vsTriggerClick || this.vsCustomContent) && this.vsDropdownVisible) {
-          if ((evt.target !== this.$refs.dropdown &&
-            evt.target.parentNode !== this.$refs.dropdown &&
-            evt.target.parentNode.parentNode !== this.$refs.dropdown)) {
+          let nodes = [evt.target, evt.target?.parentNode, evt.target?.parentNode?.parentNode].filter(Boolean);
+          if(!nodes.includes(this.$refs.dropdown)) {
             if (!evt.target.closest('.vs-dropdown--menu')) {
               dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
               document.removeEventListener('click', this.clickx)
@@ -110,36 +145,44 @@ export default {
       })*/
     },
     changePositionMenu() {
+      let dropdown = this.$refs.dropdown;
+      let container = document.querySelector(this.vsInsert);
+      if(!container) {
+        container = document.body;
+      }
+
+      let relative = window.getComputedStyle(container).position === 'relative';
+
+      let dropdownTop = dropdown.getBoundingClientRect().top;
+      let dropdownRight = dropdown.getBoundingClientRect().right;
+      let dropdownLeft = dropdown.getBoundingClientRect().left;
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
 
       let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
-      if (this.$refs.dropdown.getBoundingClientRect().top + 300 >= window.innerHeight) {
-        this.$nextTick(() => {
-          dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top - dropdownMenu.$el.clientHeight - 7) + scrollTopx
-          dropdownMenu.notHeight = true
-        })
-      } else {
-        dropdownMenu.notHeight = false
-        dropdownMenu.topx = (this.$refs.dropdown.getBoundingClientRect().top + this.$refs.dropdown.clientHeight) + scrollTopx - 5
+      if(container.tagName !== 'BODY') {
+        if(relative) {
+          scrollTopx = container.scrollTop;
+          dropdownTop -= container.getBoundingClientRect().top;
+        } else {
+          scrollTopx = container.offsetTop - container.getBoundingClientRect().top;
+        }
       }
 
-      this.$nextTick(() => {
-        var w = window.innerWidth
-          || document.documentElement.clientWidth
-          || document.body.clientWidth
+      if (dropdown.offsetTop + 300 >= container.scrollHeight) {
+        dropdownMenu.topx = (dropdownTop - dropdownMenu.$el.clientHeight - 7) + scrollTopx
+        dropdownMenu.notHeight = true
+      } else {
+        dropdownMenu.notHeight = false
+        dropdownMenu.topx = (dropdownTop + dropdown.clientHeight) + scrollTopx - 5
+      }
 
-
-        if (this.$refs.dropdown.getBoundingClientRect().left + dropdownMenu.$el.offsetWidth >= w - 25) {
-          // this.rightx = true
-        }
-
-        if (this.$refs.dropdown.getBoundingClientRect().right < (dropdownMenu.$el.clientWidth + 25)) {
-          dropdownMenu.leftx = dropdownMenu.$el.clientWidth + this.$refs.dropdown.getBoundingClientRect().left
-          this.rightx = true
-          return
-        }
-        dropdownMenu.leftx = this.$refs.dropdown.getBoundingClientRect().left + (this.vsDropRight ? dropdownMenu.$el.clientWidth : this.$refs.dropdown.clientWidth);
-      })
+      if (dropdownRight < (dropdownMenu.$el.clientWidth + 25)) {
+        dropdownMenu.leftx = dropdownMenu.$el.clientWidth + dropdownLeft - container.getBoundingClientRect().left
+        this.rightx = true
+      } else {
+        dropdownMenu.leftx = dropdownLeft + (this.vsDropRight ? dropdownMenu.$el.clientWidth : this.$refs.dropdown.clientWidth) - container.getBoundingClientRect().left;
+        this.rightx = false
+      }
     },
     clickToogleMenu(evt) {
       if (evt.type == 'contextmenu') {
@@ -147,7 +190,7 @@ export default {
       }
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
       if (this.vsTriggerClick || this.vsTriggerContextmenu) {
-        if (this.vsDropdownVisible && !evt.target.closest('.vs-dropdown--menu')) {
+        if (dropdownMenu.dropdownVisible && !evt.target.closest('.vs-dropdown--menu')) {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
         } else {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = true
@@ -163,12 +206,22 @@ export default {
     },
     toggleMenu(typex, evt) {
       let dropdownMenu = this.childrenItems.find(item => item.dropdownVisible !== undefined)
-      if (!this.vsTriggerClick && !this.vsTriggerContextmenu) {
-        if (typex == 'over') {
+      if(typex === 'over') {
+        if(!this.vsTriggerClick && !this.vsTriggerContextmenu) {
           dropdownMenu.dropdownVisible = this.vsDropdownVisible = true
-        } else {
+          if(dropdownMenu.leaveTimeout) {
+            clearTimeout(dropdownMenu.leaveTimeout);
+            dropdownMenu.leaveTimeout = null;
+          }
+        }
+      } else {
+        if((!this.vsTriggerClick || this.vsTriggerClick === 'mouseleave') && !this.vsTriggerContextmenu) {
           if (!evt.relatedTarget.classList.contains('vs-dropdown-menu')) {
-            dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+            if(dropdownMenu.leaveTimeout === null) {
+              dropdownMenu.leaveTimeout = setTimeout(() => {
+                dropdownMenu.dropdownVisible = this.vsDropdownVisible = false
+              }, parseInt(this.vsLeaveDelay))
+            }
           }
         }
       }

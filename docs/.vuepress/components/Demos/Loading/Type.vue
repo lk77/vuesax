@@ -31,8 +31,8 @@ export default {
     this.types.forEach((type)=>{
       this.$vs.loading({
         container: `#loading-${type}`,
-        type,
-        text:type
+        type: type,
+        text: type
       })
     })
   },

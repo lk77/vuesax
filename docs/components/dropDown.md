@@ -6,9 +6,9 @@ API:
    description: Change the color of the dropdown.
    default: primary
  - name: vs-trigger-click
-   type: Boolean
-   parameters: null
-   description: Determine if the dropdown opens when you click, changing the default functionality.
+   type: Boolean, String
+   parameters: mouseleave
+   description: Determine if the dropdown opens when you click, changing the default functionality. You can pass "mouseleave",  in which case the dropdown opens when you click, but closes automatically when the mouse leave the dropdown.
    default: false
  - name: divider
    type: Boolean
@@ -40,6 +40,21 @@ API:
    parameters: Icon Pack Class Name
    description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
    default: material-icons
+ - name: vs-insert
+   type: String
+   parameters: css selector
+   description: You can specify in which element the dropdown will be created, with a selector.
+   default: body
+ - name: vs-leave-tolerance
+   type: Number
+   parameters: px
+   description: You can specify a tolerance in px around the dropdown. The dropdown will not close itself if the mouse remain within that tolerance. Useful without 'vs-trigger-click' or with 'vs-trigger-click="mouseleave"'.
+   default: 0
+ - name: vs-leave-delay
+   type: Number
+   parameters: ms
+   description: You can specify a delay in ms before the dropdown closes. The dropdown will not close itself if the mouse re-enter the dropdown within that delay. Useful without 'vs-trigger-click' or with 'vs-trigger-click="mouseleave"'.
+   default: 0
 ---
 
 # DropDown
@@ -373,6 +388,8 @@ Sometimes when we need something more personalized and not necessarily a menu fo
 
 :::tip
   For better functionality in the user's aspect when doing some interaction with the custom dropdown you can add that it is only activated and deactivated by a click event with the property `vs-trigger-click`
+
+  Since vuesax3@^4.3.0 you can pass `mouseleave` to `vs-trigger-click` if you want to open the dropdown with a click but still close it when the mouse leave the menu.
 :::
 
 
@@ -388,7 +405,7 @@ Sometimes when we need something more personalized and not necessarily a menu fo
 <template lang="html">
   <div class="examplex">
 
-    <vs-dropdown vs-custom-content vs-trigger-click >
+    <vs-dropdown vs-custom-content vs-trigger-click="mouseleave">
       <a class="a-icon" href.prevent>
         Click me open login
         <vs-icon class="" icon="expand_more"></vs-icon>
@@ -470,6 +487,240 @@ export default {
 </box>
 
 
+<box class="vs-insert-box">
+
+## VsInsert
+<i>Since vuesax3@^4.3.0</i>
+
+Sometimes we need to insert the dropdown menu into another element than body, you can pass a css selector to the property `vs-insert` and the dropdown will be inserted there.
+
+by default, the dropdown menu will remain open even if it's not visible due to the scroll, you can use `:vs-blur-on-scroll="true"` to automatically close the dropdown menu when it goes out of view.
+
+:::tip
+  You want to use `position: relative` on the container, for a better scrolling experience, and to avoid overflow issues related to `position: static`
+:::
+
+<vuecode md>
+<template #demo>
+<div>
+  <Demos-DropDown-VsInsert />
+</div>
+</template>
+<template #code>
+
+```html
+<template>
+  <div class="examplex" style="flex-direction: column;">
+    <div id="vs-insert-container">
+      <div id="vs-insert">
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
+            <vs-button class="btn-drop" type="filled" icon="expand_more"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="success">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="success"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="danger">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="danger"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="warning">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="warning"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="dark">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="dark"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+        <div class="examplex" style="height:200px;">
+          <vs-button class="btnx withDropdown" type="filled" color="rgb(134, 4, 98)">Dropdown</vs-button>
+          <vs-dropdown vs-trigger-click vs-insert="#vs-insert-container" :vs-blur-on-scroll="true">
+            <vs-button class="btn-drop" type="filled" icon="expand_more" color="rgb(134, 4, 98)"></vs-button>
+            <!-- <a href="#">Hola mundo</a> -->
+
+            <vs-dropdown-menu>
+              <vs-dropdown-item>
+                option 1
+              </vs-dropdown-item>
+              <vs-dropdown-item>
+                option 2
+              </vs-dropdown-item>
+              <vs-dropdown-group>
+                <vs-dropdown-item>
+                  option 1
+                </vs-dropdown-item>
+                <vs-dropdown-item>
+                  option 2
+                </vs-dropdown-item>
+
+              </vs-dropdown-group>
+              <vs-dropdown-item divider>
+                option 3
+              </vs-dropdown-item>
+            </vs-dropdown-menu>
+          </vs-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style lang="stylus">
+.vs-insert-box .box
+  overflow:visible!important;
+#vs-insert-container
+  position: relative;
+  height: 400px;
+  width: 100%;
+  background-color: #fafafa;
+  overflow: scroll;
+  #vs-insert
+    width: 100%;
+.examplex
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .a-icon
+    outline: none;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i
+      font-size: 18px;
+</style>
+```
+
+</template>
+</vuecode>
+</box>
+
+
 <box>
 
 ## Button
@@ -506,7 +757,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
 ```html
 <template lang="html">
   <div class="examplex">
-    <vs-button class="btnx" type="filled">Dropdown</vs-button>
+    <vs-button class="btnx withDropdown" type="filled">Dropdown</vs-button>
     <vs-dropdown>
       <vs-button class="btn-drop" type="filled" icon="expand_more"></vs-button>
       <!-- <a href="#">Hola mundo</a> -->
@@ -518,7 +769,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
         <vs-dropdown-item>
           option 2
         </vs-dropdown-item>
-        <vs-dropdown-group >
+        <vs-dropdown-group>
           <vs-dropdown-item>
             option 1
           </vs-dropdown-item>
@@ -534,7 +785,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
     </vs-dropdown>
 
 
-    <vs-button class="btnx" type="success-gradient">Dropdown</vs-button>
+    <vs-button class="btnx withDropdown" type="success-gradient">Dropdown</vs-button>
     <vs-dropdown>
       <vs-button class="btn-drop" type="success-gradient" icon="more_horiz"></vs-button>
       <!-- <a href="#">Hola mundo</a> -->
@@ -553,7 +804,7 @@ Vuesax uses the **Google Material Icons** font library by default. For a list of
     </vs-dropdown>
 
 
-    <vs-button class="btnx" type="danger-line-down">Icons</vs-button>
+    <vs-button class="btnx withDropdown" type="danger-line-down">Icons</vs-button>
     <vs-dropdown>
       <vs-button class="btn-drop" type="danger-line-down" icon="mood"></vs-button>
       <!-- <a href="#">Hola mundo</a> -->
@@ -596,6 +847,7 @@ export default {
   button
     margin: 0px !important;
     &.btnx
+      height: 38px!important;
       margin-left: 10px !important;
       border-radius: 5px 0px 0px 5px;
     &.btn-drop

@@ -91,7 +91,7 @@
 </template>
 
 <script>
-  import Navbar from '../theme/components/Navbar.vue'
+  //import Navbar from '../theme/components/Navbar.vue'
   import c100 from './contributors/contribution/100.vue'
   import c1k from './contributors/contribution/1k.vue'
   import c10k from './contributors/contribution/10k.vue'
@@ -104,7 +104,7 @@
   import pull50 from './contributors/pull/50pull.vue'
 
   import footerContributors from './contributors/footerContributors.vue'
-  import Footer from '../theme/components/Footer.vue'
+  //import Footer from '../theme/components/Footer.vue'
 
   export default {
   components:{
@@ -117,8 +117,8 @@
     pull20,
     pull50,
     footerContributors,
-    Footer,
-    Navbar
+    /*Footer,
+    Navbar*/
   },
   data:()=>({
     users:[],
@@ -238,7 +238,7 @@
 </script>
 
 <style lang="scss">
-@use '../theme/styles/config' as *;
+//@use '../theme/styles/config' as *;
 
 .con-contenedores {
 	margin-top: 20px;
@@ -261,7 +261,7 @@
 				&:before {
 					width: 0%;
 					height: 2px;
-					background: $accentColor;
+					//background: $accentColor;
 					position: absolute;
 					content: '';
 					bottom: 0px;
@@ -333,7 +333,7 @@
 							color: rgba(0,0,0,0.4);
 							transition: all 0.2s ease;
 							&:hover {
-								color: $accentColor;
+								//color: $accentColor;
 							}
 						}
 					}

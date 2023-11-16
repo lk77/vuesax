@@ -12350,28 +12350,28 @@ const vsBreadcrumb_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(vsBre
 /* harmony default export */ var components_vsBreadcrumb = (function (Vue) {
   Vue.component('VsBreadcrumb', vsBreadcrumb);
 });
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/functions/vsDialog/vsDialog.vue?vue&type=template&id=dc9f4f02&lang=html
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/functions/vsDialog/vsDialog.vue?vue&type=template&id=77d3903d&lang=html
 
-var vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_1 = {
+var vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_1 = {
   ref: "dialogx",
   class: "vs-dialog"
 };
-var vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_2 = {
+var vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_2 = {
   class: "con-title-after"
 };
-var vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_3 = {
+var vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_3 = {
   class: "dialog-title"
 };
-var vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_4 = {
+var vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_4 = {
   class: "vs-dialog-text"
 };
-var vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_5 = {
+var vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_5 = {
   key: 0
 };
-var vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_6 = {
+var vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_6 = {
   key: 1
 };
-function vsDialogvue_type_template_id_dc9f4f02_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsDialogvue_type_template_id_77d3903d_lang_html_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.resolveComponent)("vs-icon");
   var _component_vs_button = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.resolveComponent)("vs-button");
   return (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.Transition, {
@@ -12387,19 +12387,19 @@ function vsDialogvue_type_template_id_dc9f4f02_lang_html_render(_ctx, _cache, $p
         onClick: _cache[0] || (_cache[0] = function ($event) {
           return $options.handleClose($event, true);
         })
-      }), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_1, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("header", {
+      }), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_1, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("header", {
         style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeStyle)($options.styleHeader),
         class: "vs-dialog-header"
-      }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_2, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("span", {
+      }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_2, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("span", {
         style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeStyle)($options.styleAfter),
         class: "after"
-      }, null, 4), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("h3", vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_3, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.title), 1)]), $props.type == 'alert' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createBlock)(_component_vs_icon, {
+      }, null, 4), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("h3", vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_3, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.title), 1)]), $props.type == 'alert' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createBlock)(_component_vs_icon, {
         key: 0,
         icon: $props.closeIcon,
         "icon-pack": $props.iconPack,
         class: "vs-dialog-cancel vs-dialog-cancel--icon notranslate",
         onClick: $options.handleClose
-      }, null, 8, ["icon", "icon-pack", "onClick"])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)], 4), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_4, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderSlot)(_ctx.$slots, "default"), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createTextVNode)(" " + (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.text), 1)]), ($props.buttonsHidden ? false : _ctx.isPrompt || $props.type == 'confirm') ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("footer", vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_5, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createVNode)(_component_vs_button, {
+      }, null, 8, ["icon", "icon-pack", "onClick"])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)], 4), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_4, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderSlot)(_ctx.$slots, "default"), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createTextVNode)(" " + (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.text), 1)]), ($props.buttonsHidden ? false : _ctx.isPrompt || $props.type == 'confirm') ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("footer", vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_5, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createVNode)(_component_vs_button, {
         disabled: $props.isValid == 'none' ? false : !$props.isValid,
         color: $props.color,
         type: $props.buttonAccept,
@@ -12420,7 +12420,7 @@ function vsDialogvue_type_template_id_dc9f4f02_lang_html_render(_ctx, _cache, $p
           return [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createTextVNode)((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.cancelText), 1)];
         }),
         _: 1
-      }, 8, ["text-color", "type", "onClick"])])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), $props.type == 'alert' && !_ctx.isPrompt ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("footer", vsDialogvue_type_template_id_dc9f4f02_lang_html_hoisted_6, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createVNode)(_component_vs_button, {
+      }, 8, ["text-color", "type", "onClick"])])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), $props.type == 'alert' && !_ctx.isPrompt ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("footer", vsDialogvue_type_template_id_77d3903d_lang_html_hoisted_6, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createVNode)(_component_vs_button, {
         color: $props.color,
         type: $props.buttonAccept,
         class: "vs-dialog-accept-button",
@@ -12435,7 +12435,7 @@ function vsDialogvue_type_template_id_dc9f4f02_lang_html_render(_ctx, _cache, $p
     _: 3
   });
 }
-;// CONCATENATED MODULE: ./src/functions/vsDialog/vsDialog.vue?vue&type=template&id=dc9f4f02&lang=html
+;// CONCATENATED MODULE: ./src/functions/vsDialog/vsDialog.vue?vue&type=template&id=77d3903d&lang=html
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/functions/vsDialog/vsDialog.vue?vue&type=script&lang=js
 
@@ -12496,6 +12496,10 @@ function vsDialogvue_type_template_id_dc9f4f02_lang_html_render(_ctx, _cache, $p
     },
     parent: {
       default: null
+    },
+    autoclose: {
+      default: true,
+      type: Boolean
     }
   },
   data: function data() {
@@ -12560,14 +12564,18 @@ function vsDialogvue_type_template_id_dc9f4f02_lang_html_render(_ctx, _cache, $p
     acceptDialog: function acceptDialog() {
       if (!this.isPrompt) {
         this.accept ? this.accept(this.parameters) : null;
-        this.fActive = false;
-        this.$emit('update:active', false);
+        if (this.autoclose) {
+          this.fActive = false;
+          this.$emit('update:active', false);
+        }
         this.$emit('accept', this.parameters);
       } else {
         if (this.isValid || this.isValid == 'none') {
           this.accept ? this.accept() : null;
-          this.fActive = false;
-          this.$emit('update:active', false);
+          if (this.autoclose) {
+            this.fActive = false;
+            this.$emit('update:active', false);
+          }
           this.$emit('accept', this.parameters);
         }
       }
@@ -12587,17 +12595,19 @@ function vsDialogvue_type_template_id_dc9f4f02_lang_html_render(_ctx, _cache, $p
       } else {
         return;
       }
-      if (con) {
-        if (event.target.className.indexOf('vs-dialog-dark') != -1 && this.type == 'alert') {
-          this.fActive = false;
-          this.$emit('update:active', false);
-        } else if (event.target.className.indexOf('vs-dialog-dark') != -1) {
-          this.rebound();
-        }
-      } else {
-        if (event ? event.target.className.indexOf('vs-dialog-cancel') != -1 : event ? event.target.className.indexOf('vs-dialog-cancel--icon') != -1 : false) {
-          this.fActive = false;
-          this.$emit('update:active', false);
+      if (this.autoclose) {
+        if (con) {
+          if (event.target.className.indexOf('vs-dialog-dark') != -1 && this.type == 'alert') {
+            this.fActive = false;
+            this.$emit('update:active', false);
+          } else if (event.target.className.indexOf('vs-dialog-dark') != -1) {
+            this.rebound();
+          }
+        } else {
+          if (event ? event.target.className.indexOf('vs-dialog-cancel') != -1 : event ? event.target.className.indexOf('vs-dialog-cancel--icon') != -1 : false) {
+            this.fActive = false;
+            this.$emit('update:active', false);
+          }
         }
       }
       this.$emit('close');
@@ -12606,8 +12616,10 @@ function vsDialogvue_type_template_id_dc9f4f02_lang_html_render(_ctx, _cache, $p
       });
     },
     cancelClose: function cancelClose() {
-      this.fActive = false;
-      this.$emit('update:active', false);
+      if (this.autoclose) {
+        this.fActive = false;
+        this.$emit('update:active', false);
+      }
       this.$emit('cancel');
       // this.$emit('cancel')
       this.cancel ? this.cancel(this.parameters) : null;
@@ -12627,7 +12639,7 @@ function vsDialogvue_type_template_id_dc9f4f02_lang_html_render(_ctx, _cache, $p
 
 
 ;
-const vsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(vsDialogvue_type_script_lang_js, [['render',vsDialogvue_type_template_id_dc9f4f02_lang_html_render]])
+const vsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(vsDialogvue_type_script_lang_js, [['render',vsDialogvue_type_template_id_77d3903d_lang_html_render]])
 
 /* harmony default export */ var vsDialog = (vsDialog_exports_);
 ;// CONCATENATED MODULE: ./src/components/vsPrompt/index.js
@@ -14164,47 +14176,47 @@ const vsDropDownGroup_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(vs
   Vue.component('VsDropdownItem', vsDropDownItem);
   Vue.component('VsDropdownGroup', vsDropDownGroup);
 });
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/vsTable/vsTable.vue?vue&type=template&id=0f375955
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/vsTable/vsTable.vue?vue&type=template&id=317458fb
 
 
 
 
 
-var vsTablevue_type_template_id_0f375955_hoisted_1 = {
+var vsTablevue_type_template_id_317458fb_hoisted_1 = {
   class: "header-table vs-table--header"
 };
-var vsTablevue_type_template_id_0f375955_hoisted_2 = {
+var vsTablevue_type_template_id_317458fb_hoisted_2 = {
   key: 0,
   class: "con-input-search vs-table--search"
 };
-var vsTablevue_type_template_id_0f375955_hoisted_3 = {
+var vsTablevue_type_template_id_317458fb_hoisted_3 = {
   class: "con-tablex vs-table--content"
 };
-var vsTablevue_type_template_id_0f375955_hoisted_4 = {
+var vsTablevue_type_template_id_317458fb_hoisted_4 = {
   ref: "table",
   class: "vs-table vs-table--tbody-table"
 };
-var vsTablevue_type_template_id_0f375955_hoisted_5 = {
+var vsTablevue_type_template_id_317458fb_hoisted_5 = {
   ref: "thead",
   class: "vs-table--thead"
 };
-var vsTablevue_type_template_id_0f375955_hoisted_6 = {
+var vsTablevue_type_template_id_317458fb_hoisted_6 = {
   key: 0,
   class: "td-check"
 };
-var vsTablevue_type_template_id_0f375955_hoisted_7 = {
+var vsTablevue_type_template_id_317458fb_hoisted_7 = {
   key: 0,
   class: "con-td-check"
 };
-var vsTablevue_type_template_id_0f375955_hoisted_8 = {
+var vsTablevue_type_template_id_317458fb_hoisted_8 = {
   key: 0,
   class: "not-data-table vs-table--not-data"
 };
-var vsTablevue_type_template_id_0f375955_hoisted_9 = {
+var vsTablevue_type_template_id_317458fb_hoisted_9 = {
   key: 1,
   class: "con-pagination-table vs-table--pagination"
 };
-function vsTablevue_type_template_id_0f375955_render(_ctx, _cache, $props, $setup, $data, $options) {
+function vsTablevue_type_template_id_317458fb_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_vs_icon = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.resolveComponent)("vs-icon");
   var _component_vs_checkbox = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.resolveComponent)("vs-checkbox");
   var _component_vs_pagination = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.resolveComponent)("vs-pagination");
@@ -14213,7 +14225,7 @@ function vsTablevue_type_template_id_0f375955_render(_ctx, _cache, $props, $setu
       'stripe': $props.stripe,
       'hoverFlat': $props.hoverFlat
     }, "vs-table-".concat($props.color)], "vs-component vs-con-table"])
-  }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("header", vsTablevue_type_template_id_0f375955_hoisted_1, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderSlot)(_ctx.$slots, "header"), $props.search ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", vsTablevue_type_template_id_0f375955_hoisted_2, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.withDirectives)((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("input", {
+  }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("header", vsTablevue_type_template_id_317458fb_hoisted_1, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderSlot)(_ctx.$slots, "header"), $props.search ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", vsTablevue_type_template_id_317458fb_hoisted_2, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.withDirectives)((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return _ctx.searchx = $event;
     }),
@@ -14221,10 +14233,10 @@ function vsTablevue_type_template_id_0f375955_render(_ctx, _cache, $props, $setu
     type: "text"
   }, null, 512), [[external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.vModelText, _ctx.searchx]]), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createVNode)(_component_vs_icon, {
     icon: "search"
-  })])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)]), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", vsTablevue_type_template_id_0f375955_hoisted_3, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", {
+  })])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)]), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", vsTablevue_type_template_id_317458fb_hoisted_3, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", {
     style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeStyle)($options.styleConTbody),
     class: "vs-con-tbody vs-table--tbody"
-  }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("table", vsTablevue_type_template_id_0f375955_hoisted_4, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("thead", vsTablevue_type_template_id_0f375955_hoisted_5, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("tr", null, [$props.multiple || _ctx.hasExpadableData ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("th", vsTablevue_type_template_id_0f375955_hoisted_6, [$props.multiple ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("span", vsTablevue_type_template_id_0f375955_hoisted_7, [((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createBlock)(_component_vs_checkbox, {
+  }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("table", vsTablevue_type_template_id_317458fb_hoisted_4, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("thead", vsTablevue_type_template_id_317458fb_hoisted_5, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("tr", null, [$props.multiple || _ctx.hasExpadableData ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("th", vsTablevue_type_template_id_317458fb_hoisted_6, [$props.multiple ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("span", vsTablevue_type_template_id_317458fb_hoisted_7, [((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createBlock)(_component_vs_checkbox, {
     key: $options.isCheckedLine ? 'remove' : 'check',
     icon: $options.isCheckedLine ? 'remove' : 'check',
     checked: $options.isCheckedMultiple,
@@ -14232,7 +14244,7 @@ function vsTablevue_type_template_id_0f375955_render(_ctx, _cache, $props, $setu
     onChange: $options.changeCheckedMultiple
   }, null, 8, ["icon", "checked", "onChange"]))])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderSlot)(_ctx.$slots, "thead")])], 512), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderSlot)(_ctx.$slots, "default", {
     data: _ctx.datax
-  })], 512)], 4), $options.isNoData ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", vsTablevue_type_template_id_0f375955_hoisted_8, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.noDataText), 1)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), $props.pagination ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", vsTablevue_type_template_id_0f375955_hoisted_9, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createVNode)(_component_vs_pagination, {
+  })], 512)], 4), $options.isNoData ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", vsTablevue_type_template_id_317458fb_hoisted_8, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.noDataText), 1)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), $props.pagination ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", vsTablevue_type_template_id_317458fb_hoisted_9, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createVNode)(_component_vs_pagination, {
     modelValue: _ctx.currentx,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return _ctx.currentx = $event;
@@ -14248,7 +14260,7 @@ function vsTablevue_type_template_id_0f375955_render(_ctx, _cache, $props, $setu
     onChangeMaxItems: $options.changeMaxItems
   }, null, 8, ["modelValue", "total", "description-items", "max-items", "size-array", "description", "description-title", "description-connector", "description-body", "onChangeMaxItems"])])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)])], 2);
 }
-;// CONCATENATED MODULE: ./src/components/vsTable/vsTable.vue?vue&type=template&id=0f375955
+;// CONCATENATED MODULE: ./src/components/vsTable/vsTable.vue?vue&type=template&id=317458fb
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.sort.js
 var es_array_sort = __webpack_require__(2707);
@@ -14469,7 +14481,7 @@ var es_array_sort = __webpack_require__(2707);
       }
     });
   },
-  destroyed: function destroyed() {
+  unmounted: function unmounted() {
     window.removeEventListener('resize', this.listenerChangeWidth);
   },
   methods: {
@@ -14617,7 +14629,7 @@ var es_array_sort = __webpack_require__(2707);
 
 
 ;
-const vsTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(vsTablevue_type_script_lang_js, [['render',vsTablevue_type_template_id_0f375955_render]])
+const vsTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(vsTablevue_type_script_lang_js, [['render',vsTablevue_type_template_id_317458fb_render]])
 
 /* harmony default export */ var vsTable = (vsTable_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/vsTable/vsTh.vue?vue&type=template&id=269a1452
@@ -16024,14 +16036,14 @@ const vsNotifications_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(vs
 var es_array_from = __webpack_require__(1038);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.iterator.js
 var es_string_iterator = __webpack_require__(8783);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/functions/vsLoading/vsLoading.vue?vue&type=template&id=fbc6e18e
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/functions/vsLoading/vsLoading.vue?vue&type=template&id=75c9f6ce
 
-var vsLoadingvue_type_template_id_fbc6e18e_hoisted_1 = {
+var vsLoadingvue_type_template_id_75c9f6ce_hoisted_1 = {
   key: 0,
   class: "title-loading"
 };
-var vsLoadingvue_type_template_id_fbc6e18e_hoisted_2 = ["src"];
-var vsLoadingvue_type_template_id_fbc6e18e_hoisted_3 = {
+var vsLoadingvue_type_template_id_75c9f6ce_hoisted_2 = ["src"];
+var vsLoadingvue_type_template_id_75c9f6ce_hoisted_3 = {
   key: 3,
   class: "spinner",
   width: "50px",
@@ -16039,7 +16051,7 @@ var vsLoadingvue_type_template_id_fbc6e18e_hoisted_3 = {
   viewBox: "0 0 66 66",
   xmlns: "http://www.w3.org/2000/svg"
 };
-var vsLoadingvue_type_template_id_fbc6e18e_hoisted_4 = /*#__PURE__*/(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("circle", {
+var vsLoadingvue_type_template_id_75c9f6ce_hoisted_4 = /*#__PURE__*/(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("circle", {
   class: "path",
   fill: "none",
   "stroke-width": "5",
@@ -16048,8 +16060,8 @@ var vsLoadingvue_type_template_id_fbc6e18e_hoisted_4 = /*#__PURE__*/(0,external_
   cy: "33",
   r: "30"
 }, null, -1);
-var vsLoadingvue_type_template_id_fbc6e18e_hoisted_5 = [vsLoadingvue_type_template_id_fbc6e18e_hoisted_4];
-function vsLoadingvue_type_template_id_fbc6e18e_render(_ctx, _cache, $props, $setup, $data, $options) {
+var vsLoadingvue_type_template_id_75c9f6ce_hoisted_5 = [vsLoadingvue_type_template_id_75c9f6ce_hoisted_4];
+function vsLoadingvue_type_template_id_75c9f6ce_render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.Transition, {
     name: "fade"
   }, {
@@ -16057,7 +16069,7 @@ function vsLoadingvue_type_template_id_fbc6e18e_render(_ctx, _cache, $props, $se
       return [_ctx.active ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
         key: 0,
         style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeStyle)($options.style),
-        class: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeClass)([["vs-loading-background-".concat(_ctx.background), "vs-loading-color-".concat(_ctx.color), {
+        class: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeClass)([["vs-loading-background-".concat($props.background), "vs-loading-color-".concat($props.color), {
           'textAfter': _ctx.textAfter
         }], "con-vs-loading"]),
         onClick: _cache[0] || (_cache[0] = function () {
@@ -16067,56 +16079,70 @@ function vsLoadingvue_type_template_id_fbc6e18e_render(_ctx, _cache, $props, $se
         name: "effect-click"
       }, {
         default: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.withCtx)(function () {
-          return [_ctx.activeEffectClick && _ctx.clickEffect ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
+          return [_ctx.activeEffectClick && $props.clickEffect ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
             key: 0,
             style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeStyle)($options.styleEffectClick),
             class: "effect-click"
           }, null, 4)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)];
         }),
         _: 1
-      }), _ctx.text ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("h4", vsLoadingvue_type_template_id_fbc6e18e_hoisted_1, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)(_ctx.text), 1)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", {
+      }), $props.text ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("h4", vsLoadingvue_type_template_id_75c9f6ce_hoisted_1, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.text), 1)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("div", {
         style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeStyle)({
-          transform: "scale(".concat(_ctx.scale, ")")
+          transform: "scale(".concat($props.scale, ")")
         }),
-        class: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeClass)([[_ctx.type], "vs-loading"])
-      }, [_ctx.type != 'material' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
+        class: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeClass)([[$props.type], "vs-loading"])
+      }, [$props.type != 'material' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
         key: 0,
         style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeStyle)($options.styleEffect1),
         class: "effect-1 effects"
-      }, null, 4)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), _ctx.type != 'material' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
+      }, null, 4)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), $props.type != 'material' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
         key: 1,
         style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeStyle)($options.styleEffect2),
         class: "effect-2 effects"
-      }, null, 4)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), _ctx.type != 'material' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
+      }, null, 4)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), $props.type != 'material' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
         key: 2,
         style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeStyle)($options.styleEffect3),
         class: "effect-3 effects"
       }, null, 4)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("img", {
         src: _ctx.src
-      }, null, 8, vsLoadingvue_type_template_id_fbc6e18e_hoisted_2), _ctx.type == 'material' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("svg", vsLoadingvue_type_template_id_fbc6e18e_hoisted_3, vsLoadingvue_type_template_id_fbc6e18e_hoisted_5)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)], 6)], 6)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)];
+      }, null, 8, vsLoadingvue_type_template_id_75c9f6ce_hoisted_2), $props.type == 'material' ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("svg", vsLoadingvue_type_template_id_75c9f6ce_hoisted_3, vsLoadingvue_type_template_id_75c9f6ce_hoisted_5)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)], 6)], 6)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)];
     }),
     _: 1
   });
 }
-;// CONCATENATED MODULE: ./src/functions/vsLoading/vsLoading.vue?vue&type=template&id=fbc6e18e
+;// CONCATENATED MODULE: ./src/functions/vsLoading/vsLoading.vue?vue&type=template&id=75c9f6ce
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/functions/vsLoading/vsLoading.vue?vue&type=script&lang=js
 
 /* harmony default export */ var vsLoadingvue_type_script_lang_js = ({
+  props: {
+    type: {
+      default: 'default'
+    },
+    background: {
+      default: 'rgba(255,255,255,.6)'
+    },
+    color: {
+      default: null
+    },
+    scale: {
+      default: 1
+    },
+    text: {
+      default: null
+    },
+    clickEffect: {
+      default: false
+    }
+  },
   data: function data() {
     return {
       active: false,
-      type: 'default',
-      color: null,
-      background: 'rgba(255,255,255,.6)',
       src: '',
       leftx: 0,
       topx: 0,
-      clickEffect: false,
       activeEffectClick: false,
-      scale: 1,
-      textAfter: false,
-      text: null
+      textAfter: false
     };
   },
   computed: {
@@ -16247,7 +16273,7 @@ function vsLoadingvue_type_template_id_fbc6e18e_render(_ctx, _cache, $props, $se
 
 
 ;
-const vsLoading_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(vsLoadingvue_type_script_lang_js, [['render',vsLoadingvue_type_template_id_fbc6e18e_render]])
+const vsLoading_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(vsLoadingvue_type_script_lang_js, [['render',vsLoadingvue_type_template_id_75c9f6ce_render]])
 
 /* harmony default export */ var vsLoading = (vsLoading_exports_);
 ;// CONCATENATED MODULE: ./src/functions/vsLoading/index.js

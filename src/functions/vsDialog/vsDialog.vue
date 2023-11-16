@@ -135,6 +135,10 @@ export default {
     },
     parent:{
       default: null,
+    },
+    autoclose: {
+      default: true,
+      type: Boolean
     }
   },
   data:()=>({
@@ -195,14 +199,18 @@ export default {
     acceptDialog () {
       if(!this.isPrompt){
         this.accept?this.accept(this.parameters):null
-        this.fActive = false
-        this.$emit('update:active',false)
+        if(this.autoclose) {
+          this.fActive = false
+          this.$emit('update:active',false)
+        }
         this.$emit('accept', this.parameters)
       } else {
         if (this.isValid || this.isValid == 'none') {
           this.accept?this.accept():null
-          this.fActive = false
-          this.$emit('update:active',false)
+          if(this.autoclose) {
+            this.fActive = false
+            this.$emit('update:active', false)
+          }
           this.$emit('accept', this.parameters)
         }
       }
@@ -221,17 +229,19 @@ export default {
         return;
       }
 
-      if(con){
-        if(event.target.className.indexOf('vs-dialog-dark')!=-1 && this.type == 'alert'){
-          this.fActive = false
-          this.$emit('update:active',false)
-        } else if (event.target.className.indexOf('vs-dialog-dark')!=-1) {
-          this.rebound()
-        }
-      } else {
-        if(event?event.target.className.indexOf('vs-dialog-cancel')!=-1:event?event.target.className.indexOf('vs-dialog-cancel--icon')!=-1:false ){
-          this.fActive = false
-          this.$emit('update:active',false)
+      if(this.autoclose) {
+        if (con) {
+          if (event.target.className.indexOf('vs-dialog-dark') != -1 && this.type == 'alert') {
+            this.fActive = false
+            this.$emit('update:active', false)
+          } else if (event.target.className.indexOf('vs-dialog-dark') != -1) {
+            this.rebound()
+          }
+        } else {
+          if (event ? event.target.className.indexOf('vs-dialog-cancel') != -1 : event ? event.target.className.indexOf('vs-dialog-cancel--icon') != -1 : false) {
+            this.fActive = false
+            this.$emit('update:active', false)
+          }
         }
       }
       this.$emit('close')
@@ -240,8 +250,10 @@ export default {
       })
     },
     cancelClose(){
-      this.fActive = false
-      this.$emit('update:active',false)
+      if(this.autoclose) {
+        this.fActive = false
+        this.$emit('update:active', false)
+      }
       this.$emit('cancel')
       // this.$emit('cancel')
       this.cancel?this.cancel(this.parameters):null
