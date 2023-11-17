@@ -5,10 +5,10 @@
       ref="options"
       :class="{'rightx':vsDropRight || $parent.rightx,'notHeight': notHeight}"
       :style="{
-        'left':`${leftx+(vsLeaveTolerance*2)}px`,
-        'top':`${topx+(notHeight ? (vsLeaveTolerance*2) : 0)}px`,
-        'padding' : `${vsLeaveTolerance+(notHeight ? 0 : 10)}px`,
-        'margin' : `-${vsLeaveTolerance}px`
+        'left':left,
+        'top':top,
+        'padding':padding,
+        'margin':'-'+margin
       }"
       class="con-vs-dropdown--menu vs-dropdown-menu"
       style="position:absolute!important;"
@@ -32,7 +32,7 @@
       <div
         ref="menuAfter"
         :style="{
-          'margin': `${vsLeaveTolerance}px`
+          'margin': margin
         }"
         :class="[ vsDropRight ? 'vs-dropdown-right--menu--after' : 'vs-dropdown--menu--after']"
       ></div>
@@ -60,6 +60,41 @@ export default {
     childrenItems: [],
     leaveTimeout: null
   }),
+  computed: {
+    left() {
+      if(this.vsLeaveTolerance && this.vsLeaveTolerance > 0) {
+        return `${this.leftx + (this.vsLeaveTolerance * 2)}px`;
+      }
+
+      return `${this.leftx}px`;
+    },
+    top() {
+      if(this.vsLeaveTolerance && this.vsLeaveTolerance > 0) {
+        return `${this.topx + (this.notHeight ? this.vsLeaveTolerance*2 : 0)}px`;
+      }
+
+      return `${this.topx}px`;
+    },
+    padding() {
+      if(this.vsLeaveTolerance && this.vsLeaveTolerance > 0) {
+        return [
+          `${this.vsLeaveTolerance+(this.notHeight ? 0 : 10)}px`,
+          `${this.vsLeaveTolerance}px`,
+          `${this.vsLeaveTolerance}px`,
+          `${this.vsLeaveTolerance}px`,
+        ].join(' ');
+      }
+
+      return undefined;
+    },
+    margin() {
+      if(this.vsLeaveTolerance && this.vsLeaveTolerance > 0) {
+        return `${this.vsLeaveTolerance}px`
+      }
+
+      return undefined;
+    }
+  },
   watch:{
     dropdownVisible(val) {
       let dropdownGroup = this.childrenItems.filter(item => item.activeGroup !== undefined)
