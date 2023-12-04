@@ -44,6 +44,9 @@ export default {
 
     return included;
   },
+  getColorCode(colorx, alpha){
+    return `rgba(${getComputedStyle(document.documentElement).getPropertyValue('--vs-' + colorx)},${alpha})`;
+  },
   RandomColor(){
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min)) + min;
