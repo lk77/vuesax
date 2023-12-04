@@ -20,6 +20,16 @@ API:
     parameters: null
     description: Determine the height of the progress bar
     default: 6
+  - name: backgroundColor
+    type: String
+    parameters: RGB, HEX, primary, success, danger, warning, dark
+    description: Determine the background color
+    default: color
+  - name: backgroundAlpha
+    type: Number
+    parameters:
+    description: Determine the background alpha
+    default: 0.1
 contributors:
   - fergardi
 ---
@@ -61,6 +71,41 @@ Nice colors for your progress bar.
   <vs-progress :percent="45" color="dark">dark</vs-progress>
   <vs-progress :percent="30" color="rgb(164, 69, 15)">RGB</vs-progress>
   <vs-progress :percent="15" color="#24c1a0">HEX</vs-progress>
+```
+
+</template>
+</vuecode>
+
+</box>
+
+<box>
+
+## Background
+
+Change `backgroundColor` and `backgroundAlpha` properties
+
+<vuecode md>
+<template #demo>
+<div>
+  <vs-progress :percent="95" color="lightgrey" backgroundColor="primary" :backgroundAlpha="0.3">primary</vs-progress>
+  <vs-progress :percent="90" color="lightgrey" backgroundColor="warning" :backgroundAlpha="0.4">warning</vs-progress>
+  <vs-progress :percent="75" color="lightgrey" backgroundColor="danger" :backgroundAlpha="0.5">danger</vs-progress>
+  <vs-progress :percent="60" color="lightgrey" backgroundColor="success" :backgroundAlpha="0.6">success</vs-progress>
+  <vs-progress :percent="45" color="lightgrey" backgroundColor="dark" :backgroundAlpha="0.7">dark</vs-progress>
+  <vs-progress :percent="30" color="lightgrey" backgroundColor="rgb(164, 69, 15)" :backgroundAlpha="0.8">RGB</vs-progress>
+  <vs-progress :percent="15" color="lightgrey" backgroundColor="#24c1a0" :backgroundAlpha="0.9">HEX</vs-progress>
+</div>
+</template>
+<template #code>
+
+```html
+  <vs-progress :percent="95" color="lightgrey" backgroundColor="primary" :backgroundAlpha="0.3">primary</vs-progress>
+  <vs-progress :percent="90" color="lightgrey" backgroundColor="warning" :backgroundAlpha="0.4">warning</vs-progress>
+  <vs-progress :percent="75" color="lightgrey" backgroundColor="danger" :backgroundAlpha="0.5">danger</vs-progress>
+  <vs-progress :percent="60" color="lightgrey" backgroundColor="success" :backgroundAlpha="0.6">success</vs-progress>
+  <vs-progress :percent="45" color="lightgrey" backgroundColor="dark" :backgroundAlpha="0.7">dark</vs-progress>
+  <vs-progress :percent="30" color="lightgrey" backgroundColor="rgb(164, 69, 15)" :backgroundAlpha="0.8">RGB</vs-progress>
+  <vs-progress :percent="15" color="lightgrey" backgroundColor="#24c1a0" :backgroundAlpha="0.9">HEX</vs-progress>
 ```
 
 </template>

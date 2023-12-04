@@ -38,6 +38,14 @@ export default {
     color:{
       type:String,
       default:'primary'
+    },
+    backgroundColor: {
+      type:String,
+      default: null
+    },
+    backgroundAlpha: {
+      type:Number,
+      default: null
     }
   },
   data () {
@@ -47,8 +55,16 @@ export default {
   },
   computed: {
     styleConProgress () {
+      let backgroundColor = this.backgroundColor ?? this.color;
+
+      if(_color.isColor(backgroundColor)) {
+        backgroundColor = _color.rColor(backgroundColor, this.backgroundAlpha ?? .1);
+      } else {
+        backgroundColor = _color.getColor(backgroundColor, this.backgroundAlpha ?? .1);
+      }
+
       return {
-        background: _color.getColor(this.color,.1),
+        background: backgroundColor,
         height: `${this.height}px`
       }
     },
