@@ -106,10 +106,45 @@ export default {
     this.searchParent(this, (parent) => {
       this.parent = parent;
       this.id = this.parent.childrenItems.length;
-      this.parent.childrenItems.push(this);
-    })
+      this.parent.childrenItems.push(this)
+    });
+  },
+  unmounted() {
+    // We remove the vs-tab
+    this.parent.childrenItems[this.id] = undefined
   },
   methods: {
+    /**
+     * Retrieve the attributes of this tab
+     *
+     * @returns {{} & Data}
+     */
+    getAttrs() {
+      return Object.assign({}, this.$attrs);
+    },
+    /**
+     * In vite, an infinite loop might occur when calling $attrs directly from VsTabs
+     * We debounce the calls to $attrs to ensure this does not occur
+     *
+     * @param fn
+     * @returns {*}
+     */
+    debounce(fn) {
+      if(!fn._debounce) {
+        fn._debounce = fn();
+        setTimeout(() => {
+          delete fn._debounce;
+        }, 50);
+      }
+
+      return fn._debounce;
+    },
+    /**
+     * We search for the parent VsTabs
+     *
+     * @param _this
+     * @param callback
+     */
     searchParent(_this, callback) {
       let parent = _this.$parent
       if (!parent.childrenItems) {

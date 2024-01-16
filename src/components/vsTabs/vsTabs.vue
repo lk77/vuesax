@@ -13,7 +13,7 @@
         class="ul-tabs vs-tabs--ul"
       >
         <li
-          v-for="(child,index) in childrenItems"
+          v-for="(child,index) in childrenItems.filter(Boolean)"
           :ref="'li-' + index"
           :class="[{'activeChild':childActive == index}, {'hoverChild': childHover == index}, `vs-tabs-${child.color}`]"
           :style="child.style"
@@ -22,12 +22,12 @@
           @mouseout="child.hover = false; childHover = -1"
         >
           <button
-            v-bind="allowedAttrs(child.$attrs)"
+            v-bind="allowedAttrs(child.debounce(child.getAttrs))"
             :style="styleAlignIcon(child.icon)"
             class="vs-tabs--btn"
             type="button"
             @click="activeChild(index)"
-            v-on="child.$attrs"
+            v-on="child.debounce(child.getAttrs)"
           >
             <vs-icon
               v-if="child.icon"
