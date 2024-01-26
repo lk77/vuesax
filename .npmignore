@@ -20,3 +20,4 @@ dist/demo.html
 *.sln
 .github/
 .nvmrc
+vuesax-nuxt
