@@ -121,7 +121,9 @@ export default {
     modelValue(index) {
       this.$nextTick(() => {
         const activeIndex = this.parseIndex(index)
-        this.activeChild(activeIndex)
+        if(this.childrenItems.length > 0) {
+          this.activeChild(activeIndex)
+        }
       })
     },
   },
@@ -130,7 +132,9 @@ export default {
       const activeIndex = this.parseIndex(this.modelValue)
       this.childActive = activeIndex
       this.$nextTick(() => {
-        this.activeChild(activeIndex, true)
+        if(this.childrenItems.length > 0) {
+          this.activeChild(activeIndex, true)
+        }
       })
     })
   },

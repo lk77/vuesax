@@ -149,7 +149,9 @@ export default {
       if(this.parent) {
         let elx = this.$refs.sidebarbackground
         let parentx = typeof this.parent == 'string' ? document.querySelector(this.parent) : this.parent
-        parentx.insertBefore(elx, parentx.firstChild)
+        if(parentx) {
+          parentx.insertBefore(elx, parentx.firstChild)
+        }
       }
 
     },
